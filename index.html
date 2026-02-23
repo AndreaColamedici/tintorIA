@@ -3,146 +3,734 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TintorIA — Indice Tintoria Podcast</title>
+<title>TintorIA — Cerca in Tintoria</title>
+<meta name="description" content="Cerca in tutte le puntate di Tintoria, il podcast di Daniele Tinti e Stefano Rapone. 234 puntate, 232 trascrizioni, 3.4 milioni di parole indicizzate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
 <style>
   :root {
-    --bg: #0f0f0f;
-    --card: #1a1a1a;
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1c1c1c;
+    --surface-3: #242424;
     --border: #2a2a2a;
-    --text: #e8e8e8;
-    --muted: #888;
+    --border-light: #333;
+    --text: #f0f0f0;
+    --text-secondary: #999;
+    --text-muted: #666;
     --accent: #e63946;
+    --accent-glow: rgba(230, 57, 70, 0.15);
     --accent-hover: #ff4d5a;
-    --search-bg: #1e1e1e;
-    --tag-bg: #252525;
+    --accent-soft: #3a1a1c;
+    --green: #4ade80;
+    --green-soft: rgba(74, 222, 128, 0.12);
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --max-w: 1200px;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font);
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
-  .header {
+  ::selection { background: var(--accent); color: white; }
+  
+  /* ---- HERO ---- */
+  .hero {
+    position: relative;
+    padding: 3rem 1.5rem 2.5rem;
     text-align: center;
-    padding: 2rem 1rem 1rem;
-    border-bottom: 1px solid var(--border);
+    overflow: hidden;
   }
-  .header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; }
-  .header h1 span { color: var(--accent); }
-  .header p { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
-  .stats {
-    display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    position: relative;
+  }
+  .hero-title span { color: var(--accent); }
+  .hero-sub {
+    color: var(--text-secondary);
+    margin-top: 0.6rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
     flex-wrap: wrap;
   }
-  .stat { text-align: center; }
-  .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
-  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-
-  .controls {
-    max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem;
+  .hero-stat {
+    text-align: center;
   }
-  .search-row {
-    display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
-    margin-bottom: 0.75rem;
+  .hero-stat-val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
   }
-  .search-box {
-    flex: 1; min-width: 200px;
-    background: var(--search-bg); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.65rem 1rem;
-    color: var(--text); font-size: 0.95rem; outline: none;
+  .hero-stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
   }
-  .search-box:focus { border-color: var(--accent); }
-  .search-box::placeholder { color: var(--muted); }
-
-  .sort-btn, .filter-btn {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.5rem 0.85rem;
-    color: var(--muted); font-size: 0.82rem; cursor: pointer;
-    transition: all 0.15s; white-space: nowrap;
+  
+  /* ---- SEARCH ---- */
+  .search-section {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
-  .sort-btn:hover, .filter-btn:hover { border-color: var(--accent); color: var(--text); }
-  .sort-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .filter-btn.active { background: #2a1a1c; border-color: var(--accent); color: var(--accent); }
-
+  .search-container {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    font-size: 1.1rem;
+  }
+  .search-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1rem 0.9rem 2.8rem;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: var(--font);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    padding-left: 0.2rem;
+  }
+  .search-hint em { color: var(--accent); font-style: normal; font-family: var(--mono); font-size: 0.72rem; }
+  
+  /* ---- TABS / VIEW MODE ---- */
+  .view-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    max-width: var(--max-w);
+    margin-left: auto; margin-right: auto;
+    padding: 0 1.5rem;
+  }
+  .view-tabs {
+    display: flex;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .view-tab {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.82rem;
+    font-family: var(--font);
+    font-weight: 500;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .view-tab:hover { color: var(--text-secondary); }
+  .view-tab.active {
+    background: var(--accent);
+    color: white;
+  }
+  .sort-select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.7rem;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-family: var(--font);
+    cursor: pointer;
+    outline: none;
+  }
+  .sort-select:focus { border-color: var(--accent); }
+  .results-count {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+  
+  /* ---- FILTERS ---- */
+  .filters-bar {
+    max-width: var(--max-w);
+    margin: 0 auto 1rem;
+    padding: 0 1.5rem;
+  }
   .filters-row {
-    display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0.5rem;
   }
   .filters-label {
-    font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
-    letter-spacing: 0.06em; margin-right: 0.25rem;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-right: 0.3rem;
+    font-weight: 600;
   }
-  .clear-filters {
-    background: none; border: none; color: var(--accent); font-size: 0.8rem;
-    cursor: pointer; padding: 0.3rem 0.5rem; text-decoration: underline;
+  .chip {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.28rem 0.65rem;
+    font-size: 0.75rem;
+    font-family: var(--font);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
   }
-  .clear-filters:hover { color: var(--accent-hover); }
-
-  .active-filters {
-    max-width: 1100px; margin: 0 auto 0.5rem; padding: 0 1rem;
-    display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;
+  .chip:hover { border-color: var(--accent); color: var(--text); }
+  .chip.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 500;
   }
-  .active-tag {
-    background: #2a1a1c; border: 1px solid var(--accent); color: var(--accent);
-    border-radius: 6px; padding: 0.25rem 0.6rem; font-size: 0.78rem;
-    display: flex; align-items: center; gap: 0.35rem; cursor: pointer;
+  .chip-count {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-left: 0.2rem;
+    font-variant-numeric: tabular-nums;
   }
-  .active-tag:hover { background: var(--accent); color: #fff; }
-  .active-tag .x { font-weight: 700; }
-
+  .clear-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-family: var(--font);
+    cursor: pointer;
+    padding: 0.28rem 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  /* ---- CARD GRID ---- */
   .grid {
-    max-width: 1100px; margin: 0 auto; padding: 1rem;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1rem;
   }
+  @media (max-width: 700px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  
   .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden;
-    transition: transform 0.15s, border-color 0.15s;
-    cursor: pointer;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
   }
-  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-  .card a { text-decoration: none; color: inherit; display: block; }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .card-thumb-wrap {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--surface-2);
+  }
   .card-thumb {
-    width: 100%; aspect-ratio: 16/9; object-fit: cover;
-    display: block; background: #222;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
   }
-  .card-body { padding: 0.85rem 1rem; }
-  .card-ep { color: var(--accent); font-weight: 700; font-size: 0.8rem; }
-  .card-guest { font-size: 1.1rem; font-weight: 600; margin: 0.2rem 0; }
-  .card-meta { display: flex; gap: 1rem; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
-  .card-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
-  .card-tag {
-    background: var(--tag-bg); color: var(--muted); border-radius: 4px;
-    padding: 0.15rem 0.45rem; font-size: 0.7rem; cursor: pointer;
-    transition: all 0.12s;
+  .card:hover .card-thumb { transform: scale(1.03); }
+  .card-ep-badge {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(4px);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-variant-numeric: tabular-nums;
   }
-  .card-tag:hover { background: var(--accent); color: #fff; }
-
+  .card-duration-badge {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    font-size: 0.72rem;
+    font-family: var(--mono);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+  }
+  .card-body {
+    padding: 0.9rem 1rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-guest {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+  }
   .card-prof {
-    color: var(--muted); font-size: 0.78rem; font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  .card-meta-row {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    align-items: center;
+  }
+  .card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .card-tags {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  .card-tag {
+    background: var(--surface-3);
+    color: var(--text-muted);
+    border-radius: 4px;
+    padding: 0.12rem 0.4rem;
+    font-size: 0.68rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .card-tag:hover {
+    background: var(--accent);
+    color: white;
+  }
+  
+  /* ---- TRANSCRIPT MATCH ---- */
+  .card-transcript {
+    background: var(--green-soft);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.65rem;
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+  .card-transcript-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+  }
+  .card-transcript mark {
+    background: rgba(74, 222, 128, 0.25);
+    color: var(--green);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  
+  /* ---- LIST VIEW ---- */
+  .list {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.7rem 1rem;
+    transition: all var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  .list-item:hover {
+    border-color: var(--accent);
+    background: var(--surface-2);
+  }
+  .list-ep {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.82rem;
+    min-width: 3rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .list-guest {
+    font-weight: 600;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .list-prof {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    flex-shrink: 0;
+    display: none;
+  }
+  @media (min-width: 700px) {
+    .list-prof { display: block; min-width: 120px; }
+  }
+  .list-meta {
+    display: flex;
+    gap: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .list-transcript-hint {
+    color: var(--green);
+    font-size: 0.72rem;
+    flex-shrink: 0;
+  }
+  
+  /* ---- EPISODE DETAIL MODAL ---- */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+  }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    max-width: 800px;
+    width: 100%;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    position: relative;
+  }
+  .modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin: 0.8rem 0.8rem 0 0;
+    z-index: 10;
+    transition: all var(--transition);
+  }
+  .modal-close:hover { background: var(--accent); color: white; border-color: var(--accent); }
+  .modal-header {
+    padding: 1.5rem 1.5rem 0;
+  }
+  .modal-ep {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
     margin-bottom: 0.3rem;
   }
-
-  .results-count {
-    max-width: 1100px; margin: 0 auto; padding: 0 1rem;
-    font-size: 0.85rem; color: var(--muted);
+  .modal-guest {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
   }
-
-  .card-transcript-match {
-    background: #1a2a1a; border: 1px solid #2a4a2a; border-radius: 4px;
-    padding: 0.25rem 0.5rem; font-size: 0.72rem; color: #6a9; margin-top: 0.4rem;
+  .modal-prof {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
   }
-  .no-results { text-align: center; color: var(--muted); padding: 3rem 1rem; font-size: 1.1rem; }
-
+  .modal-meta {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-tags {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    padding: 0.8rem 1.5rem;
+  }
+  .modal-tag {
+    background: var(--surface-3);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .modal-tag:hover { background: var(--accent); color: white; }
+  .modal-actions {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    font-family: var(--font);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--transition);
+  }
+  .modal-btn:hover { background: var(--accent-hover); }
+  .modal-btn-secondary {
+    background: var(--surface-3);
+    color: var(--text-secondary);
+  }
+  .modal-btn-secondary:hover { background: var(--surface-2); color: var(--text); }
+  
+  /* ---- TRANSCRIPT SECTION ---- */
+  .transcript-section {
+    padding: 1.2rem 1.5rem 1.5rem;
+  }
+  .transcript-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+  }
+  .transcript-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .transcript-title-icon { color: var(--green); }
+  .transcript-search {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+    color: var(--text);
+    font-size: 0.82rem;
+    font-family: var(--font);
+    outline: none;
+    width: 180px;
+    transition: border-color var(--transition);
+  }
+  .transcript-search:focus { border-color: var(--accent); }
+  .transcript-body {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .transcript-body mark {
+    background: rgba(230, 57, 70, 0.25);
+    color: var(--accent);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  .transcript-info {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .transcript-unavailable {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    padding: 1rem 0;
+  }
+  
+  /* ---- RANDOM EPISODE ---- */
+  .random-bar {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .random-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.82rem;
+    font-family: var(--font);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .random-btn:hover { border-color: var(--accent); color: var(--accent); }
+  
+  /* ---- NO RESULTS ---- */
+  .no-results {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 4rem 1rem;
+    font-size: 1rem;
+  }
+  .no-results-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+  .no-results-sub { font-size: 0.85rem; margin-top: 0.4rem; }
+  
+  /* ---- FOOTER ---- */
   .footer {
-    text-align: center; padding: 2rem 1rem; color: var(--muted);
-    font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 2rem;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    line-height: 1.7;
   }
   .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ---- LOADING ---- */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+  .spinner {
+    width: 24px; height: 24px;
+    border: 2.5px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-right: 0.6rem;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  
+  /* ---- BACK TO TOP ---- */
+  .back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+    z-index: 100;
+  }
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+  .back-to-top:hover { transform: translateY(-2px); }
 </style>
 </head>
 <body>
@@ -151,7 +739,6 @@
 async function loadData() {
   if (window.__EPISODES_DATA__) return window.__EPISODES_DATA__;
   try {
-    // Try tagged version first, fall back to basic
     let res = await fetch('../data/episodes_tagged.json');
     if (!res.ok) res = await fetch('../data/episodes.json');
     return await res.json();
@@ -160,14 +747,21 @@ async function loadData() {
     return { meta: {}, episodes: [], extras: [] };
   }
 }
+async function loadTranscript(epNum) {
+  try {
+    const res = await fetch('../data/transcripts/' + String(epNum).padStart(3,'0') + '.txt');
+    if (!res.ok) return null;
+    return await res.text();
+  } catch(e) { return null; }
+}
 </script>
 <script type="text/babel">
-const { useState, useEffect, useMemo, useCallback } = React;
+const { useState, useEffect, useMemo, useCallback, useRef } = React;
 
 function formatViews(n) {
   if (!n) return '0';
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
-  if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
+  if (n >= 1_000) return Math.round(n / 1_000) + 'K';
   return n.toString();
 }
 
@@ -178,19 +772,262 @@ function formatDate(d) {
   return `${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
 }
 
+function formatDuration(s) {
+  if (!s) return '';
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  return h > 0 ? `${h}h ${m}m` : `${m}m`;
+}
+
+function highlightText(text, query) {
+  if (!query || query.length < 3) return text;
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'));
+  return parts.map((part, i) =>
+    part.toLowerCase() === query.toLowerCase()
+      ? React.createElement('mark', { key: i }, part)
+      : part
+  );
+}
+
+function getSnippet(text, query, contextChars = 120) {
+  if (!text || !query) return '';
+  const lower = text.toLowerCase();
+  const qLower = query.toLowerCase();
+  const idx = lower.indexOf(qLower);
+  if (idx === -1) return text.slice(0, 250) + '...';
+  const start = Math.max(0, idx - contextChars);
+  const end = Math.min(text.length, idx + query.length + contextChars);
+  let snippet = '';
+  if (start > 0) snippet += '...';
+  snippet += text.slice(start, end);
+  if (end < text.length) snippet += '...';
+  return snippet;
+}
+
+// ---- EPISODE DETAIL MODAL ----
+function EpisodeModal({ episode, onClose, onTagClick, searchQuery }) {
+  const [transcript, setTranscript] = useState(null);
+  const [loadingTranscript, setLoadingTranscript] = useState(false);
+  const [transcriptQuery, setTranscriptQuery] = useState(searchQuery || '');
+  const bodyRef = useRef(null);
+
+  useEffect(() => {
+    if (episode && episode.has_transcription) {
+      setLoadingTranscript(true);
+      loadTranscript(episode.episode_number).then(t => {
+        setTranscript(t);
+        setLoadingTranscript(false);
+      });
+    }
+    // Reset transcript query to search query
+    setTranscriptQuery(searchQuery || '');
+  }, [episode, searchQuery]);
+
+  useEffect(() => {
+    const handler = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClose]);
+
+  // Scroll to first match in transcript
+  useEffect(() => {
+    if (transcript && transcriptQuery && bodyRef.current) {
+      const firstMark = bodyRef.current.querySelector('mark');
+      if (firstMark) {
+        firstMark.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+  }, [transcript, transcriptQuery]);
+
+  if (!episode) return null;
+  const ep = episode;
+
+  // Process transcript for display
+  let transcriptDisplay = null;
+  if (transcript) {
+    // Remove the title line
+    let lines = transcript.split('\n');
+    if (lines[0] && lines[0].startsWith('#')) lines = lines.slice(2);
+    let text = lines.join('\n').trim();
+
+    if (transcriptQuery && transcriptQuery.length >= 3) {
+      transcriptDisplay = highlightText(text, transcriptQuery);
+    } else {
+      transcriptDisplay = text;
+    }
+  }
+
+  return (
+    <div className="modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="modal">
+        <button className="modal-close" onClick={onClose}>✕</button>
+        <div className="modal-header">
+          <div className="modal-ep">Puntata #{ep.episode_number}</div>
+          <div className="modal-guest">{ep.guest}</div>
+          {ep.professione && ep.professione.length > 0 && (
+            <div className="modal-prof">{ep.professione.join(', ')}</div>
+          )}
+        </div>
+        <div className="modal-meta">
+          {ep.upload_date && <span>📅 {formatDate(ep.upload_date)}</span>}
+          <span>👁 {formatViews(ep.view_count)} visualizzazioni</span>
+          <span>⏱ {ep.duration_formatted || formatDuration(ep.duration_seconds)}</span>
+          {ep.transcript_words && <span>📝 {ep.transcript_words.toLocaleString('it')} parole trascritte</span>}
+        </div>
+        {ep.tags && ep.tags.length > 0 && (
+          <div className="modal-tags">
+            {ep.ambito && ep.ambito.map(a => (
+              <span key={a} className="modal-tag" style={{borderLeft: '2px solid var(--accent)', borderRadius: '2px 6px 6px 2px'}}
+                onClick={() => { onTagClick('ambito', a); onClose(); }}>{a}</span>
+            ))}
+            {ep.tags.map(t => (
+              <span key={t} className="modal-tag"
+                onClick={() => { onTagClick('tag', t); onClose(); }}>{t}</span>
+            ))}
+          </div>
+        )}
+        <div className="modal-actions">
+          <a className="modal-btn" href={ep.youtube_url} target="_blank" rel="noopener noreferrer">
+            ▶ Guarda su YouTube
+          </a>
+        </div>
+
+        {/* TRANSCRIPT */}
+        <div className="transcript-section">
+          <div className="transcript-header">
+            <div className="transcript-title">
+              <span className="transcript-title-icon">📝</span>
+              Trascrizione
+            </div>
+            {transcript && (
+              <input
+                className="transcript-search"
+                placeholder="Cerca nella puntata..."
+                value={transcriptQuery}
+                onChange={e => setTranscriptQuery(e.target.value)}
+              />
+            )}
+          </div>
+          {loadingTranscript ? (
+            <div style={{display:'flex',alignItems:'center',padding:'1rem 0',color:'var(--text-muted)'}}>
+              <div className="spinner"></div> Caricamento trascrizione...
+            </div>
+          ) : transcript ? (
+            <>
+              <div className="transcript-body" ref={bodyRef}>
+                {transcriptDisplay}
+              </div>
+              <div className="transcript-info">
+                {ep.transcript_words?.toLocaleString('it')} parole — trascrizione automatica da sottotitoli YouTube
+              </div>
+            </>
+          ) : (
+            <div className="transcript-unavailable">
+              Trascrizione non disponibile per questa puntata.
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---- EPISODE CARD ----
+function EpisodeCard({ ep, onClick, transcriptMatch, searchQuery, onTagClick }) {
+  return (
+    <div className="card" onClick={() => onClick(ep)}>
+      <div className="card-thumb-wrap">
+        <img className="card-thumb" src={ep.thumbnail_url} alt={ep.guest} loading="lazy" />
+        <div className="card-ep-badge">#{ep.episode_number}</div>
+        {ep.duration_formatted && <div className="card-duration-badge">{ep.duration_formatted}</div>}
+      </div>
+      <div className="card-body">
+        <div className="card-guest">{ep.guest}</div>
+        {ep.professione && ep.professione.length > 0 && (
+          <div className="card-prof">{ep.professione.join(', ')}</div>
+        )}
+        <div className="card-meta-row">
+          {ep.upload_date && <span className="card-meta-item">{formatDate(ep.upload_date)}</span>}
+          <span className="card-meta-item">{formatViews(ep.view_count)} views</span>
+          {ep.has_transcription && <span className="card-meta-item" style={{color:'var(--green)'}}>📝</span>}
+        </div>
+        {transcriptMatch && searchQuery && searchQuery.length >= 4 && (
+          <div className="card-transcript">
+            <div className="card-transcript-label">Menzionato nella trascrizione</div>
+            {transcriptMatch.snippet && highlightText(transcriptMatch.snippet, searchQuery)}
+          </div>
+        )}
+        {ep.tags && ep.tags.length > 0 && (
+          <div className="card-tags">
+            {ep.tags.slice(0, 5).map(t => (
+              <span key={t} className="card-tag" onClick={(e) => {
+                e.stopPropagation();
+                onTagClick('tag', t);
+              }}>{t}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ---- EPISODE LIST ITEM ----
+function EpisodeListItem({ ep, onClick, transcriptMatch, searchQuery }) {
+  return (
+    <div className="list-item" onClick={() => onClick(ep)}>
+      <div className="list-ep">#{ep.episode_number}</div>
+      <div className="list-guest">{ep.guest}</div>
+      <div className="list-prof">{ep.professione ? ep.professione[0] : ''}</div>
+      {transcriptMatch && searchQuery && searchQuery.length >= 4 && (
+        <div className="list-transcript-hint" title="Trovato nella trascrizione">📝 trovato</div>
+      )}
+      <div className="list-meta">
+        {ep.upload_date && <span>{formatDate(ep.upload_date)}</span>}
+        <span>{formatViews(ep.view_count)}</span>
+      </div>
+    </div>
+  );
+}
+
+// ---- MAIN APP ----
 function App() {
   const [data, setData] = useState(null);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('number_desc');
+  const [view, setView] = useState('grid'); // grid | list
   const [activeAmbiti, setActiveAmbiti] = useState(new Set());
   const [activeTags, setActiveTags] = useState(new Set());
   const [searchIndex, setSearchIndex] = useState(null);
   const [indexLoading, setIndexLoading] = useState(false);
   const [transcriptMatches, setTranscriptMatches] = useState(new Map());
+  const [selectedEp, setSelectedEp] = useState(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const searchRef = useRef(null);
 
   useEffect(() => { loadData().then(setData); }, []);
 
-  // Load search index on first deep search (lazy)
+  // Keyboard shortcut: / to focus search
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        searchRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
+  // Back to top visibility
+  useEffect(() => {
+    const handler = () => setShowBackToTop(window.scrollY > 600);
+    window.addEventListener('scroll', handler, { passive: true });
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  // Load search index lazily
   const loadSearchIndex = useCallback(async () => {
     if (searchIndex || indexLoading) return searchIndex;
     setIndexLoading(true);
@@ -201,37 +1038,64 @@ function App() {
       setIndexLoading(false);
       return idx;
     } catch(e) {
-      console.error('Could not load search index', e);
+      console.error('Search index load failed', e);
       setIndexLoading(false);
       return null;
     }
   }, [searchIndex, indexLoading]);
 
-  // Search transcripts when query is 4+ chars
+  // Transcript search with snippets
   useEffect(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 4) { setTranscriptMatches(new Map()); return; }
+
+    let cancelled = false;
     (async () => {
       let idx = searchIndex;
       if (!idx) idx = await loadSearchIndex();
-      if (!idx) return;
-      const matches = idx[q];
-      if (matches) {
-        setTranscriptMatches(new Map(matches.map(n => [n, true])));
-      } else {
-        // Partial match: find all words starting with query
-        const partial = new Map();
-        for (const [word, eps] of Object.entries(idx)) {
-          if (word.startsWith(q)) {
-            for (const ep of eps) partial.set(ep, true);
-          }
-        }
-        setTranscriptMatches(partial);
+      if (!idx || cancelled) return;
+
+      // Collect matching episodes
+      const epNums = new Set();
+      // Exact match
+      if (idx[q]) {
+        for (const n of idx[q]) epNums.add(n);
       }
+      // Partial match (prefix)
+      for (const [word, eps] of Object.entries(idx)) {
+        if (word.startsWith(q) && word !== q) {
+          for (const ep of eps) epNums.add(ep);
+        }
+      }
+
+      if (cancelled) return;
+
+      // Load snippets for top matches (max 20)
+      const matchMap = new Map();
+      const toLoad = [...epNums].slice(0, 20);
+      
+      await Promise.all(toLoad.map(async (epNum) => {
+        try {
+          const res = await fetch('../data/search_snippets/' + String(epNum).padStart(3,'0') + '.txt');
+          if (res.ok) {
+            const text = await res.text();
+            const snippet = getSnippet(text, q, 80);
+            if (!cancelled) matchMap.set(epNum, { snippet });
+          }
+        } catch(e) {}
+      }));
+
+      // Add remaining matches without snippets
+      for (const n of epNums) {
+        if (!matchMap.has(n)) matchMap.set(n, { snippet: '' });
+      }
+
+      if (!cancelled) setTranscriptMatches(matchMap);
     })();
+    return () => { cancelled = true; };
   }, [query, searchIndex]);
 
-  // Collect all ambiti and top tags
+  // Collect ambiti and tags
   const { ambitiList, tagsList } = useMemo(() => {
     if (!data) return { ambitiList: [], tagsList: [] };
     const ac = {}, tc = {};
@@ -241,7 +1105,7 @@ function App() {
     }
     return {
       ambitiList: Object.entries(ac).sort((a,b) => b[1]-a[1]),
-      tagsList: Object.entries(tc).sort((a,b) => b[1]-a[1]).slice(0, 25),
+      tagsList: Object.entries(tc).sort((a,b) => b[1]-a[1]).slice(0, 30),
     };
   }, [data]);
 
@@ -261,21 +1125,38 @@ function App() {
     });
   }, []);
 
-  const clearFilters = () => { setActiveAmbiti(new Set()); setActiveTags(new Set()); };
+  const handleTagClick = useCallback((type, value) => {
+    if (type === 'ambito') toggleAmbito(value);
+    else toggleTag(value);
+  }, [toggleAmbito, toggleTag]);
 
+  const clearFilters = () => {
+    setActiveAmbiti(new Set());
+    setActiveTags(new Set());
+  };
+
+  // Random episode
+  const openRandom = useCallback(() => {
+    if (!data) return;
+    const idx = Math.floor(Math.random() * data.episodes.length);
+    setSelectedEp(data.episodes[idx]);
+  }, [data]);
+
+  // Filtered + sorted results
   const filtered = useMemo(() => {
     if (!data) return [];
     let eps = data.episodes;
 
     if (query.trim()) {
-      const q = query.toLowerCase();
+      const q = query.toLowerCase().trim();
       eps = eps.filter(e => {
         const metaMatch =
           (e.guest && e.guest.toLowerCase().includes(q)) ||
           (e.title && e.title.toLowerCase().includes(q)) ||
           (e.episode_number && String(e.episode_number) === q.replace('#','')) ||
           (e.professione && e.professione.some(p => p.toLowerCase().includes(q))) ||
-          (e.tags && e.tags.some(t => t.toLowerCase().includes(q)));
+          (e.tags && e.tags.some(t => t.toLowerCase().includes(q))) ||
+          (e.ambito && e.ambito.some(a => a.toLowerCase().includes(q)));
         const transcriptMatch = transcriptMatches.has(e.episode_number);
         return metaMatch || transcriptMatch;
       });
@@ -291,142 +1172,189 @@ function App() {
     const sorted = [...eps];
     switch(sort) {
       case 'views': sorted.sort((a,b) => (b.view_count||0) - (a.view_count||0)); break;
-      case 'number_asc': sorted.sort((a,b) => (a.upload_date||'').localeCompare(b.upload_date||'')); break;
-      case 'number_desc': sorted.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
+      case 'number_asc': sorted.sort((a,b) => (a.episode_number||0) - (b.episode_number||0)); break;
+      case 'number_desc': sorted.sort((a,b) => (b.episode_number||0) - (a.episode_number||0)); break;
       case 'duration': sorted.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
+      case 'date_asc': sorted.sort((a,b) => (a.upload_date||'').localeCompare(b.upload_date||'')); break;
+      case 'date_desc': sorted.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
     }
-    return sorted;
-  }, [data, query, sort, activeAmbiti, activeTags]);
 
-  if (!data) return <div className="no-results">Caricamento...</div>;
+    // If transcript search active, prioritize transcript matches
+    if (transcriptMatches.size > 0 && query.trim().length >= 4) {
+      sorted.sort((a, b) => {
+        const aMatch = transcriptMatches.has(a.episode_number) ? 1 : 0;
+        const bMatch = transcriptMatches.has(b.episode_number) ? 1 : 0;
+        return bMatch - aMatch;
+      });
+    }
+
+    return sorted;
+  }, [data, query, sort, activeAmbiti, activeTags, transcriptMatches]);
+
+  if (!data) return (
+    <div className="loading">
+      <div className="spinner"></div>
+      Caricamento archivio...
+    </div>
+  );
 
   const m = data.meta;
-  const sorts = [
-    { key: 'number_desc', label: 'Recenti' },
-    { key: 'number_asc', label: 'Cronologico' },
-    { key: 'views', label: 'Views' },
-    { key: 'duration', label: 'Durata' },
-  ];
-
   const hasFilters = activeAmbiti.size > 0 || activeTags.size > 0;
+  const transcriptHits = query.length >= 4 ? transcriptMatches.size : 0;
 
   return (
     <>
-      <div className="header">
-        <h1>Tintor<span>IA</span></h1>
-        <p>Indice completo del podcast di Daniele Tinti e Stefano Rapone — con trascrizioni</p>
-        <div className="stats">
-          <div className="stat">
-            <div className="stat-value">{m.total_episodes}</div>
-            <div className="stat-label">Puntate</div>
+      {/* HERO */}
+      <div className="hero">
+        <div className="hero-title">Tintor<span>IA</span></div>
+        <div className="hero-sub">
+          Cerca in tutte le puntate di Tintoria, il podcast di Daniele Tinti e Stefano Rapone
+        </div>
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <div className="hero-stat-val">{m.total_episodes}</div>
+            <div className="hero-stat-label">Puntate</div>
           </div>
-          <div className="stat">
-            <div className="stat-value">{m.unique_guests}</div>
-            <div className="stat-label">Ospiti</div>
+          <div className="hero-stat">
+            <div className="hero-stat-val">{m.unique_guests}</div>
+            <div className="hero-stat-label">Ospiti</div>
           </div>
-          <div className="stat">
-            <div className="stat-value">{formatViews(m.total_views)}</div>
-            <div className="stat-label">Views totali</div>
+          <div className="hero-stat">
+            <div className="hero-stat-val">{formatViews(m.total_views)}</div>
+            <div className="hero-stat-label">Views</div>
+          </div>
+          <div className="hero-stat">
+            <div className="hero-stat-val">{((m.total_transcript_words||0)/1000000).toFixed(1)}M</div>
+            <div className="hero-stat-label">Parole trascritte</div>
           </div>
         </div>
       </div>
 
-      <div className="controls">
-        <div className="search-row">
+      {/* SEARCH */}
+      <div className="search-section">
+        <div className="search-container">
+          <span className="search-icon">🔍</span>
           <input
-            className="search-box"
-            placeholder="Cerca ospite, titolo, numero, professione o tag..."
+            ref={searchRef}
+            className="search-input"
+            placeholder="Cerca un ospite, un argomento, una parola detta in puntata..."
             value={query}
             onChange={e => setQuery(e.target.value)}
           />
-          {sorts.map(s => (
-            <button
-              key={s.key}
-              className={`sort-btn ${sort === s.key ? 'active' : ''}`}
-              onClick={() => setSort(s.key)}
-            >{s.label}</button>
-          ))}
         </div>
+        <div className="search-hint">
+          {query.length >= 4 && transcriptHits > 0 ? (
+            <span>Trovato "<em>{query}</em>" in {transcriptHits} trascrizioni {indexLoading && '(caricamento indice...)'}</span>
+          ) : query.length >= 1 && query.length < 4 ? (
+            <span>Scrivi almeno 4 caratteri per cercare nelle trascrizioni</span>
+          ) : indexLoading ? (
+            <span>Caricamento indice di ricerca...</span>
+          ) : (
+            <span>Prova: <em>berlusconi</em> · <em>sanremo</em> · <em>netflix</em> · <em>pizza</em> · <em>droga</em> — oppure premi <em>/</em> per cercare</span>
+          )}
+        </div>
+      </div>
 
+      {/* FILTERS */}
+      <div className="filters-bar">
         <div className="filters-row">
           <span className="filters-label">Ambito</span>
           {ambitiList.map(([a, c]) => (
-            <button
-              key={a}
-              className={`filter-btn ${activeAmbiti.has(a) ? 'active' : ''}`}
-              onClick={() => toggleAmbito(a)}
-            >{a} ({c})</button>
+            <button key={a} className={`chip ${activeAmbiti.has(a) ? 'active' : ''}`}
+              onClick={() => toggleAmbito(a)}>
+              {a}<span className="chip-count">{c}</span>
+            </button>
           ))}
-          {hasFilters && <button className="clear-filters" onClick={clearFilters}>Pulisci filtri</button>}
+          {hasFilters && <button className="clear-btn" onClick={clearFilters}>Pulisci filtri</button>}
         </div>
-
-        <div className="filters-row" style={{marginTop: '0.5rem'}}>
+        <div className="filters-row">
           <span className="filters-label">Tag</span>
           {tagsList.map(([t, c]) => (
-            <button
-              key={t}
-              className={`filter-btn ${activeTags.has(t) ? 'active' : ''}`}
-              onClick={() => toggleTag(t)}
-            >{t} ({c})</button>
+            <button key={t} className={`chip ${activeTags.has(t) ? 'active' : ''}`}
+              onClick={() => toggleTag(t)}>
+              {t}<span className="chip-count">{c}</span>
+            </button>
           ))}
         </div>
       </div>
 
-      <div className="results-count">
-        {filtered.length} puntate{query || hasFilters ? ' trovate' : ''}
+      {/* VIEW BAR */}
+      <div className="view-bar">
+        <div className="view-tabs">
+          <button className={`view-tab ${view==='grid'?'active':''}`} onClick={()=>setView('grid')}>Griglia</button>
+          <button className={`view-tab ${view==='list'?'active':''}`} onClick={()=>setView('list')}>Lista</button>
+        </div>
+        <select className="sort-select" value={sort} onChange={e => setSort(e.target.value)}>
+          <option value="number_desc">Più recenti</option>
+          <option value="number_asc">Più vecchie</option>
+          <option value="date_desc">Per data ↓</option>
+          <option value="date_asc">Per data ↑</option>
+          <option value="views">Più viste</option>
+          <option value="duration">Più lunghe</option>
+        </select>
+        <button className="random-btn" onClick={openRandom}>🎲 Puntata a caso</button>
+        <div className="results-count">
+          {filtered.length} puntat{filtered.length === 1 ? 'a' : 'e'}{(query || hasFilters) ? ' trovate' : ''}
+        </div>
       </div>
 
+      {/* RESULTS */}
       {filtered.length === 0 ? (
-        <div className="no-results">Nessun risultato</div>
-      ) : (
+        <div className="no-results">
+          <div className="no-results-icon">🤷</div>
+          Nessun risultato per "{query}"
+          <div className="no-results-sub">Prova con un'altra ricerca o rimuovi i filtri</div>
+        </div>
+      ) : view === 'grid' ? (
         <div className="grid">
           {filtered.map(ep => (
-            <div className="card" key={ep.youtube_id}>
-              <a href={ep.youtube_url} target="_blank" rel="noopener noreferrer">
-                <img
-                  className="card-thumb"
-                  src={ep.thumbnail_url}
-                  alt={ep.guest}
-                  loading="lazy"
-                />
-              </a>
-              <div className="card-body">
-                <div className="card-ep">#{ep.episode_number}</div>
-                <div className="card-guest">{ep.guest}</div>
-                {ep.professione && ep.professione.length > 0 && (
-                  <div className="card-prof">{ep.professione.join(', ')}</div>
-                )}
-                <div className="card-meta">
-                  <span>{formatViews(ep.view_count)} views</span>
-                  <span>{ep.duration_formatted}</span>
-                  {ep.upload_date && <span>{formatDate(ep.upload_date)}</span>}
-                  {ep.has_transcription && <span title="Trascrizione disponibile">📝</span>}
-                </div>
-                {transcriptMatches.has(ep.episode_number) && query.length >= 4 && (
-                  <div className="card-transcript-match">
-                    Menzionato nella trascrizione
-                  </div>
-                )}
-                {ep.tags && ep.tags.length > 0 && (
-                  <div className="card-tags">
-                    {ep.tags.map(t => (
-                      <span key={t} className="card-tag" onClick={(e) => {
-                        e.preventDefault();
-                        toggleTag(t);
-                      }}>{t}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+            <EpisodeCard
+              key={ep.youtube_id}
+              ep={ep}
+              onClick={setSelectedEp}
+              transcriptMatch={transcriptMatches.get(ep.episode_number)}
+              searchQuery={query}
+              onTagClick={handleTagClick}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="list">
+          {filtered.map(ep => (
+            <EpisodeListItem
+              key={ep.youtube_id}
+              ep={ep}
+              onClick={setSelectedEp}
+              transcriptMatch={transcriptMatches.get(ep.episode_number)}
+              searchQuery={query}
+            />
           ))}
         </div>
       )}
+
+      {/* FOOTER */}
       <div className="footer">
-        TintorIA — {m.transcriptions_count || 0} puntate trascritte, {((m.total_transcript_words||0)/1000000).toFixed(1)}M parole indicizzate.
-        <br/>Dati da YouTube, trascrizioni auto-generate, tag con Claude.
+        TintorIA — L'archivio non ufficiale di Tintoria, il podcast di Daniele Tinti e Stefano Rapone.
+        <br/>{m.total_episodes} puntate, {m.transcriptions_count || 232} trascrizioni, {((m.total_transcript_words||0)/1000000).toFixed(1)}M di parole indicizzate.
+        <br/>Dati da YouTube · Trascrizioni automatiche · Tag con Claude
         <br/><a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
       </div>
+
+      {/* MODAL */}
+      {selectedEp && (
+        <EpisodeModal
+          episode={selectedEp}
+          onClose={() => setSelectedEp(null)}
+          onTagClick={handleTagClick}
+          searchQuery={query}
+        />
+      )}
+
+      {/* BACK TO TOP */}
+      <button
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >↑</button>
     </>
   );
 }
