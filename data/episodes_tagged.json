@@ -121,7 +121,8 @@
       "napoli": 5,
       "assurdo": 4,
       "una pezza di Lundini": 4
-    }
+    },
+    "dates_fetched": true
   },
   "episodes": [
     {
@@ -148,7 +149,8 @@
         "stand-up",
         "comedy americana",
         "internazionale"
-      ]
+      ],
+      "upload_date": "2019-06-13"
     },
     {
       "youtube_id": "NhURgtNAFDw",
@@ -172,7 +174,8 @@
         "indie",
         "cantautore",
         "rap"
-      ]
+      ],
+      "upload_date": "2019-11-12"
     },
     {
       "youtube_id": "z0T8HeOcu6o",
@@ -200,7 +203,8 @@
         "assurdo",
         "rai",
         "una pezza di Lundini"
-      ]
+      ],
+      "upload_date": "2020-02-18"
     },
     {
       "youtube_id": "F-HeBgWEeUM",
@@ -223,7 +227,8 @@
       "tags": [
         "indie",
         "cantautore"
-      ]
+      ],
+      "upload_date": "2020-02-25"
     },
     {
       "youtube_id": "fv75eQBgXUA",
@@ -246,7 +251,8 @@
       "tags": [
         "elettronica",
         "indie"
-      ]
+      ],
+      "upload_date": "2020-03-02"
     },
     {
       "youtube_id": "vJlpfz3CKOs",
@@ -268,7 +274,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2020-03-09"
     },
     {
       "youtube_id": "fCFlbo-hw_8",
@@ -291,7 +298,8 @@
       "tags": [
         "stand-up",
         "podcast"
-      ]
+      ],
+      "upload_date": "2020-05-22"
     },
     {
       "youtube_id": "e4jBefa7Ohk",
@@ -314,7 +322,8 @@
       "tags": [
         "rap",
         "hip-hop"
-      ]
+      ],
+      "upload_date": "2020-06-05"
     },
     {
       "youtube_id": "ztFM5z-Q09k",
@@ -336,7 +345,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2020-06-12"
     },
     {
       "youtube_id": "QEcRgsdveFo",
@@ -360,7 +370,8 @@
         "stand-up",
         "netflix",
         "lol"
-      ]
+      ],
+      "upload_date": "2020-06-19"
     },
     {
       "youtube_id": "SKWYvSEN-Ew",
@@ -384,7 +395,8 @@
       "tags": [
         "calcio",
         "il post"
-      ]
+      ],
+      "upload_date": "2020-07-03"
     },
     {
       "youtube_id": "-QvK8_YARpg",
@@ -413,7 +425,8 @@
         "assurdo",
         "una pezza di Lundini",
         "vazzanikki"
-      ]
+      ],
+      "upload_date": "2020-09-07"
     },
     {
       "youtube_id": "bsvhNQD5rTI",
@@ -435,7 +448,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2020-09-11"
     },
     {
       "youtube_id": "6jofvOzoQ1E",
@@ -461,7 +475,8 @@
       "tags": [
         "stand-up",
         "una pezza di Lundini"
-      ]
+      ],
+      "upload_date": "2020-09-18"
     },
     {
       "youtube_id": "u0UqGAeNMek",
@@ -483,7 +498,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2020-09-26"
     },
     {
       "youtube_id": "g7aPrBPKpIA",
@@ -508,7 +524,8 @@
         "satira",
         "imitazioni",
         "roma"
-      ]
+      ],
+      "upload_date": "2020-10-02"
     },
     {
       "youtube_id": "iLIqj_qiyf8",
@@ -530,7 +547,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2020-10-09"
     },
     {
       "youtube_id": "45mxdnOCz2o",
@@ -553,7 +571,8 @@
       "tags": [
         "stand-up",
         "donne nella comedy"
-      ]
+      ],
+      "upload_date": "2020-10-16"
     },
     {
       "youtube_id": "tKI-8ZuWAKg",
@@ -576,7 +595,8 @@
       "tags": [
         "stand-up",
         "co-host"
-      ]
+      ],
+      "upload_date": "2020-10-24"
     },
     {
       "youtube_id": "5GW4XoZFYug",
@@ -601,7 +621,8 @@
       "tags": [
         "stand-up",
         "attrice"
-      ]
+      ],
+      "upload_date": "2020-10-30"
     },
     {
       "youtube_id": "Aj7y86M6eoY",
@@ -624,7 +645,8 @@
       "tags": [
         "live",
         "elio e le storie tese"
-      ]
+      ],
+      "upload_date": "2021-03-19"
     },
     {
       "youtube_id": "h_0G9nJxjZ4",
@@ -647,7 +669,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-03-23"
     },
     {
       "youtube_id": "A66WibyYReA",
@@ -670,7 +693,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-03-26"
     },
     {
       "youtube_id": "MjE1UsFsqjE",
@@ -696,7 +720,8 @@
         "rap",
         "hip-hop",
         "cantautore"
-      ]
+      ],
+      "upload_date": "2021-03-30"
     },
     {
       "youtube_id": "TzralXrwExM",
@@ -718,7 +743,8 @@
       ],
       "tags": [
         "live"
-      ]
+      ],
+      "upload_date": "2021-04-02"
     },
     {
       "youtube_id": "p8hnNBDM7_I",
@@ -743,7 +769,8 @@
       "tags": [
         "live",
         "i soliti idioti"
-      ]
+      ],
+      "upload_date": "2021-04-06"
     },
     {
       "youtube_id": "_1n_Hpux62k",
@@ -766,7 +793,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-04-09"
     },
     {
       "youtube_id": "zCiVweUV_ZE",
@@ -790,7 +818,8 @@
         "live",
         "host",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-04-13"
     },
     {
       "youtube_id": "osweV2JV1yw",
@@ -813,7 +842,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-04-16"
     },
     {
       "youtube_id": "uf1ptTLh9lA",
@@ -836,7 +866,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-04-20"
     },
     {
       "youtube_id": "6cHwVpQ0eCo",
@@ -859,7 +890,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-04-23"
     },
     {
       "youtube_id": "aPgQppAlvjk",
@@ -883,7 +915,8 @@
         "live",
         "romanzo",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2021-04-27"
     },
     {
       "youtube_id": "MouS0ik2kvs",
@@ -906,7 +939,8 @@
       "tags": [
         "host",
         "speciale"
-      ]
+      ],
+      "upload_date": "2021-04-30"
     },
     {
       "youtube_id": "evfM9Eg4Nz8",
@@ -929,7 +963,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-05-07"
     },
     {
       "youtube_id": "5JIu4I92Xlc",
@@ -955,7 +990,8 @@
         "narrativa",
         "social media",
         "critica culturale"
-      ]
+      ],
+      "upload_date": "2021-05-14"
     },
     {
       "youtube_id": "uiETza7MPVg",
@@ -980,7 +1016,8 @@
         "rock",
         "jet",
         "internazionale"
-      ]
+      ],
+      "upload_date": "2021-05-21"
     },
     {
       "youtube_id": "jA5k6AjMkR8",
@@ -1004,7 +1041,8 @@
         "live",
         "indie",
         "band"
-      ]
+      ],
+      "upload_date": "2021-05-25"
     },
     {
       "youtube_id": "BJkFC-Efzcw",
@@ -1028,7 +1066,8 @@
         "live",
         "stand-up",
         "podcast"
-      ]
+      ],
+      "upload_date": "2021-05-29"
     },
     {
       "youtube_id": "GdS71UQRJaI",
@@ -1052,7 +1091,8 @@
         "live",
         "stand-up",
         "netflix"
-      ]
+      ],
+      "upload_date": "2021-06-04"
     },
     {
       "youtube_id": "E8Y1hWn4DLo",
@@ -1075,7 +1115,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-06-18"
     },
     {
       "youtube_id": "Y0VUK8pPzk4",
@@ -1100,7 +1141,8 @@
         "youtube",
         "street interview",
         "roma"
-      ]
+      ],
+      "upload_date": "2021-07-13"
     },
     {
       "youtube_id": "PeNr89NFmrQ",
@@ -1123,7 +1165,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-10-22"
     },
     {
       "youtube_id": "Aj9otdJUcJ8",
@@ -1146,7 +1189,8 @@
       "tags": [
         "co-host",
         "speciale"
-      ]
+      ],
+      "upload_date": "2021-10-26"
     },
     {
       "youtube_id": "2_pCtudcrLY",
@@ -1169,7 +1213,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-11-02"
     },
     {
       "youtube_id": "teve3AXK33I",
@@ -1192,7 +1237,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-11-09"
     },
     {
       "youtube_id": "u78Lff-Yx28",
@@ -1215,7 +1261,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-11-16"
     },
     {
       "youtube_id": "PKYcoBmoYq4",
@@ -1239,7 +1286,8 @@
       "tags": [
         "crossover",
         "cachemire podcast"
-      ]
+      ],
+      "upload_date": "2021-11-23"
     },
     {
       "youtube_id": "MuDnrnhICrE",
@@ -1264,7 +1312,8 @@
         "stand-up",
         "internazionale",
         "londra"
-      ]
+      ],
+      "upload_date": "2021-11-30"
     },
     {
       "youtube_id": "lH7546Rf-yM",
@@ -1286,7 +1335,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2021-12-07"
     },
     {
       "youtube_id": "sy2Ahyl-Mg8",
@@ -1309,7 +1359,8 @@
       "tags": [
         "stand-up",
         "roma"
-      ]
+      ],
+      "upload_date": "2021-12-15"
     },
     {
       "youtube_id": "lR5Frt39ND0",
@@ -1332,7 +1383,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-01-18"
     },
     {
       "youtube_id": "25LzmblWp7M",
@@ -1355,7 +1407,8 @@
       "tags": [
         "live",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-01-25"
     },
     {
       "youtube_id": "UxlNLtXtSLM",
@@ -1379,7 +1432,8 @@
         "live",
         "co-host",
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-02-01"
     },
     {
       "youtube_id": "n0rH8_pjKc8",
@@ -1401,7 +1455,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-02-08"
     },
     {
       "youtube_id": "xDfmcK0MFis",
@@ -1424,7 +1479,8 @@
       "tags": [
         "stand-up",
         "roma"
-      ]
+      ],
+      "upload_date": "2022-02-15"
     },
     {
       "youtube_id": "V9wRQkjtPU0",
@@ -1446,7 +1502,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-02-22"
     },
     {
       "youtube_id": "XWHhFpg-lws",
@@ -1471,7 +1528,8 @@
       "tags": [
         "youtube",
         "personaggio"
-      ]
+      ],
+      "upload_date": "2022-03-01"
     },
     {
       "youtube_id": "X82ybollVbA",
@@ -1493,7 +1551,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-03-08"
     },
     {
       "youtube_id": "vpLKZ4RRtYc",
@@ -1515,7 +1574,8 @@
         "covid",
         "pandemia",
         "speciale"
-      ]
+      ],
+      "upload_date": "2022-03-15"
     },
     {
       "youtube_id": "sNvR9YNvYkY",
@@ -1537,7 +1597,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-03-29"
     },
     {
       "youtube_id": "AzOvR5dM8KQ",
@@ -1559,7 +1620,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-04-05"
     },
     {
       "youtube_id": "TAfdbHLAKEU",
@@ -1583,7 +1645,8 @@
       "tags": [
         "a panda piace",
         "graphic novel"
-      ]
+      ],
+      "upload_date": "2022-04-12"
     },
     {
       "youtube_id": "XWhp2pa_M78",
@@ -1606,7 +1669,8 @@
       "tags": [
         "stand-up",
         "netflix"
-      ]
+      ],
+      "upload_date": "2022-04-19"
     },
     {
       "youtube_id": "XcmyqODYRjU",
@@ -1628,7 +1692,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-04-26"
     },
     {
       "youtube_id": "KLOsVYwS2Fo",
@@ -1654,7 +1719,8 @@
         "cina",
         "asia",
         "politica internazionale"
-      ]
+      ],
+      "upload_date": "2022-05-03"
     },
     {
       "youtube_id": "Li6NJRSjt3k",
@@ -1678,7 +1744,8 @@
         "drag",
         "lgbtq+",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2022-05-10"
     },
     {
       "youtube_id": "HDxB3nQS6PY",
@@ -1700,7 +1767,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-05-17"
     },
     {
       "youtube_id": "O6aTuGSx-fc",
@@ -1723,7 +1791,8 @@
       ],
       "tags": [
         "crossover"
-      ]
+      ],
+      "upload_date": "2022-05-24"
     },
     {
       "youtube_id": "pm39fjypD_k",
@@ -1748,7 +1817,8 @@
         "pop",
         "sanremo",
         "cantautrice"
-      ]
+      ],
+      "upload_date": "2022-05-31"
     },
     {
       "youtube_id": "-xSBztJ5vy4",
@@ -1770,7 +1840,8 @@
         "live",
         "speciale",
         "recanati"
-      ]
+      ],
+      "upload_date": "2022-06-07"
     },
     {
       "youtube_id": "6jb0GDacjBI",
@@ -1793,7 +1864,8 @@
       "tags": [
         "indie",
         "rap"
-      ]
+      ],
+      "upload_date": "2022-06-14"
     },
     {
       "youtube_id": "Urxa9JuKrgo",
@@ -1819,7 +1891,8 @@
         "geopolitica",
         "stories",
         "podcast"
-      ]
+      ],
+      "upload_date": "2022-06-21"
     },
     {
       "youtube_id": "gqIfBSr72fY",
@@ -1842,7 +1915,8 @@
       "tags": [
         "cabaret",
         "tv"
-      ]
+      ],
+      "upload_date": "2022-07-14"
     },
     {
       "youtube_id": "MbPMO_NUGNQ",
@@ -1864,7 +1938,8 @@
         "live",
         "speciale",
         "prato"
-      ]
+      ],
+      "upload_date": "2022-07-19"
     },
     {
       "youtube_id": "CxSehwB5ZbM",
@@ -1887,7 +1962,8 @@
       "tags": [
         "youtube",
         "podcast"
-      ]
+      ],
+      "upload_date": "2022-07-26"
     },
     {
       "youtube_id": "PpOFEEREOd8",
@@ -1909,7 +1985,8 @@
         "live",
         "festival",
         "speciale"
-      ]
+      ],
+      "upload_date": "2022-10-04"
     },
     {
       "youtube_id": "umQHBbJKNx4",
@@ -1931,7 +2008,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-10-11"
     },
     {
       "youtube_id": "btTFP_TV9-k",
@@ -1955,7 +2033,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2022-10-18"
     },
     {
       "youtube_id": "1pBszVt2PRw",
@@ -1981,7 +2060,8 @@
         "toscana",
         "commedia italiana",
         "benigni"
-      ]
+      ],
+      "upload_date": "2022-10-25"
     },
     {
       "youtube_id": "7wkAzn1_aeo",
@@ -2008,7 +2088,8 @@
         "graphic novel",
         "arte",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2022-11-01"
     },
     {
       "youtube_id": "jKXgiEpRHhQ",
@@ -2036,7 +2117,8 @@
         "parodia",
         "youtube",
         "surreale"
-      ]
+      ],
+      "upload_date": "2022-11-08"
     },
     {
       "youtube_id": "TYH6NrXXlEM",
@@ -2065,7 +2147,8 @@
         "assurdo",
         "una pezza di Lundini",
         "rai"
-      ]
+      ],
+      "upload_date": "2022-11-15"
     },
     {
       "youtube_id": "4WHtF8jkeY8",
@@ -2092,7 +2175,8 @@
         "cantautrice",
         "pop",
         "gloria!"
-      ]
+      ],
+      "upload_date": "2022-11-22"
     },
     {
       "youtube_id": "tOdQwCuow2g",
@@ -2116,7 +2200,8 @@
       "tags": [
         "commedia italiana",
         "caratterista"
-      ]
+      ],
+      "upload_date": "2022-11-29"
     },
     {
       "youtube_id": "gZ5liNDuV-g",
@@ -2140,7 +2225,8 @@
         "duo comico",
         "tv",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2022-12-06"
     },
     {
       "youtube_id": "cBoThvZnZe4",
@@ -2163,7 +2249,8 @@
       "tags": [
         "stand-up",
         "the jackal"
-      ]
+      ],
+      "upload_date": "2022-12-14"
     },
     {
       "youtube_id": "vLehI9vB4JI",
@@ -2190,7 +2277,8 @@
         "strappare lungo i bordi",
         "roma",
         "rebibbia"
-      ]
+      ],
+      "upload_date": "2022-12-20"
     },
     {
       "youtube_id": "qVCVUKRzseM",
@@ -2215,7 +2303,8 @@
         "cabaret",
         "one man show",
         "roma"
-      ]
+      ],
+      "upload_date": "2022-12-27"
     },
     {
       "youtube_id": "L1Uuv0Gr2k8",
@@ -2239,7 +2328,8 @@
       "tags": [
         "boris",
         "commedia italiana"
-      ]
+      ],
+      "upload_date": "2023-01-10"
     },
     {
       "youtube_id": "M6i11ul7yPk",
@@ -2264,7 +2354,8 @@
       "tags": [
         "divulgazione scientifica",
         "youtube"
-      ]
+      ],
+      "upload_date": "2023-01-17"
     },
     {
       "youtube_id": "LjL1LuT7nRg",
@@ -2291,7 +2382,8 @@
         "youtube",
         "lol",
         "pranks"
-      ]
+      ],
+      "upload_date": "2023-01-24"
     },
     {
       "youtube_id": "p2d7rLgLNSI",
@@ -2317,7 +2409,8 @@
         "youtube",
         "web series",
         "roma"
-      ]
+      ],
+      "upload_date": "2023-01-31"
     },
     {
       "youtube_id": "4Bz4W2dCUs0",
@@ -2342,7 +2435,8 @@
         "indie",
         "sanremo",
         "morgan"
-      ]
+      ],
+      "upload_date": "2023-02-08"
     },
     {
       "youtube_id": "UvVMjXGhpaQ",
@@ -2369,7 +2463,8 @@
         "lol",
         "lillo e greg",
         "commedia"
-      ]
+      ],
+      "upload_date": "2023-02-14"
     },
     {
       "youtube_id": "mZbiuOTjktg",
@@ -2395,7 +2490,8 @@
         "rai",
         "radio",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2023-02-21"
     },
     {
       "youtube_id": "vcVHgaJDLn8",
@@ -2420,7 +2516,8 @@
         "indie",
         "sanremo",
         "bologna"
-      ]
+      ],
+      "upload_date": "2023-02-28"
     },
     {
       "youtube_id": "YN2P3xMpPCY",
@@ -2444,7 +2541,8 @@
         "x factor",
         "netflix",
         "rai"
-      ]
+      ],
+      "upload_date": "2023-03-07"
     },
     {
       "youtube_id": "FBr_MI1aHCI",
@@ -2470,7 +2568,8 @@
         "cabaret",
         "zelig",
         "ruggero de ceglie"
-      ]
+      ],
+      "upload_date": "2023-03-14"
     },
     {
       "youtube_id": "4Slailmgku4",
@@ -2497,7 +2596,8 @@
       "tags": [
         "elio e le storie tese",
         "satira"
-      ]
+      ],
+      "upload_date": "2023-03-21"
     },
     {
       "youtube_id": "TiUhqvXor6I",
@@ -2523,7 +2623,8 @@
         "cantautore",
         "torino",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2023-03-28"
     },
     {
       "youtube_id": "Maxx5AwXnl8",
@@ -2548,7 +2649,8 @@
       "tags": [
         "the jackal",
         "lol"
-      ]
+      ],
+      "upload_date": "2023-04-04"
     },
     {
       "youtube_id": "kEhaYPJyFNY",
@@ -2574,7 +2676,8 @@
         "podcast",
         "usa",
         "politica"
-      ]
+      ],
+      "upload_date": "2023-04-11"
     },
     {
       "youtube_id": "JJA84Hk-TwM",
@@ -2598,7 +2701,8 @@
         "cantautore",
         "indie",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2023-04-18"
     },
     {
       "youtube_id": "BG4_rAX2AK8",
@@ -2621,7 +2725,8 @@
       "tags": [
         "stand-up",
         "imitazioni"
-      ]
+      ],
+      "upload_date": "2023-04-25"
     },
     {
       "youtube_id": "zOJwmqiqsQM",
@@ -2644,7 +2749,8 @@
       "tags": [
         "cabaret",
         "tv"
-      ]
+      ],
+      "upload_date": "2023-05-02"
     },
     {
       "youtube_id": "ml8Lm5ZsBlg",
@@ -2668,7 +2774,8 @@
         "rock",
         "litfiba",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2023-05-09"
     },
     {
       "youtube_id": "NOxrWEePRt8",
@@ -2692,7 +2799,8 @@
       "tags": [
         "commedia",
         "rai"
-      ]
+      ],
+      "upload_date": "2023-05-16"
     },
     {
       "youtube_id": "VTRhXK9yAYQ",
@@ -2718,7 +2826,8 @@
         "youtube",
         "divulgazione",
         "attualità"
-      ]
+      ],
+      "upload_date": "2023-05-23"
     },
     {
       "youtube_id": "jMk1o9wYTNo",
@@ -2743,7 +2852,8 @@
         "roma",
         "cabaret",
         "tv"
-      ]
+      ],
+      "upload_date": "2023-05-30"
     },
     {
       "youtube_id": "bxKvEIgk_bo",
@@ -2769,7 +2879,8 @@
         "eutanasia",
         "radicali",
         "diritti"
-      ]
+      ],
+      "upload_date": "2023-06-06"
     },
     {
       "youtube_id": "3z2cS1h_pYU",
@@ -2796,7 +2907,8 @@
         "cucina italiana",
         "food",
         "debunking"
-      ]
+      ],
+      "upload_date": "2023-06-13"
     },
     {
       "youtube_id": "Rq-XChBNx-A",
@@ -2821,7 +2933,8 @@
         "pop",
         "sanremo",
         "gen z"
-      ]
+      ],
+      "upload_date": "2023-06-20"
     },
     {
       "youtube_id": "qOFR5tiUQ1g",
@@ -2845,7 +2958,8 @@
       "tags": [
         "commedia",
         "dramma"
-      ]
+      ],
+      "upload_date": "2023-06-27"
     },
     {
       "youtube_id": "1R-fwZr-wXM",
@@ -2869,7 +2983,8 @@
         "cantautore",
         "sanremo",
         "napoli"
-      ]
+      ],
+      "upload_date": "2023-07-04"
     },
     {
       "youtube_id": "2BvDwuYLeQk",
@@ -2895,7 +3010,8 @@
         "zelig",
         "comicità",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2023-07-18"
     },
     {
       "youtube_id": "kliB6YdSUvw",
@@ -2920,7 +3036,8 @@
         "rap",
         "roma",
         "supercafone"
-      ]
+      ],
+      "upload_date": "2023-08-01"
     },
     {
       "youtube_id": "Cm-9TsdLCjA",
@@ -2944,7 +3061,8 @@
       "tags": [
         "podcast",
         "social media"
-      ]
+      ],
+      "upload_date": "2023-08-08"
     },
     {
       "youtube_id": "1vsJM6pbV4Q",
@@ -2970,7 +3088,8 @@
         "teatro",
         "improvvisazione",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2023-08-29"
     },
     {
       "youtube_id": "9LRAIQ1tUWk",
@@ -2993,7 +3112,8 @@
       "tags": [
         "stand-up",
         "sicilia"
-      ]
+      ],
+      "upload_date": "2023-09-12"
     },
     {
       "youtube_id": "OcqIp-Y4QoQ",
@@ -3019,7 +3139,8 @@
         "quick change",
         "teatro",
         "illusionismo"
-      ]
+      ],
+      "upload_date": "2023-09-26"
     },
     {
       "youtube_id": "v4Jc5kYfGN4",
@@ -3045,7 +3166,8 @@
         "cabaret",
         "roma",
         "tv"
-      ]
+      ],
+      "upload_date": "2023-10-10"
     },
     {
       "youtube_id": "fnANqWqWlC4",
@@ -3071,7 +3193,8 @@
         "zelig",
         "cabaret",
         "tale e quale"
-      ]
+      ],
+      "upload_date": "2023-10-17"
     },
     {
       "youtube_id": "FRjXJICYUQ4",
@@ -3095,7 +3218,8 @@
         "basket",
         "nba",
         "olimpiadi"
-      ]
+      ],
+      "upload_date": "2023-10-24"
     },
     {
       "youtube_id": "QFB4rV6nmFQ",
@@ -3121,7 +3245,8 @@
         "roma",
         "cabaret",
         "imitazioni"
-      ]
+      ],
+      "upload_date": "2023-10-31"
     },
     {
       "youtube_id": "z1MtwWkVheI",
@@ -3148,7 +3273,8 @@
         "franca rame",
         "ecologia",
         "controcultura"
-      ]
+      ],
+      "upload_date": "2023-11-07"
     },
     {
       "youtube_id": "g_TEV8VCZwg",
@@ -3174,7 +3300,8 @@
       "tags": [
         "radio deejay",
         "radio"
-      ]
+      ],
+      "upload_date": "2023-11-14"
     },
     {
       "youtube_id": "l6sch6P1voA",
@@ -3198,7 +3325,8 @@
         "cantautore",
         "blues",
         "chitarrista"
-      ]
+      ],
+      "upload_date": "2023-11-21"
     },
     {
       "youtube_id": "RZmLLyqA_a8",
@@ -3225,7 +3353,8 @@
         "umorismo",
         "africa",
         "solidarietà"
-      ]
+      ],
+      "upload_date": "2023-11-28"
     },
     {
       "youtube_id": "uo4mq-e3vEI",
@@ -3251,7 +3380,8 @@
         "performance",
         "avanguardia",
         "teatro contemporaneo"
-      ]
+      ],
+      "upload_date": "2023-12-05"
     },
     {
       "youtube_id": "eXwHGvuRo-w",
@@ -3276,7 +3406,8 @@
       "tags": [
         "romanzo criminale",
         "dramma"
-      ]
+      ],
+      "upload_date": "2023-12-12"
     },
     {
       "youtube_id": "jJdBMmxciQw",
@@ -3303,7 +3434,8 @@
         "satira",
         "boris",
         "guzzanti"
-      ]
+      ],
+      "upload_date": "2023-12-19"
     },
     {
       "youtube_id": "edVgrQYOTzg",
@@ -3329,7 +3461,8 @@
         "radio deejay",
         "radio",
         "lol"
-      ]
+      ],
+      "upload_date": "2023-12-26"
     },
     {
       "youtube_id": "gCjCXgh1-Bs",
@@ -3355,7 +3488,8 @@
         "hip-hop",
         "articolo 31",
         "pop"
-      ]
+      ],
+      "upload_date": "2024-01-02"
     },
     {
       "youtube_id": "WNhl56KOwXQ",
@@ -3382,7 +3516,8 @@
         "regia",
         "narrativa",
         "sergio castellitto"
-      ]
+      ],
+      "upload_date": "2024-01-10"
     },
     {
       "youtube_id": "IgwWpFCERQw",
@@ -3407,7 +3542,8 @@
       "tags": [
         "podcast",
         "pop culture"
-      ]
+      ],
+      "upload_date": "2024-01-16"
     },
     {
       "youtube_id": "_1-T8WNmqfw",
@@ -3432,7 +3568,8 @@
       "tags": [
         "lillo e greg",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2024-01-23"
     },
     {
       "youtube_id": "guXgWXERVok",
@@ -3457,7 +3594,8 @@
         "cabaret milanese",
         "cochi e renato",
         "storico"
-      ]
+      ],
+      "upload_date": "2024-01-30"
     },
     {
       "youtube_id": "mqA7IW5U47c",
@@ -3482,7 +3620,8 @@
         "storico",
         "genova",
         "canzone italiana"
-      ]
+      ],
+      "upload_date": "2024-02-06"
     },
     {
       "youtube_id": "M8IfAyT6JXg",
@@ -3506,7 +3645,8 @@
         "cantautore",
         "indie",
         "calabria"
-      ]
+      ],
+      "upload_date": "2024-02-13"
     },
     {
       "youtube_id": "dmYZyyDa3KY",
@@ -3532,7 +3672,8 @@
         "imitazioni",
         "lol",
         "gialappa"
-      ]
+      ],
+      "upload_date": "2024-02-20"
     },
     {
       "youtube_id": "JRNxbapMeVs",
@@ -3558,7 +3699,8 @@
         "gomorra",
         "napoli",
         "regia"
-      ]
+      ],
+      "upload_date": "2024-02-27"
     },
     {
       "youtube_id": "ZPRu6ePrQO0",
@@ -3583,7 +3725,8 @@
       "tags": [
         "nuoto",
         "olimpiadi"
-      ]
+      ],
+      "upload_date": "2024-03-05"
     },
     {
       "youtube_id": "ySlbapYozkw",
@@ -3606,7 +3749,8 @@
       "tags": [
         "host",
         "speciale"
-      ]
+      ],
+      "upload_date": "2024-03-12"
     },
     {
       "youtube_id": "Ujn2PQBP9vc",
@@ -3631,7 +3775,8 @@
       "tags": [
         "web series",
         "the jackal"
-      ]
+      ],
+      "upload_date": "2024-03-19"
     },
     {
       "youtube_id": "YpnrFIFl6XQ",
@@ -3656,7 +3801,8 @@
         "cronaca nera",
         "indagini",
         "podcast"
-      ]
+      ],
+      "upload_date": "2024-03-26"
     },
     {
       "youtube_id": "3-Fmp4xvBxc",
@@ -3679,7 +3825,8 @@
       "tags": [
         "rai",
         "tv storica"
-      ]
+      ],
+      "upload_date": "2024-04-02"
     },
     {
       "youtube_id": "kGWLwHHIvlk",
@@ -3703,7 +3850,8 @@
         "stand-up",
         "netflix",
         "lol"
-      ]
+      ],
+      "upload_date": "2024-04-09"
     },
     {
       "youtube_id": "8U5doRaA4ZA",
@@ -3728,7 +3876,8 @@
       "tags": [
         "personaggi",
         "tv"
-      ]
+      ],
+      "upload_date": "2024-04-16"
     },
     {
       "youtube_id": "RFY3nUsVbSI",
@@ -3752,7 +3901,8 @@
       "tags": [
         "cinema d'autore",
         "teatro"
-      ]
+      ],
+      "upload_date": "2024-04-23"
     },
     {
       "youtube_id": "VzDcImdjhmA",
@@ -3778,7 +3928,8 @@
         "elio e le storie tese",
         "satira",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2024-04-30"
     },
     {
       "youtube_id": "OY58zq6WYN0",
@@ -3802,7 +3953,8 @@
         "a cappella",
         "vocal group",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2024-05-07"
     },
     {
       "youtube_id": "Na-RFhzh9gY",
@@ -3828,7 +3980,8 @@
         "zelig",
         "magia",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2024-05-14"
     },
     {
       "youtube_id": "6xXDfPkmBSk",
@@ -3850,7 +4003,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2024-05-21"
     },
     {
       "youtube_id": "1mRPjDuSq4A",
@@ -3875,7 +4029,8 @@
         "anime",
         "manga",
         "pop culture"
-      ]
+      ],
+      "upload_date": "2024-05-28"
     },
     {
       "youtube_id": "rnWafL4VlPs",
@@ -3901,7 +4056,8 @@
         "teatro",
         "cabaret",
         "milano"
-      ]
+      ],
+      "upload_date": "2024-06-04"
     },
     {
       "youtube_id": "8dzRKXio3tg",
@@ -3926,7 +4082,8 @@
       "tags": [
         "luca e paolo",
         "genova"
-      ]
+      ],
+      "upload_date": "2024-06-11"
     },
     {
       "youtube_id": "zonkB3qQp74",
@@ -3953,7 +4110,8 @@
       "tags": [
         "le invasioni barbariche",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2024-06-18"
     },
     {
       "youtube_id": "R1WCPQnF-Eg",
@@ -3978,7 +4136,8 @@
       "tags": [
         "cucina",
         "4 ristoranti"
-      ]
+      ],
+      "upload_date": "2024-06-25"
     },
     {
       "youtube_id": "dGVwuCG4SU8",
@@ -4004,7 +4163,8 @@
         "politica italiana",
         "repubblica",
         "costume"
-      ]
+      ],
+      "upload_date": "2024-07-02"
     },
     {
       "youtube_id": "WK0DWtLVjlw",
@@ -4028,7 +4188,8 @@
       "tags": [
         "cabaret",
         "toscana"
-      ]
+      ],
+      "upload_date": "2024-07-09"
     },
     {
       "youtube_id": "WgRuRufS3bs",
@@ -4055,7 +4216,8 @@
         "indie",
         "cantautore",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2024-07-16"
     },
     {
       "youtube_id": "SdKP7bvCbEI",
@@ -4082,7 +4244,8 @@
         "mai dire",
         "calcio",
         "satira tv"
-      ]
+      ],
+      "upload_date": "2024-07-23"
     },
     {
       "youtube_id": "h0seANORsN8",
@@ -4109,7 +4272,8 @@
         "cabaret",
         "milan",
         "adriano celentano"
-      ]
+      ],
+      "upload_date": "2024-09-03"
     },
     {
       "youtube_id": "vcHUab-a7xg",
@@ -4134,7 +4298,8 @@
         "elettronica",
         "sanremo",
         "x factor"
-      ]
+      ],
+      "upload_date": "2024-09-10"
     },
     {
       "youtube_id": "ngluqtiWAJg",
@@ -4156,7 +4321,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2024-09-17"
     },
     {
       "youtube_id": "mHe6b2fH2E4",
@@ -4182,7 +4348,8 @@
         "imitazioni",
         "rai",
         "one man show"
-      ]
+      ],
+      "upload_date": "2024-09-24"
     },
     {
       "youtube_id": "9pHzEA5iMmU",
@@ -4209,7 +4376,8 @@
       "tags": [
         "basilicata coast to coast",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2024-10-01"
     },
     {
       "youtube_id": "2jir9Me8-z8",
@@ -4235,7 +4403,8 @@
         "propaganda live",
         "gazebo",
         "politica"
-      ]
+      ],
+      "upload_date": "2024-10-09"
     },
     {
       "youtube_id": "Czbc2jGsR0Q",
@@ -4259,7 +4428,8 @@
         "stand-up",
         "dark comedy",
         "sociale"
-      ]
+      ],
+      "upload_date": "2024-10-15"
     },
     {
       "youtube_id": "gNHTF2p4RJo",
@@ -4286,7 +4456,8 @@
         "la grande bellezza",
         "napoli",
         "cinema d'autore"
-      ]
+      ],
+      "upload_date": "2024-10-22"
     },
     {
       "youtube_id": "L2_hc8jUORU",
@@ -4312,7 +4483,8 @@
         "thriller",
         "noir",
         "narrativa"
-      ]
+      ],
+      "upload_date": "2024-10-29"
     },
     {
       "youtube_id": "AJZI2B8Dgl0",
@@ -4336,7 +4508,8 @@
       "tags": [
         "hbo",
         "internazionale"
-      ]
+      ],
+      "upload_date": "2024-11-05"
     },
     {
       "youtube_id": "HBlPIZ3BQgc",
@@ -4361,7 +4534,8 @@
       "tags": [
         "radio deejay",
         "podcast"
-      ]
+      ],
+      "upload_date": "2024-11-12"
     },
     {
       "youtube_id": "gdrzVWbGarM",
@@ -4389,7 +4563,8 @@
         "zelig",
         "commedia italiana",
         "teatro"
-      ]
+      ],
+      "upload_date": "2024-11-19"
     },
     {
       "youtube_id": "cwMXUtJahNg",
@@ -4414,7 +4589,8 @@
         "reportage",
         "guerra",
         "migrazioni"
-      ]
+      ],
+      "upload_date": "2024-11-26"
     },
     {
       "youtube_id": "KpYC88DMauQ",
@@ -4438,7 +4614,8 @@
         "pop",
         "rock",
         "sanremo"
-      ]
+      ],
+      "upload_date": "2024-12-03"
     },
     {
       "youtube_id": "R2gbKZwue4M",
@@ -4463,7 +4640,8 @@
       "tags": [
         "imitazioni",
         "gialappa"
-      ]
+      ],
+      "upload_date": "2024-12-10"
     },
     {
       "youtube_id": "tr0bO_arhfg",
@@ -4487,7 +4665,8 @@
         "cinema d'autore",
         "dramma",
         "turchia-italia"
-      ]
+      ],
+      "upload_date": "2024-12-17"
     },
     {
       "youtube_id": "laZ_FM0gzPk",
@@ -4513,7 +4692,8 @@
         "cinepanettone",
         "commedia italiana",
         "de sica"
-      ]
+      ],
+      "upload_date": "2024-12-24"
     },
     {
       "youtube_id": "JCrjUR5jWY4",
@@ -4539,7 +4719,8 @@
         "anime",
         "nostalgia",
         "pop"
-      ]
+      ],
+      "upload_date": "2024-12-31"
     },
     {
       "youtube_id": "dQSN10rPq_U",
@@ -4566,7 +4747,8 @@
         "don matteo",
         "che tempo che fa",
         "surreale"
-      ]
+      ],
+      "upload_date": "2025-01-07"
     },
     {
       "youtube_id": "u7IB6r8TFuM",
@@ -4590,7 +4772,8 @@
         "rat-man",
         "graphic novel",
         "umorismo"
-      ]
+      ],
+      "upload_date": "2025-01-14"
     },
     {
       "youtube_id": "BP-v6cVZoLw",
@@ -4617,7 +4800,8 @@
         "commedia italiana",
         "gialappa",
         "mai dire"
-      ]
+      ],
+      "upload_date": "2025-01-21"
     },
     {
       "youtube_id": "_2nINsvHye4",
@@ -4643,7 +4827,8 @@
         "assurdo",
         "cabaret",
         "satira"
-      ]
+      ],
+      "upload_date": "2025-01-28"
     },
     {
       "youtube_id": "rfaDzkfj5zI",
@@ -4668,7 +4853,8 @@
         "rap",
         "pop",
         "cantautore"
-      ]
+      ],
+      "upload_date": "2025-02-04"
     },
     {
       "youtube_id": "0AG2avi2D50",
@@ -4696,7 +4882,8 @@
         "satira politica",
         "guzzanti",
         "documentario"
-      ]
+      ],
+      "upload_date": "2025-02-18"
     },
     {
       "youtube_id": "dPJ86RCJx4g",
@@ -4722,7 +4909,8 @@
         "satira",
         "la tv delle ragazze",
         "rai"
-      ]
+      ],
+      "upload_date": "2025-02-25"
     },
     {
       "youtube_id": "kJRPwznEQUY",
@@ -4747,7 +4935,8 @@
         "gomorra",
         "napoli",
         "serie tv"
-      ]
+      ],
+      "upload_date": "2025-03-04"
     },
     {
       "youtube_id": "8X5grAmLbrE",
@@ -4770,7 +4959,8 @@
       "tags": [
         "tennis",
         "atp"
-      ]
+      ],
+      "upload_date": "2025-03-11"
     },
     {
       "youtube_id": "2rO7t6PX9u4",
@@ -4795,7 +4985,8 @@
       "tags": [
         "distretto di polizia",
         "teatro"
-      ]
+      ],
+      "upload_date": "2025-03-18"
     },
     {
       "youtube_id": "568Ezf0CY1g",
@@ -4820,7 +5011,8 @@
         "rap",
         "hip-hop",
         "club dogo"
-      ]
+      ],
+      "upload_date": "2025-03-25"
     },
     {
       "youtube_id": "hxfjpJqvAmo",
@@ -4844,7 +5036,8 @@
       "tags": [
         "cinema d'autore",
         "roma"
-      ]
+      ],
+      "upload_date": "2025-04-01"
     },
     {
       "youtube_id": "34JaTj9Z2H4",
@@ -4869,7 +5062,8 @@
         "paola e chiara",
         "pop",
         "x factor"
-      ]
+      ],
+      "upload_date": "2025-04-15"
     },
     {
       "youtube_id": "P0_lA2eBdyc",
@@ -4893,7 +5087,8 @@
         "art attack",
         "rai",
         "nostalgia"
-      ]
+      ],
+      "upload_date": "2025-04-22"
     },
     {
       "youtube_id": "0Db_fJj6v-0",
@@ -4918,7 +5113,8 @@
         "indie",
         "sanremo",
         "pop"
-      ]
+      ],
+      "upload_date": "2025-04-29"
     },
     {
       "youtube_id": "u0AlkL3FRsM",
@@ -4941,7 +5137,8 @@
       "tags": [
         "pechino express",
         "pop culture"
-      ]
+      ],
+      "upload_date": "2025-05-06"
     },
     {
       "youtube_id": "DSeGvsWw7Xw",
@@ -4966,7 +5163,8 @@
       "tags": [
         "le iene",
         "radio deejay"
-      ]
+      ],
+      "upload_date": "2025-05-13"
     },
     {
       "youtube_id": "PGUEP2aRwtk",
@@ -4991,7 +5189,8 @@
         "pop",
         "sanremo",
         "canzone italiana"
-      ]
+      ],
+      "upload_date": "2025-05-20"
     },
     {
       "youtube_id": "qPxejMapk9Q",
@@ -5016,7 +5215,8 @@
         "sanremo",
         "x factor",
         "cantautrice"
-      ]
+      ],
+      "upload_date": "2025-05-27"
     },
     {
       "youtube_id": "5s_hzhTYDE0",
@@ -5038,7 +5238,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-06-03"
     },
     {
       "youtube_id": "f68Nnod1AZE",
@@ -5065,7 +5266,8 @@
         "camorra",
         "mafia",
         "diritti civili"
-      ]
+      ],
+      "upload_date": "2025-06-10"
     },
     {
       "youtube_id": "7z1VJsaFFNA",
@@ -5091,7 +5293,8 @@
         "one man show",
         "toscana",
         "imitazioni"
-      ]
+      ],
+      "upload_date": "2025-06-17"
     },
     {
       "youtube_id": "HbnCYWK6AHQ",
@@ -5119,7 +5322,8 @@
         "imitazioni",
         "marche",
         "commedia"
-      ]
+      ],
+      "upload_date": "2025-06-24"
     },
     {
       "youtube_id": "dqy-1Hdn8Pw",
@@ -5144,7 +5348,8 @@
         "russia",
         "dostoevskij",
         "umorismo letterario"
-      ]
+      ],
+      "upload_date": "2025-07-01"
     },
     {
       "youtube_id": "Jus81lajvCg",
@@ -5168,7 +5373,8 @@
         "lo chiamavano jeeg robot",
         "freaks out",
         "cinema di genere"
-      ]
+      ],
+      "upload_date": "2025-07-08"
     },
     {
       "youtube_id": "nB3JDKfWtc8",
@@ -5196,7 +5402,8 @@
         "mafia",
         "sicilia",
         "documentario"
-      ]
+      ],
+      "upload_date": "2025-07-15"
     },
     {
       "youtube_id": "audq8YDfX_Y",
@@ -5218,7 +5425,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-07-22"
     },
     {
       "youtube_id": "ctnM-JhccjA",
@@ -5244,7 +5452,8 @@
         "roma",
         "commedia italiana",
         "serie tv"
-      ]
+      ],
+      "upload_date": "2025-07-29"
     },
     {
       "youtube_id": "kePnIWgt3Mk",
@@ -5266,7 +5475,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-08-05"
     },
     {
       "youtube_id": "PgaGTBX4rz8",
@@ -5290,7 +5500,8 @@
         "jazz",
         "pianoforte",
         "tv"
-      ]
+      ],
+      "upload_date": "2025-09-02"
     },
     {
       "youtube_id": "uy3o-He1uWg",
@@ -5318,7 +5529,8 @@
         "radio 2",
         "sanremo",
         "autobiografia"
-      ]
+      ],
+      "upload_date": "2025-09-09"
     },
     {
       "youtube_id": "tASSHFPxPAw",
@@ -5340,7 +5552,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-09-16"
     },
     {
       "youtube_id": "68eqQQri77E",
@@ -5363,7 +5576,8 @@
       "tags": [
         "stand-up",
         "zelig"
-      ]
+      ],
+      "upload_date": "2025-09-23"
     },
     {
       "youtube_id": "chisHio32Vs",
@@ -5387,7 +5601,8 @@
       "tags": [
         "rap",
         "hip-hop"
-      ]
+      ],
+      "upload_date": "2025-09-30"
     },
     {
       "youtube_id": "BqBDS8Z-SmM",
@@ -5412,7 +5627,8 @@
         "onu",
         "palestina",
         "diritto internazionale"
-      ]
+      ],
+      "upload_date": "2025-10-07"
     },
     {
       "youtube_id": "pcuAMmS1f3U",
@@ -5437,7 +5653,8 @@
       "tags": [
         "striscia la notizia",
         "cabaret"
-      ]
+      ],
+      "upload_date": "2025-10-14"
     },
     {
       "youtube_id": "43qPvJ8VIQs",
@@ -5462,7 +5679,8 @@
         "rap",
         "hip-hop",
         "club dogo"
-      ]
+      ],
+      "upload_date": "2025-10-21"
     },
     {
       "youtube_id": "iW43dOSvQ-0",
@@ -5484,7 +5702,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-10-28"
     },
     {
       "youtube_id": "vo-OslIXrb8",
@@ -5507,7 +5726,8 @@
       ],
       "tags": [
         "commedia italiana"
-      ]
+      ],
+      "upload_date": "2025-11-04"
     },
     {
       "youtube_id": "KJKhNcwqvjA",
@@ -5534,7 +5754,8 @@
         "stories",
         "podcast",
         "iran"
-      ]
+      ],
+      "upload_date": "2025-11-11"
     },
     {
       "youtube_id": "2XA7JD32yl8",
@@ -5557,7 +5778,8 @@
       "tags": [
         "stand-up",
         "tiktok"
-      ]
+      ],
+      "upload_date": "2025-11-18"
     },
     {
       "youtube_id": "m5l_DPMCGFM",
@@ -5583,7 +5805,8 @@
         "commedia italiana",
         "roma",
         "cult"
-      ]
+      ],
+      "upload_date": "2025-11-25"
     },
     {
       "youtube_id": "aLohVZxbr9Y",
@@ -5608,7 +5831,8 @@
         "rap",
         "cantautore",
         "puglia"
-      ]
+      ],
+      "upload_date": "2025-12-02"
     },
     {
       "youtube_id": "4QypMbiMMSg",
@@ -5633,7 +5857,8 @@
       "tags": [
         "dimartedì",
         "politica"
-      ]
+      ],
+      "upload_date": "2025-12-09"
     },
     {
       "youtube_id": "8Xkrw-blcXY",
@@ -5655,7 +5880,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-12-16"
     },
     {
       "youtube_id": "JZnjct73oDY",
@@ -5677,7 +5903,8 @@
       ],
       "tags": [
         "stand-up"
-      ]
+      ],
+      "upload_date": "2025-12-23"
     },
     {
       "youtube_id": "vV0wjwN44Mw",
@@ -5702,7 +5929,8 @@
         "voyager",
         "misteri",
         "divulgazione"
-      ]
+      ],
+      "upload_date": "2025-12-30"
     },
     {
       "youtube_id": "U5P9Cm0vnOw",
@@ -5727,7 +5955,8 @@
       "tags": [
         "non è la rai",
         "teatro"
-      ]
+      ],
+      "upload_date": "2026-01-06"
     },
     {
       "youtube_id": "ESk8R9W9-Zk",
@@ -5753,7 +5982,8 @@
         "sorrentino",
         "teatro",
         "napoli"
-      ]
+      ],
+      "upload_date": "2026-01-13"
     },
     {
       "youtube_id": "W_Ry5tnP9lU",
@@ -5779,7 +6009,8 @@
         "commedia",
         "milano",
         "animazione"
-      ]
+      ],
+      "upload_date": "2026-01-20"
     },
     {
       "youtube_id": "VKHURBoYSTw",
@@ -5803,7 +6034,8 @@
         "pop",
         "internazionale",
         "x factor"
-      ]
+      ],
+      "upload_date": "2026-01-27"
     },
     {
       "youtube_id": "Jy3o3Bcv4Q4",
@@ -5827,7 +6059,8 @@
         "atletica",
         "velocista",
         "olimpiadi"
-      ]
+      ],
+      "upload_date": "2026-02-03"
     },
     {
       "youtube_id": "9Sa-fQzEUmE",
@@ -5851,7 +6084,8 @@
       "tags": [
         "one man show",
         "zelig"
-      ]
+      ],
+      "upload_date": "2026-02-10"
     },
     {
       "youtube_id": "LlH6heeCblY",
@@ -5876,7 +6110,8 @@
         "rap",
         "hip-hop",
         "freestyle"
-      ]
+      ],
+      "upload_date": "2026-02-17"
     }
   ],
   "extras": [

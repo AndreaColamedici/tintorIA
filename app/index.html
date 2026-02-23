@@ -167,6 +167,13 @@ function formatViews(n) {
   return n.toString();
 }
 
+function formatDate(d) {
+  if (!d) return '';
+  const [y, m, day] = d.split('-');
+  const months = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  return `${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
+}
+
 function App() {
   const [data, setData] = useState(null);
   const [query, setQuery] = useState('');
@@ -233,8 +240,8 @@ function App() {
     const sorted = [...eps];
     switch(sort) {
       case 'views': sorted.sort((a,b) => (b.view_count||0) - (a.view_count||0)); break;
-      case 'number_asc': sorted.sort((a,b) => a.episode_number - b.episode_number); break;
-      case 'number_desc': sorted.sort((a,b) => b.episode_number - a.episode_number); break;
+      case 'number_asc': sorted.sort((a,b) => (a.upload_date||'').localeCompare(b.upload_date||'')); break;
+      case 'number_desc': sorted.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
       case 'duration': sorted.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
     }
     return sorted;
@@ -341,6 +348,7 @@ function App() {
                 <div className="card-meta">
                   <span>{formatViews(ep.view_count)} views</span>
                   <span>{ep.duration_formatted}</span>
+                  {ep.upload_date && <span>{formatDate(ep.upload_date)}</span>}
                 </div>
                 {ep.tags && ep.tags.length > 0 && (
                   <div className="card-tags">
