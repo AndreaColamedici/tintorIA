@@ -132,6 +132,10 @@
     font-size: 0.85rem; color: var(--muted);
   }
 
+  .card-transcript-match {
+    background: #1a2a1a; border: 1px solid #2a4a2a; border-radius: 4px;
+    padding: 0.25rem 0.5rem; font-size: 0.72rem; color: #6a9; margin-top: 0.4rem;
+  }
   .no-results { text-align: center; color: var(--muted); padding: 3rem 1rem; font-size: 1.1rem; }
 
   .footer {
@@ -180,8 +184,52 @@ function App() {
   const [sort, setSort] = useState('number_desc');
   const [activeAmbiti, setActiveAmbiti] = useState(new Set());
   const [activeTags, setActiveTags] = useState(new Set());
+  const [searchIndex, setSearchIndex] = useState(null);
+  const [indexLoading, setIndexLoading] = useState(false);
+  const [transcriptMatches, setTranscriptMatches] = useState(new Map());
 
   useEffect(() => { loadData().then(setData); }, []);
+
+  // Load search index on first deep search (lazy)
+  const loadSearchIndex = useCallback(async () => {
+    if (searchIndex || indexLoading) return searchIndex;
+    setIndexLoading(true);
+    try {
+      const res = await fetch('../data/search_index.json');
+      const idx = await res.json();
+      setSearchIndex(idx);
+      setIndexLoading(false);
+      return idx;
+    } catch(e) {
+      console.error('Could not load search index', e);
+      setIndexLoading(false);
+      return null;
+    }
+  }, [searchIndex, indexLoading]);
+
+  // Search transcripts when query is 4+ chars
+  useEffect(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 4) { setTranscriptMatches(new Map()); return; }
+    (async () => {
+      let idx = searchIndex;
+      if (!idx) idx = await loadSearchIndex();
+      if (!idx) return;
+      const matches = idx[q];
+      if (matches) {
+        setTranscriptMatches(new Map(matches.map(n => [n, true])));
+      } else {
+        // Partial match: find all words starting with query
+        const partial = new Map();
+        for (const [word, eps] of Object.entries(idx)) {
+          if (word.startsWith(q)) {
+            for (const ep of eps) partial.set(ep, true);
+          }
+        }
+        setTranscriptMatches(partial);
+      }
+    })();
+  }, [query, searchIndex]);
 
   // Collect all ambiti and top tags
   const { ambitiList, tagsList } = useMemo(() => {
@@ -221,13 +269,16 @@ function App() {
 
     if (query.trim()) {
       const q = query.toLowerCase();
-      eps = eps.filter(e =>
-        (e.guest && e.guest.toLowerCase().includes(q)) ||
-        (e.title && e.title.toLowerCase().includes(q)) ||
-        (e.episode_number && String(e.episode_number) === q.replace('#','')) ||
-        (e.professione && e.professione.some(p => p.toLowerCase().includes(q))) ||
-        (e.tags && e.tags.some(t => t.toLowerCase().includes(q)))
-      );
+      eps = eps.filter(e => {
+        const metaMatch =
+          (e.guest && e.guest.toLowerCase().includes(q)) ||
+          (e.title && e.title.toLowerCase().includes(q)) ||
+          (e.episode_number && String(e.episode_number) === q.replace('#','')) ||
+          (e.professione && e.professione.some(p => p.toLowerCase().includes(q))) ||
+          (e.tags && e.tags.some(t => t.toLowerCase().includes(q)));
+        const transcriptMatch = transcriptMatches.has(e.episode_number);
+        return metaMatch || transcriptMatch;
+      });
     }
 
     if (activeAmbiti.size > 0) {
@@ -263,7 +314,7 @@ function App() {
     <>
       <div className="header">
         <h1>Tintor<span>IA</span></h1>
-        <p>Indice completo del podcast di Daniele Tinti e Stefano Rapone</p>
+        <p>Indice completo del podcast di Daniele Tinti e Stefano Rapone — con trascrizioni</p>
         <div className="stats">
           <div className="stat">
             <div className="stat-value">{m.total_episodes}</div>
@@ -349,7 +400,13 @@ function App() {
                   <span>{formatViews(ep.view_count)} views</span>
                   <span>{ep.duration_formatted}</span>
                   {ep.upload_date && <span>{formatDate(ep.upload_date)}</span>}
+                  {ep.has_transcription && <span title="Trascrizione disponibile">📝</span>}
                 </div>
+                {transcriptMatches.has(ep.episode_number) && query.length >= 4 && (
+                  <div className="card-transcript-match">
+                    Menzionato nella trascrizione
+                  </div>
+                )}
                 {ep.tags && ep.tags.length > 0 && (
                   <div className="card-tags">
                     {ep.tags.map(t => (
@@ -366,7 +423,8 @@ function App() {
         </div>
       )}
       <div className="footer">
-        TintorIA — Dati estratti da YouTube, tag generati con Claude.
+        TintorIA — {m.transcriptions_count || 0} puntate trascritte, {((m.total_transcript_words||0)/1000000).toFixed(1)}M parole indicizzate.
+        <br/>Dati da YouTube, trascrizioni auto-generate, tag con Claude.
         <br/><a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
       </div>
     </>
