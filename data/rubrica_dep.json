@@ -5,19 +5,27 @@
     "last_episode": 292,
     "dictator_ranking": [
       {
-        "name": "tito",
-        "mentions": 13
+        "name": "kim jong",
+        "mentions": 10
       },
       {
         "name": "stalin",
-        "mentions": 8
+        "mentions": 9
       },
       {
-        "name": "kim jong",
-        "mentions": 5
+        "name": "gheddafi",
+        "mentions": 6
       },
       {
         "name": "pol pot",
+        "mentions": 5
+      },
+      {
+        "name": "franco",
+        "mentions": 5
+      },
+      {
+        "name": "hitler",
         "mentions": 5
       },
       {
@@ -25,35 +33,39 @@
         "mentions": 5
       },
       {
-        "name": "franco",
-        "mentions": 4
-      },
-      {
-        "name": "francisco franco",
-        "mentions": 3
-      },
-      {
-        "name": "peron",
-        "mentions": 3
-      },
-      {
         "name": "mao",
-        "mentions": 2
+        "mentions": 3
       },
       {
-        "name": "gheddafi",
-        "mentions": 2
+        "name": "ceausescu",
+        "mentions": 3
       },
       {
         "name": "fidel castro",
-        "mentions": 2
+        "mentions": 3
       },
       {
         "name": "saddam",
+        "mentions": 3
+      },
+      {
+        "name": "tito",
+        "mentions": 2
+      },
+      {
+        "name": "peron",
+        "mentions": 2
+      },
+      {
+        "name": "chavez",
         "mentions": 2
       },
       {
         "name": "ho chi minh",
+        "mentions": 1
+      },
+      {
+        "name": "idi amin",
         "mentions": 1
       },
       {
@@ -69,19 +81,39 @@
         "mentions": 1
       },
       {
-        "name": "ceausescu",
+        "name": "papa francesco",
         "mentions": 1
       },
       {
-        "name": "hussein",
+        "name": "freezer",
         "mentions": 1
       },
       {
-        "name": "chavez",
+        "name": "greta garbo",
         "mentions": 1
       },
       {
-        "name": "gaddafi",
+        "name": "saparmurat niyazov",
+        "mentions": 1
+      },
+      {
+        "name": "mourinho",
+        "mentions": 1
+      },
+      {
+        "name": "napoleone",
+        "mentions": 1
+      },
+      {
+        "name": "lenin",
+        "mentions": 1
+      },
+      {
+        "name": "kadyrov",
+        "mentions": 1
+      },
+      {
+        "name": "khamenei",
         "mentions": 1
       }
     ]
@@ -95,8 +127,8 @@
       "youtube_id": "MouS0ik2kvs",
       "thumbnail_url": "https://i.ytimg.com/vi/MouS0ik2kvs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAUhQ7T9GX9L-6BFWunkxcfwFV7_Q",
       "dictators_mentioned": [
-        "stalin",
-        "francisco franco"
+        "gheddafi",
+        "mao"
       ],
       "estimated_timestamp": "59:25",
       "estimated_timestamp_sec": 3565,
@@ -127,9 +159,9 @@
       "youtube_id": "5JIu4I92Xlc",
       "thumbnail_url": "https://i.ytimg.com/vi/5JIu4I92Xlc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBxiajWsngb9OVL8iFEP-F5RszKfg",
       "dictators_mentioned": [
-        "tito",
         "stalin",
-        "pol pot"
+        "pol pot",
+        "tito"
       ],
       "estimated_timestamp": "11:55",
       "estimated_timestamp_sec": 715,
@@ -159,7 +191,7 @@
       "youtube_id": "teve3AXK33I",
       "thumbnail_url": "https://i.ytimg.com/vi/teve3AXK33I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnfioFKKKl338VDiTbx9S3txV-2A",
       "dictators_mentioned": [
-        "francisco franco"
+        "franco"
       ],
       "estimated_timestamp": "73:37",
       "estimated_timestamp_sec": 4417,
@@ -173,7 +205,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=u78Lff-Yx28",
       "youtube_id": "u78Lff-Yx28",
       "thumbnail_url": "https://i.ytimg.com/vi/u78Lff-Yx28/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCWNZ8W-wdLfk_TNCq6O0khBd-_fw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "idi amin"
+      ],
       "estimated_timestamp": "44:12",
       "estimated_timestamp_sec": 2652,
       "position_pct": 52,
@@ -186,7 +220,10 @@
       "youtube_url": "https://www.youtube.com/watch?v=MuDnrnhICrE",
       "youtube_id": "MuDnrnhICrE",
       "thumbnail_url": "https://i.ytimg.com/vi/MuDnrnhICrE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKDRlIgF2qU0TXIkyXWBZRC-6tcQ",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "hitler",
+        "stalin"
+      ],
       "estimated_timestamp": "47:43",
       "estimated_timestamp_sec": 2863,
       "position_pct": 61,
@@ -228,8 +265,8 @@
       "youtube_id": "25LzmblWp7M",
       "thumbnail_url": "https://i.ytimg.com/vi/25LzmblWp7M/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAhS1ZwoSpUjTQ2q0a_uA0J8unayA",
       "dictators_mentioned": [
-        "erdogan",
-        "putin"
+        "putin",
+        "erdogan"
       ],
       "estimated_timestamp": "82:34",
       "estimated_timestamp_sec": 4954,
@@ -244,7 +281,7 @@
       "youtube_id": "n0rH8_pjKc8",
       "thumbnail_url": "https://i.ytimg.com/vi/n0rH8_pjKc8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAD7MibkYzgY9yXVGt2yDJ0QRCjKg",
       "dictators_mentioned": [
-        "pol pot"
+        "stalin"
       ],
       "estimated_timestamp": "67:50",
       "estimated_timestamp_sec": 4070,
@@ -287,7 +324,6 @@
       "youtube_id": "6jb0GDacjBI",
       "thumbnail_url": "https://i.ytimg.com/vi/6jb0GDacjBI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCciSTiBtjLZycd8_ikQo2iTxPPKQ",
       "dictators_mentioned": [
-        "tito",
         "gheddafi"
       ],
       "estimated_timestamp": "33:32",
@@ -332,9 +368,7 @@
       "youtube_id": "umQHBbJKNx4",
       "thumbnail_url": "https://i.ytimg.com/vi/umQHBbJKNx4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB07otYtgVpOpgBLWsP_reCueFD7A",
       "dictators_mentioned": [
-        "franco",
-        "bokassa",
-        "tito"
+        "bokassa"
       ],
       "estimated_timestamp": "77:25",
       "estimated_timestamp_sec": 4645,
@@ -379,8 +413,8 @@
       "youtube_id": "4WHtF8jkeY8",
       "thumbnail_url": "https://i.ytimg.com/vi/4WHtF8jkeY8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-EriasXcajx3OEneKrwjC9vOr5w",
       "dictators_mentioned": [
-        "franco",
-        "tito"
+        "tito",
+        "franco"
       ],
       "estimated_timestamp": "60:40",
       "estimated_timestamp_sec": 3640,
@@ -410,6 +444,7 @@
       "youtube_id": "cBoThvZnZe4",
       "thumbnail_url": "https://i.ytimg.com/vi/cBoThvZnZe4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5AuKHeYQTSi44JXCuLUthlPc12A",
       "dictators_mentioned": [
+        "hitler",
         "stalin"
       ],
       "estimated_timestamp": "89:24",
@@ -440,7 +475,6 @@
       "youtube_id": "qVCVUKRzseM",
       "thumbnail_url": "https://i.ytimg.com/vi/qVCVUKRzseM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCF_9TyvfHQuf5ClVO4ot8VkeHT7w",
       "dictators_mentioned": [
-        "peron",
         "stalin"
       ],
       "estimated_timestamp": "77:14",
@@ -457,7 +491,6 @@
       "thumbnail_url": "https://i.ytimg.com/vi/LjL1LuT7nRg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBrzuJCy-3nsVeL8io03G_jpVCoag",
       "dictators_mentioned": [
         "kim jong",
-        "tito",
         "franco"
       ],
       "estimated_timestamp": "113:31",
@@ -472,9 +505,7 @@
       "youtube_url": "https://www.youtube.com/watch?v=UvVMjXGhpaQ",
       "youtube_id": "UvVMjXGhpaQ",
       "thumbnail_url": "https://i.ytimg.com/vi/UvVMjXGhpaQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBGwUHsua0ywgky1Edrpy5tB27gIw",
-      "dictators_mentioned": [
-        "tito"
-      ],
+      "dictators_mentioned": [],
       "estimated_timestamp": "74:17",
       "estimated_timestamp_sec": 4457,
       "position_pct": 82,
@@ -488,8 +519,7 @@
       "youtube_id": "TiUhqvXor6I",
       "thumbnail_url": "https://i.ytimg.com/vi/TiUhqvXor6I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLqC-VSIuxrDcSaVrGqR_FB7R_jA",
       "dictators_mentioned": [
-        "kim jong",
-        "tito"
+        "kim jong"
       ],
       "estimated_timestamp": "103:01",
       "estimated_timestamp_sec": 6181,
@@ -504,8 +534,7 @@
       "youtube_id": "BG4_rAX2AK8",
       "thumbnail_url": "https://i.ytimg.com/vi/BG4_rAX2AK8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-vnuc3ebucDF22MLiwooXLSclOw",
       "dictators_mentioned": [
-        "stalin",
-        "tito"
+        "stalin"
       ],
       "estimated_timestamp": "82:03",
       "estimated_timestamp_sec": 4923,
@@ -520,6 +549,7 @@
       "youtube_id": "VTRhXK9yAYQ",
       "thumbnail_url": "https://i.ytimg.com/vi/VTRhXK9yAYQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQNm57f0DO8QFg-qslNLLhrrD76A",
       "dictators_mentioned": [
+        "kim jong",
         "peron"
       ],
       "estimated_timestamp": "73:48",
@@ -535,7 +565,7 @@
       "youtube_id": "3z2cS1h_pYU",
       "thumbnail_url": "https://i.ytimg.com/vi/3z2cS1h_pYU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMbUfI99JDQyhqmTarCNIZaMpJoQ",
       "dictators_mentioned": [
-        "stalin"
+        "fidel castro"
       ],
       "estimated_timestamp": "63:13",
       "estimated_timestamp_sec": 3793,
@@ -562,7 +592,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=1R-fwZr-wXM",
       "youtube_id": "1R-fwZr-wXM",
       "thumbnail_url": "https://i.ytimg.com/vi/1R-fwZr-wXM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCq-AmF2AhGKmCKfVsVHD0dKhMvhQ",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "kim jong"
+      ],
       "estimated_timestamp": "100:45",
       "estimated_timestamp_sec": 6045,
       "position_pct": 94,
@@ -575,7 +607,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=Cm-9TsdLCjA",
       "youtube_id": "Cm-9TsdLCjA",
       "thumbnail_url": "https://i.ytimg.com/vi/Cm-9TsdLCjA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBAQwx9O7hAhQtyl3NBGaC4qJRp1Q",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "gheddafi"
+      ],
       "estimated_timestamp": "0:08",
       "estimated_timestamp_sec": 8,
       "position_pct": 0,
@@ -588,9 +622,7 @@
       "youtube_url": "https://www.youtube.com/watch?v=FRjXJICYUQ4",
       "youtube_id": "FRjXJICYUQ4",
       "thumbnail_url": "https://i.ytimg.com/vi/FRjXJICYUQ4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQr1R9EVA3UWliVod7xsc0VGvRjA",
-      "dictators_mentioned": [
-        "tito"
-      ],
+      "dictators_mentioned": [],
       "estimated_timestamp": "80:30",
       "estimated_timestamp_sec": 4830,
       "position_pct": 89,
@@ -603,7 +635,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=z1MtwWkVheI",
       "youtube_id": "z1MtwWkVheI",
       "thumbnail_url": "https://i.ytimg.com/vi/z1MtwWkVheI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyd9eS8fzelj9y9g0iEt5gUfkdfQ",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "papa francesco"
+      ],
       "estimated_timestamp": "106:10",
       "estimated_timestamp_sec": 6370,
       "position_pct": 84,
@@ -659,7 +693,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=IgwWpFCERQw",
       "youtube_id": "IgwWpFCERQw",
       "thumbnail_url": "https://i.ytimg.com/vi/IgwWpFCERQw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAY2MipXOZoaWQ-kuDzCm00Bd1X3g",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "hitler"
+      ],
       "estimated_timestamp": "93:03",
       "estimated_timestamp_sec": 5583,
       "position_pct": 95,
@@ -673,8 +709,7 @@
       "youtube_id": "M8IfAyT6JXg",
       "thumbnail_url": "https://i.ytimg.com/vi/M8IfAyT6JXg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoSL0y3xXuyEL74oDUOq2X8C643A",
       "dictators_mentioned": [
-        "saddam",
-        "hussein"
+        "saddam"
       ],
       "estimated_timestamp": "114:58",
       "estimated_timestamp_sec": 6898,
@@ -688,7 +723,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=JRNxbapMeVs",
       "youtube_id": "JRNxbapMeVs",
       "thumbnail_url": "https://i.ytimg.com/vi/JRNxbapMeVs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClNzCGeVjQd0WnbE8BpowdxqhMog",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "ceausescu"
+      ],
       "estimated_timestamp": "85:09",
       "estimated_timestamp_sec": 5109,
       "position_pct": 97,
@@ -716,7 +753,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=YpnrFIFl6XQ",
       "youtube_id": "YpnrFIFl6XQ",
       "thumbnail_url": "https://i.ytimg.com/vi/YpnrFIFl6XQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdJ9O3KK2x9s7KvMrt2DHfH5EwxQ",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "ceausescu"
+      ],
       "estimated_timestamp": "74:09",
       "estimated_timestamp_sec": 4449,
       "position_pct": 91,
@@ -729,7 +768,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=kGWLwHHIvlk",
       "youtube_id": "kGWLwHHIvlk",
       "thumbnail_url": "https://i.ytimg.com/vi/kGWLwHHIvlk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoVlrDqIE3XZvAvjMgCnoVf1u6ng",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "freezer"
+      ],
       "estimated_timestamp": "86:46",
       "estimated_timestamp_sec": 5206,
       "position_pct": 72,
@@ -770,7 +811,10 @@
       "youtube_url": "https://www.youtube.com/watch?v=OY58zq6WYN0",
       "youtube_id": "OY58zq6WYN0",
       "thumbnail_url": "https://i.ytimg.com/vi/OY58zq6WYN0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5kzNvAmAUZXElRDd1nzXCza1tcA",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "saddam",
+        "gheddafi"
+      ],
       "estimated_timestamp": "133:47",
       "estimated_timestamp_sec": 8027,
       "position_pct": 93,
@@ -784,6 +828,7 @@
       "youtube_id": "6xXDfPkmBSk",
       "thumbnail_url": "https://i.ytimg.com/vi/6xXDfPkmBSk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDreSTrnKMfuJnMtg8m4r18hC4rqg",
       "dictators_mentioned": [
+        "stalin",
         "franco"
       ],
       "estimated_timestamp": "110:17",
@@ -799,7 +844,7 @@
       "youtube_id": "8dzRKXio3tg",
       "thumbnail_url": "https://i.ytimg.com/vi/8dzRKXio3tg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD0Jf8Oajy-3UE1rxO1DZHfGNA9iw",
       "dictators_mentioned": [
-        "tito"
+        "chavez"
       ],
       "estimated_timestamp": "90:50",
       "estimated_timestamp_sec": 5450,
@@ -813,7 +858,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=R1WCPQnF-Eg",
       "youtube_id": "R1WCPQnF-Eg",
       "thumbnail_url": "https://i.ytimg.com/vi/R1WCPQnF-Eg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdFh1GCYjOvFcUHk77hEJ_MTuJmg",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "kim jong"
+      ],
       "estimated_timestamp": "95:23",
       "estimated_timestamp_sec": 5723,
       "position_pct": 98,
@@ -842,8 +889,8 @@
       "youtube_id": "SdKP7bvCbEI",
       "thumbnail_url": "https://i.ytimg.com/vi/SdKP7bvCbEI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPXRtyxtt73uF1DvTkycXxjVimbw",
       "dictators_mentioned": [
-        "francisco franco",
-        "stalin"
+        "stalin",
+        "franco"
       ],
       "estimated_timestamp": "103:43",
       "estimated_timestamp_sec": 6223,
@@ -857,9 +904,7 @@
       "youtube_url": "https://www.youtube.com/watch?v=h0seANORsN8",
       "youtube_id": "h0seANORsN8",
       "thumbnail_url": "https://i.ytimg.com/vi/h0seANORsN8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvWSPLI_enCsb-QXyCdDwknqJGFg",
-      "dictators_mentioned": [
-        "tito"
-      ],
+      "dictators_mentioned": [],
       "estimated_timestamp": "0:55",
       "estimated_timestamp_sec": 55,
       "position_pct": 1,
@@ -931,7 +976,7 @@
       "youtube_id": "cwMXUtJahNg",
       "thumbnail_url": "https://i.ytimg.com/vi/cwMXUtJahNg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYWg5WNE5F4FfXqzIunUKDsIpp7g",
       "dictators_mentioned": [
-        "gaddafi"
+        "gheddafi"
       ],
       "estimated_timestamp": "129:58",
       "estimated_timestamp_sec": 7798,
@@ -945,7 +990,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=dQSN10rPq_U",
       "youtube_id": "dQSN10rPq_U",
       "thumbnail_url": "https://i.ytimg.com/vi/dQSN10rPq_U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsA6lDVH3OsSTqghfPMj2Cwi5WsA",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "greta garbo"
+      ],
       "estimated_timestamp": "106:53",
       "estimated_timestamp_sec": 6413,
       "position_pct": 99,
@@ -958,7 +1005,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=0AG2avi2D50",
       "youtube_id": "0AG2avi2D50",
       "thumbnail_url": "https://i.ytimg.com/vi/0AG2avi2D50/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-ReuLYMBj1HQsErJugM-EI6rsAw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "kim jong"
+      ],
       "estimated_timestamp": "82:24",
       "estimated_timestamp_sec": 4944,
       "position_pct": 94,
@@ -971,7 +1020,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=dPJ86RCJx4g",
       "youtube_id": "dPJ86RCJx4g",
       "thumbnail_url": "https://i.ytimg.com/vi/dPJ86RCJx4g/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBxOFATJGLqEfP8H9kBqi86ze1A0w",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "saparmurat niyazov"
+      ],
       "estimated_timestamp": "112:21",
       "estimated_timestamp_sec": 6741,
       "position_pct": 97,
@@ -984,7 +1035,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=hxfjpJqvAmo",
       "youtube_id": "hxfjpJqvAmo",
       "thumbnail_url": "https://i.ytimg.com/vi/hxfjpJqvAmo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCn2HqiT27zJAGv3Umplu3GWuA0bw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "mourinho"
+      ],
       "estimated_timestamp": "86:24",
       "estimated_timestamp_sec": 5184,
       "position_pct": 97,
@@ -997,7 +1050,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=u0AlkL3FRsM",
       "youtube_id": "u0AlkL3FRsM",
       "thumbnail_url": "https://i.ytimg.com/vi/u0AlkL3FRsM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJ_Z_MNXxErWtvKuR1nFaOc-RhWw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "pol pot"
+      ],
       "estimated_timestamp": "93:00",
       "estimated_timestamp_sec": 5580,
       "position_pct": 91,
@@ -1010,7 +1065,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=DSeGvsWw7Xw",
       "youtube_id": "DSeGvsWw7Xw",
       "thumbnail_url": "https://i.ytimg.com/vi/DSeGvsWw7Xw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDue0j2GrYmFZhfVMZBGoqBDY4Fng",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "kim jong"
+      ],
       "estimated_timestamp": "88:57",
       "estimated_timestamp_sec": 5337,
       "position_pct": 84,
@@ -1037,8 +1094,8 @@
       "youtube_id": "dqy-1Hdn8Pw",
       "thumbnail_url": "https://i.ytimg.com/vi/dqy-1Hdn8Pw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAchSinOcGgg5M6fxx9MFiPZ2g-OQ",
       "dictators_mentioned": [
-        "saddam",
-        "napoleone"
+        "napoleone",
+        "saddam"
       ],
       "estimated_timestamp": "115:02",
       "estimated_timestamp_sec": 6902,
@@ -1052,7 +1109,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=Jus81lajvCg",
       "youtube_id": "Jus81lajvCg",
       "thumbnail_url": "https://i.ytimg.com/vi/Jus81lajvCg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsmdDe1VhdbR8mb5TFmy9YPMsiiA",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "hitler"
+      ],
       "estimated_timestamp": "108:30",
       "estimated_timestamp_sec": 6510,
       "position_pct": 91,
@@ -1078,7 +1137,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=kePnIWgt3Mk",
       "youtube_id": "kePnIWgt3Mk",
       "thumbnail_url": "https://i.ytimg.com/vi/kePnIWgt3Mk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD3YWdNMI8JFOf6DWa7EmKLNlBuYw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "lenin"
+      ],
       "estimated_timestamp": "84:10",
       "estimated_timestamp_sec": 5050,
       "position_pct": 98,
@@ -1105,8 +1166,7 @@
       "youtube_id": "tASSHFPxPAw",
       "thumbnail_url": "https://i.ytimg.com/vi/tASSHFPxPAw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDG2XUvS1OeKvXkCHGXxG1RAfZHpg",
       "dictators_mentioned": [
-        "kim jong",
-        "tito"
+        "kim jong"
       ],
       "estimated_timestamp": "88:46",
       "estimated_timestamp_sec": 5326,
@@ -1120,7 +1180,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=43qPvJ8VIQs",
       "youtube_id": "43qPvJ8VIQs",
       "thumbnail_url": "https://i.ytimg.com/vi/43qPvJ8VIQs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlDhz5FnawKoLBPHwYEdF5SK93Kw",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "kadyrov"
+      ],
       "estimated_timestamp": "86:35",
       "estimated_timestamp_sec": 5195,
       "position_pct": 95,
@@ -1133,9 +1195,7 @@
       "youtube_url": "https://www.youtube.com/watch?v=iW43dOSvQ-0",
       "youtube_id": "iW43dOSvQ-0",
       "thumbnail_url": "https://i.ytimg.com/vi/iW43dOSvQ-0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLActnY3e2Ce_vzkpe9ctzvZGY6rwA",
-      "dictators_mentioned": [
-        "mobutu"
-      ],
+      "dictators_mentioned": [],
       "estimated_timestamp": "77:29",
       "estimated_timestamp_sec": 4649,
       "position_pct": 96,
@@ -1148,7 +1208,9 @@
       "youtube_url": "https://www.youtube.com/watch?v=KJKhNcwqvjA",
       "youtube_id": "KJKhNcwqvjA",
       "thumbnail_url": "https://i.ytimg.com/vi/KJKhNcwqvjA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNI26Ai6uW_uPo5k3VUtBq_oX6sQ",
-      "dictators_mentioned": [],
+      "dictators_mentioned": [
+        "khamenei"
+      ],
       "estimated_timestamp": "115:42",
       "estimated_timestamp_sec": 6942,
       "position_pct": 97,
@@ -1177,7 +1239,7 @@
       "youtube_id": "LlH6heeCblY",
       "thumbnail_url": "https://i.ytimg.com/vi/LlH6heeCblY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDsi0VEixBdgnA9EwKNo_o2g9OtQw",
       "dictators_mentioned": [
-        "tito"
+        "hitler"
       ],
       "estimated_timestamp": "85:42",
       "estimated_timestamp_sec": 5142,
