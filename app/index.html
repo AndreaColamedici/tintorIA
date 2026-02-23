@@ -3,1363 +3,952 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TintorIA — Cerca in Tintoria</title>
-<meta name="description" content="Cerca in tutte le puntate di Tintoria, il podcast di Daniele Tinti e Stefano Rapone. 234 puntate, 232 trascrizioni, 3.4 milioni di parole indicizzate.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>TintorIA — L'archivio intelligente di Tintoria</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0a0a;
-    --surface: #141414;
-    --surface-2: #1c1c1c;
-    --surface-3: #242424;
-    --border: #2a2a2a;
-    --border-light: #333;
-    --text: #f0f0f0;
-    --text-secondary: #999;
-    --text-muted: #666;
-    --accent: #e63946;
-    --accent-glow: rgba(230, 57, 70, 0.15);
-    --accent-hover: #ff4d5a;
-    --accent-soft: #3a1a1c;
-    --green: #4ade80;
-    --green-soft: rgba(74, 222, 128, 0.12);
-    --yellow: #fbbf24;
-    --blue: #60a5fa;
-    --purple: #a78bfa;
-    --radius: 12px;
-    --radius-sm: 8px;
-    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --max-w: 1200px;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --mono: 'JetBrains Mono', monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: var(--font);
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-  }
-  ::selection { background: var(--accent); color: white; }
-  
-  /* ---- HERO ---- */
-  .hero {
-    position: relative;
-    padding: 3rem 1.5rem 2.5rem;
-    text-align: center;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, var(--accent-glow) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    position: relative;
-  }
-  .hero-title span { color: var(--accent); }
-  .hero-sub {
-    color: var(--text-secondary);
-    margin-top: 0.6rem;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .hero-stat {
-    text-align: center;
-  }
-  .hero-stat-val {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-  }
-  .hero-stat-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-top: 0.1rem;
-  }
-  
-  /* ---- SEARCH ---- */
-  .search-section {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  .search-container {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  .search-icon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    pointer-events: none;
-    font-size: 1.1rem;
-  }
-  .search-input {
-    width: 100%;
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0.9rem 1rem 0.9rem 2.8rem;
-    color: var(--text);
-    font-size: 1rem;
-    font-family: var(--font);
-    outline: none;
-    transition: border-color var(--transition), box-shadow var(--transition);
-  }
-  .search-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
-  .search-input::placeholder { color: var(--text-muted); }
-  .search-hint {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-    padding-left: 0.2rem;
-  }
-  .search-hint em { color: var(--accent); font-style: normal; font-family: var(--mono); font-size: 0.72rem; }
-  
-  /* ---- TABS / VIEW MODE ---- */
-  .view-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    max-width: var(--max-w);
-    margin-left: auto; margin-right: auto;
-    padding: 0 1.5rem;
-  }
-  .view-tabs {
-    display: flex;
-    background: var(--surface);
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    overflow: hidden;
-  }
-  .view-tab {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.82rem;
-    font-family: var(--font);
-    font-weight: 500;
-    color: var(--text-muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: all var(--transition);
-  }
-  .view-tab:hover { color: var(--text-secondary); }
-  .view-tab.active {
-    background: var(--accent);
-    color: white;
-  }
-  .sort-select {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 0.45rem 0.7rem;
-    color: var(--text-secondary);
-    font-size: 0.82rem;
-    font-family: var(--font);
-    cursor: pointer;
-    outline: none;
-  }
-  .sort-select:focus { border-color: var(--accent); }
-  .results-count {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-left: auto;
-  }
-  
-  /* ---- FILTERS ---- */
-  .filters-bar {
-    max-width: var(--max-w);
-    margin: 0 auto 1rem;
-    padding: 0 1.5rem;
-  }
-  .filters-row {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  .filters-label {
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    margin-right: 0.3rem;
-    font-weight: 600;
-  }
-  .chip {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 0.28rem 0.65rem;
-    font-size: 0.75rem;
-    font-family: var(--font);
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all var(--transition);
-    white-space: nowrap;
-  }
-  .chip:hover { border-color: var(--accent); color: var(--text); }
-  .chip.active {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    color: var(--accent);
-    font-weight: 500;
-  }
-  .chip-count {
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    margin-left: 0.2rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .clear-btn {
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-size: 0.75rem;
-    font-family: var(--font);
-    cursor: pointer;
-    padding: 0.28rem 0.5rem;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  
-  /* ---- CARD GRID ---- */
-  .grid {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.5rem 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
-  }
-  @media (max-width: 700px) {
-    .grid { grid-template-columns: 1fr; }
-  }
-  
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: all var(--transition);
-    display: flex;
-    flex-direction: column;
-  }
-  .card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .card-thumb-wrap {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    background: var(--surface-2);
-  }
-  .card-thumb {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s;
-  }
-  .card:hover .card-thumb { transform: scale(1.03); }
-  .card-ep-badge {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.6rem;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(4px);
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 6px;
-    font-variant-numeric: tabular-nums;
-  }
-  .card-duration-badge {
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    background: rgba(0,0,0,0.85);
-    color: white;
-    font-size: 0.72rem;
-    font-family: var(--mono);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-  }
-  .card-body {
-    padding: 0.9rem 1rem 1rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .card-guest {
-    font-size: 1.15rem;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 0.25rem;
-  }
-  .card-prof {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-  }
-  .card-meta-row {
-    display: flex;
-    gap: 0.8rem;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 0.6rem;
-    align-items: center;
-  }
-  .card-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  .card-tags {
-    display: flex;
-    gap: 0.3rem;
-    flex-wrap: wrap;
-    margin-top: auto;
-  }
-  .card-tag {
-    background: var(--surface-3);
-    color: var(--text-muted);
-    border-radius: 4px;
-    padding: 0.12rem 0.4rem;
-    font-size: 0.68rem;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .card-tag:hover {
-    background: var(--accent);
-    color: white;
-  }
-  
-  /* ---- TRANSCRIPT MATCH ---- */
-  .card-transcript {
-    background: var(--green-soft);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 0.65rem;
-    margin-top: 0.6rem;
-    font-size: 0.78rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-  }
-  .card-transcript-label {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: var(--green);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.25rem;
-  }
-  .card-transcript mark {
-    background: rgba(74, 222, 128, 0.25);
-    color: var(--green);
-    padding: 0 2px;
-    border-radius: 2px;
-  }
-  
-  /* ---- LIST VIEW ---- */
-  .list {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .list-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 0.7rem 1rem;
-    transition: all var(--transition);
-    text-decoration: none;
-    color: inherit;
-  }
-  .list-item:hover {
-    border-color: var(--accent);
-    background: var(--surface-2);
-  }
-  .list-ep {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.82rem;
-    min-width: 3rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .list-guest {
-    font-weight: 600;
-    font-size: 0.95rem;
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .list-prof {
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    flex-shrink: 0;
-    display: none;
-  }
-  @media (min-width: 700px) {
-    .list-prof { display: block; min-width: 120px; }
-  }
-  .list-meta {
-    display: flex;
-    gap: 0.8rem;
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
-  }
-  .list-transcript-hint {
-    color: var(--green);
-    font-size: 0.72rem;
-    flex-shrink: 0;
-  }
-  
-  /* ---- EPISODE DETAIL MODAL ---- */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2rem 1rem;
-    overflow-y: auto;
-  }
-  .modal {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    max-width: 800px;
-    width: 100%;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
-    position: relative;
-  }
-  .modal-close {
-    position: sticky;
-    top: 0;
-    float: right;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin: 0.8rem 0.8rem 0 0;
-    z-index: 10;
-    transition: all var(--transition);
-  }
-  .modal-close:hover { background: var(--accent); color: white; border-color: var(--accent); }
-  .modal-header {
-    padding: 1.5rem 1.5rem 0;
-  }
-  .modal-ep {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
-  }
-  .modal-guest {
-    font-size: 1.6rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
-  }
-  .modal-prof {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-  }
-  .modal-meta {
-    display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    padding: 0.8rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .modal-tags {
-    display: flex;
-    gap: 0.3rem;
-    flex-wrap: wrap;
-    padding: 0.8rem 1.5rem;
-  }
-  .modal-tag {
-    background: var(--surface-3);
-    color: var(--text-secondary);
-    border-radius: 6px;
-    padding: 0.2rem 0.55rem;
-    font-size: 0.78rem;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .modal-tag:hover { background: var(--accent); color: white; }
-  .modal-actions {
-    display: flex;
-    gap: 0.6rem;
-    padding: 0.8rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .modal-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 0.55rem 1rem;
-    font-size: 0.85rem;
-    font-family: var(--font);
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background var(--transition);
-  }
-  .modal-btn:hover { background: var(--accent-hover); }
-  .modal-btn-secondary {
-    background: var(--surface-3);
-    color: var(--text-secondary);
-  }
-  .modal-btn-secondary:hover { background: var(--surface-2); color: var(--text); }
-  
-  /* ---- TRANSCRIPT SECTION ---- */
-  .transcript-section {
-    padding: 1.2rem 1.5rem 1.5rem;
-  }
-  .transcript-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-  }
-  .transcript-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .transcript-title-icon { color: var(--green); }
-  .transcript-search {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.35rem 0.6rem;
-    color: var(--text);
-    font-size: 0.82rem;
-    font-family: var(--font);
-    outline: none;
-    width: 180px;
-    transition: border-color var(--transition);
-  }
-  .transcript-search:focus { border-color: var(--accent); }
-  .transcript-body {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 1rem 1.2rem;
-    max-height: 400px;
-    overflow-y: auto;
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-  .transcript-body mark {
-    background: rgba(230, 57, 70, 0.25);
-    color: var(--accent);
-    padding: 0 2px;
-    border-radius: 2px;
-  }
-  .transcript-info {
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-  .transcript-unavailable {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    font-style: italic;
-    padding: 1rem 0;
-  }
-  
-  /* ---- RANDOM EPISODE ---- */
-  .random-bar {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    margin-bottom: 1rem;
-  }
-  .random-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 0.45rem 0.85rem;
-    font-size: 0.82rem;
-    font-family: var(--font);
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all var(--transition);
-  }
-  .random-btn:hover { border-color: var(--accent); color: var(--accent); }
-  
-  /* ---- NO RESULTS ---- */
-  .no-results {
-    text-align: center;
-    color: var(--text-muted);
-    padding: 4rem 1rem;
-    font-size: 1rem;
-  }
-  .no-results-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-  .no-results-sub { font-size: 0.85rem; margin-top: 0.4rem; }
-  
-  /* ---- FOOTER ---- */
-  .footer {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    border-top: 1px solid var(--border);
-    margin-top: 2rem;
-    line-height: 1.7;
-  }
-  .footer a { color: var(--accent); text-decoration: none; }
-  .footer a:hover { text-decoration: underline; }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--surface:#13131a;--surface2:#1a1a25;--surface3:#22222f;
+  --border:#2a2a3a;--text:#e8e8f0;--text2:#9898a8;--text3:#686878;
+  --accent:#ff6b35;--accent2:#ff8c5a;--accent-glow:rgba(255,107,53,0.15);
+  --green:#4ade80;--red:#f87171;--blue:#60a5fa;--purple:#a78bfa;--yellow:#fbbf24;
+  --pink:#f472b6;--cyan:#22d3ee;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent2)}
 
-  /* ---- LOADING ---- */
-  .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    color: var(--text-muted);
-    font-size: 1rem;
-  }
-  .spinner {
-    width: 24px; height: 24px;
-    border: 2.5px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-    margin-right: 0.6rem;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  
-  /* ---- BACK TO TOP ---- */
-  .back-to-top {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: all var(--transition);
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
-    z-index: 100;
-  }
-  .back-to-top.visible { opacity: 1; pointer-events: auto; }
-  .back-to-top:hover { transform: translateY(-2px); }
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--text3)}
+
+/* Navigation */
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;height:56px;gap:8px}
+.nav-logo{font-weight:800;font-size:20px;color:var(--accent);margin-right:24px;cursor:pointer}
+.nav-tab{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;transition:all 0.2s;border:none;background:none}
+.nav-tab:hover{color:var(--text);background:var(--surface2)}
+.nav-tab.active{color:var(--accent);background:var(--accent-glow)}
+.nav-search{margin-left:auto;position:relative}
+.nav-search input{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px 8px 36px;color:var(--text);font-size:14px;width:240px;transition:all 0.3s}
+.nav-search input:focus{outline:none;border-color:var(--accent);width:320px;background:var(--surface3)}
+.nav-search .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
+.nav-shortcut{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text3);background:var(--surface);padding:2px 6px;border-radius:4px;border:1px solid var(--border);font-family:'JetBrains Mono'}
+
+/* Hero */
+.hero{padding:48px 24px 32px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 80%,var(--accent-glow) 0%,transparent 50%);pointer-events:none}
+.hero h1{font-size:48px;font-weight:900;margin-bottom:8px;position:relative}
+.hero h1 span{color:var(--accent)}
+.hero .subtitle{color:var(--text2);font-size:16px;margin-bottom:24px;position:relative}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;position:relative}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:28px;font-weight:800;color:var(--accent)}
+.hero-stat .label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+/* Main content */
+.main{max-width:1400px;margin:0 auto;padding:0 24px 80px}
+
+/* Section headers */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin:32px 0 16px;flex-wrap:wrap;gap:12px}
+.section-title{font-size:22px;font-weight:700}
+.section-subtitle{color:var(--text2);font-size:14px}
+
+/* Filters bar */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.filter-chip{padding:6px 14px;border-radius:20px;font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.filter-chip:hover{border-color:var(--text3);color:var(--text)}
+.filter-chip.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+.filter-chip .count{font-size:11px;opacity:0.6;margin-left:4px}
+
+/* Controls */
+.controls{display:flex;gap:8px;align-items:center}
+.control-btn{padding:6px 12px;border-radius:6px;font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all 0.2s}
+.control-btn:hover{border-color:var(--text3);color:var(--text)}
+.control-btn.active{border-color:var(--accent);color:var(--accent)}
+.sort-select{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer}
+
+/* Episode grid */
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.ep-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.2s}
+.ep-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.ep-card .thumb{position:relative;padding-top:56.25%;background:var(--surface2)}
+.ep-card .thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.ep-card .thumb .duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.8);padding:2px 6px;border-radius:4px;font-size:12px;font-family:'JetBrains Mono'}
+.ep-card .thumb .ep-num{position:absolute;top:8px;left:8px;background:var(--accent);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700}
+.ep-card .thumb .fav-btn{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.6);border:none;color:var(--text3);font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.ep-card .thumb .fav-btn:hover,.ep-card .thumb .fav-btn.faved{color:var(--red)}
+.ep-card .info{padding:12px 14px}
+.ep-card .info .guest{font-weight:600;font-size:15px;margin-bottom:4px;line-height:1.3}
+.ep-card .info .meta{display:flex;gap:8px;font-size:12px;color:var(--text3);margin-bottom:8px;flex-wrap:wrap}
+.ep-card .info .tags{display:flex;gap:4px;flex-wrap:wrap}
+.ep-card .info .tag{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--surface2);color:var(--text3);cursor:pointer;transition:all 0.15s}
+.ep-card .info .tag:hover{color:var(--accent);background:var(--accent-glow)}
+.ep-card .info .tag.ambito{color:var(--blue);background:rgba(96,165,250,0.1)}
+.ep-card .cid-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:2px 8px;border-radius:10px;margin-top:4px}
+
+/* Episode list */
+.ep-list .ep-row{display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent}
+.ep-list .ep-row:hover{background:var(--surface);border-color:var(--border)}
+.ep-list .ep-row .num{font-size:13px;color:var(--text3);width:40px;text-align:right;font-family:'JetBrains Mono'}
+.ep-list .ep-row .guest{flex:1;font-weight:500}
+.ep-list .ep-row .meta-item{font-size:13px;color:var(--text3);min-width:60px;text-align:right}
+
+/* Modal */
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;display:flex;justify-content:center;overflow-y:auto;padding:24px}
+.modal{background:var(--bg);border:1px solid var(--border);border-radius:16px;width:100%;max-width:900px;margin:auto;position:relative;max-height:calc(100vh - 48px);overflow-y:auto}
+.modal-close{position:sticky;top:16px;float:right;margin-right:16px;z-index:10;background:var(--surface2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+.modal-hero{position:relative;padding-top:40%}
+.modal-hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.modal-hero .overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,var(--bg))}
+.modal-body{padding:0 24px 24px}
+.modal-title{font-size:28px;font-weight:800;margin-bottom:4px}
+.modal-guest{font-size:18px;color:var(--text2);margin-bottom:16px}
+.modal-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:14px;color:var(--text3)}
+.modal-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.modal-tags .tag{padding:4px 12px;border-radius:16px;font-size:13px;background:var(--surface2);color:var(--text2);cursor:pointer}
+.modal-tags .tag:hover{color:var(--accent)}
+.modal-tags .tag.ambito{color:var(--blue);background:rgba(96,165,250,0.1)}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent2)}
+.btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-cid{background:rgba(251,191,36,0.15);border:1px solid var(--yellow);color:var(--yellow)}.btn-cid:hover{background:rgba(251,191,36,0.25)}
+
+/* Transcript */
+.transcript-section{margin-top:20px;border-top:1px solid var(--border);padding-top:16px}
+.transcript-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;color:var(--text2);font-size:14px;font-weight:500}
+.transcript-toggle:hover{color:var(--text)}
+.transcript-search{margin:12px 0;position:relative}
+.transcript-search input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px}
+.transcript-search input:focus{outline:none;border-color:var(--accent)}
+.transcript-text{font-size:14px;line-height:1.8;color:var(--text2);max-height:500px;overflow-y:auto;padding:12px;background:var(--surface);border-radius:8px;font-family:'Inter',sans-serif;white-space:pre-wrap}
+
+/* CID Section */
+.cid-section{margin-top:24px}
+.cid-intro{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(255,107,53,0.08));border:1px solid rgba(251,191,36,0.2);border-radius:16px;padding:24px;margin-bottom:20px}
+.cid-intro h3{font-size:20px;margin-bottom:8px}
+.cid-intro p{color:var(--text2);font-size:14px;line-height:1.6}
+.cid-stats{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
+.cid-stat{text-align:center}
+.cid-stat .n{font-size:24px;font-weight:800;color:var(--yellow)}
+.cid-stat .l{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
+.cid-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.2s}
+.cid-card:hover{border-color:var(--yellow);transform:translateY(-2px)}
+.cid-card .cid-top{display:flex;gap:12px;padding:14px}
+.cid-card .cid-thumb{width:120px;height:68px;border-radius:6px;object-fit:cover;flex-shrink:0}
+.cid-card .cid-info{flex:1;min-width:0}
+.cid-card .cid-guest{font-weight:600;font-size:14px;margin-bottom:2px}
+.cid-card .cid-meta{font-size:12px;color:var(--text3)}
+.cid-card .cid-preview{font-size:12px;color:var(--text3);padding:0 14px 12px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cid-card .story-badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin-top:4px}
+.cid-card .story-badge.yes{color:var(--green);background:rgba(74,222,128,0.1)}
+.cid-card .story-badge.no{color:var(--red);background:rgba(248,113,113,0.1)}
+
+/* Guests Section */
+.guest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.guest-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all 0.2s}
+.guest-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.guest-card .g-name{font-weight:600;font-size:16px;margin-bottom:4px}
+.guest-card .g-count{color:var(--accent);font-size:13px;margin-bottom:8px}
+.guest-card .g-episodes{font-size:12px;color:var(--text3);line-height:1.6}
+
+/* Stats Section */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all 0.2s}
+.stat-card:hover{border-color:var(--accent)}
+.stat-card .stat-emoji{font-size:28px;margin-bottom:8px}
+.stat-card .stat-label{font-size:13px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.stat-card .stat-value{font-size:18px;font-weight:700;margin-bottom:4px}
+.stat-card .stat-detail{font-size:13px;color:var(--text2)}
+
+/* Discovery flow */
+.discovery{text-align:center;padding:32px 0}
+.discovery h3{font-size:24px;font-weight:700;margin-bottom:8px}
+.discovery p{color:var(--text2);margin-bottom:24px}
+.discovery-step{margin-bottom:24px}
+.discovery-q{font-size:16px;font-weight:500;margin-bottom:12px}
+.discovery-opts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.discovery-opt{padding:10px 20px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;transition:all 0.2s;font-size:14px}
+.discovery-opt:hover{border-color:var(--accent);color:var(--accent)}
+.discovery-opt.selected{border-color:var(--accent);background:var(--accent-glow);color:var(--accent)}
+.discovery-result{background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:24px;max-width:500px;margin:0 auto;cursor:pointer;transition:all 0.2s}
+.discovery-result:hover{transform:scale(1.02)}
+
+/* Timeline */
+.timeline{margin:24px 0;padding:16px 0}
+.timeline-bar{display:flex;height:48px;border-radius:8px;overflow:hidden;gap:2px}
+.timeline-segment{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;cursor:pointer;transition:all 0.2s;border-radius:4px;min-width:16px}
+.timeline-segment:hover{background:var(--surface2)}
+.timeline-segment .bar{width:100%;background:var(--accent);border-radius:2px;transition:all 0.2s;min-height:2px}
+.timeline-segment:hover .bar{background:var(--accent2)}
+.timeline-segment .label{font-size:10px;color:var(--text3);margin-top:4px;white-space:nowrap}
+.timeline-segment.active .bar{background:var(--yellow)}
+
+/* Favorites section */
+.fav-empty{text-align:center;padding:48px;color:var(--text3)}
+.fav-empty .icon{font-size:48px;margin-bottom:12px}
+
+/* Search results */
+.search-results{margin-top:8px}
+.search-result{padding:12px 16px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent;margin-bottom:4px}
+.search-result:hover{background:var(--surface);border-color:var(--border)}
+.search-result .sr-guest{font-weight:600;margin-bottom:4px}
+.search-result .sr-snippet{font-size:13px;color:var(--text2);line-height:1.5}
+.search-result mark{background:var(--accent-glow);color:var(--accent);padding:0 2px;border-radius:2px}
+
+/* Back to top */
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;opacity:0;transition:all 0.3s;z-index:50;box-shadow:0 4px 16px rgba(255,107,53,0.3)}
+.back-top.visible{opacity:1}
+.back-top:hover{transform:scale(1.1)}
+
+/* Count badge */
+.results-count{font-size:13px;color:var(--text3);margin-bottom:12px}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:32px}
+  .hero-stats{gap:16px}
+  .hero-stat .num{font-size:22px}
+  .nav-search input{width:160px}.nav-search input:focus{width:200px}
+  .ep-grid{grid-template-columns:1fr}
+  .modal{margin:0;border-radius:12px 12px 0 0;max-height:100vh}
+  .nav-tab{padding:6px 10px;font-size:13px}
+  .nav-shortcut{display:none}
+  .stats-grid{grid-template-columns:1fr}
+}
+
+/* Loading */
+.loading{text-align:center;padding:48px;color:var(--text3)}
+.spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <div id="root"></div>
-<script>
-async function loadData() {
-  if (window.__EPISODES_DATA__) return window.__EPISODES_DATA__;
-  try {
-    let res = await fetch('../data/episodes_tagged.json');
-    if (!res.ok) res = await fetch('../data/episodes.json');
-    return await res.json();
-  } catch(e) {
-    console.error('Could not load data', e);
-    return { meta: {}, episodes: [], extras: [] };
-  }
-}
-async function loadTranscript(epNum) {
-  try {
-    const res = await fetch('../data/transcripts/' + String(epNum).padStart(3,'0') + '.txt');
-    if (!res.ok) return null;
-    return await res.text();
-  } catch(e) { return null; }
-}
-</script>
 <script type="text/babel">
-const { useState, useEffect, useMemo, useCallback, useRef } = React;
+const {useState, useEffect, useMemo, useCallback, useRef} = React;
 
-function formatViews(n) {
-  if (!n) return '0';
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
-  if (n >= 1_000) return Math.round(n / 1_000) + 'K';
-  return n.toString();
-}
+// ========== UTILITIES ==========
+const fmt = n => n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n.toString();
+const fmtDate = d => {if(!d)return'';const[y,m,dd]=d.split('-');const months=['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];return`${parseInt(dd)} ${months[parseInt(m)-1]} ${y}`};
+const fmtDur = s => {const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`:`${m}:${String(ss).padStart(2,'0')}`};
 
-function formatDate(d) {
-  if (!d) return '';
-  const [y, m, day] = d.split('-');
-  const months = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
-  return `${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
-}
-
-function formatDuration(s) {
-  if (!s) return '';
-  const h = Math.floor(s / 3600);
-  const m = Math.floor((s % 3600) / 60);
-  return h > 0 ? `${h}h ${m}m` : `${m}m`;
-}
-
-function highlightText(text, query) {
+function highlight(text, query) {
   if (!query || query.length < 3) return text;
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const parts = text.split(new RegExp(`(${escaped})`, 'gi'));
-  return parts.map((part, i) =>
-    part.toLowerCase() === query.toLowerCase()
-      ? React.createElement('mark', { key: i }, part)
-      : part
-  );
+  const parts = text.split(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'));
+  return parts.map((p,i) => p.toLowerCase()===query.toLowerCase() ? React.createElement('mark',{key:i},p) : p);
 }
 
-function getSnippet(text, query, contextChars = 120) {
-  if (!text || !query) return '';
-  const lower = text.toLowerCase();
-  const qLower = query.toLowerCase();
-  const idx = lower.indexOf(qLower);
-  if (idx === -1) return text.slice(0, 250) + '...';
-  const start = Math.max(0, idx - contextChars);
-  const end = Math.min(text.length, idx + query.length + contextChars);
-  let snippet = '';
-  if (start > 0) snippet += '...';
-  snippet += text.slice(start, end);
-  if (end < text.length) snippet += '...';
-  return snippet;
+function getSnippet(text, query, contextLen=80) {
+  if (!query || !text) return '';
+  const idx = text.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return text.slice(0, 200);
+  const start = Math.max(0, idx - contextLen);
+  const end = Math.min(text.length, idx + query.length + contextLen);
+  return (start > 0 ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
 }
 
-// ---- EPISODE DETAIL MODAL ----
-function EpisodeModal({ episode, onClose, onTagClick, searchQuery }) {
+// ========== FAVORITES ==========
+function loadFavs() { try { return JSON.parse(localStorage.getItem('tintoria_favs')||'[]') } catch(e) { return [] } }
+function saveFavs(f) { localStorage.setItem('tintoria_favs', JSON.stringify(f)) }
+function toggleFav(id, favs, setFavs) {
+  const next = favs.includes(id) ? favs.filter(f=>f!==id) : [...favs, id];
+  setFavs(next); saveFavs(next);
+}
+
+// ========== GUEST INDEX ==========
+function buildGuestIndex(episodes) {
+  const idx = {};
+  episodes.forEach(ep => {
+    if (!ep.is_numbered) return;
+    let g = ep.guest || '';
+    const hasRapone = /rapone/i.test(g);
+    g = g.replace(/^LIVE\s+/, '');
+    g = g.replace(/\s*\(con Stefano Rapone\)/i, '');
+    g = g.replace(/\s*con \(Stefano Rapone\)/i, '');
+    g = g.replace(/\s*feat\s+Stefano Rapone/i, '');
+    const parts = g.split(/\s*[&,]\s*|\s+e\s+/);
+    parts.forEach(p => {
+      let name = p.trim();
+      if (!name || name.length < 3) return;
+      if (name.includes(' aka ')) {
+        const [a, b] = name.split(' aka ');
+        if (!idx[a.trim()]) idx[a.trim()] = [];
+        idx[a.trim()].push(ep);
+      }
+      if (!idx[name]) idx[name] = [];
+      idx[name].push(ep);
+    });
+    if (hasRapone) {
+      if (!idx['Stefano Rapone']) idx['Stefano Rapone'] = [];
+      idx['Stefano Rapone'].push(ep);
+    }
+  });
+  // Deduplicate
+  Object.keys(idx).forEach(k => {
+    const seen = new Set();
+    idx[k] = idx[k].filter(ep => { if(seen.has(ep.episode_number)) return false; seen.add(ep.episode_number); return true; });
+    idx[k].sort((a,b) => a.episode_number - b.episode_number);
+  });
+  return idx;
+}
+
+// ========== STATS ==========
+function buildStats(episodes, meta) {
+  const numbered = episodes.filter(e => e.is_numbered);
+  const withViews = numbered.filter(e => e.view_count);
+  const sorted = [...withViews].sort((a,b) => b.view_count - a.view_count);
+  const byDuration = [...numbered].filter(e=>e.duration_seconds).sort((a,b) => b.duration_seconds - a.duration_seconds);
+  const totalWords = meta.total_transcript_words || 0;
+  
+  // Episodes per year
+  const perYear = {};
+  numbered.forEach(ep => { const y = (ep.upload_date||'').slice(0,4); if(y) perYear[y] = (perYear[y]||0)+1; });
+  const busiestYear = Object.entries(perYear).sort((a,b)=>b[1]-a[1])[0];
+  
+  // Total hours
+  const totalSec = numbered.reduce((s,e) => s + (e.duration_seconds||0), 0);
+  const totalHours = Math.round(totalSec / 3600);
+  
+  return [
+    { emoji:'👑', label:'Episodio più visto', value: `#${sorted[0]?.episode_number} ${sorted[0]?.guest}`, detail:`${fmt(sorted[0]?.view_count)} visualizzazioni`, ep: sorted[0] },
+    { emoji:'💎', label:'Gemma nascosta', value: `#${sorted[sorted.length-1]?.episode_number} ${sorted[sorted.length-1]?.guest}`, detail:`Solo ${fmt(sorted[sorted.length-1]?.view_count)} visualizzazioni`, ep: sorted[sorted.length-1] },
+    { emoji:'🕐', label:'Maratona più lunga', value: `#${byDuration[0]?.episode_number} ${byDuration[0]?.guest}`, detail:fmtDur(byDuration[0]?.duration_seconds), ep: byDuration[0] },
+    { emoji:'⚡', label:'Episodio più breve', value: `#${byDuration[byDuration.length-1]?.episode_number} ${byDuration[byDuration.length-1]?.guest}`, detail:fmtDur(byDuration[byDuration.length-1]?.duration_seconds), ep: byDuration[byDuration.length-1] },
+    { emoji:'📅', label:'Anno più prolifico', value: busiestYear ? `${busiestYear[0]}` : '?', detail: busiestYear ? `${busiestYear[1]} episodi pubblicati` : '' },
+    { emoji:'🎙️', label:'Ore totali di podcast', value: `${totalHours} ore`, detail:`${totalWords ? (totalWords/1e6).toFixed(1)+'M' : '?'} parole trascritte` },
+    { emoji:'💩', label:'Rubrica "Cacare in discoteca"', value: `${meta.rubrica_cid_count || 0} episodi`, detail:`${meta.rubrica_cid_stories || 0} ospiti hanno raccontato` },
+    { emoji:'👥', label:'Ospiti unici', value: `${meta.unique_guests || 0}`, detail:`Da ${Object.keys(perYear).sort()[0]||'?'} a oggi` },
+  ];
+}
+
+// ========== EPISODE MODAL ==========
+function EpisodeModal({ ep, onClose, onTagClick, favs, setFavs, cidData }) {
   const [transcript, setTranscript] = useState(null);
-  const [loadingTranscript, setLoadingTranscript] = useState(false);
-  const [transcriptQuery, setTranscriptQuery] = useState(searchQuery || '');
-  const bodyRef = useRef(null);
+  const [showTranscript, setShowTranscript] = useState(false);
+  const [tSearch, setTSearch] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (episode && episode.has_transcription) {
-      setLoadingTranscript(true);
-      loadTranscript(episode.episode_number).then(t => {
-        setTranscript(t);
-        setLoadingTranscript(false);
-      });
-    }
-    // Reset transcript query to search query
-    setTranscriptQuery(searchQuery || '');
-  }, [episode, searchQuery]);
+  useEffect(() => { document.body.style.overflow='hidden'; return()=>{document.body.style.overflow=''}; }, []);
+  useEffect(() => { const h=e=>{if(e.key==='Escape')onClose()}; window.addEventListener('keydown',h); return()=>window.removeEventListener('keydown',h); }, [onClose]);
 
-  useEffect(() => {
-    const handler = (e) => { if (e.key === 'Escape') onClose(); };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, [onClose]);
-
-  // Scroll to first match in transcript
-  useEffect(() => {
-    if (transcript && transcriptQuery && bodyRef.current) {
-      const firstMark = bodyRef.current.querySelector('mark');
-      if (firstMark) {
-        firstMark.scrollIntoView({ block: 'center', behavior: 'smooth' });
-      }
-    }
-  }, [transcript, transcriptQuery]);
-
-  if (!episode) return null;
-  const ep = episode;
-
-  // Process transcript for display
-  let transcriptDisplay = null;
-  if (transcript) {
-    // Remove the title line
-    let lines = transcript.split('\n');
-    if (lines[0] && lines[0].startsWith('#')) lines = lines.slice(2);
-    let text = lines.join('\n').trim();
-
-    if (transcriptQuery && transcriptQuery.length >= 3) {
-      transcriptDisplay = highlightText(text, transcriptQuery);
-    } else {
-      transcriptDisplay = text;
-    }
-  }
-
-  return (
-    <div className="modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="modal">
-        <button className="modal-close" onClick={onClose}>✕</button>
-        <div className="modal-header">
-          <div className="modal-ep">Puntata #{ep.episode_number}</div>
-          <div className="modal-guest">{ep.guest}</div>
-          {ep.professione && ep.professione.length > 0 && (
-            <div className="modal-prof">{ep.professione.join(', ')}</div>
-          )}
-        </div>
-        <div className="modal-meta">
-          {ep.upload_date && <span>📅 {formatDate(ep.upload_date)}</span>}
-          <span>👁 {formatViews(ep.view_count)} visualizzazioni</span>
-          <span>⏱ {ep.duration_formatted || formatDuration(ep.duration_seconds)}</span>
-          {ep.transcript_words && <span>📝 {ep.transcript_words.toLocaleString('it')} parole trascritte</span>}
-        </div>
-        {ep.tags && ep.tags.length > 0 && (
-          <div className="modal-tags">
-            {ep.ambito && ep.ambito.map(a => (
-              <span key={a} className="modal-tag" style={{borderLeft: '2px solid var(--accent)', borderRadius: '2px 6px 6px 2px'}}
-                onClick={() => { onTagClick('ambito', a); onClose(); }}>{a}</span>
-            ))}
-            {ep.tags.map(t => (
-              <span key={t} className="modal-tag"
-                onClick={() => { onTagClick('tag', t); onClose(); }}>{t}</span>
-            ))}
-          </div>
-        )}
-        <div className="modal-actions">
-          <a className="modal-btn" href={ep.youtube_url} target="_blank" rel="noopener noreferrer">
-            ▶ Guarda su YouTube
-          </a>
-        </div>
-
-        {/* TRANSCRIPT */}
-        <div className="transcript-section">
-          <div className="transcript-header">
-            <div className="transcript-title">
-              <span className="transcript-title-icon">📝</span>
-              Trascrizione
-            </div>
-            {transcript && (
-              <input
-                className="transcript-search"
-                placeholder="Cerca nella puntata..."
-                value={transcriptQuery}
-                onChange={e => setTranscriptQuery(e.target.value)}
-              />
-            )}
-          </div>
-          {loadingTranscript ? (
-            <div style={{display:'flex',alignItems:'center',padding:'1rem 0',color:'var(--text-muted)'}}>
-              <div className="spinner"></div> Caricamento trascrizione...
-            </div>
-          ) : transcript ? (
-            <>
-              <div className="transcript-body" ref={bodyRef}>
-                {transcriptDisplay}
-              </div>
-              <div className="transcript-info">
-                {ep.transcript_words?.toLocaleString('it')} parole — trascrizione automatica da sottotitoli YouTube
-              </div>
-            </>
-          ) : (
-            <div className="transcript-unavailable">
-              Trascrizione non disponibile per questa puntata.
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ---- EPISODE CARD ----
-function EpisodeCard({ ep, onClick, transcriptMatch, searchQuery, onTagClick }) {
-  return (
-    <div className="card" onClick={() => onClick(ep)}>
-      <div className="card-thumb-wrap">
-        <img className="card-thumb" src={ep.thumbnail_url} alt={ep.guest} loading="lazy" />
-        <div className="card-ep-badge">#{ep.episode_number}</div>
-        {ep.duration_formatted && <div className="card-duration-badge">{ep.duration_formatted}</div>}
-      </div>
-      <div className="card-body">
-        <div className="card-guest">{ep.guest}</div>
-        {ep.professione && ep.professione.length > 0 && (
-          <div className="card-prof">{ep.professione.join(', ')}</div>
-        )}
-        <div className="card-meta-row">
-          {ep.upload_date && <span className="card-meta-item">{formatDate(ep.upload_date)}</span>}
-          <span className="card-meta-item">{formatViews(ep.view_count)} views</span>
-          {ep.has_transcription && <span className="card-meta-item" style={{color:'var(--green)'}}>📝</span>}
-        </div>
-        {transcriptMatch && searchQuery && searchQuery.length >= 4 && (
-          <div className="card-transcript">
-            <div className="card-transcript-label">Menzionato nella trascrizione</div>
-            {transcriptMatch.snippet && highlightText(transcriptMatch.snippet, searchQuery)}
-          </div>
-        )}
-        {ep.tags && ep.tags.length > 0 && (
-          <div className="card-tags">
-            {ep.tags.slice(0, 5).map(t => (
-              <span key={t} className="card-tag" onClick={(e) => {
-                e.stopPropagation();
-                onTagClick('tag', t);
-              }}>{t}</span>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ---- EPISODE LIST ITEM ----
-function EpisodeListItem({ ep, onClick, transcriptMatch, searchQuery }) {
-  return (
-    <div className="list-item" onClick={() => onClick(ep)}>
-      <div className="list-ep">#{ep.episode_number}</div>
-      <div className="list-guest">{ep.guest}</div>
-      <div className="list-prof">{ep.professione ? ep.professione[0] : ''}</div>
-      {transcriptMatch && searchQuery && searchQuery.length >= 4 && (
-        <div className="list-transcript-hint" title="Trovato nella trascrizione">📝 trovato</div>
-      )}
-      <div className="list-meta">
-        {ep.upload_date && <span>{formatDate(ep.upload_date)}</span>}
-        <span>{formatViews(ep.view_count)}</span>
-      </div>
-    </div>
-  );
-}
-
-// ---- MAIN APP ----
-function App() {
-  const [data, setData] = useState(null);
-  const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('number_desc');
-  const [view, setView] = useState('grid'); // grid | list
-  const [activeAmbiti, setActiveAmbiti] = useState(new Set());
-  const [activeTags, setActiveTags] = useState(new Set());
-  const [searchIndex, setSearchIndex] = useState(null);
-  const [indexLoading, setIndexLoading] = useState(false);
-  const [transcriptMatches, setTranscriptMatches] = useState(new Map());
-  const [selectedEp, setSelectedEp] = useState(null);
-  const [showBackToTop, setShowBackToTop] = useState(false);
-  const searchRef = useRef(null);
-
-  useEffect(() => { loadData().then(setData); }, []);
-
-  // Keyboard shortcut: / to focus search
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
-        e.preventDefault();
-        searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, []);
-
-  // Back to top visibility
-  useEffect(() => {
-    const handler = () => setShowBackToTop(window.scrollY > 600);
-    window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
-
-  // Load search index lazily
-  const loadSearchIndex = useCallback(async () => {
-    if (searchIndex || indexLoading) return searchIndex;
-    setIndexLoading(true);
+  const loadTranscript = useCallback(async () => {
+    if (transcript) { setShowTranscript(!showTranscript); return; }
+    setLoading(true);
     try {
-      const res = await fetch('../data/search_index.json');
-      const idx = await res.json();
-      setSearchIndex(idx);
-      setIndexLoading(false);
-      return idx;
-    } catch(e) {
-      console.error('Search index load failed', e);
-      setIndexLoading(false);
-      return null;
+      const num = String(ep.episode_number).padStart(3,'0');
+      const res = await fetch(`../data/transcripts/${num}.txt`);
+      if (res.ok) { const t = await res.text(); setTranscript(t); setShowTranscript(true); }
+    } catch(e) {}
+    setLoading(false);
+  }, [ep, transcript, showTranscript]);
+
+  const cidInfo = cidData?.episodes?.find(c => c.episode_number === ep.episode_number);
+
+  const filteredTranscript = useMemo(() => {
+    if (!transcript || !tSearch || tSearch.length < 3) return transcript;
+    return transcript;
+  }, [transcript, tSearch]);
+
+  const tSearchCount = useMemo(() => {
+    if (!transcript || !tSearch || tSearch.length < 3) return 0;
+    return (transcript.toLowerCase().match(new RegExp(tSearch.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'))||[]).length;
+  }, [transcript, tSearch]);
+
+  const isFav = favs.includes(ep.youtube_id);
+
+  return React.createElement('div', {className:'modal-overlay', onClick:e=>{if(e.target===e.currentTarget)onClose()}},
+    React.createElement('div', {className:'modal'},
+      React.createElement('button', {className:'modal-close', onClick:onClose}, '✕'),
+      React.createElement('div', {className:'modal-hero'},
+        React.createElement('img', {src:ep.thumbnail_url, alt:ep.guest}),
+        React.createElement('div', {className:'overlay'})
+      ),
+      React.createElement('div', {className:'modal-body'},
+        React.createElement('div', {className:'modal-title'}, `Tintoria #${ep.episode_number}`),
+        React.createElement('div', {className:'modal-guest'}, ep.guest),
+        React.createElement('div', {className:'modal-meta'},
+          ep.upload_date && React.createElement('span', null, '📅 ', fmtDate(ep.upload_date)),
+          React.createElement('span', null, '⏱ ', fmtDur(ep.duration_seconds)),
+          React.createElement('span', null, '👁 ', fmt(ep.view_count)),
+          ep.professione?.length > 0 && React.createElement('span', null, '💼 ', ep.professione.join(', '))
+        ),
+        React.createElement('div', {className:'modal-tags'},
+          ...(ep.ambito||[]).map(a => React.createElement('span', {key:'a_'+a, className:'tag ambito', onClick:()=>{onClose();onTagClick('ambito',a)}}, a)),
+          ...(ep.tags||[]).map(t => React.createElement('span', {key:'t_'+t, className:'tag', onClick:()=>{onClose();onTagClick('tag',t)}}, t))
+        ),
+        React.createElement('div', {className:'modal-actions'},
+          React.createElement('a', {className:'btn btn-primary', href:ep.youtube_url, target:'_blank', rel:'noopener'}, '▶ Guarda su YouTube'),
+          React.createElement('button', {className:'btn btn-secondary', onClick:()=>toggleFav(ep.youtube_id,favs,setFavs)}, isFav?'❤️ Nei preferiti':'🤍 Aggiungi ai preferiti'),
+          cidInfo && React.createElement('a', {className:'btn btn-cid', href:`${ep.youtube_url}&t=${cidInfo.estimated_timestamp_sec}`, target:'_blank', rel:'noopener'}, `💩 Vai alla rubrica (~${cidInfo.estimated_timestamp})`)
+        ),
+        cidInfo && React.createElement('div', {style:{marginBottom:16,padding:12,background:'rgba(251,191,36,0.06)',borderRadius:8,border:'1px solid rgba(251,191,36,0.15)'}},
+          React.createElement('div', {style:{fontSize:14,fontWeight:600,color:'var(--yellow)',marginBottom:4}}, '💩 Cacare in discoteca'),
+          React.createElement('div', {style:{fontSize:13,color:'var(--text2)'}}, cidInfo.guest_tells_story ? '✅ L\'ospite racconta la sua storia' : '❌ L\'ospite non racconta'),
+          cidInfo.segment_preview && React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginTop:8,fontStyle:'italic'}}, cidInfo.segment_preview.slice(0,200)+'…')
+        ),
+        ep.has_transcription && React.createElement('div', {className:'transcript-section'},
+          React.createElement('div', {className:'transcript-toggle', onClick:loadTranscript},
+            loading ? React.createElement('span', {className:'spinner', style:{width:16,height:16}}) : null,
+            React.createElement('span', null, showTranscript ? '▼' : '▶'),
+            React.createElement('span', null, showTranscript ? 'Nascondi trascrizione' : 'Leggi la trascrizione'),
+            ep.transcript_words && React.createElement('span', {style:{fontSize:12,color:'var(--text3)'}}, `(${(ep.transcript_words/1000).toFixed(1)}K parole)`)
+          ),
+          showTranscript && React.createElement('div', null,
+            React.createElement('div', {className:'transcript-search'},
+              React.createElement('input', {type:'text', placeholder:'Cerca nella trascrizione...', value:tSearch, onChange:e=>setTSearch(e.target.value)}),
+              tSearch.length >= 3 && React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginTop:4}}, `${tSearchCount} risultati`)
+            ),
+            React.createElement('div', {className:'transcript-text', dangerouslySetInnerHTML:{
+              __html: tSearch.length >= 3
+                ? (filteredTranscript||'').replace(new RegExp(`(${tSearch.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark>$1</mark>')
+                : filteredTranscript || ''
+            }})
+          )
+        )
+      )
+    )
+  );
+}
+
+// ========== EPISODE CARD ==========
+function EpisodeCard({ ep, onClick, onTagClick, favs, setFavs }) {
+  const isFav = favs.includes(ep.youtube_id);
+  return React.createElement('div', {className:'ep-card', onClick:()=>onClick(ep)},
+    React.createElement('div', {className:'thumb'},
+      React.createElement('img', {src:ep.thumbnail_url, alt:ep.guest, loading:'lazy'}),
+      React.createElement('span', {className:'duration'}, fmtDur(ep.duration_seconds)),
+      ep.is_numbered && React.createElement('span', {className:'ep-num'}, `#${ep.episode_number}`),
+      React.createElement('button', {className:`fav-btn ${isFav?'faved':''}`, onClick:e=>{e.stopPropagation();toggleFav(ep.youtube_id,favs,setFavs)}}, isFav?'❤':'♡')
+    ),
+    React.createElement('div', {className:'info'},
+      React.createElement('div', {className:'guest'}, ep.guest),
+      React.createElement('div', {className:'meta'},
+        ep.upload_date && React.createElement('span', null, fmtDate(ep.upload_date)),
+        React.createElement('span', null, fmt(ep.view_count)+' views')
+      ),
+      React.createElement('div', {className:'tags'},
+        ...(ep.ambito||[]).slice(0,2).map(a => React.createElement('span', {key:'a_'+a, className:'tag ambito', onClick:e=>{e.stopPropagation();onTagClick('ambito',a)}}, a)),
+        ...(ep.tags||[]).slice(0,3).map(t => React.createElement('span', {key:'t_'+t, className:'tag', onClick:e=>{e.stopPropagation();onTagClick('tag',t)}}, t))
+      ),
+      ep.has_rubrica_cid && React.createElement('div', {className:'cid-badge'}, '💩 Cacare in discoteca')
+    )
+  );
+}
+
+// ========== DISCOVERY FLOW ==========
+function DiscoveryFlow({ episodes, onSelect }) {
+  const [step, setStep] = useState(0);
+  const [ambito, setAmbito] = useState(null);
+  const [mood, setMood] = useState(null);
+  const [result, setResult] = useState(null);
+
+  const ambiti = ['comedy', 'musica', 'cinema', 'tv', 'letteratura', 'web', 'giornalismo'];
+  const moods = [
+    {label:'Episodio popolare', key:'popular'},
+    {label:'Gemma nascosta', key:'hidden'},
+    {label:'Maratona lunga', key:'long'},
+    {label:'Episodio breve', key:'short'},
+  ];
+
+  const findEpisode = (a, m) => {
+    let pool = episodes.filter(e => e.is_numbered && (e.ambito||[]).includes(a));
+    if (pool.length === 0) pool = episodes.filter(e => e.is_numbered);
+    let sorted;
+    switch(m) {
+      case 'popular': sorted = [...pool].sort((a,b)=>b.view_count-a.view_count); break;
+      case 'hidden': sorted = [...pool].sort((a,b)=>a.view_count-b.view_count); break;
+      case 'long': sorted = [...pool].sort((a,b)=>b.duration_seconds-a.duration_seconds); break;
+      case 'short': sorted = [...pool].sort((a,b)=>a.duration_seconds-b.duration_seconds); break;
+      default: sorted = pool;
     }
-  }, [searchIndex, indexLoading]);
-
-  // Transcript search with snippets
-  useEffect(() => {
-    const q = query.trim().toLowerCase();
-    if (q.length < 4) { setTranscriptMatches(new Map()); return; }
-
-    let cancelled = false;
-    (async () => {
-      let idx = searchIndex;
-      if (!idx) idx = await loadSearchIndex();
-      if (!idx || cancelled) return;
-
-      // Collect matching episodes
-      const epNums = new Set();
-      // Exact match
-      if (idx[q]) {
-        for (const n of idx[q]) epNums.add(n);
-      }
-      // Partial match (prefix)
-      for (const [word, eps] of Object.entries(idx)) {
-        if (word.startsWith(q) && word !== q) {
-          for (const ep of eps) epNums.add(ep);
-        }
-      }
-
-      if (cancelled) return;
-
-      // Load snippets for top matches (max 20)
-      const matchMap = new Map();
-      const toLoad = [...epNums].slice(0, 20);
-      
-      await Promise.all(toLoad.map(async (epNum) => {
-        try {
-          const res = await fetch('../data/search_snippets/' + String(epNum).padStart(3,'0') + '.txt');
-          if (res.ok) {
-            const text = await res.text();
-            const snippet = getSnippet(text, q, 80);
-            if (!cancelled) matchMap.set(epNum, { snippet });
-          }
-        } catch(e) {}
-      }));
-
-      // Add remaining matches without snippets
-      for (const n of epNums) {
-        if (!matchMap.has(n)) matchMap.set(n, { snippet: '' });
-      }
-
-      if (!cancelled) setTranscriptMatches(matchMap);
-    })();
-    return () => { cancelled = true; };
-  }, [query, searchIndex]);
-
-  // Collect ambiti and tags
-  const { ambitiList, tagsList } = useMemo(() => {
-    if (!data) return { ambitiList: [], tagsList: [] };
-    const ac = {}, tc = {};
-    for (const ep of data.episodes) {
-      for (const a of (ep.ambito || [])) ac[a] = (ac[a]||0) + 1;
-      for (const t of (ep.tags || [])) tc[t] = (tc[t]||0) + 1;
-    }
-    return {
-      ambitiList: Object.entries(ac).sort((a,b) => b[1]-a[1]),
-      tagsList: Object.entries(tc).sort((a,b) => b[1]-a[1]).slice(0, 30),
-    };
-  }, [data]);
-
-  const toggleAmbito = useCallback((a) => {
-    setActiveAmbiti(prev => {
-      const next = new Set(prev);
-      next.has(a) ? next.delete(a) : next.add(a);
-      return next;
-    });
-  }, []);
-
-  const toggleTag = useCallback((t) => {
-    setActiveTags(prev => {
-      const next = new Set(prev);
-      next.has(t) ? next.delete(t) : next.add(t);
-      return next;
-    });
-  }, []);
-
-  const handleTagClick = useCallback((type, value) => {
-    if (type === 'ambito') toggleAmbito(value);
-    else toggleTag(value);
-  }, [toggleAmbito, toggleTag]);
-
-  const clearFilters = () => {
-    setActiveAmbiti(new Set());
-    setActiveTags(new Set());
+    // Pick from top 5 randomly
+    const top = sorted.slice(0, Math.min(5, sorted.length));
+    return top[Math.floor(Math.random() * top.length)];
   };
 
-  // Random episode
-  const openRandom = useCallback(() => {
-    if (!data) return;
-    const idx = Math.floor(Math.random() * data.episodes.length);
-    setSelectedEp(data.episodes[idx]);
-  }, [data]);
+  const reset = () => { setStep(0); setAmbito(null); setMood(null); setResult(null); };
 
-  // Filtered + sorted results
-  const filtered = useMemo(() => {
-    if (!data) return [];
-    let eps = data.episodes;
+  if (result) {
+    return React.createElement('div', {className:'discovery'},
+      React.createElement('h3', null, '🎯 Ecco il tuo episodio!'),
+      React.createElement('div', {className:'discovery-result', onClick:()=>onSelect(result)},
+        React.createElement('div', {style:{fontSize:14,color:'var(--accent)',marginBottom:4}}, `#${result.episode_number}`),
+        React.createElement('div', {style:{fontSize:20,fontWeight:700,marginBottom:4}}, result.guest),
+        React.createElement('div', {style:{fontSize:14,color:'var(--text2)'}}, `${fmtDur(result.duration_seconds)} · ${fmt(result.view_count)} views`),
+        React.createElement('div', {style:{marginTop:8,fontSize:13,color:'var(--text3)'}}, (result.ambito||[]).concat(result.tags||[]).join(' · '))
+      ),
+      React.createElement('div', {style:{marginTop:16,display:'flex',gap:8,justifyContent:'center'}},
+        React.createElement('button', {className:'btn btn-secondary', onClick:()=>{setResult(findEpisode(ambito,mood))}}, '🔄 Un altro'),
+        React.createElement('button', {className:'btn btn-secondary', onClick:reset}, '↩ Ricomincia')
+      )
+    );
+  }
 
-    if (query.trim()) {
-      const q = query.toLowerCase().trim();
-      eps = eps.filter(e => {
-        const metaMatch =
-          (e.guest && e.guest.toLowerCase().includes(q)) ||
-          (e.title && e.title.toLowerCase().includes(q)) ||
-          (e.episode_number && String(e.episode_number) === q.replace('#','')) ||
-          (e.professione && e.professione.some(p => p.toLowerCase().includes(q))) ||
-          (e.tags && e.tags.some(t => t.toLowerCase().includes(q))) ||
-          (e.ambito && e.ambito.some(a => a.toLowerCase().includes(q)));
-        const transcriptMatch = transcriptMatches.has(e.episode_number);
-        return metaMatch || transcriptMatch;
-      });
-    }
-
-    if (activeAmbiti.size > 0) {
-      eps = eps.filter(e => e.ambito && e.ambito.some(a => activeAmbiti.has(a)));
-    }
-    if (activeTags.size > 0) {
-      eps = eps.filter(e => e.tags && e.tags.some(t => activeTags.has(t)));
-    }
-
-    const sorted = [...eps];
-    switch(sort) {
-      case 'views': sorted.sort((a,b) => (b.view_count||0) - (a.view_count||0)); break;
-      case 'number_asc': sorted.sort((a,b) => (a.episode_number||0) - (b.episode_number||0)); break;
-      case 'number_desc': sorted.sort((a,b) => (b.episode_number||0) - (a.episode_number||0)); break;
-      case 'duration': sorted.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
-      case 'date_asc': sorted.sort((a,b) => (a.upload_date||'').localeCompare(b.upload_date||'')); break;
-      case 'date_desc': sorted.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
-    }
-
-    // If transcript search active, prioritize transcript matches
-    if (transcriptMatches.size > 0 && query.trim().length >= 4) {
-      sorted.sort((a, b) => {
-        const aMatch = transcriptMatches.has(a.episode_number) ? 1 : 0;
-        const bMatch = transcriptMatches.has(b.episode_number) ? 1 : 0;
-        return bMatch - aMatch;
-      });
-    }
-
-    return sorted;
-  }, [data, query, sort, activeAmbiti, activeTags, transcriptMatches]);
-
-  if (!data) return (
-    <div className="loading">
-      <div className="spinner"></div>
-      Caricamento archivio...
-    </div>
-  );
-
-  const m = data.meta;
-  const hasFilters = activeAmbiti.size > 0 || activeTags.size > 0;
-  const transcriptHits = query.length >= 4 ? transcriptMatches.size : 0;
-
-  return (
-    <>
-      {/* HERO */}
-      <div className="hero">
-        <div className="hero-title">Tintor<span>IA</span></div>
-        <div className="hero-sub">
-          Cerca in tutte le puntate di Tintoria, il podcast di Daniele Tinti e Stefano Rapone
-        </div>
-        <div className="hero-stats">
-          <div className="hero-stat">
-            <div className="hero-stat-val">{m.total_episodes}</div>
-            <div className="hero-stat-label">Puntate</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat-val">{m.unique_guests}</div>
-            <div className="hero-stat-label">Ospiti</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat-val">{formatViews(m.total_views)}</div>
-            <div className="hero-stat-label">Views</div>
-          </div>
-          <div className="hero-stat">
-            <div className="hero-stat-val">{((m.total_transcript_words||0)/1000000).toFixed(1)}M</div>
-            <div className="hero-stat-label">Parole trascritte</div>
-          </div>
-        </div>
-      </div>
-
-      {/* SEARCH */}
-      <div className="search-section">
-        <div className="search-container">
-          <span className="search-icon">🔍</span>
-          <input
-            ref={searchRef}
-            className="search-input"
-            placeholder="Cerca un ospite, un argomento, una parola detta in puntata..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-          />
-        </div>
-        <div className="search-hint">
-          {query.length >= 4 && transcriptHits > 0 ? (
-            <span>Trovato "<em>{query}</em>" in {transcriptHits} trascrizioni {indexLoading && '(caricamento indice...)'}</span>
-          ) : query.length >= 1 && query.length < 4 ? (
-            <span>Scrivi almeno 4 caratteri per cercare nelle trascrizioni</span>
-          ) : indexLoading ? (
-            <span>Caricamento indice di ricerca...</span>
-          ) : (
-            <span>Prova: <em>berlusconi</em> · <em>sanremo</em> · <em>netflix</em> · <em>pizza</em> · <em>droga</em> — oppure premi <em>/</em> per cercare</span>
-          )}
-        </div>
-      </div>
-
-      {/* FILTERS */}
-      <div className="filters-bar">
-        <div className="filters-row">
-          <span className="filters-label">Ambito</span>
-          {ambitiList.map(([a, c]) => (
-            <button key={a} className={`chip ${activeAmbiti.has(a) ? 'active' : ''}`}
-              onClick={() => toggleAmbito(a)}>
-              {a}<span className="chip-count">{c}</span>
-            </button>
-          ))}
-          {hasFilters && <button className="clear-btn" onClick={clearFilters}>Pulisci filtri</button>}
-        </div>
-        <div className="filters-row">
-          <span className="filters-label">Tag</span>
-          {tagsList.map(([t, c]) => (
-            <button key={t} className={`chip ${activeTags.has(t) ? 'active' : ''}`}
-              onClick={() => toggleTag(t)}>
-              {t}<span className="chip-count">{c}</span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* VIEW BAR */}
-      <div className="view-bar">
-        <div className="view-tabs">
-          <button className={`view-tab ${view==='grid'?'active':''}`} onClick={()=>setView('grid')}>Griglia</button>
-          <button className={`view-tab ${view==='list'?'active':''}`} onClick={()=>setView('list')}>Lista</button>
-        </div>
-        <select className="sort-select" value={sort} onChange={e => setSort(e.target.value)}>
-          <option value="number_desc">Più recenti</option>
-          <option value="number_asc">Più vecchie</option>
-          <option value="date_desc">Per data ↓</option>
-          <option value="date_asc">Per data ↑</option>
-          <option value="views">Più viste</option>
-          <option value="duration">Più lunghe</option>
-        </select>
-        <button className="random-btn" onClick={openRandom}>🎲 Puntata a caso</button>
-        <div className="results-count">
-          {filtered.length} puntat{filtered.length === 1 ? 'a' : 'e'}{(query || hasFilters) ? ' trovate' : ''}
-        </div>
-      </div>
-
-      {/* RESULTS */}
-      {filtered.length === 0 ? (
-        <div className="no-results">
-          <div className="no-results-icon">🤷</div>
-          Nessun risultato per "{query}"
-          <div className="no-results-sub">Prova con un'altra ricerca o rimuovi i filtri</div>
-        </div>
-      ) : view === 'grid' ? (
-        <div className="grid">
-          {filtered.map(ep => (
-            <EpisodeCard
-              key={ep.youtube_id}
-              ep={ep}
-              onClick={setSelectedEp}
-              transcriptMatch={transcriptMatches.get(ep.episode_number)}
-              searchQuery={query}
-              onTagClick={handleTagClick}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="list">
-          {filtered.map(ep => (
-            <EpisodeListItem
-              key={ep.youtube_id}
-              ep={ep}
-              onClick={setSelectedEp}
-              transcriptMatch={transcriptMatches.get(ep.episode_number)}
-              searchQuery={query}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* FOOTER */}
-      <div className="footer">
-        TintorIA — L'archivio non ufficiale di Tintoria, il podcast di Daniele Tinti e Stefano Rapone.
-        <br/>{m.total_episodes} puntate, {m.transcriptions_count || 232} trascrizioni, {((m.total_transcript_words||0)/1000000).toFixed(1)}M di parole indicizzate.
-        <br/>Dati da YouTube · Trascrizioni automatiche · Tag con Claude
-        <br/><a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
-      </div>
-
-      {/* MODAL */}
-      {selectedEp && (
-        <EpisodeModal
-          episode={selectedEp}
-          onClose={() => setSelectedEp(null)}
-          onTagClick={handleTagClick}
-          searchQuery={query}
-        />
-      )}
-
-      {/* BACK TO TOP */}
-      <button
-        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >↑</button>
-    </>
+  return React.createElement('div', {className:'discovery'},
+    React.createElement('h3', null, '🧭 Non sai cosa guardare?'),
+    React.createElement('p', null, 'Rispondi a due domande e ti consiglio un episodio'),
+    step === 0 && React.createElement('div', {className:'discovery-step'},
+      React.createElement('div', {className:'discovery-q'}, 'Che genere ti va?'),
+      React.createElement('div', {className:'discovery-opts'},
+        ...ambiti.map(a => React.createElement('button', {key:a, className:`discovery-opt ${ambito===a?'selected':''}`, onClick:()=>{setAmbito(a);setStep(1)}}, a)),
+        React.createElement('button', {className:`discovery-opt ${ambito==='any'?'selected':''}`, onClick:()=>{setAmbito('any');setStep(1)}}, '🎲 Qualsiasi')
+      )
+    ),
+    step === 1 && React.createElement('div', {className:'discovery-step'},
+      React.createElement('div', {className:'discovery-q'}, 'Che tipo di episodio?'),
+      React.createElement('div', {className:'discovery-opts'},
+        ...moods.map(m => React.createElement('button', {key:m.key, className:'discovery-opt', onClick:()=>{
+          setMood(m.key);
+          const a2 = ambito==='any'?ambiti[Math.floor(Math.random()*ambiti.length)]:ambito;
+          setResult(findEpisode(a2, m.key));
+        }}, m.label)),
+        React.createElement('button', {className:'discovery-opt', onClick:()=>{
+          const a2 = ambito==='any'?ambiti[Math.floor(Math.random()*ambiti.length)]:ambito;
+          const pool = episodes.filter(e=>e.is_numbered&&((e.ambito||[]).includes(a2)||ambito==='any'));
+          setResult(pool[Math.floor(Math.random()*pool.length)]);
+        }}, '🎲 Sorprendimi')
+      )
+    )
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+// ========== MAIN APP ==========
+function App() {
+  const [episodes, setEpisodes] = useState([]);
+  const [meta, setMeta] = useState({});
+  const [cidData, setCidData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [tab, setTab] = useState('episodi');
+  const [selectedEp, setSelectedEp] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState(null);
+  const [searchIndex, setSearchIndex] = useState(null);
+  const [loadingSearch, setLoadingSearch] = useState(false);
+  const [filterAmbito, setFilterAmbito] = useState(null);
+  const [filterTag, setFilterTag] = useState(null);
+  const [sortBy, setSortBy] = useState('number_desc');
+  const [viewMode, setViewMode] = useState('grid');
+  const [favs, setFavs] = useState(loadFavs());
+  const [showBackTop, setShowBackTop] = useState(false);
+  const [cidFilter, setCidFilter] = useState('all'); // all, story, no_story
+  const [timelineYear, setTimelineYear] = useState(null);
+  const searchRef = useRef(null);
+  const snippetCache = useRef({});
+
+  // Load data
+  useEffect(() => {
+    Promise.all([
+      fetch('../data/episodes_tagged.json').then(r=>r.json()),
+      fetch('../data/rubrica_cid.json').then(r=>r.json()).catch(()=>null)
+    ]).then(([data, cid]) => {
+      setEpisodes(data.episodes || []);
+      setMeta(data.meta || {});
+      setCidData(cid);
+      setLoading(false);
+    });
+  }, []);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const h = e => {
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && document.activeElement?.tagName !== 'INPUT') {
+        e.preventDefault(); searchRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', h);
+    return () => window.removeEventListener('keydown', h);
+  }, []);
+
+  // Back to top
+  useEffect(() => {
+    const h = () => setShowBackTop(window.scrollY > 400);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+
+  // Search logic - lazy load index
+  useEffect(() => {
+    if (searchQuery.length >= 4 && !searchIndex && !loadingSearch) {
+      setLoadingSearch(true);
+      fetch('../data/search_index.json').then(r=>r.json()).then(idx => {
+        setSearchIndex(idx);
+        setLoadingSearch(false);
+      }).catch(() => setLoadingSearch(false));
+    }
+  }, [searchQuery, searchIndex, loadingSearch]);
+
+  // Perform search
+  useEffect(() => {
+    if (!searchQuery || searchQuery.length < 4 || !searchIndex) { setSearchResults(null); return; }
+    const q = searchQuery.toLowerCase();
+    const words = q.split(/\s+/).filter(w => w.length >= 3);
+    if (words.length === 0) { setSearchResults(null); return; }
+
+    // Find episodes matching all words
+    let matchEps = null;
+    words.forEach(w => {
+      const epNums = new Set();
+      Object.keys(searchIndex).forEach(term => {
+        if (term.includes(w)) searchIndex[term].forEach(n => epNums.add(n));
+      });
+      matchEps = matchEps ? new Set([...matchEps].filter(n => epNums.has(n))) : epNums;
+    });
+
+    const results = [...(matchEps || [])].map(num => {
+      const ep = episodes.find(e => e.episode_number === num);
+      return ep ? { ep, num } : null;
+    }).filter(Boolean);
+
+    // Load snippets for top results
+    results.slice(0, 20).forEach(r => {
+      const key = String(r.num).padStart(3, '0');
+      if (!snippetCache.current[key]) {
+        snippetCache.current[key] = '';
+        fetch(`../data/search_snippets/${key}.txt`).then(res => res.ok ? res.text() : '').then(t => {
+          snippetCache.current[key] = t;
+          setSearchResults(prev => prev ? [...prev] : prev); // force re-render
+        }).catch(() => {});
+      }
+    });
+
+    setSearchResults(results);
+  }, [searchQuery, searchIndex, episodes]);
+
+  // Tag click handler
+  const handleTagClick = useCallback((type, value) => {
+    setTab('episodi');
+    if (type === 'ambito') { setFilterAmbito(value); setFilterTag(null); }
+    else { setFilterTag(value); setFilterAmbito(null); }
+    setSearchQuery(''); setSearchResults(null);
+  }, []);
+
+  // Guest index
+  const guestIndex = useMemo(() => buildGuestIndex(episodes), [episodes]);
+  const recurringGuests = useMemo(() =>
+    Object.entries(guestIndex).filter(([_,eps]) => eps.length > 1).sort((a,b) => b[1].length - a[1].length)
+  , [guestIndex]);
+  const allGuests = useMemo(() =>
+    Object.entries(guestIndex).sort((a,b) => a[0].localeCompare(b[0]))
+  , [guestIndex]);
+
+  // Stats
+  const stats = useMemo(() => episodes.length > 0 ? buildStats(episodes, meta) : [], [episodes, meta]);
+
+  // Timeline data
+  const timelineData = useMemo(() => {
+    const data = {};
+    episodes.filter(e => e.is_numbered && e.upload_date).forEach(ep => {
+      const ym = ep.upload_date.slice(0, 7); // YYYY-MM
+      if (!data[ym]) data[ym] = [];
+      data[ym].push(ep);
+    });
+    return Object.entries(data).sort((a,b) => a[0].localeCompare(b[0]));
+  }, [episodes]);
+
+  const maxPerMonth = useMemo(() => Math.max(...timelineData.map(([_,eps]) => eps.length), 1), [timelineData]);
+
+  // Filter & sort episodes
+  const filtered = useMemo(() => {
+    let f = episodes.filter(e => e.is_numbered);
+    if (filterAmbito) f = f.filter(e => (e.ambito||[]).includes(filterAmbito));
+    if (filterTag) f = f.filter(e => (e.tags||[]).includes(filterTag));
+    if (timelineYear) f = f.filter(e => (e.upload_date||'').startsWith(timelineYear));
+    // Sort
+    switch(sortBy) {
+      case 'number_desc': f.sort((a,b) => b.episode_number - a.episode_number); break;
+      case 'number_asc': f.sort((a,b) => a.episode_number - b.episode_number); break;
+      case 'views_desc': f.sort((a,b) => b.view_count - a.view_count); break;
+      case 'views_asc': f.sort((a,b) => a.view_count - b.view_count); break;
+      case 'date_desc': f.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
+      case 'duration_desc': f.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
+    }
+    return f;
+  }, [episodes, filterAmbito, filterTag, sortBy, timelineYear]);
+
+  // Favorites
+  const favEpisodes = useMemo(() => episodes.filter(e => favs.includes(e.youtube_id)), [episodes, favs]);
+
+  // CID episodes
+  const cidEpisodes = useMemo(() => {
+    if (!cidData) return [];
+    let eps = cidData.episodes || [];
+    if (cidFilter === 'story') eps = eps.filter(e => e.guest_tells_story);
+    if (cidFilter === 'no_story') eps = eps.filter(e => !e.guest_tells_story);
+    return eps;
+  }, [cidData, cidFilter]);
+
+  if (loading) return React.createElement('div', {className:'loading'}, React.createElement('div', {className:'spinner'}), React.createElement('p', {style:{marginTop:16}}, 'Caricamento...'));
+
+  const numbered = episodes.filter(e => e.is_numbered);
+  const ambiti = Object.entries(meta.ambiti_counts || {}).sort((a,b) => b[1] - a[1]);
+  const topTags = Object.entries(meta.top_tags || {}).sort((a,b) => b[1] - a[1]).slice(0, 15);
+
+  return React.createElement('div', null,
+    // NAV
+    React.createElement('div', {className:'nav'},
+      React.createElement('div', {className:'nav-inner'},
+        React.createElement('span', {className:'nav-logo', onClick:()=>{setTab('episodi');setFilterAmbito(null);setFilterTag(null);setTimelineYear(null);setSearchQuery('');setSearchResults(null)}}, 'TintorIA'),
+        React.createElement('button', {className:`nav-tab ${tab==='episodi'?'active':''}`, onClick:()=>setTab('episodi')}, 'Episodi'),
+        React.createElement('button', {className:`nav-tab ${tab==='cid'?'active':''}`, onClick:()=>setTab('cid')}, '💩 Rubrica'),
+        React.createElement('button', {className:`nav-tab ${tab==='ospiti'?'active':''}`, onClick:()=>setTab('ospiti')}, 'Ospiti'),
+        React.createElement('button', {className:`nav-tab ${tab==='stats'?'active':''}`, onClick:()=>setTab('stats')}, 'Stats'),
+        React.createElement('button', {className:`nav-tab ${tab==='scopri'?'active':''}`, onClick:()=>setTab('scopri')}, '🧭 Scopri'),
+        favs.length > 0 && React.createElement('button', {className:`nav-tab ${tab==='preferiti'?'active':''}`, onClick:()=>setTab('preferiti')}, `❤ ${favs.length}`),
+        React.createElement('div', {className:'nav-search'},
+          React.createElement('span', {className:'search-icon'}, '🔍'),
+          React.createElement('input', {ref:searchRef, type:'text', placeholder:'Cerca nei transcript...', value:searchQuery, onChange:e=>{setSearchQuery(e.target.value);if(e.target.value.length>=4)setTab('episodi')}}),
+          React.createElement('span', {className:'nav-shortcut'}, '/')
+        )
+      )
+    ),
+
+    // HERO (only on episodi tab without search)
+    tab === 'episodi' && !searchResults && !filterAmbito && !filterTag && !timelineYear && React.createElement('div', {className:'hero'},
+      React.createElement('h1', null, 'Tintor', React.createElement('span', null, 'IA')),
+      React.createElement('div', {className:'subtitle'}, 'L\'archivio intelligente di Tintoria'),
+      React.createElement('div', {className:'hero-stats'},
+        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, numbered.length), React.createElement('div', {className:'label'}, 'Episodi')),
+        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, fmt(meta.total_views||0)), React.createElement('div', {className:'label'}, 'Views totali')),
+        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.unique_guests||0), React.createElement('div', {className:'label'}, 'Ospiti')),
+        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.transcriptions_count||0), React.createElement('div', {className:'label'}, 'Trascrizioni')),
+        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.rubrica_cid_count||0), React.createElement('div', {className:'label'}, '💩 Rubrica CID'))
+      )
+    ),
+
+    React.createElement('div', {className:'main'},
+
+      // ======= SEARCH RESULTS =======
+      searchResults && tab === 'episodi' && React.createElement('div', null,
+        React.createElement('div', {className:'section-header'},
+          React.createElement('div', null,
+            React.createElement('div', {className:'section-title'}, `Risultati per "${searchQuery}"`),
+            React.createElement('div', {className:'section-subtitle'}, `${searchResults.length} episodi trovati`)
+          ),
+          React.createElement('button', {className:'btn btn-secondary', onClick:()=>{setSearchQuery('');setSearchResults(null)}}, '✕ Chiudi ricerca')
+        ),
+        loadingSearch && React.createElement('div', {className:'loading'}, React.createElement('div', {className:'spinner'})),
+        React.createElement('div', {className:'search-results'},
+          ...searchResults.slice(0,30).map(({ep, num}) => {
+            const key = String(num).padStart(3, '0');
+            const snippet = snippetCache.current[key] || '';
+            return React.createElement('div', {key:ep.youtube_id, className:'search-result', onClick:()=>setSelectedEp(ep)},
+              React.createElement('div', {className:'sr-guest'}, `#${ep.episode_number} — ${ep.guest}`),
+              React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginBottom:4}}, `${fmtDate(ep.upload_date)} · ${fmt(ep.view_count)} views`),
+              snippet && React.createElement('div', {className:'sr-snippet', dangerouslySetInnerHTML:{__html: getSnippet(snippet, searchQuery).replace(new RegExp(`(${searchQuery.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark>$1</mark>')}})
+            );
+          })
+        )
+      ),
+
+      // ======= EPISODI TAB =======
+      tab === 'episodi' && !searchResults && React.createElement('div', null,
+        // Timeline
+        timelineData.length > 0 && React.createElement('div', {className:'timeline'},
+          React.createElement('div', {style:{display:'flex',justifyContent:'space-between',marginBottom:8}},
+            React.createElement('span', {style:{fontSize:13,color:'var(--text3)'}}, 'Timeline'),
+            timelineYear && React.createElement('button', {className:'btn btn-secondary', style:{padding:'2px 10px',fontSize:12}, onClick:()=>setTimelineYear(null)}, `✕ ${timelineYear}`)
+          ),
+          React.createElement('div', {className:'timeline-bar'},
+            ...timelineData.map(([ym, eps]) => {
+              const year = ym.slice(0,4);
+              const height = Math.max(8, (eps.length / maxPerMonth) * 40);
+              const isActive = timelineYear === year;
+              return React.createElement('div', {
+                key:ym, className:`timeline-segment ${isActive?'active':''}`,
+                style:{flex:1}, title:`${ym}: ${eps.length} episodi`,
+                onClick:() => setTimelineYear(timelineYear===year ? null : year)
+              },
+                React.createElement('div', {className:'bar', style:{height}}),
+                ym.endsWith('-01') && React.createElement('span', {className:'label'}, year)
+              );
+            })
+          )
+        ),
+        // Filters
+        React.createElement('div', {className:'filters'},
+          React.createElement('span', {style:{fontSize:13,color:'var(--text3)',marginRight:4}}, 'Ambito:'),
+          ...ambiti.slice(0,10).map(([a,c]) => React.createElement('button', {key:a, className:`filter-chip ${filterAmbito===a?'active':''}`, onClick:()=>setFilterAmbito(filterAmbito===a?null:a)}, a, React.createElement('span', {className:'count'}, c))),
+          (filterAmbito || filterTag) && React.createElement('button', {className:'filter-chip', style:{color:'var(--red)',borderColor:'var(--red)'}, onClick:()=>{setFilterAmbito(null);setFilterTag(null)}}, '✕ Reset')
+        ),
+        filterTag && React.createElement('div', {style:{marginBottom:12,fontSize:14,color:'var(--text2)'}}, `Tag: "${filterTag}"`),
+        // Controls
+        React.createElement('div', {style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16,flexWrap:'wrap',gap:8}},
+          React.createElement('div', {className:'results-count'}, `${filtered.length} episodi`),
+          React.createElement('div', {className:'controls'},
+            React.createElement('select', {className:'sort-select', value:sortBy, onChange:e=>setSortBy(e.target.value)},
+              React.createElement('option', {value:'number_desc'}, 'Più recenti'),
+              React.createElement('option', {value:'number_asc'}, 'Più vecchi'),
+              React.createElement('option', {value:'views_desc'}, 'Più visti'),
+              React.createElement('option', {value:'views_asc'}, 'Meno visti'),
+              React.createElement('option', {value:'duration_desc'}, 'Più lunghi')
+            ),
+            React.createElement('button', {className:`control-btn ${viewMode==='grid'?'active':''}`, onClick:()=>setViewMode('grid')}, '▦'),
+            React.createElement('button', {className:`control-btn ${viewMode==='list'?'active':''}`, onClick:()=>setViewMode('list')}, '☰'),
+            React.createElement('button', {className:'control-btn', onClick:()=>{const r=filtered[Math.floor(Math.random()*filtered.length)];if(r)setSelectedEp(r)}}, '🎲')
+          )
+        ),
+        // Grid or List
+        viewMode === 'grid'
+          ? React.createElement('div', {className:'ep-grid'}, ...filtered.map(ep => React.createElement(EpisodeCard, {key:ep.youtube_id, ep, onClick:setSelectedEp, onTagClick:handleTagClick, favs, setFavs})))
+          : React.createElement('div', {className:'ep-list'}, ...filtered.map(ep =>
+              React.createElement('div', {key:ep.youtube_id, className:'ep-row', onClick:()=>setSelectedEp(ep)},
+                React.createElement('span', {className:'num'}, `#${ep.episode_number}`),
+                React.createElement('span', {className:'guest'}, ep.guest),
+                ep.has_rubrica_cid && React.createElement('span', {style:{fontSize:12}}, '💩'),
+                React.createElement('span', {className:'meta-item'}, fmtDate(ep.upload_date)),
+                React.createElement('span', {className:'meta-item'}, fmt(ep.view_count)),
+                React.createElement('span', {className:'meta-item'}, fmtDur(ep.duration_seconds))
+              )
+            ))
+      ),
+
+      // ======= CID TAB =======
+      tab === 'cid' && React.createElement('div', {className:'cid-section'},
+        React.createElement('div', {className:'cid-intro'},
+          React.createElement('h3', null, '💩 Cacare in discoteca'),
+          React.createElement('p', null, 'La rubrica più amata di Tintoria. Daniele chiede a ogni ospite di raccontare la propria esperienza più imbarazzante legata ai bagni. Qualcuno racconta, qualcuno si rifiuta, qualcuno nega di aver mai avuto problemi. Ma tutti, prima o poi, cagano in discoteca.'),
+          React.createElement('div', {className:'cid-stats'},
+            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.total_episodes_with_rubrica||0), React.createElement('div', {className:'l'}, 'Episodi')),
+            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.guests_with_stories||0), React.createElement('div', {className:'l'}, 'Raccontano')),
+            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.guests_without_stories||0), React.createElement('div', {className:'l'}, 'Si rifiutano'))
+          )
+        ),
+        React.createElement('div', {className:'filters', style:{marginBottom:16}},
+          React.createElement('button', {className:`filter-chip ${cidFilter==='all'?'active':''}`, onClick:()=>setCidFilter('all')}, 'Tutti'),
+          React.createElement('button', {className:`filter-chip ${cidFilter==='story'?'active':''}`, onClick:()=>setCidFilter('story')}, '✅ Raccontano'),
+          React.createElement('button', {className:`filter-chip ${cidFilter==='no_story'?'active':''}`, onClick:()=>setCidFilter('no_story')}, '❌ Non raccontano')
+        ),
+        React.createElement('div', {className:'results-count'}, `${cidEpisodes.length} episodi`),
+        React.createElement('div', {className:'ep-grid'},
+          ...cidEpisodes.map(c => {
+            const ep = episodes.find(e => e.episode_number === c.episode_number);
+            return React.createElement('div', {key:c.episode_number, className:'cid-card', onClick:()=>ep&&setSelectedEp(ep)},
+              React.createElement('div', {className:'cid-top'},
+                React.createElement('img', {className:'cid-thumb', src:c.thumbnail_url, alt:c.guest, loading:'lazy'}),
+                React.createElement('div', {className:'cid-info'},
+                  React.createElement('div', {className:'cid-guest'}, `#${c.episode_number} — ${c.guest}`),
+                  React.createElement('div', {className:'cid-meta'}, `${fmtDate(c.date)} · ~${c.estimated_timestamp}`),
+                  React.createElement('span', {className:`story-badge ${c.guest_tells_story?'yes':'no'}`}, c.guest_tells_story ? '✅ Racconta' : '❌ Non racconta')
+                )
+              ),
+              c.segment_preview && React.createElement('div', {className:'cid-preview'}, c.segment_preview.slice(0,150)+'…'),
+              React.createElement('div', {style:{padding:'0 14px 12px'}},
+                React.createElement('a', {className:'btn btn-cid', style:{fontSize:12,padding:'4px 12px'}, href:`${c.youtube_url}&t=${c.estimated_timestamp_sec}`, target:'_blank', rel:'noopener', onClick:e=>e.stopPropagation()}, `▶ Vai a ~${c.estimated_timestamp}`)
+              )
+            );
+          })
+        )
+      ),
+
+      // ======= OSPITI TAB =======
+      tab === 'ospiti' && React.createElement('div', null,
+        React.createElement('div', {className:'section-header'},
+          React.createElement('div', {className:'section-title'}, 'Tutti gli ospiti'),
+          React.createElement('div', {className:'section-subtitle'}, `${allGuests.length} ospiti unici, ${recurringGuests.length} ricorrenti`)
+        ),
+        recurringGuests.length > 0 && React.createElement('div', null,
+          React.createElement('h3', {style:{fontSize:16,fontWeight:600,marginBottom:12,color:'var(--accent)'}}, 'Ospiti ricorrenti'),
+          React.createElement('div', {className:'guest-grid', style:{marginBottom:32}},
+            ...recurringGuests.map(([name, eps]) => React.createElement('div', {key:name, className:'guest-card'},
+              React.createElement('div', {className:'g-name'}, name),
+              React.createElement('div', {className:'g-count'}, `${eps.length} episodi`),
+              React.createElement('div', {className:'g-episodes'},
+                ...eps.map(ep => React.createElement('span', {key:ep.episode_number, style:{cursor:'pointer',marginRight:8}, onClick:()=>setSelectedEp(ep)},
+                  React.createElement('span', {style:{color:'var(--accent)'}}, `#${ep.episode_number}`),
+                  ' ', ep.guest?.replace(name,'').replace(/^[\s,&(]+|[\s,&)]+$/g,'').replace(/^con\s*/i,'').replace(/^LIVE\s*/,'') || ''
+                ))
+              )
+            ))
+          )
+        ),
+        React.createElement('h3', {style:{fontSize:16,fontWeight:600,marginBottom:12}}, 'Tutti gli ospiti (A-Z)'),
+        React.createElement('div', {className:'guest-grid'},
+          ...allGuests.map(([name, eps]) => React.createElement('div', {key:name, className:'guest-card', onClick:()=>{if(eps.length===1)setSelectedEp(eps[0])}},
+            React.createElement('div', {className:'g-name'}, name),
+            eps.length > 1 && React.createElement('div', {className:'g-count'}, `${eps.length} episodi`),
+            React.createElement('div', {className:'g-episodes'},
+              ...eps.slice(0,5).map(ep => React.createElement('span', {key:ep.episode_number, style:{cursor:'pointer',marginRight:8}, onClick:e=>{e.stopPropagation();setSelectedEp(ep)}},
+                React.createElement('span', {style:{color:'var(--accent)'}}, `#${ep.episode_number}`)
+              )),
+              eps.length > 5 && React.createElement('span', {style:{color:'var(--text3)'}}, `+${eps.length-5}`)
+            )
+          ))
+        )
+      ),
+
+      // ======= STATS TAB =======
+      tab === 'stats' && React.createElement('div', null,
+        React.createElement('div', {className:'section-header'},
+          React.createElement('div', {className:'section-title'}, 'Lo sapevi che…')
+        ),
+        React.createElement('div', {className:'stats-grid'},
+          ...stats.map((s,i) => React.createElement('div', {key:i, className:'stat-card', onClick:()=>{if(s.ep)setSelectedEp(s.ep)}},
+            React.createElement('div', {className:'stat-emoji'}, s.emoji),
+            React.createElement('div', {className:'stat-label'}, s.label),
+            React.createElement('div', {className:'stat-value'}, s.value),
+            React.createElement('div', {className:'stat-detail'}, s.detail)
+          ))
+        ),
+        // Tag cloud
+        React.createElement('div', {className:'section-header', style:{marginTop:40}},
+          React.createElement('div', {className:'section-title'}, 'Mappa dei temi')
+        ),
+        React.createElement('div', {style:{display:'flex',gap:8,flexWrap:'wrap'}},
+          ...ambiti.map(([a,c]) => React.createElement('button', {key:a, className:'filter-chip', style:{fontSize:Math.max(12, Math.min(20, 10+c/5))+'px'}, onClick:()=>{setTab('episodi');setFilterAmbito(a)}}, `${a} (${c})`))
+        ),
+        React.createElement('div', {style:{marginTop:20,display:'flex',gap:6,flexWrap:'wrap'}},
+          ...topTags.map(([t,c]) => React.createElement('button', {key:t, className:'filter-chip', onClick:()=>{setTab('episodi');setFilterTag(t)}}, `${t} (${c})`))
+        ),
+        // Years breakdown
+        React.createElement('div', {className:'section-header', style:{marginTop:40}},
+          React.createElement('div', {className:'section-title'}, 'Episodi per anno')
+        ),
+        React.createElement('div', {style:{display:'flex',gap:16,flexWrap:'wrap'}},
+          ...Object.entries(
+            episodes.filter(e=>e.is_numbered&&e.upload_date).reduce((acc,e)=>{const y=e.upload_date.slice(0,4);acc[y]=(acc[y]||0)+1;return acc},{})
+          ).sort((a,b)=>a[0].localeCompare(b[0])).map(([y,c]) =>
+            React.createElement('div', {key:y, className:'stat-card', style:{cursor:'pointer',flex:'1',minWidth:120}, onClick:()=>{setTab('episodi');setTimelineYear(y)}},
+              React.createElement('div', {style:{fontSize:24,fontWeight:800,color:'var(--accent)'}}, c),
+              React.createElement('div', {style:{fontSize:14,color:'var(--text2)'}}, y)
+            )
+          )
+        )
+      ),
+
+      // ======= SCOPRI TAB =======
+      tab === 'scopri' && React.createElement(DiscoveryFlow, {episodes, onSelect:setSelectedEp}),
+
+      // ======= PREFERITI TAB =======
+      tab === 'preferiti' && React.createElement('div', null,
+        React.createElement('div', {className:'section-header'},
+          React.createElement('div', {className:'section-title'}, '❤ I tuoi preferiti'),
+          React.createElement('div', {className:'section-subtitle'}, `${favEpisodes.length} episodi salvati`)
+        ),
+        favEpisodes.length === 0
+          ? React.createElement('div', {className:'fav-empty'},
+              React.createElement('div', {className:'icon'}, '🤍'),
+              React.createElement('p', null, 'Nessun preferito ancora.'),
+              React.createElement('p', {style:{fontSize:13,marginTop:4}}, 'Clicca il cuoricino su un episodio per salvarlo qui.')
+            )
+          : React.createElement('div', {className:'ep-grid'}, ...favEpisodes.map(ep => React.createElement(EpisodeCard, {key:ep.youtube_id, ep, onClick:setSelectedEp, onTagClick:handleTagClick, favs, setFavs})))
+      )
+    ),
+
+    // Modal
+    selectedEp && React.createElement(EpisodeModal, {ep:selectedEp, onClose:()=>setSelectedEp(null), onTagClick:handleTagClick, favs, setFavs, cidData}),
+
+    // Back to top
+    React.createElement('button', {className:`back-top ${showBackTop?'visible':''}`, onClick:()=>window.scrollTo({top:0,behavior:'smooth'})}, '↑')
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 </script>
 </body>
 </html>
