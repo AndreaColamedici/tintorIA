@@ -8,407 +8,334 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0a0a0f;--surface:#13131a;--surface2:#1a1a25;--surface3:#22222f;
-  --border:#2a2a3a;--text:#e8e8f0;--text2:#9898a8;--text3:#686878;
-  --accent:#ff6b35;--accent2:#ff8c5a;--accent-glow:rgba(255,107,53,0.15);
-  --green:#4ade80;--red:#f87171;--blue:#60a5fa;--purple:#a78bfa;--yellow:#fbbf24;
-  --pink:#f472b6;--cyan:#22d3ee;
+  --bg:#08080c;--surface:#101018;--surface2:#181824;--surface3:#202030;
+  --border:#1e1e30;--border2:#2a2a40;
+  --text:#ececf4;--text2:#9898ac;--text3:#5e5e74;
+  --accent:#ff6633;--accent2:#ff884d;--accent-soft:rgba(255,102,51,0.08);--accent-glow:rgba(255,102,51,0.12);
+  --green:#34d399;--red:#fb7185;--blue:#818cf8;--purple:#a78bfa;--yellow:#fcd34d;
+  --pink:#f0abfc;--cyan:#67e8f9;
+  --radius:14px;--radius-sm:8px;--radius-xs:6px;
+  --shadow:0 4px 24px rgba(0,0,0,0.4),0 1px 2px rgba(0,0,0,0.3);
+  --shadow-lg:0 12px 48px rgba(0,0,0,0.5),0 2px 8px rgba(0,0,0,0.3);
 }
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
-a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent2)}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;transition:color 0.2s}a:hover{color:var(--accent2)}
+::selection{background:var(--accent);color:#fff}
 
-/* Scrollbar */
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--surface)}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:10px}
 ::-webkit-scrollbar-thumb:hover{background:var(--text3)}
 
-/* Navigation */
-.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
-.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;height:56px;gap:8px}
-.nav-logo{font-weight:800;font-size:20px;color:var(--accent);margin-right:24px;cursor:pointer}
-.nav-tab{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text2);cursor:pointer;transition:all 0.2s;border:none;background:none}
-.nav-tab:hover{color:var(--text);background:var(--surface2)}
-.nav-tab.active{color:var(--accent);background:var(--accent-glow)}
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(8,8,12,0.85);backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;height:52px;gap:4px}
+.nav-logo{font-family:'Instrument Serif',serif;font-size:24px;color:var(--text);margin-right:20px;cursor:pointer;letter-spacing:-0.5px}
+.nav-logo em{font-style:normal;color:var(--accent);font-weight:400}
+.nav-tab{padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500;color:var(--text3);cursor:pointer;transition:all 0.25s;border:none;background:none;letter-spacing:0.2px}
+.nav-tab:hover{color:var(--text)}
+.nav-tab.active{color:var(--text);background:var(--surface2)}
 .nav-search{margin-left:auto;position:relative}
-.nav-search input{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 14px 8px 36px;color:var(--text);font-size:14px;width:240px;transition:all 0.3s}
-.nav-search input:focus{outline:none;border-color:var(--accent);width:320px;background:var(--surface3)}
-.nav-search .search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
-.nav-shortcut{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text3);background:var(--surface);padding:2px 6px;border-radius:4px;border:1px solid var(--border);font-family:'JetBrains Mono'}
+.nav-search input{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 14px 7px 34px;color:var(--text);font-size:13px;width:220px;transition:all 0.3s;font-family:inherit}
+.nav-search input:focus{outline:none;border-color:var(--accent);width:300px;background:var(--surface2);box-shadow:0 0 0 3px var(--accent-soft)}
+.nav-search .si{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:13px;pointer-events:none}
+.nav-key{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--text3);background:var(--surface2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);font-family:'JetBrains Mono',monospace}
 
-/* Hero */
-.hero{padding:48px 24px 32px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 80%,var(--accent-glow) 0%,transparent 50%);pointer-events:none}
-.hero h1{font-size:48px;font-weight:900;margin-bottom:8px;position:relative}
-.hero h1 span{color:var(--accent)}
-.hero .subtitle{color:var(--text2);font-size:16px;margin-bottom:24px;position:relative}
-.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;position:relative}
+/* ===== HERO ===== */
+.hero{padding:60px 24px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 70%);pointer-events:none;opacity:0.7}
+.hero h1{font-family:'Instrument Serif',serif;font-size:64px;font-weight:400;margin-bottom:6px;position:relative;letter-spacing:-2px;line-height:1}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{color:var(--text3);font-size:15px;margin-bottom:32px;position:relative;letter-spacing:0.5px;font-weight:300}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;position:relative}
 .hero-stat{text-align:center}
-.hero-stat .num{font-size:28px;font-weight:800;color:var(--accent)}
-.hero-stat .label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.hero-stat .n{font-size:32px;font-weight:700;color:var(--text);letter-spacing:-1px}
+.hero-stat .l{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-top:2px;font-weight:500}
 
-/* Main content */
-.main{max-width:1400px;margin:0 auto;padding:0 24px 80px}
+/* ===== LAYOUT ===== */
+.main{max-width:1400px;margin:0 auto;padding:0 24px 100px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 16px;flex-wrap:wrap;gap:8px}
+.section-head h2{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;letter-spacing:-0.5px}
+.section-head .aside{color:var(--text3);font-size:13px}
 
-/* Section headers */
-.section-header{display:flex;align-items:center;justify-content:space-between;margin:32px 0 16px;flex-wrap:wrap;gap:12px}
-.section-title{font-size:22px;font-weight:700}
-.section-subtitle{color:var(--text2);font-size:14px}
+/* ===== FILTERS ===== */
+.filters{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.chip{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all 0.2s;letter-spacing:0.3px}
+.chip:hover{border-color:var(--border2);color:var(--text2)}
+.chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.chip .c{opacity:0.5;margin-left:3px;font-size:11px}
 
-/* Filters bar */
-.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
-.filter-chip{padding:6px 14px;border-radius:20px;font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all 0.2s;white-space:nowrap}
-.filter-chip:hover{border-color:var(--text3);color:var(--text)}
-.filter-chip.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
-.filter-chip .count{font-size:11px;opacity:0.6;margin-left:4px}
+/* ===== CONTROLS ===== */
+.controls{display:flex;gap:6px;align-items:center}
+.ctrl{padding:5px 10px;border-radius:var(--radius-xs);font-size:12px;border:1px solid var(--border);background:transparent;color:var(--text3);cursor:pointer;transition:all 0.2s}
+.ctrl:hover{color:var(--text2);border-color:var(--border2)}
+.ctrl.on{color:var(--accent);border-color:var(--accent)}
+.sel{background:transparent;border:1px solid var(--border);color:var(--text2);padding:5px 10px;border-radius:var(--radius-xs);font-size:12px;cursor:pointer;font-family:inherit}
+.count{font-size:12px;color:var(--text3)}
 
-/* Controls */
-.controls{display:flex;gap:8px;align-items:center}
-.control-btn{padding:6px 12px;border-radius:6px;font-size:13px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all 0.2s}
-.control-btn:hover{border-color:var(--text3);color:var(--text)}
-.control-btn.active{border-color:var(--accent);color:var(--accent)}
-.sort-select{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer}
+/* ===== CARDS ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all 0.3s ease}
+.card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.card .thumb{position:relative;padding-top:56.25%;background:var(--surface2);overflow:hidden}
+.card .thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.card:hover .thumb img{transform:scale(1.03)}
+.card .thumb .dur{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.85);padding:2px 7px;border-radius:4px;font-size:11px;font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
+.card .thumb .num{position:absolute;top:10px;left:10px;background:var(--accent);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;color:#fff}
+.card .thumb .fav{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);border:none;color:var(--text3);font-size:16px;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.card .thumb .fav:hover,.card .thumb .fav.on{color:var(--red);background:rgba(251,113,133,0.15)}
+.card .body{padding:12px 14px 14px}
+.card .body .guest{font-weight:600;font-size:14px;margin-bottom:3px;line-height:1.35;letter-spacing:-0.2px}
+.card .body .meta{display:flex;gap:8px;font-size:11px;color:var(--text3);margin-bottom:8px}
+.card .body .tags{display:flex;gap:4px;flex-wrap:wrap}
+.card .body .t{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--surface2);color:var(--text3);cursor:pointer;transition:all 0.15s;letter-spacing:0.3px;text-transform:uppercase}
+.card .body .t:hover{color:var(--accent);background:var(--accent-soft)}
+.card .body .t.amb{color:var(--blue);background:rgba(129,140,248,0.08)}
+.card .cid{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--yellow);background:rgba(252,211,77,0.08);padding:2px 8px;border-radius:10px;margin-top:6px;letter-spacing:0.3px;text-transform:uppercase}
 
-/* Episode grid */
-.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.ep-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.2s}
-.ep-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
-.ep-card .thumb{position:relative;padding-top:56.25%;background:var(--surface2)}
-.ep-card .thumb img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
-.ep-card .thumb .duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.8);padding:2px 6px;border-radius:4px;font-size:12px;font-family:'JetBrains Mono'}
-.ep-card .thumb .ep-num{position:absolute;top:8px;left:8px;background:var(--accent);padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700}
-.ep-card .thumb .fav-btn{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.6);border:none;color:var(--text3);font-size:18px;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
-.ep-card .thumb .fav-btn:hover,.ep-card .thumb .fav-btn.faved{color:var(--red)}
-.ep-card .info{padding:12px 14px}
-.ep-card .info .guest{font-weight:600;font-size:15px;margin-bottom:4px;line-height:1.3}
-.ep-card .info .meta{display:flex;gap:8px;font-size:12px;color:var(--text3);margin-bottom:8px;flex-wrap:wrap}
-.ep-card .info .tags{display:flex;gap:4px;flex-wrap:wrap}
-.ep-card .info .tag{font-size:11px;padding:2px 8px;border-radius:10px;background:var(--surface2);color:var(--text3);cursor:pointer;transition:all 0.15s}
-.ep-card .info .tag:hover{color:var(--accent);background:var(--accent-glow)}
-.ep-card .info .tag.ambito{color:var(--blue);background:rgba(96,165,250,0.1)}
-.ep-card .cid-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:2px 8px;border-radius:10px;margin-top:4px}
+/* ===== LIST VIEW ===== */
+.list .row{display:flex;align-items:center;gap:14px;padding:10px 14px;border-radius:var(--radius-sm);cursor:pointer;transition:all 0.15s;border:1px solid transparent}
+.list .row:hover{background:var(--surface);border-color:var(--border)}
+.list .row .rn{font-size:12px;color:var(--text3);width:36px;text-align:right;font-family:'JetBrains Mono',monospace}
+.list .row .rg{flex:1;font-weight:500;font-size:14px}
+.list .row .rm{font-size:12px;color:var(--text3);min-width:55px;text-align:right}
 
-/* Episode list */
-.ep-list .ep-row{display:flex;align-items:center;gap:16px;padding:12px 16px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent}
-.ep-list .ep-row:hover{background:var(--surface);border-color:var(--border)}
-.ep-list .ep-row .num{font-size:13px;color:var(--text3);width:40px;text-align:right;font-family:'JetBrains Mono'}
-.ep-list .ep-row .guest{flex:1;font-weight:500}
-.ep-list .ep-row .meta-item{font-size:13px;color:var(--text3);min-width:60px;text-align:right}
+/* ===== MODAL ===== */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;display:flex;justify-content:center;overflow-y:auto;padding:24px;backdrop-filter:blur(4px)}
+.modal{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);width:100%;max-width:880px;margin:auto;position:relative;max-height:calc(100vh - 48px);overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal .mx{position:sticky;top:12px;float:right;margin-right:12px;z-index:10;background:var(--surface2);border:1px solid var(--border);color:var(--text2);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;backdrop-filter:blur(8px)}
+.modal .mx:hover{color:var(--text);border-color:var(--border2)}
+.modal .mhero{position:relative;padding-top:42%;overflow:hidden}
+.modal .mhero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.modal .mhero .grad{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,var(--bg))}
+.modal .mbody{padding:0 28px 28px}
+.modal .mt{font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;margin-bottom:2px;letter-spacing:-1px}
+.modal .mg{font-size:17px;color:var(--text2);margin-bottom:14px;font-weight:300}
+.modal .mm{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:var(--text3)}
+.modal .mtags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:18px}
+.modal .mtags .t{padding:4px 12px;border-radius:14px;font-size:12px;background:var(--surface2);color:var(--text2);cursor:pointer;transition:all 0.15s;letter-spacing:0.3px}
+.modal .mtags .t:hover{color:var(--accent)}
+.modal .mtags .t.amb{color:var(--blue);background:rgba(129,140,248,0.08)}
+.modal .mactions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.btn{padding:9px 18px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:5px;font-family:inherit;letter-spacing:0.2px}
+.btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:var(--accent2);box-shadow:0 4px 16px rgba(255,102,51,0.25)}
+.btn-s{background:transparent;border:1px solid var(--border);color:var(--text2)}.btn-s:hover{border-color:var(--border2);color:var(--text)}
+.btn-cid{background:rgba(252,211,77,0.08);border:1px solid rgba(252,211,77,0.2);color:var(--yellow)}.btn-cid:hover{background:rgba(252,211,77,0.15)}
 
-/* Modal */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;display:flex;justify-content:center;overflow-y:auto;padding:24px}
-.modal{background:var(--bg);border:1px solid var(--border);border-radius:16px;width:100%;max-width:900px;margin:auto;position:relative;max-height:calc(100vh - 48px);overflow-y:auto}
-.modal-close{position:sticky;top:16px;float:right;margin-right:16px;z-index:10;background:var(--surface2);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
-.modal-hero{position:relative;padding-top:40%}
-.modal-hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
-.modal-hero .overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,var(--bg))}
-.modal-body{padding:0 24px 24px}
-.modal-title{font-size:28px;font-weight:800;margin-bottom:4px}
-.modal-guest{font-size:18px;color:var(--text2);margin-bottom:16px}
-.modal-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:14px;color:var(--text3)}
-.modal-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
-.modal-tags .tag{padding:4px 12px;border-radius:16px;font-size:13px;background:var(--surface2);color:var(--text2);cursor:pointer}
-.modal-tags .tag:hover{color:var(--accent)}
-.modal-tags .tag.ambito{color:var(--blue);background:rgba(96,165,250,0.1)}
-.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.btn{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;border:none;display:inline-flex;align-items:center;gap:6px}
-.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent2)}
-.btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-.btn-cid{background:rgba(251,191,36,0.15);border:1px solid var(--yellow);color:var(--yellow)}.btn-cid:hover{background:rgba(251,191,36,0.25)}
+/* ===== TRANSCRIPT ===== */
+.tsec{margin-top:18px;border-top:1px solid var(--border);padding-top:14px}
+.ttog{display:flex;align-items:center;gap:6px;cursor:pointer;color:var(--text3);font-size:13px;font-weight:500;transition:color 0.2s}
+.ttog:hover{color:var(--text2)}
+.tbox{font-size:13px;line-height:1.9;color:var(--text2);max-height:500px;overflow-y:auto;padding:14px;background:var(--surface);border-radius:var(--radius-sm);white-space:pre-wrap;margin-top:10px;border:1px solid var(--border)}
+.tbox mark{background:var(--accent-glow);color:var(--accent);padding:1px 3px;border-radius:3px}
 
-/* Transcript */
-.transcript-section{margin-top:20px;border-top:1px solid var(--border);padding-top:16px}
-.transcript-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;color:var(--text2);font-size:14px;font-weight:500}
-.transcript-toggle:hover{color:var(--text)}
-.transcript-search{margin:12px 0;position:relative}
-.transcript-search input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px}
-.transcript-search input:focus{outline:none;border-color:var(--accent)}
-.transcript-text{font-size:14px;line-height:1.8;color:var(--text2);max-height:500px;overflow-y:auto;padding:12px;background:var(--surface);border-radius:8px;font-family:'Inter',sans-serif;white-space:pre-wrap}
+/* ===== CID ===== */
+.cid-intro{background:linear-gradient(135deg,rgba(252,211,77,0.04),rgba(255,102,51,0.04));border:1px solid rgba(252,211,77,0.12);border-radius:var(--radius);padding:28px;margin-bottom:20px}
+.cid-intro h3{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;margin-bottom:6px;letter-spacing:-0.5px}
+.cid-intro p{color:var(--text2);font-size:14px;line-height:1.65;font-weight:300}
+.cid-nums{display:flex;gap:28px;margin-top:18px;flex-wrap:wrap}
+.cid-nums .cn{text-align:center}.cid-nums .cv{font-size:28px;font-weight:700;color:var(--yellow);letter-spacing:-1px}.cid-nums .cl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:2px;margin-top:1px}
+.ccard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:all 0.3s}
+.ccard:hover{border-color:rgba(252,211,77,0.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.ccard .ctop{display:flex;gap:12px;padding:12px 14px}
+.ccard .cimg{width:110px;height:62px;border-radius:var(--radius-xs);object-fit:cover;flex-shrink:0}
+.ccard .ci{flex:1;min-width:0}
+.ccard .cg{font-weight:600;font-size:13px;margin-bottom:2px}
+.ccard .cm{font-size:11px;color:var(--text3)}
+.ccard .cpre{font-size:11px;color:var(--text3);padding:0 14px 10px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:300}
+.ccard .sb{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-top:3px;letter-spacing:0.3px;text-transform:uppercase;font-weight:500}
+.ccard .sb.y{color:var(--green);background:rgba(52,211,153,0.08)}.ccard .sb.n{color:var(--red);background:rgba(251,113,133,0.08)}
 
-/* CID Section */
-.cid-section{margin-top:24px}
-.cid-intro{background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(255,107,53,0.08));border:1px solid rgba(251,191,36,0.2);border-radius:16px;padding:24px;margin-bottom:20px}
-.cid-intro h3{font-size:20px;margin-bottom:8px}
-.cid-intro p{color:var(--text2);font-size:14px;line-height:1.6}
-.cid-stats{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
-.cid-stat{text-align:center}
-.cid-stat .n{font-size:24px;font-weight:800;color:var(--yellow)}
-.cid-stat .l{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
-.cid-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all 0.2s}
-.cid-card:hover{border-color:var(--yellow);transform:translateY(-2px)}
-.cid-card .cid-top{display:flex;gap:12px;padding:14px}
-.cid-card .cid-thumb{width:120px;height:68px;border-radius:6px;object-fit:cover;flex-shrink:0}
-.cid-card .cid-info{flex:1;min-width:0}
-.cid-card .cid-guest{font-weight:600;font-size:14px;margin-bottom:2px}
-.cid-card .cid-meta{font-size:12px;color:var(--text3)}
-.cid-card .cid-preview{font-size:12px;color:var(--text3);padding:0 14px 12px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cid-card .story-badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:10px;margin-top:4px}
-.cid-card .story-badge.yes{color:var(--green);background:rgba(74,222,128,0.1)}
-.cid-card .story-badge.no{color:var(--red);background:rgba(248,113,113,0.1)}
+/* ===== GUESTS ===== */
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.gcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all 0.25s}
+.gcard:hover{border-color:var(--border2);transform:translateY(-1px)}
+.gcard .gn{font-weight:600;font-size:15px;margin-bottom:3px;letter-spacing:-0.2px}
+.gcard .gc{color:var(--accent);font-size:12px;margin-bottom:6px;font-weight:500}
+.gcard .ge{font-size:12px;color:var(--text3);line-height:1.7}
 
-/* Guests Section */
-.guest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-.guest-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all 0.2s}
-.guest-card:hover{border-color:var(--accent);transform:translateY(-1px)}
-.guest-card .g-name{font-weight:600;font-size:16px;margin-bottom:4px}
-.guest-card .g-count{color:var(--accent);font-size:13px;margin-bottom:8px}
-.guest-card .g-episodes{font-size:12px;color:var(--text3);line-height:1.6}
+/* ===== STATS ===== */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.scard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden}
+.scard:hover{border-color:var(--border2);transform:translateY(-1px)}
+.scard::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,var(--accent-soft),transparent 70%);opacity:0;transition:opacity 0.3s}
+.scard:hover::before{opacity:1}
+.scard .se{font-size:28px;margin-bottom:8px;position:relative}
+.scard .sl{font-size:11px;color:var(--text3);margin-bottom:3px;text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
+.scard .sv{font-size:17px;font-weight:600;margin-bottom:3px;letter-spacing:-0.3px;position:relative}
+.scard .sd{font-size:12px;color:var(--text2);position:relative;font-weight:300}
 
-/* Stats Section */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all 0.2s}
-.stat-card:hover{border-color:var(--accent)}
-.stat-card .stat-emoji{font-size:28px;margin-bottom:8px}
-.stat-card .stat-label{font-size:13px;color:var(--text3);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
-.stat-card .stat-value{font-size:18px;font-weight:700;margin-bottom:4px}
-.stat-card .stat-detail{font-size:13px;color:var(--text2)}
+/* ===== DISCOVERY ===== */
+.disco{text-align:center;padding:40px 0}
+.disco h3{font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;margin-bottom:6px;letter-spacing:-1px}
+.disco p{color:var(--text3);margin-bottom:28px;font-weight:300}
+.disco .dq{font-size:15px;font-weight:500;margin-bottom:14px}
+.disco .dopts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.disco .dopt{padding:10px 22px;border-radius:var(--radius);border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;transition:all 0.25s;font-size:14px;font-family:inherit}
+.disco .dopt:hover{border-color:var(--border2);color:var(--text)}
+.disco .dopt.sel{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.disco .dresult{background:var(--surface);border:1px solid var(--accent);border-radius:var(--radius);padding:28px;max-width:480px;margin:0 auto;cursor:pointer;transition:all 0.25s}
+.disco .dresult:hover{transform:scale(1.02);box-shadow:var(--shadow)}
 
-/* Discovery flow */
-.discovery{text-align:center;padding:32px 0}
-.discovery h3{font-size:24px;font-weight:700;margin-bottom:8px}
-.discovery p{color:var(--text2);margin-bottom:24px}
-.discovery-step{margin-bottom:24px}
-.discovery-q{font-size:16px;font-weight:500;margin-bottom:12px}
-.discovery-opts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.discovery-opt{padding:10px 20px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;transition:all 0.2s;font-size:14px}
-.discovery-opt:hover{border-color:var(--accent);color:var(--accent)}
-.discovery-opt.selected{border-color:var(--accent);background:var(--accent-glow);color:var(--accent)}
-.discovery-result{background:var(--surface);border:1px solid var(--accent);border-radius:16px;padding:24px;max-width:500px;margin:0 auto;cursor:pointer;transition:all 0.2s}
-.discovery-result:hover{transform:scale(1.02)}
+/* ===== TIMELINE ===== */
+.tl{margin:20px 0;padding:14px 0}
+.tl-bar{display:flex;height:44px;gap:1px;align-items:flex-end}
+.tl-seg{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;cursor:pointer;transition:all 0.2s;border-radius:2px;min-width:8px;flex:1}
+.tl-seg:hover{background:rgba(255,255,255,0.02)}
+.tl-seg .b{width:100%;background:var(--accent);border-radius:2px 2px 0 0;transition:all 0.25s;min-height:1px;opacity:0.6}
+.tl-seg:hover .b{opacity:1}
+.tl-seg.on .b{background:var(--yellow);opacity:1}
+.tl-seg .lb{font-size:9px;color:var(--text3);margin-top:4px;letter-spacing:1px}
 
-/* Timeline */
-.timeline{margin:24px 0;padding:16px 0}
-.timeline-bar{display:flex;height:48px;border-radius:8px;overflow:hidden;gap:2px}
-.timeline-segment{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;cursor:pointer;transition:all 0.2s;border-radius:4px;min-width:16px}
-.timeline-segment:hover{background:var(--surface2)}
-.timeline-segment .bar{width:100%;background:var(--accent);border-radius:2px;transition:all 0.2s;min-height:2px}
-.timeline-segment:hover .bar{background:var(--accent2)}
-.timeline-segment .label{font-size:10px;color:var(--text3);margin-top:4px;white-space:nowrap}
-.timeline-segment.active .bar{background:var(--yellow)}
+/* ===== SEARCH ===== */
+.sr{padding:10px 14px;border-radius:var(--radius-sm);cursor:pointer;transition:all 0.15s;border:1px solid transparent;margin-bottom:3px}
+.sr:hover{background:var(--surface);border-color:var(--border)}
+.sr .srg{font-weight:600;font-size:14px;margin-bottom:3px;letter-spacing:-0.2px}
+.sr .srs{font-size:12px;color:var(--text2);line-height:1.6;font-weight:300}
+.sr mark{background:var(--accent-glow);color:var(--accent);padding:0 2px;border-radius:2px}
 
-/* Favorites section */
-.fav-empty{text-align:center;padding:48px;color:var(--text3)}
-.fav-empty .icon{font-size:48px;margin-bottom:12px}
-
-/* Search results */
-.search-results{margin-top:8px}
-.search-result{padding:12px 16px;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent;margin-bottom:4px}
-.search-result:hover{background:var(--surface);border-color:var(--border)}
-.search-result .sr-guest{font-weight:600;margin-bottom:4px}
-.search-result .sr-snippet{font-size:13px;color:var(--text2);line-height:1.5}
-.search-result mark{background:var(--accent-glow);color:var(--accent);padding:0 2px;border-radius:2px}
-
-/* Back to top */
-.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;opacity:0;transition:all 0.3s;z-index:50;box-shadow:0 4px 16px rgba(255,107,53,0.3)}
-.back-top.visible{opacity:1}
-.back-top:hover{transform:scale(1.1)}
-
-/* Count badge */
-.results-count{font-size:13px;color:var(--text3);margin-bottom:12px}
-
-/* Responsive */
-@media(max-width:768px){
-  .hero h1{font-size:32px}
-  .hero-stats{gap:16px}
-  .hero-stat .num{font-size:22px}
-  .nav-search input{width:160px}.nav-search input:focus{width:200px}
-  .ep-grid{grid-template-columns:1fr}
-  .modal{margin:0;border-radius:12px 12px 0 0;max-height:100vh}
-  .nav-tab{padding:6px 10px;font-size:13px}
-  .nav-shortcut{display:none}
-  .stats-grid{grid-template-columns:1fr}
-}
-
-/* Loading */
-.loading{text-align:center;padding:48px;color:var(--text3)}
-.spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+/* ===== MISC ===== */
+.btt{position:fixed;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);color:var(--text2);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;opacity:0;transition:all 0.3s;z-index:50}
+.btt.vis{opacity:1}.btt:hover{border-color:var(--accent);color:var(--accent)}
+.empty{text-align:center;padding:48px;color:var(--text3);font-weight:300}
+.empty .icon{font-size:40px;margin-bottom:10px;opacity:0.5}
+.loading{text-align:center;padding:48px;color:var(--text3)}.spinner{display:inline-block;width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:768px){
+  .hero h1{font-size:40px}.hero-stats{gap:20px}.hero-stat .n{font-size:24px}
+  .nav-search input{width:140px}.nav-search input:focus{width:180px}
+  .grid{grid-template-columns:1fr}.modal{border-radius:var(--radius) var(--radius) 0 0;max-height:100vh}
+  .nav-tab{padding:5px 8px;font-size:12px}.nav-key{display:none}
+  .sgrid{grid-template-columns:1fr}.section-head h2{font-size:22px}
+}
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
 const {useState, useEffect, useMemo, useCallback, useRef} = React;
+const h = React.createElement;
 
-// ========== UTILITIES ==========
-const fmt = n => n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':n.toString();
-const fmtDate = d => {if(!d)return'';const[y,m,dd]=d.split('-');const months=['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];return`${parseInt(dd)} ${months[parseInt(m)-1]} ${y}`};
-const fmtDur = s => {const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`:`${m}:${String(ss).padStart(2,'0')}`};
+// ===== UTILS =====
+const fmt = n => n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(1)+'K':String(n);
+const fDate = d => {if(!d)return'';const[y,m,dd]=d.split('-');return`${+dd} ${['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'][+m-1]} ${y}`};
+const fDur = s => {if(!s)return'';const hr=Math.floor(s/3600),mn=Math.floor((s%3600)/60),sc=s%60;return hr?`${hr}:${String(mn).padStart(2,'0')}:${String(sc).padStart(2,'0')}`:`${mn}:${String(sc).padStart(2,'0')}`};
+const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 
-function highlight(text, query) {
-  if (!query || query.length < 3) return text;
-  const parts = text.split(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'));
-  return parts.map((p,i) => p.toLowerCase()===query.toLowerCase() ? React.createElement('mark',{key:i},p) : p);
-}
+// ===== FAVS =====
+const loadFavs = () => { try{return JSON.parse(localStorage.getItem('tintoria_favs')||'[]')}catch(e){return[]} };
+const saveFavs = f => localStorage.setItem('tintoria_favs', JSON.stringify(f));
+const togFav = (id, favs, set) => { const n = favs.includes(id)?favs.filter(f=>f!==id):[...favs,id]; set(n); saveFavs(n); };
 
-function getSnippet(text, query, contextLen=80) {
-  if (!query || !text) return '';
-  const idx = text.toLowerCase().indexOf(query.toLowerCase());
-  if (idx === -1) return text.slice(0, 200);
-  const start = Math.max(0, idx - contextLen);
-  const end = Math.min(text.length, idx + query.length + contextLen);
-  return (start > 0 ? '…' : '') + text.slice(start, end) + (end < text.length ? '…' : '');
-}
-
-// ========== FAVORITES ==========
-function loadFavs() { try { return JSON.parse(localStorage.getItem('tintoria_favs')||'[]') } catch(e) { return [] } }
-function saveFavs(f) { localStorage.setItem('tintoria_favs', JSON.stringify(f)) }
-function toggleFav(id, favs, setFavs) {
-  const next = favs.includes(id) ? favs.filter(f=>f!==id) : [...favs, id];
-  setFavs(next); saveFavs(next);
-}
-
-// ========== GUEST INDEX ==========
-function buildGuestIndex(episodes) {
+// ===== GUEST INDEX (Rapone = conduttore, escluso) =====
+function buildGuests(episodes) {
+  const HOSTS = ['stefano rapone', 'daniele tinti'];
   const idx = {};
   episodes.forEach(ep => {
     if (!ep.is_numbered) return;
-    let g = ep.guest || '';
-    const hasRapone = /rapone/i.test(g);
-    g = g.replace(/^LIVE\s+/, '');
-    g = g.replace(/\s*\(con Stefano Rapone\)/i, '');
-    g = g.replace(/\s*con \(Stefano Rapone\)/i, '');
-    g = g.replace(/\s*feat\s+Stefano Rapone/i, '');
-    const parts = g.split(/\s*[&,]\s*|\s+e\s+/);
-    parts.forEach(p => {
+    let g = (ep.guest || '').replace(/^LIVE\s+/,'')
+      .replace(/\s*\(con Stefano Rapone\)/gi,'')
+      .replace(/\s*con \(Stefano Rapone\)/gi,'')
+      .replace(/\s*feat\s+Stefano Rapone/gi,'');
+    g.split(/\s*[&,]\s*|\s+e\s+/).forEach(p => {
       let name = p.trim();
-      if (!name || name.length < 3) return;
-      if (name.includes(' aka ')) {
-        const [a, b] = name.split(' aka ');
-        if (!idx[a.trim()]) idx[a.trim()] = [];
-        idx[a.trim()].push(ep);
-      }
-      if (!idx[name]) idx[name] = [];
-      idx[name].push(ep);
+      if (!name || name.length < 3 || HOSTS.includes(name.toLowerCase())) return;
+      if (name.includes(' aka ')) { name.split(' aka ').forEach(n => { const k=n.trim(); if(k.length>2){if(!idx[k])idx[k]=[];idx[k].push(ep)} }); }
+      else { if(!idx[name])idx[name]=[]; idx[name].push(ep); }
     });
-    if (hasRapone) {
-      if (!idx['Stefano Rapone']) idx['Stefano Rapone'] = [];
-      idx['Stefano Rapone'].push(ep);
-    }
   });
-  // Deduplicate
   Object.keys(idx).forEach(k => {
     const seen = new Set();
-    idx[k] = idx[k].filter(ep => { if(seen.has(ep.episode_number)) return false; seen.add(ep.episode_number); return true; });
+    idx[k] = idx[k].filter(e => { if(seen.has(e.episode_number))return false; seen.add(e.episode_number); return true; });
     idx[k].sort((a,b) => a.episode_number - b.episode_number);
   });
   return idx;
 }
 
-// ========== STATS ==========
-function buildStats(episodes, meta) {
-  const numbered = episodes.filter(e => e.is_numbered);
-  const withViews = numbered.filter(e => e.view_count);
-  const sorted = [...withViews].sort((a,b) => b.view_count - a.view_count);
-  const byDuration = [...numbered].filter(e=>e.duration_seconds).sort((a,b) => b.duration_seconds - a.duration_seconds);
-  const totalWords = meta.total_transcript_words || 0;
-  
-  // Episodes per year
-  const perYear = {};
-  numbered.forEach(ep => { const y = (ep.upload_date||'').slice(0,4); if(y) perYear[y] = (perYear[y]||0)+1; });
-  const busiestYear = Object.entries(perYear).sort((a,b)=>b[1]-a[1])[0];
-  
-  // Total hours
-  const totalSec = numbered.reduce((s,e) => s + (e.duration_seconds||0), 0);
-  const totalHours = Math.round(totalSec / 3600);
-  
+// ===== STATS =====
+function buildStats(eps, meta) {
+  const num = eps.filter(e=>e.is_numbered);
+  const wv = [...num].filter(e=>e.view_count).sort((a,b)=>b.view_count-a.view_count);
+  const wd = [...num].filter(e=>e.duration_seconds).sort((a,b)=>b.duration_seconds-a.duration_seconds);
+  const py = {}; num.forEach(e=>{const y=(e.upload_date||'').slice(0,4);if(y)py[y]=(py[y]||0)+1});
+  const by = Object.entries(py).sort((a,b)=>b[1]-a[1])[0];
+  const th = Math.round(num.reduce((s,e)=>s+(e.duration_seconds||0),0)/3600);
   return [
-    { emoji:'👑', label:'Episodio più visto', value: `#${sorted[0]?.episode_number} ${sorted[0]?.guest}`, detail:`${fmt(sorted[0]?.view_count)} visualizzazioni`, ep: sorted[0] },
-    { emoji:'💎', label:'Gemma nascosta', value: `#${sorted[sorted.length-1]?.episode_number} ${sorted[sorted.length-1]?.guest}`, detail:`Solo ${fmt(sorted[sorted.length-1]?.view_count)} visualizzazioni`, ep: sorted[sorted.length-1] },
-    { emoji:'🕐', label:'Maratona più lunga', value: `#${byDuration[0]?.episode_number} ${byDuration[0]?.guest}`, detail:fmtDur(byDuration[0]?.duration_seconds), ep: byDuration[0] },
-    { emoji:'⚡', label:'Episodio più breve', value: `#${byDuration[byDuration.length-1]?.episode_number} ${byDuration[byDuration.length-1]?.guest}`, detail:fmtDur(byDuration[byDuration.length-1]?.duration_seconds), ep: byDuration[byDuration.length-1] },
-    { emoji:'📅', label:'Anno più prolifico', value: busiestYear ? `${busiestYear[0]}` : '?', detail: busiestYear ? `${busiestYear[1]} episodi pubblicati` : '' },
-    { emoji:'🎙️', label:'Ore totali di podcast', value: `${totalHours} ore`, detail:`${totalWords ? (totalWords/1e6).toFixed(1)+'M' : '?'} parole trascritte` },
-    { emoji:'💩', label:'Rubrica "Cacare in discoteca"', value: `${meta.rubrica_cid_count || 0} episodi`, detail:`${meta.rubrica_cid_stories || 0} ospiti hanno raccontato` },
-    { emoji:'👥', label:'Ospiti unici', value: `${meta.unique_guests || 0}`, detail:`Da ${Object.keys(perYear).sort()[0]||'?'} a oggi` },
+    {e:'👑',l:'Episodio più visto',v:`#${wv[0]?.episode_number} ${wv[0]?.guest}`,d:`${fmt(wv[0]?.view_count)} views`,ep:wv[0]},
+    {e:'💎',l:'Gemma nascosta',v:`#${wv[wv.length-1]?.episode_number} ${wv[wv.length-1]?.guest}`,d:`${fmt(wv[wv.length-1]?.view_count)} views`,ep:wv[wv.length-1]},
+    {e:'🕐',l:'Maratona più lunga',v:`#${wd[0]?.episode_number} ${wd[0]?.guest}`,d:fDur(wd[0]?.duration_seconds),ep:wd[0]},
+    {e:'⚡',l:'Più breve',v:`#${wd[wd.length-1]?.episode_number} ${wd[wd.length-1]?.guest}`,d:fDur(wd[wd.length-1]?.duration_seconds),ep:wd[wd.length-1]},
+    {e:'📅',l:'Anno più prolifico',v:by?by[0]:'?',d:by?`${by[1]} episodi`:''},
+    {e:'🎙️',l:'Ore di podcast',v:`${th}`,d:`${meta.total_transcript_words?(meta.total_transcript_words/1e6).toFixed(1)+'M parole trascritte':''}`},
+    {e:'💩',l:'Rubrica CID',v:`${meta.rubrica_cid_count||0} episodi`,d:`${meta.rubrica_cid_stories||0} storie raccontate`},
+    {e:'👥',l:'Ospiti unici',v:`${meta.unique_guests||0}`,d:`Dal ${Object.keys(py).sort()[0]||'?'} a oggi`},
   ];
 }
 
-// ========== EPISODE MODAL ==========
-function EpisodeModal({ ep, onClose, onTagClick, favs, setFavs, cidData }) {
-  const [transcript, setTranscript] = useState(null);
-  const [showTranscript, setShowTranscript] = useState(false);
-  const [tSearch, setTSearch] = useState('');
-  const [loading, setLoading] = useState(false);
+// ===== MODAL =====
+function Modal({ep, onClose, onTag, favs, setFavs, cid}) {
+  const [txt, setTxt] = useState(null);
+  const [show, setShow] = useState(false);
+  const [ts, setTs] = useState('');
+  const [ld, setLd] = useState(false);
+  useEffect(()=>{document.body.style.overflow='hidden';return()=>{document.body.style.overflow=''}},[]);
+  useEffect(()=>{const f=e=>{if(e.key==='Escape')onClose()};window.addEventListener('keydown',f);return()=>window.removeEventListener('keydown',f)},[onClose]);
 
-  useEffect(() => { document.body.style.overflow='hidden'; return()=>{document.body.style.overflow=''}; }, []);
-  useEffect(() => { const h=e=>{if(e.key==='Escape')onClose()}; window.addEventListener('keydown',h); return()=>window.removeEventListener('keydown',h); }, [onClose]);
+  const load = useCallback(async()=>{
+    if(txt){setShow(!show);return}
+    setLd(true);
+    try{const r=await fetch(`../data/transcripts/${String(ep.episode_number).padStart(3,'0')}.txt`);if(r.ok){setTxt(await r.text());setShow(true)}}catch(e){}
+    setLd(false);
+  },[ep,txt,show]);
 
-  const loadTranscript = useCallback(async () => {
-    if (transcript) { setShowTranscript(!showTranscript); return; }
-    setLoading(true);
-    try {
-      const num = String(ep.episode_number).padStart(3,'0');
-      const res = await fetch(`../data/transcripts/${num}.txt`);
-      if (res.ok) { const t = await res.text(); setTranscript(t); setShowTranscript(true); }
-    } catch(e) {}
-    setLoading(false);
-  }, [ep, transcript, showTranscript]);
-
-  const cidInfo = cidData?.episodes?.find(c => c.episode_number === ep.episode_number);
-
-  const filteredTranscript = useMemo(() => {
-    if (!transcript || !tSearch || tSearch.length < 3) return transcript;
-    return transcript;
-  }, [transcript, tSearch]);
-
-  const tSearchCount = useMemo(() => {
-    if (!transcript || !tSearch || tSearch.length < 3) return 0;
-    return (transcript.toLowerCase().match(new RegExp(tSearch.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'))||[]).length;
-  }, [transcript, tSearch]);
-
+  const ci = cid?.episodes?.find(c=>c.episode_number===ep.episode_number);
   const isFav = favs.includes(ep.youtube_id);
+  const tCount = (txt&&ts.length>=3)?(txt.toLowerCase().match(new RegExp(esc(ts.toLowerCase()),'g'))||[]).length:0;
 
-  return React.createElement('div', {className:'modal-overlay', onClick:e=>{if(e.target===e.currentTarget)onClose()}},
-    React.createElement('div', {className:'modal'},
-      React.createElement('button', {className:'modal-close', onClick:onClose}, '✕'),
-      React.createElement('div', {className:'modal-hero'},
-        React.createElement('img', {src:ep.thumbnail_url, alt:ep.guest}),
-        React.createElement('div', {className:'overlay'})
-      ),
-      React.createElement('div', {className:'modal-body'},
-        React.createElement('div', {className:'modal-title'}, `Tintoria #${ep.episode_number}`),
-        React.createElement('div', {className:'modal-guest'}, ep.guest),
-        React.createElement('div', {className:'modal-meta'},
-          ep.upload_date && React.createElement('span', null, '📅 ', fmtDate(ep.upload_date)),
-          React.createElement('span', null, '⏱ ', fmtDur(ep.duration_seconds)),
-          React.createElement('span', null, '👁 ', fmt(ep.view_count)),
-          ep.professione?.length > 0 && React.createElement('span', null, '💼 ', ep.professione.join(', '))
+  return h('div',{className:'overlay',onClick:e=>{if(e.target===e.currentTarget)onClose()}},
+    h('div',{className:'modal'},
+      h('button',{className:'mx',onClick:onClose},'✕'),
+      h('div',{className:'mhero'},h('img',{src:ep.thumbnail_url,alt:ep.guest}),h('div',{className:'grad'})),
+      h('div',{className:'mbody'},
+        h('div',{className:'mt'},`Tintoria #${ep.episode_number}`),
+        h('div',{className:'mg'},ep.guest),
+        h('div',{className:'mm'},
+          ep.upload_date&&h('span',null,'📅 ',fDate(ep.upload_date)),
+          h('span',null,'⏱ ',fDur(ep.duration_seconds)),
+          h('span',null,'👁 ',fmt(ep.view_count)),
+          ep.professione?.length>0&&h('span',null,'💼 ',ep.professione.join(', '))
         ),
-        React.createElement('div', {className:'modal-tags'},
-          ...(ep.ambito||[]).map(a => React.createElement('span', {key:'a_'+a, className:'tag ambito', onClick:()=>{onClose();onTagClick('ambito',a)}}, a)),
-          ...(ep.tags||[]).map(t => React.createElement('span', {key:'t_'+t, className:'tag', onClick:()=>{onClose();onTagClick('tag',t)}}, t))
+        h('div',{className:'mtags'},
+          ...(ep.ambito||[]).map(a=>h('span',{key:'a_'+a,className:'t amb',onClick:()=>{onClose();onTag('ambito',a)}},a)),
+          ...(ep.tags||[]).map(t=>h('span',{key:'t_'+t,className:'t',onClick:()=>{onClose();onTag('tag',t)}},t))
         ),
-        React.createElement('div', {className:'modal-actions'},
-          React.createElement('a', {className:'btn btn-primary', href:ep.youtube_url, target:'_blank', rel:'noopener'}, '▶ Guarda su YouTube'),
-          React.createElement('button', {className:'btn btn-secondary', onClick:()=>toggleFav(ep.youtube_id,favs,setFavs)}, isFav?'❤️ Nei preferiti':'🤍 Aggiungi ai preferiti'),
-          cidInfo && React.createElement('a', {className:'btn btn-cid', href:`${ep.youtube_url}&t=${cidInfo.estimated_timestamp_sec}`, target:'_blank', rel:'noopener'}, `💩 Vai alla rubrica (~${cidInfo.estimated_timestamp})`)
+        h('div',{className:'mactions'},
+          h('a',{className:'btn btn-p',href:ep.youtube_url,target:'_blank',rel:'noopener'},'▶ YouTube'),
+          h('button',{className:'btn btn-s',onClick:()=>togFav(ep.youtube_id,favs,setFavs)},isFav?'❤️ Preferito':'🤍 Salva'),
+          ci&&h('a',{className:'btn btn-cid',href:`${ep.youtube_url}&t=${ci.estimated_timestamp_sec}`,target:'_blank',rel:'noopener'},`💩 Rubrica ~${ci.estimated_timestamp}`)
         ),
-        cidInfo && React.createElement('div', {style:{marginBottom:16,padding:12,background:'rgba(251,191,36,0.06)',borderRadius:8,border:'1px solid rgba(251,191,36,0.15)'}},
-          React.createElement('div', {style:{fontSize:14,fontWeight:600,color:'var(--yellow)',marginBottom:4}}, '💩 Cacare in discoteca'),
-          React.createElement('div', {style:{fontSize:13,color:'var(--text2)'}}, cidInfo.guest_tells_story ? '✅ L\'ospite racconta la sua storia' : '❌ L\'ospite non racconta'),
-          cidInfo.segment_preview && React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginTop:8,fontStyle:'italic'}}, cidInfo.segment_preview.slice(0,200)+'…')
+        ci&&h('div',{style:{marginBottom:16,padding:14,background:'rgba(252,211,77,0.04)',borderRadius:'var(--radius-sm)',border:'1px solid rgba(252,211,77,0.1)'}},
+          h('div',{style:{fontSize:13,fontWeight:600,color:'var(--yellow)',marginBottom:3}},'💩 Cacare in discoteca'),
+          h('div',{style:{fontSize:12,color:'var(--text2)',fontWeight:300}},ci.guest_tells_story?'✅ L\'ospite racconta':'❌ L\'ospite non racconta'),
+          ci.segment_preview&&h('div',{style:{fontSize:11,color:'var(--text3)',marginTop:6,fontStyle:'italic',lineHeight:1.5,fontWeight:300}},ci.segment_preview.slice(0,200)+'…')
         ),
-        ep.has_transcription && React.createElement('div', {className:'transcript-section'},
-          React.createElement('div', {className:'transcript-toggle', onClick:loadTranscript},
-            loading ? React.createElement('span', {className:'spinner', style:{width:16,height:16}}) : null,
-            React.createElement('span', null, showTranscript ? '▼' : '▶'),
-            React.createElement('span', null, showTranscript ? 'Nascondi trascrizione' : 'Leggi la trascrizione'),
-            ep.transcript_words && React.createElement('span', {style:{fontSize:12,color:'var(--text3)'}}, `(${(ep.transcript_words/1000).toFixed(1)}K parole)`)
+        ep.has_transcription&&h('div',{className:'tsec'},
+          h('div',{className:'ttog',onClick:load},
+            ld?h('span',{className:'spinner',style:{width:14,height:14}}):null,
+            h('span',null,show?'▼':'▶'),
+            h('span',null,show?'Nascondi trascrizione':'Leggi trascrizione'),
+            ep.transcript_words&&h('span',{style:{fontSize:11,color:'var(--text3)',marginLeft:4}},`${(ep.transcript_words/1000).toFixed(1)}K parole`)
           ),
-          showTranscript && React.createElement('div', null,
-            React.createElement('div', {className:'transcript-search'},
-              React.createElement('input', {type:'text', placeholder:'Cerca nella trascrizione...', value:tSearch, onChange:e=>setTSearch(e.target.value)}),
-              tSearch.length >= 3 && React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginTop:4}}, `${tSearchCount} risultati`)
+          show&&h('div',null,
+            h('div',{style:{margin:'10px 0',position:'relative'}},
+              h('input',{type:'text',placeholder:'Cerca nella trascrizione…',value:ts,onChange:e=>setTs(e.target.value),style:{width:'100%',background:'var(--surface)',border:'1px solid var(--border)',borderRadius:'var(--radius-sm)',padding:'9px 14px',color:'var(--text)',fontSize:13,fontFamily:'inherit'}}),
+              ts.length>=3&&h('span',{style:{position:'absolute',right:12,top:'50%',transform:'translateY(-50%)',fontSize:11,color:'var(--text3)'}},`${tCount} trovati`)
             ),
-            React.createElement('div', {className:'transcript-text', dangerouslySetInnerHTML:{
-              __html: tSearch.length >= 3
-                ? (filteredTranscript||'').replace(new RegExp(`(${tSearch.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark>$1</mark>')
-                : filteredTranscript || ''
-            }})
+            h('div',{className:'tbox',dangerouslySetInnerHTML:{__html:ts.length>=3?(txt||'').replace(new RegExp(`(${esc(ts)})`,'gi'),'<mark>$1</mark>'):txt||''}})
           )
         )
       )
@@ -416,539 +343,342 @@ function EpisodeModal({ ep, onClose, onTagClick, favs, setFavs, cidData }) {
   );
 }
 
-// ========== EPISODE CARD ==========
-function EpisodeCard({ ep, onClick, onTagClick, favs, setFavs }) {
-  const isFav = favs.includes(ep.youtube_id);
-  return React.createElement('div', {className:'ep-card', onClick:()=>onClick(ep)},
-    React.createElement('div', {className:'thumb'},
-      React.createElement('img', {src:ep.thumbnail_url, alt:ep.guest, loading:'lazy'}),
-      React.createElement('span', {className:'duration'}, fmtDur(ep.duration_seconds)),
-      ep.is_numbered && React.createElement('span', {className:'ep-num'}, `#${ep.episode_number}`),
-      React.createElement('button', {className:`fav-btn ${isFav?'faved':''}`, onClick:e=>{e.stopPropagation();toggleFav(ep.youtube_id,favs,setFavs)}}, isFav?'❤':'♡')
+// ===== CARD =====
+function Card({ep, onClick, onTag, favs, setFavs}) {
+  const fav = favs.includes(ep.youtube_id);
+  return h('div',{className:'card',onClick:()=>onClick(ep)},
+    h('div',{className:'thumb'},
+      h('img',{src:ep.thumbnail_url,alt:ep.guest,loading:'lazy'}),
+      h('span',{className:'dur'},fDur(ep.duration_seconds)),
+      ep.is_numbered&&h('span',{className:'num'},`#${ep.episode_number}`),
+      h('button',{className:`fav ${fav?'on':''}`,onClick:e=>{e.stopPropagation();togFav(ep.youtube_id,favs,setFavs)}},fav?'❤':'♡')
     ),
-    React.createElement('div', {className:'info'},
-      React.createElement('div', {className:'guest'}, ep.guest),
-      React.createElement('div', {className:'meta'},
-        ep.upload_date && React.createElement('span', null, fmtDate(ep.upload_date)),
-        React.createElement('span', null, fmt(ep.view_count)+' views')
+    h('div',{className:'body'},
+      h('div',{className:'guest'},ep.guest),
+      h('div',{className:'meta'},
+        ep.upload_date&&h('span',null,fDate(ep.upload_date)),
+        h('span',null,fmt(ep.view_count)+' views')
       ),
-      React.createElement('div', {className:'tags'},
-        ...(ep.ambito||[]).slice(0,2).map(a => React.createElement('span', {key:'a_'+a, className:'tag ambito', onClick:e=>{e.stopPropagation();onTagClick('ambito',a)}}, a)),
-        ...(ep.tags||[]).slice(0,3).map(t => React.createElement('span', {key:'t_'+t, className:'tag', onClick:e=>{e.stopPropagation();onTagClick('tag',t)}}, t))
+      h('div',{className:'tags'},
+        ...(ep.ambito||[]).slice(0,2).map(a=>h('span',{key:'a_'+a,className:'t amb',onClick:e=>{e.stopPropagation();onTag('ambito',a)}},a)),
+        ...(ep.tags||[]).slice(0,3).map(t=>h('span',{key:'t_'+t,className:'t',onClick:e=>{e.stopPropagation();onTag('tag',t)}},t))
       ),
-      ep.has_rubrica_cid && React.createElement('div', {className:'cid-badge'}, '💩 Cacare in discoteca')
+      ep.has_rubrica_cid&&h('div',{className:'cid'},'💩 CID')
     )
   );
 }
 
-// ========== DISCOVERY FLOW ==========
-function DiscoveryFlow({ episodes, onSelect }) {
-  const [step, setStep] = useState(0);
-  const [ambito, setAmbito] = useState(null);
-  const [mood, setMood] = useState(null);
-  const [result, setResult] = useState(null);
-
-  const ambiti = ['comedy', 'musica', 'cinema', 'tv', 'letteratura', 'web', 'giornalismo'];
-  const moods = [
-    {label:'Episodio popolare', key:'popular'},
-    {label:'Gemma nascosta', key:'hidden'},
-    {label:'Maratona lunga', key:'long'},
-    {label:'Episodio breve', key:'short'},
-  ];
-
-  const findEpisode = (a, m) => {
-    let pool = episodes.filter(e => e.is_numbered && (e.ambito||[]).includes(a));
-    if (pool.length === 0) pool = episodes.filter(e => e.is_numbered);
-    let sorted;
-    switch(m) {
-      case 'popular': sorted = [...pool].sort((a,b)=>b.view_count-a.view_count); break;
-      case 'hidden': sorted = [...pool].sort((a,b)=>a.view_count-b.view_count); break;
-      case 'long': sorted = [...pool].sort((a,b)=>b.duration_seconds-a.duration_seconds); break;
-      case 'short': sorted = [...pool].sort((a,b)=>a.duration_seconds-b.duration_seconds); break;
-      default: sorted = pool;
-    }
-    // Pick from top 5 randomly
-    const top = sorted.slice(0, Math.min(5, sorted.length));
-    return top[Math.floor(Math.random() * top.length)];
+// ===== DISCOVERY =====
+function Disco({episodes, onPick}) {
+  const [step,setStep]=useState(0);const [amb,setAmb]=useState(null);const [res,setRes]=useState(null);
+  const ambiti=['comedy','musica','cinema','tv','letteratura','web','giornalismo'];
+  const moods=[{l:'Popolare',k:'pop'},{l:'Gemma nascosta',k:'gem'},{l:'Maratona',k:'long'},{l:'Breve',k:'short'}];
+  const find=(a,m)=>{
+    let pool=episodes.filter(e=>e.is_numbered&&(a==='any'||(e.ambito||[]).includes(a)));
+    if(!pool.length)pool=episodes.filter(e=>e.is_numbered);
+    let s;
+    switch(m){case'pop':s=[...pool].sort((a,b)=>b.view_count-a.view_count);break;case'gem':s=[...pool].sort((a,b)=>a.view_count-b.view_count);break;case'long':s=[...pool].sort((a,b)=>(b.duration_seconds||0)-(a.duration_seconds||0));break;case'short':s=[...pool].sort((a,b)=>(a.duration_seconds||0)-(b.duration_seconds||0));break;default:s=pool}
+    const top=s.slice(0,5);return top[Math.floor(Math.random()*top.length)];
   };
-
-  const reset = () => { setStep(0); setAmbito(null); setMood(null); setResult(null); };
-
-  if (result) {
-    return React.createElement('div', {className:'discovery'},
-      React.createElement('h3', null, '🎯 Ecco il tuo episodio!'),
-      React.createElement('div', {className:'discovery-result', onClick:()=>onSelect(result)},
-        React.createElement('div', {style:{fontSize:14,color:'var(--accent)',marginBottom:4}}, `#${result.episode_number}`),
-        React.createElement('div', {style:{fontSize:20,fontWeight:700,marginBottom:4}}, result.guest),
-        React.createElement('div', {style:{fontSize:14,color:'var(--text2)'}}, `${fmtDur(result.duration_seconds)} · ${fmt(result.view_count)} views`),
-        React.createElement('div', {style:{marginTop:8,fontSize:13,color:'var(--text3)'}}, (result.ambito||[]).concat(result.tags||[]).join(' · '))
-      ),
-      React.createElement('div', {style:{marginTop:16,display:'flex',gap:8,justifyContent:'center'}},
-        React.createElement('button', {className:'btn btn-secondary', onClick:()=>{setResult(findEpisode(ambito,mood))}}, '🔄 Un altro'),
-        React.createElement('button', {className:'btn btn-secondary', onClick:reset}, '↩ Ricomincia')
-      )
-    );
-  }
-
-  return React.createElement('div', {className:'discovery'},
-    React.createElement('h3', null, '🧭 Non sai cosa guardare?'),
-    React.createElement('p', null, 'Rispondi a due domande e ti consiglio un episodio'),
-    step === 0 && React.createElement('div', {className:'discovery-step'},
-      React.createElement('div', {className:'discovery-q'}, 'Che genere ti va?'),
-      React.createElement('div', {className:'discovery-opts'},
-        ...ambiti.map(a => React.createElement('button', {key:a, className:`discovery-opt ${ambito===a?'selected':''}`, onClick:()=>{setAmbito(a);setStep(1)}}, a)),
-        React.createElement('button', {className:`discovery-opt ${ambito==='any'?'selected':''}`, onClick:()=>{setAmbito('any');setStep(1)}}, '🎲 Qualsiasi')
+  const reset=()=>{setStep(0);setAmb(null);setRes(null)};
+  if(res)return h('div',{className:'disco'},
+    h('h3',null,'🎯 Ecco il tuo episodio'),
+    h('div',{className:'dresult',onClick:()=>onPick(res)},
+      h('div',{style:{fontSize:13,color:'var(--accent)',marginBottom:3}},`#${res.episode_number}`),
+      h('div',{style:{fontSize:22,fontWeight:600,marginBottom:3,letterSpacing:'-0.5px'}},res.guest),
+      h('div',{style:{fontSize:13,color:'var(--text2)',fontWeight:300}},`${fDur(res.duration_seconds)} · ${fmt(res.view_count)} views`),
+      h('div',{style:{marginTop:6,fontSize:12,color:'var(--text3)'}},((res.ambito||[]).concat(res.tags||[])).join(' · '))
+    ),
+    h('div',{style:{marginTop:16,display:'flex',gap:8,justifyContent:'center'}},
+      h('button',{className:'btn btn-s',onClick:()=>setRes(find(amb,null))},'🔄 Un altro'),
+      h('button',{className:'btn btn-s',onClick:reset},'↩ Ricomincia')
+    )
+  );
+  return h('div',{className:'disco'},
+    h('h3',null,'Non sai cosa guardare?'),
+    h('p',null,'Due domande, un episodio'),
+    step===0&&h('div',null,
+      h('div',{className:'dq'},'Che genere ti va?'),
+      h('div',{className:'dopts'},
+        ...ambiti.map(a=>h('button',{key:a,className:`dopt ${amb===a?'sel':''}`,onClick:()=>{setAmb(a);setStep(1)}},a)),
+        h('button',{className:`dopt ${amb==='any'?'sel':''}`,onClick:()=>{setAmb('any');setStep(1)}},'🎲 Qualsiasi')
       )
     ),
-    step === 1 && React.createElement('div', {className:'discovery-step'},
-      React.createElement('div', {className:'discovery-q'}, 'Che tipo di episodio?'),
-      React.createElement('div', {className:'discovery-opts'},
-        ...moods.map(m => React.createElement('button', {key:m.key, className:'discovery-opt', onClick:()=>{
-          setMood(m.key);
-          const a2 = ambito==='any'?ambiti[Math.floor(Math.random()*ambiti.length)]:ambito;
-          setResult(findEpisode(a2, m.key));
-        }}, m.label)),
-        React.createElement('button', {className:'discovery-opt', onClick:()=>{
-          const a2 = ambito==='any'?ambiti[Math.floor(Math.random()*ambiti.length)]:ambito;
-          const pool = episodes.filter(e=>e.is_numbered&&((e.ambito||[]).includes(a2)||ambito==='any'));
-          setResult(pool[Math.floor(Math.random()*pool.length)]);
-        }}, '🎲 Sorprendimi')
+    step===1&&h('div',null,
+      h('div',{className:'dq'},'Che tipo?'),
+      h('div',{className:'dopts'},
+        ...moods.map(m=>h('button',{key:m.k,className:'dopt',onClick:()=>setRes(find(amb,m.k))},m.l)),
+        h('button',{className:'dopt',onClick:()=>{const pool=episodes.filter(e=>e.is_numbered);setRes(pool[Math.floor(Math.random()*pool.length)])}},'🎲 Sorprendimi')
       )
     )
   );
 }
 
-// ========== MAIN APP ==========
+// ===== APP =====
 function App() {
-  const [episodes, setEpisodes] = useState([]);
-  const [meta, setMeta] = useState({});
-  const [cidData, setCidData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState('episodi');
-  const [selectedEp, setSelectedEp] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState(null);
-  const [searchIndex, setSearchIndex] = useState(null);
-  const [loadingSearch, setLoadingSearch] = useState(false);
-  const [filterAmbito, setFilterAmbito] = useState(null);
-  const [filterTag, setFilterTag] = useState(null);
-  const [sortBy, setSortBy] = useState('number_desc');
-  const [viewMode, setViewMode] = useState('grid');
-  const [favs, setFavs] = useState(loadFavs());
-  const [showBackTop, setShowBackTop] = useState(false);
-  const [cidFilter, setCidFilter] = useState('all'); // all, story, no_story
-  const [timelineYear, setTimelineYear] = useState(null);
-  const searchRef = useRef(null);
-  const snippetCache = useRef({});
+  const [episodes,setEpisodes]=useState([]);const [meta,setMeta]=useState({});const [cid,setCid]=useState(null);
+  const [loading,setLoading]=useState(true);const [tab,setTab]=useState('episodi');const [sel,setSel]=useState(null);
+  const [q,setQ]=useState('');const [sRes,setSRes]=useState(null);const [sIdx,setSIdx]=useState(null);const [sLd,setSLd]=useState(false);
+  const [fAmb,setFAmb]=useState(null);const [fTag,setFTag]=useState(null);const [sort,setSort]=useState('number_desc');
+  const [view,setView]=useState('grid');const [favs,setFavs]=useState(loadFavs());const [btt,setBtt]=useState(false);
+  const [cidF,setCidF]=useState('all');const [tlY,setTlY]=useState(null);
+  const sRef=useRef(null);const snipC=useRef({});
 
-  // Load data
-  useEffect(() => {
+  useEffect(()=>{
     Promise.all([
       fetch('../data/episodes_tagged.json').then(r=>r.json()),
       fetch('../data/rubrica_cid.json').then(r=>r.json()).catch(()=>null)
-    ]).then(([data, cid]) => {
-      setEpisodes(data.episodes || []);
-      setMeta(data.meta || {});
-      setCidData(cid);
-      setLoading(false);
-    });
-  }, []);
+    ]).then(([d,c])=>{setEpisodes(d.episodes||[]);setMeta(d.meta||{});setCid(c);setLoading(false)});
+  },[]);
 
-  // Keyboard shortcuts
-  useEffect(() => {
-    const h = e => {
-      if (e.key === '/' && !e.ctrlKey && !e.metaKey && document.activeElement?.tagName !== 'INPUT') {
-        e.preventDefault(); searchRef.current?.focus();
-      }
-    };
-    window.addEventListener('keydown', h);
-    return () => window.removeEventListener('keydown', h);
-  }, []);
+  useEffect(()=>{const f=e=>{if(e.key==='/'&&document.activeElement?.tagName!=='INPUT'){e.preventDefault();sRef.current?.focus()}};window.addEventListener('keydown',f);return()=>window.removeEventListener('keydown',f)},[]);
+  useEffect(()=>{const f=()=>setBtt(window.scrollY>400);window.addEventListener('scroll',f);return()=>window.removeEventListener('scroll',f)},[]);
 
-  // Back to top
-  useEffect(() => {
-    const h = () => setShowBackTop(window.scrollY > 400);
-    window.addEventListener('scroll', h);
-    return () => window.removeEventListener('scroll', h);
-  }, []);
+  // Lazy-load search index
+  useEffect(()=>{if(q.length>=4&&!sIdx&&!sLd){setSLd(true);fetch('../data/search_index.json').then(r=>r.json()).then(i=>{setSIdx(i);setSLd(false)}).catch(()=>setSLd(false))}},[q,sIdx,sLd]);
 
-  // Search logic - lazy load index
-  useEffect(() => {
-    if (searchQuery.length >= 4 && !searchIndex && !loadingSearch) {
-      setLoadingSearch(true);
-      fetch('../data/search_index.json').then(r=>r.json()).then(idx => {
-        setSearchIndex(idx);
-        setLoadingSearch(false);
-      }).catch(() => setLoadingSearch(false));
-    }
-  }, [searchQuery, searchIndex, loadingSearch]);
+  // Search
+  useEffect(()=>{
+    if(!q||q.length<4||!sIdx){setSRes(null);return}
+    const words=q.toLowerCase().split(/\s+/).filter(w=>w.length>=3);
+    if(!words.length){setSRes(null);return}
+    let match=null;
+    words.forEach(w=>{const s=new Set();Object.keys(sIdx).forEach(t=>{if(t.includes(w))sIdx[t].forEach(n=>s.add(n))});match=match?new Set([...match].filter(n=>s.has(n))):s});
+    const res=[...(match||[])].map(n=>{const ep=episodes.find(e=>e.episode_number===n);return ep?{ep,n}:null}).filter(Boolean);
+    res.slice(0,20).forEach(r=>{const k=String(r.n).padStart(3,'0');if(!snipC.current[k]){snipC.current[k]='';fetch(`../data/search_snippets/${k}.txt`).then(r=>r.ok?r.text():'').then(t=>{snipC.current[k]=t;setSRes(p=>p?[...p]:p)}).catch(()=>{})}});
+    setSRes(res);
+  },[q,sIdx,episodes]);
 
-  // Perform search
-  useEffect(() => {
-    if (!searchQuery || searchQuery.length < 4 || !searchIndex) { setSearchResults(null); return; }
-    const q = searchQuery.toLowerCase();
-    const words = q.split(/\s+/).filter(w => w.length >= 3);
-    if (words.length === 0) { setSearchResults(null); return; }
+  const onTag=useCallback((type,val)=>{setTab('episodi');if(type==='ambito'){setFAmb(val);setFTag(null)}else{setFTag(val);setFAmb(null)};setQ('');setSRes(null)},[]);
 
-    // Find episodes matching all words
-    let matchEps = null;
-    words.forEach(w => {
-      const epNums = new Set();
-      Object.keys(searchIndex).forEach(term => {
-        if (term.includes(w)) searchIndex[term].forEach(n => epNums.add(n));
-      });
-      matchEps = matchEps ? new Set([...matchEps].filter(n => epNums.has(n))) : epNums;
-    });
+  const guests=useMemo(()=>buildGuests(episodes),[episodes]);
+  const recurring=useMemo(()=>Object.entries(guests).filter(([_,e])=>e.length>1).sort((a,b)=>b[1].length-a[1].length),[guests]);
+  const allG=useMemo(()=>Object.entries(guests).sort((a,b)=>a[0].localeCompare(b[0])),[guests]);
+  const stats=useMemo(()=>episodes.length?buildStats(episodes,meta):[],[episodes,meta]);
 
-    const results = [...(matchEps || [])].map(num => {
-      const ep = episodes.find(e => e.episode_number === num);
-      return ep ? { ep, num } : null;
-    }).filter(Boolean);
+  const tlData=useMemo(()=>{const d={};episodes.filter(e=>e.is_numbered&&e.upload_date).forEach(e=>{const k=e.upload_date.slice(0,7);if(!d[k])d[k]=[];d[k].push(e)});return Object.entries(d).sort((a,b)=>a[0].localeCompare(b[0]))},[episodes]);
+  const tlMax=useMemo(()=>Math.max(...tlData.map(([_,e])=>e.length),1),[tlData]);
 
-    // Load snippets for top results
-    results.slice(0, 20).forEach(r => {
-      const key = String(r.num).padStart(3, '0');
-      if (!snippetCache.current[key]) {
-        snippetCache.current[key] = '';
-        fetch(`../data/search_snippets/${key}.txt`).then(res => res.ok ? res.text() : '').then(t => {
-          snippetCache.current[key] = t;
-          setSearchResults(prev => prev ? [...prev] : prev); // force re-render
-        }).catch(() => {});
-      }
-    });
-
-    setSearchResults(results);
-  }, [searchQuery, searchIndex, episodes]);
-
-  // Tag click handler
-  const handleTagClick = useCallback((type, value) => {
-    setTab('episodi');
-    if (type === 'ambito') { setFilterAmbito(value); setFilterTag(null); }
-    else { setFilterTag(value); setFilterAmbito(null); }
-    setSearchQuery(''); setSearchResults(null);
-  }, []);
-
-  // Guest index
-  const guestIndex = useMemo(() => buildGuestIndex(episodes), [episodes]);
-  const recurringGuests = useMemo(() =>
-    Object.entries(guestIndex).filter(([_,eps]) => eps.length > 1).sort((a,b) => b[1].length - a[1].length)
-  , [guestIndex]);
-  const allGuests = useMemo(() =>
-    Object.entries(guestIndex).sort((a,b) => a[0].localeCompare(b[0]))
-  , [guestIndex]);
-
-  // Stats
-  const stats = useMemo(() => episodes.length > 0 ? buildStats(episodes, meta) : [], [episodes, meta]);
-
-  // Timeline data
-  const timelineData = useMemo(() => {
-    const data = {};
-    episodes.filter(e => e.is_numbered && e.upload_date).forEach(ep => {
-      const ym = ep.upload_date.slice(0, 7); // YYYY-MM
-      if (!data[ym]) data[ym] = [];
-      data[ym].push(ep);
-    });
-    return Object.entries(data).sort((a,b) => a[0].localeCompare(b[0]));
-  }, [episodes]);
-
-  const maxPerMonth = useMemo(() => Math.max(...timelineData.map(([_,eps]) => eps.length), 1), [timelineData]);
-
-  // Filter & sort episodes
-  const filtered = useMemo(() => {
-    let f = episodes.filter(e => e.is_numbered);
-    if (filterAmbito) f = f.filter(e => (e.ambito||[]).includes(filterAmbito));
-    if (filterTag) f = f.filter(e => (e.tags||[]).includes(filterTag));
-    if (timelineYear) f = f.filter(e => (e.upload_date||'').startsWith(timelineYear));
-    // Sort
-    switch(sortBy) {
-      case 'number_desc': f.sort((a,b) => b.episode_number - a.episode_number); break;
-      case 'number_asc': f.sort((a,b) => a.episode_number - b.episode_number); break;
-      case 'views_desc': f.sort((a,b) => b.view_count - a.view_count); break;
-      case 'views_asc': f.sort((a,b) => a.view_count - b.view_count); break;
-      case 'date_desc': f.sort((a,b) => (b.upload_date||'').localeCompare(a.upload_date||'')); break;
-      case 'duration_desc': f.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
+  const filtered=useMemo(()=>{
+    let f=episodes.filter(e=>e.is_numbered);
+    if(fAmb)f=f.filter(e=>(e.ambito||[]).includes(fAmb));
+    if(fTag)f=f.filter(e=>(e.tags||[]).includes(fTag));
+    if(tlY)f=f.filter(e=>(e.upload_date||'').startsWith(tlY));
+    switch(sort){
+      case'number_desc':f.sort((a,b)=>b.episode_number-a.episode_number);break;
+      case'number_asc':f.sort((a,b)=>a.episode_number-b.episode_number);break;
+      case'views_desc':f.sort((a,b)=>b.view_count-a.view_count);break;
+      case'views_asc':f.sort((a,b)=>a.view_count-b.view_count);break;
+      case'duration_desc':f.sort((a,b)=>(b.duration_seconds||0)-(a.duration_seconds||0));break;
     }
     return f;
-  }, [episodes, filterAmbito, filterTag, sortBy, timelineYear]);
+  },[episodes,fAmb,fTag,sort,tlY]);
 
-  // Favorites
-  const favEpisodes = useMemo(() => episodes.filter(e => favs.includes(e.youtube_id)), [episodes, favs]);
+  const favEps=useMemo(()=>episodes.filter(e=>favs.includes(e.youtube_id)),[episodes,favs]);
+  const cidEps=useMemo(()=>{if(!cid)return[];let e=cid.episodes||[];if(cidF==='story')e=e.filter(x=>x.guest_tells_story);if(cidF==='no')e=e.filter(x=>!x.guest_tells_story);return e},[cid,cidF]);
 
-  // CID episodes
-  const cidEpisodes = useMemo(() => {
-    if (!cidData) return [];
-    let eps = cidData.episodes || [];
-    if (cidFilter === 'story') eps = eps.filter(e => e.guest_tells_story);
-    if (cidFilter === 'no_story') eps = eps.filter(e => !e.guest_tells_story);
-    return eps;
-  }, [cidData, cidFilter]);
+  if(loading)return h('div',{className:'loading'},h('div',{className:'spinner'}),h('p',{style:{marginTop:16,fontWeight:300}},'Caricamento…'));
 
-  if (loading) return React.createElement('div', {className:'loading'}, React.createElement('div', {className:'spinner'}), React.createElement('p', {style:{marginTop:16}}, 'Caricamento...'));
+  const numbered=episodes.filter(e=>e.is_numbered);
+  const ambiti=Object.entries(meta.ambiti_counts||{}).sort((a,b)=>b[1]-a[1]);
+  const topTags=Object.entries(meta.top_tags||{}).sort((a,b)=>b[1]-a[1]).slice(0,15);
 
-  const numbered = episodes.filter(e => e.is_numbered);
-  const ambiti = Object.entries(meta.ambiti_counts || {}).sort((a,b) => b[1] - a[1]);
-  const topTags = Object.entries(meta.top_tags || {}).sort((a,b) => b[1] - a[1]).slice(0, 15);
+  const getSnip=(txt,query,ctx=80)=>{if(!query||!txt)return'';const i=txt.toLowerCase().indexOf(query.toLowerCase());if(i===-1)return txt.slice(0,200);const s=Math.max(0,i-ctx),e=Math.min(txt.length,i+query.length+ctx);return(s>0?'…':'')+txt.slice(s,e)+(e<txt.length?'…':'')};
 
-  return React.createElement('div', null,
+  const resetAll=()=>{setTab('episodi');setFAmb(null);setFTag(null);setTlY(null);setQ('');setSRes(null)};
+
+  return h('div',null,
     // NAV
-    React.createElement('div', {className:'nav'},
-      React.createElement('div', {className:'nav-inner'},
-        React.createElement('span', {className:'nav-logo', onClick:()=>{setTab('episodi');setFilterAmbito(null);setFilterTag(null);setTimelineYear(null);setSearchQuery('');setSearchResults(null)}}, 'TintorIA'),
-        React.createElement('button', {className:`nav-tab ${tab==='episodi'?'active':''}`, onClick:()=>setTab('episodi')}, 'Episodi'),
-        React.createElement('button', {className:`nav-tab ${tab==='cid'?'active':''}`, onClick:()=>setTab('cid')}, '💩 Rubrica'),
-        React.createElement('button', {className:`nav-tab ${tab==='ospiti'?'active':''}`, onClick:()=>setTab('ospiti')}, 'Ospiti'),
-        React.createElement('button', {className:`nav-tab ${tab==='stats'?'active':''}`, onClick:()=>setTab('stats')}, 'Stats'),
-        React.createElement('button', {className:`nav-tab ${tab==='scopri'?'active':''}`, onClick:()=>setTab('scopri')}, '🧭 Scopri'),
-        favs.length > 0 && React.createElement('button', {className:`nav-tab ${tab==='preferiti'?'active':''}`, onClick:()=>setTab('preferiti')}, `❤ ${favs.length}`),
-        React.createElement('div', {className:'nav-search'},
-          React.createElement('span', {className:'search-icon'}, '🔍'),
-          React.createElement('input', {ref:searchRef, type:'text', placeholder:'Cerca nei transcript...', value:searchQuery, onChange:e=>{setSearchQuery(e.target.value);if(e.target.value.length>=4)setTab('episodi')}}),
-          React.createElement('span', {className:'nav-shortcut'}, '/')
+    h('div',{className:'nav'},h('div',{className:'nav-inner'},
+      h('span',{className:'nav-logo',onClick:resetAll},'Tintor',h('em',null,'IA')),
+      h('button',{className:`nav-tab ${tab==='episodi'?'active':''}`,onClick:()=>setTab('episodi')},'Episodi'),
+      h('button',{className:`nav-tab ${tab==='cid'?'active':''}`,onClick:()=>setTab('cid')},'💩 Rubrica'),
+      h('button',{className:`nav-tab ${tab==='ospiti'?'active':''}`,onClick:()=>setTab('ospiti')},'Ospiti'),
+      h('button',{className:`nav-tab ${tab==='stats'?'active':''}`,onClick:()=>setTab('stats')},'Stats'),
+      h('button',{className:`nav-tab ${tab==='scopri'?'active':''}`,onClick:()=>setTab('scopri')},'Scopri'),
+      favs.length>0&&h('button',{className:`nav-tab ${tab==='fav'?'active':''}`,onClick:()=>setTab('fav')},`❤ ${favs.length}`),
+      h('div',{className:'nav-search'},
+        h('span',{className:'si'},'⌕'),
+        h('input',{ref:sRef,type:'text',placeholder:'Cerca nei transcript…',value:q,onChange:e=>{setQ(e.target.value);if(e.target.value.length>=4)setTab('episodi')}}),
+        h('span',{className:'nav-key'},'/')
+      )
+    )),
+
+    // HERO
+    tab==='episodi'&&!sRes&&!fAmb&&!fTag&&!tlY&&h('div',{className:'hero'},
+      h('h1',null,'Tintor',h('em',null,'IA')),
+      h('div',{className:'sub'},'L\'archivio intelligente di Tintoria'),
+      h('div',{className:'hero-stats'},
+        h('div',{className:'hero-stat'},h('div',{className:'n'},numbered.length),h('div',{className:'l'},'Episodi')),
+        h('div',{className:'hero-stat'},h('div',{className:'n'},fmt(meta.total_views||0)),h('div',{className:'l'},'Views')),
+        h('div',{className:'hero-stat'},h('div',{className:'n'},meta.unique_guests||0),h('div',{className:'l'},'Ospiti')),
+        h('div',{className:'hero-stat'},h('div',{className:'n'},meta.transcriptions_count||0),h('div',{className:'l'},'Trascrizioni'))
+      )
+    ),
+
+    h('div',{className:'main'},
+
+    // === SEARCH RESULTS ===
+    sRes&&tab==='episodi'&&h('div',null,
+      h('div',{className:'section-head'},
+        h('div',null,h('h2',null,`"${q}"`),h('div',{className:'aside'},`${sRes.length} episodi`)),
+        h('button',{className:'btn btn-s',onClick:()=>{setQ('');setSRes(null)}},'✕ Chiudi')
+      ),
+      sLd&&h('div',{className:'loading'},h('div',{className:'spinner'})),
+      h('div',null,...sRes.slice(0,30).map(({ep,n})=>{
+        const k=String(n).padStart(3,'0');const sn=snipC.current[k]||'';
+        return h('div',{key:ep.youtube_id,className:'sr',onClick:()=>setSel(ep)},
+          h('div',{className:'srg'},`#${ep.episode_number} — ${ep.guest}`),
+          h('div',{style:{fontSize:11,color:'var(--text3)',marginBottom:3,fontWeight:300}},`${fDate(ep.upload_date)} · ${fmt(ep.view_count)} views`),
+          sn&&h('div',{className:'srs',dangerouslySetInnerHTML:{__html:getSnip(sn,q).replace(new RegExp(`(${esc(q)})`,'gi'),'<mark>$1</mark>')}})
         )
-      )
+      }))
     ),
 
-    // HERO (only on episodi tab without search)
-    tab === 'episodi' && !searchResults && !filterAmbito && !filterTag && !timelineYear && React.createElement('div', {className:'hero'},
-      React.createElement('h1', null, 'Tintor', React.createElement('span', null, 'IA')),
-      React.createElement('div', {className:'subtitle'}, 'L\'archivio intelligente di Tintoria'),
-      React.createElement('div', {className:'hero-stats'},
-        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, numbered.length), React.createElement('div', {className:'label'}, 'Episodi')),
-        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, fmt(meta.total_views||0)), React.createElement('div', {className:'label'}, 'Views totali')),
-        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.unique_guests||0), React.createElement('div', {className:'label'}, 'Ospiti')),
-        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.transcriptions_count||0), React.createElement('div', {className:'label'}, 'Trascrizioni')),
-        React.createElement('div', {className:'hero-stat'}, React.createElement('div', {className:'num'}, meta.rubrica_cid_count||0), React.createElement('div', {className:'label'}, '💩 Rubrica CID'))
-      )
-    ),
-
-    React.createElement('div', {className:'main'},
-
-      // ======= SEARCH RESULTS =======
-      searchResults && tab === 'episodi' && React.createElement('div', null,
-        React.createElement('div', {className:'section-header'},
-          React.createElement('div', null,
-            React.createElement('div', {className:'section-title'}, `Risultati per "${searchQuery}"`),
-            React.createElement('div', {className:'section-subtitle'}, `${searchResults.length} episodi trovati`)
+    // === EPISODI ===
+    tab==='episodi'&&!sRes&&h('div',null,
+      tlData.length>0&&h('div',{className:'tl'},
+        h('div',{style:{display:'flex',justifyContent:'space-between',marginBottom:6}},
+          h('span',{style:{fontSize:11,color:'var(--text3)',textTransform:'uppercase',letterSpacing:'1.5px',fontWeight:500}},'Timeline'),
+          tlY&&h('button',{className:'btn btn-s',style:{padding:'2px 10px',fontSize:11}},tlY,h('span',{style:{marginLeft:4,cursor:'pointer'},onClick:()=>setTlY(null)},'✕'))
+        ),
+        h('div',{className:'tl-bar'},...tlData.map(([ym,eps])=>{
+          const yr=ym.slice(0,4);const ht=Math.max(4,(eps.length/tlMax)*36);
+          return h('div',{key:ym,className:`tl-seg ${tlY===yr?'on':''}`,title:`${ym}: ${eps.length}`,onClick:()=>setTlY(tlY===yr?null:yr)},
+            h('div',{className:'b',style:{height:ht}}),
+            ym.endsWith('-01')&&h('span',{className:'lb'},yr)
+          )
+        }))
+      ),
+      h('div',{className:'filters'},
+        ...ambiti.slice(0,10).map(([a,c])=>h('button',{key:a,className:`chip ${fAmb===a?'on':''}`,onClick:()=>setFAmb(fAmb===a?null:a)},a,h('span',{className:'c'},c))),
+        (fAmb||fTag)&&h('button',{className:'chip',style:{color:'var(--red)',borderColor:'rgba(251,113,133,0.3)'},onClick:()=>{setFAmb(null);setFTag(null)}},'✕')
+      ),
+      fTag&&h('div',{style:{marginBottom:10,fontSize:13,color:'var(--text2)',fontWeight:300}},`Tag: ${fTag}`),
+      h('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14,flexWrap:'wrap',gap:8}},
+        h('div',{className:'count'},`${filtered.length} episodi`),
+        h('div',{className:'controls'},
+          h('select',{className:'sel',value:sort,onChange:e=>setSort(e.target.value)},
+            h('option',{value:'number_desc'},'Recenti'),h('option',{value:'number_asc'},'Vecchi'),
+            h('option',{value:'views_desc'},'Più visti'),h('option',{value:'views_asc'},'Meno visti'),
+            h('option',{value:'duration_desc'},'Più lunghi')
           ),
-          React.createElement('button', {className:'btn btn-secondary', onClick:()=>{setSearchQuery('');setSearchResults(null)}}, '✕ Chiudi ricerca')
-        ),
-        loadingSearch && React.createElement('div', {className:'loading'}, React.createElement('div', {className:'spinner'})),
-        React.createElement('div', {className:'search-results'},
-          ...searchResults.slice(0,30).map(({ep, num}) => {
-            const key = String(num).padStart(3, '0');
-            const snippet = snippetCache.current[key] || '';
-            return React.createElement('div', {key:ep.youtube_id, className:'search-result', onClick:()=>setSelectedEp(ep)},
-              React.createElement('div', {className:'sr-guest'}, `#${ep.episode_number} — ${ep.guest}`),
-              React.createElement('div', {style:{fontSize:12,color:'var(--text3)',marginBottom:4}}, `${fmtDate(ep.upload_date)} · ${fmt(ep.view_count)} views`),
-              snippet && React.createElement('div', {className:'sr-snippet', dangerouslySetInnerHTML:{__html: getSnippet(snippet, searchQuery).replace(new RegExp(`(${searchQuery.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<mark>$1</mark>')}})
-            );
-          })
+          h('button',{className:`ctrl ${view==='grid'?'on':''}`,onClick:()=>setView('grid')},'▦'),
+          h('button',{className:`ctrl ${view==='list'?'on':''}`,onClick:()=>setView('list')},'☰'),
+          h('button',{className:'ctrl',onClick:()=>{const r=filtered[Math.floor(Math.random()*filtered.length)];if(r)setSel(r)}},'🎲')
         )
       ),
-
-      // ======= EPISODI TAB =======
-      tab === 'episodi' && !searchResults && React.createElement('div', null,
-        // Timeline
-        timelineData.length > 0 && React.createElement('div', {className:'timeline'},
-          React.createElement('div', {style:{display:'flex',justifyContent:'space-between',marginBottom:8}},
-            React.createElement('span', {style:{fontSize:13,color:'var(--text3)'}}, 'Timeline'),
-            timelineYear && React.createElement('button', {className:'btn btn-secondary', style:{padding:'2px 10px',fontSize:12}, onClick:()=>setTimelineYear(null)}, `✕ ${timelineYear}`)
-          ),
-          React.createElement('div', {className:'timeline-bar'},
-            ...timelineData.map(([ym, eps]) => {
-              const year = ym.slice(0,4);
-              const height = Math.max(8, (eps.length / maxPerMonth) * 40);
-              const isActive = timelineYear === year;
-              return React.createElement('div', {
-                key:ym, className:`timeline-segment ${isActive?'active':''}`,
-                style:{flex:1}, title:`${ym}: ${eps.length} episodi`,
-                onClick:() => setTimelineYear(timelineYear===year ? null : year)
-              },
-                React.createElement('div', {className:'bar', style:{height}}),
-                ym.endsWith('-01') && React.createElement('span', {className:'label'}, year)
-              );
-            })
-          )
-        ),
-        // Filters
-        React.createElement('div', {className:'filters'},
-          React.createElement('span', {style:{fontSize:13,color:'var(--text3)',marginRight:4}}, 'Ambito:'),
-          ...ambiti.slice(0,10).map(([a,c]) => React.createElement('button', {key:a, className:`filter-chip ${filterAmbito===a?'active':''}`, onClick:()=>setFilterAmbito(filterAmbito===a?null:a)}, a, React.createElement('span', {className:'count'}, c))),
-          (filterAmbito || filterTag) && React.createElement('button', {className:'filter-chip', style:{color:'var(--red)',borderColor:'var(--red)'}, onClick:()=>{setFilterAmbito(null);setFilterTag(null)}}, '✕ Reset')
-        ),
-        filterTag && React.createElement('div', {style:{marginBottom:12,fontSize:14,color:'var(--text2)'}}, `Tag: "${filterTag}"`),
-        // Controls
-        React.createElement('div', {style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16,flexWrap:'wrap',gap:8}},
-          React.createElement('div', {className:'results-count'}, `${filtered.length} episodi`),
-          React.createElement('div', {className:'controls'},
-            React.createElement('select', {className:'sort-select', value:sortBy, onChange:e=>setSortBy(e.target.value)},
-              React.createElement('option', {value:'number_desc'}, 'Più recenti'),
-              React.createElement('option', {value:'number_asc'}, 'Più vecchi'),
-              React.createElement('option', {value:'views_desc'}, 'Più visti'),
-              React.createElement('option', {value:'views_asc'}, 'Meno visti'),
-              React.createElement('option', {value:'duration_desc'}, 'Più lunghi')
-            ),
-            React.createElement('button', {className:`control-btn ${viewMode==='grid'?'active':''}`, onClick:()=>setViewMode('grid')}, '▦'),
-            React.createElement('button', {className:`control-btn ${viewMode==='list'?'active':''}`, onClick:()=>setViewMode('list')}, '☰'),
-            React.createElement('button', {className:'control-btn', onClick:()=>{const r=filtered[Math.floor(Math.random()*filtered.length)];if(r)setSelectedEp(r)}}, '🎲')
-          )
-        ),
-        // Grid or List
-        viewMode === 'grid'
-          ? React.createElement('div', {className:'ep-grid'}, ...filtered.map(ep => React.createElement(EpisodeCard, {key:ep.youtube_id, ep, onClick:setSelectedEp, onTagClick:handleTagClick, favs, setFavs})))
-          : React.createElement('div', {className:'ep-list'}, ...filtered.map(ep =>
-              React.createElement('div', {key:ep.youtube_id, className:'ep-row', onClick:()=>setSelectedEp(ep)},
-                React.createElement('span', {className:'num'}, `#${ep.episode_number}`),
-                React.createElement('span', {className:'guest'}, ep.guest),
-                ep.has_rubrica_cid && React.createElement('span', {style:{fontSize:12}}, '💩'),
-                React.createElement('span', {className:'meta-item'}, fmtDate(ep.upload_date)),
-                React.createElement('span', {className:'meta-item'}, fmt(ep.view_count)),
-                React.createElement('span', {className:'meta-item'}, fmtDur(ep.duration_seconds))
-              )
-            ))
-      ),
-
-      // ======= CID TAB =======
-      tab === 'cid' && React.createElement('div', {className:'cid-section'},
-        React.createElement('div', {className:'cid-intro'},
-          React.createElement('h3', null, '💩 Cacare in discoteca'),
-          React.createElement('p', null, 'La rubrica più amata di Tintoria. Daniele chiede a ogni ospite di raccontare la propria esperienza più imbarazzante legata ai bagni. Qualcuno racconta, qualcuno si rifiuta, qualcuno nega di aver mai avuto problemi. Ma tutti, prima o poi, cagano in discoteca.'),
-          React.createElement('div', {className:'cid-stats'},
-            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.total_episodes_with_rubrica||0), React.createElement('div', {className:'l'}, 'Episodi')),
-            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.guests_with_stories||0), React.createElement('div', {className:'l'}, 'Raccontano')),
-            React.createElement('div', {className:'cid-stat'}, React.createElement('div', {className:'n'}, cidData?.meta?.guests_without_stories||0), React.createElement('div', {className:'l'}, 'Si rifiutano'))
-          )
-        ),
-        React.createElement('div', {className:'filters', style:{marginBottom:16}},
-          React.createElement('button', {className:`filter-chip ${cidFilter==='all'?'active':''}`, onClick:()=>setCidFilter('all')}, 'Tutti'),
-          React.createElement('button', {className:`filter-chip ${cidFilter==='story'?'active':''}`, onClick:()=>setCidFilter('story')}, '✅ Raccontano'),
-          React.createElement('button', {className:`filter-chip ${cidFilter==='no_story'?'active':''}`, onClick:()=>setCidFilter('no_story')}, '❌ Non raccontano')
-        ),
-        React.createElement('div', {className:'results-count'}, `${cidEpisodes.length} episodi`),
-        React.createElement('div', {className:'ep-grid'},
-          ...cidEpisodes.map(c => {
-            const ep = episodes.find(e => e.episode_number === c.episode_number);
-            return React.createElement('div', {key:c.episode_number, className:'cid-card', onClick:()=>ep&&setSelectedEp(ep)},
-              React.createElement('div', {className:'cid-top'},
-                React.createElement('img', {className:'cid-thumb', src:c.thumbnail_url, alt:c.guest, loading:'lazy'}),
-                React.createElement('div', {className:'cid-info'},
-                  React.createElement('div', {className:'cid-guest'}, `#${c.episode_number} — ${c.guest}`),
-                  React.createElement('div', {className:'cid-meta'}, `${fmtDate(c.date)} · ~${c.estimated_timestamp}`),
-                  React.createElement('span', {className:`story-badge ${c.guest_tells_story?'yes':'no'}`}, c.guest_tells_story ? '✅ Racconta' : '❌ Non racconta')
-                )
-              ),
-              c.segment_preview && React.createElement('div', {className:'cid-preview'}, c.segment_preview.slice(0,150)+'…'),
-              React.createElement('div', {style:{padding:'0 14px 12px'}},
-                React.createElement('a', {className:'btn btn-cid', style:{fontSize:12,padding:'4px 12px'}, href:`${c.youtube_url}&t=${c.estimated_timestamp_sec}`, target:'_blank', rel:'noopener', onClick:e=>e.stopPropagation()}, `▶ Vai a ~${c.estimated_timestamp}`)
-              )
-            );
-          })
-        )
-      ),
-
-      // ======= OSPITI TAB =======
-      tab === 'ospiti' && React.createElement('div', null,
-        React.createElement('div', {className:'section-header'},
-          React.createElement('div', {className:'section-title'}, 'Tutti gli ospiti'),
-          React.createElement('div', {className:'section-subtitle'}, `${allGuests.length} ospiti unici, ${recurringGuests.length} ricorrenti`)
-        ),
-        recurringGuests.length > 0 && React.createElement('div', null,
-          React.createElement('h3', {style:{fontSize:16,fontWeight:600,marginBottom:12,color:'var(--accent)'}}, 'Ospiti ricorrenti'),
-          React.createElement('div', {className:'guest-grid', style:{marginBottom:32}},
-            ...recurringGuests.map(([name, eps]) => React.createElement('div', {key:name, className:'guest-card'},
-              React.createElement('div', {className:'g-name'}, name),
-              React.createElement('div', {className:'g-count'}, `${eps.length} episodi`),
-              React.createElement('div', {className:'g-episodes'},
-                ...eps.map(ep => React.createElement('span', {key:ep.episode_number, style:{cursor:'pointer',marginRight:8}, onClick:()=>setSelectedEp(ep)},
-                  React.createElement('span', {style:{color:'var(--accent)'}}, `#${ep.episode_number}`),
-                  ' ', ep.guest?.replace(name,'').replace(/^[\s,&(]+|[\s,&)]+$/g,'').replace(/^con\s*/i,'').replace(/^LIVE\s*/,'') || ''
-                ))
-              )
-            ))
-          )
-        ),
-        React.createElement('h3', {style:{fontSize:16,fontWeight:600,marginBottom:12}}, 'Tutti gli ospiti (A-Z)'),
-        React.createElement('div', {className:'guest-grid'},
-          ...allGuests.map(([name, eps]) => React.createElement('div', {key:name, className:'guest-card', onClick:()=>{if(eps.length===1)setSelectedEp(eps[0])}},
-            React.createElement('div', {className:'g-name'}, name),
-            eps.length > 1 && React.createElement('div', {className:'g-count'}, `${eps.length} episodi`),
-            React.createElement('div', {className:'g-episodes'},
-              ...eps.slice(0,5).map(ep => React.createElement('span', {key:ep.episode_number, style:{cursor:'pointer',marginRight:8}, onClick:e=>{e.stopPropagation();setSelectedEp(ep)}},
-                React.createElement('span', {style:{color:'var(--accent)'}}, `#${ep.episode_number}`)
-              )),
-              eps.length > 5 && React.createElement('span', {style:{color:'var(--text3)'}}, `+${eps.length-5}`)
-            )
-          ))
-        )
-      ),
-
-      // ======= STATS TAB =======
-      tab === 'stats' && React.createElement('div', null,
-        React.createElement('div', {className:'section-header'},
-          React.createElement('div', {className:'section-title'}, 'Lo sapevi che…')
-        ),
-        React.createElement('div', {className:'stats-grid'},
-          ...stats.map((s,i) => React.createElement('div', {key:i, className:'stat-card', onClick:()=>{if(s.ep)setSelectedEp(s.ep)}},
-            React.createElement('div', {className:'stat-emoji'}, s.emoji),
-            React.createElement('div', {className:'stat-label'}, s.label),
-            React.createElement('div', {className:'stat-value'}, s.value),
-            React.createElement('div', {className:'stat-detail'}, s.detail)
-          ))
-        ),
-        // Tag cloud
-        React.createElement('div', {className:'section-header', style:{marginTop:40}},
-          React.createElement('div', {className:'section-title'}, 'Mappa dei temi')
-        ),
-        React.createElement('div', {style:{display:'flex',gap:8,flexWrap:'wrap'}},
-          ...ambiti.map(([a,c]) => React.createElement('button', {key:a, className:'filter-chip', style:{fontSize:Math.max(12, Math.min(20, 10+c/5))+'px'}, onClick:()=>{setTab('episodi');setFilterAmbito(a)}}, `${a} (${c})`))
-        ),
-        React.createElement('div', {style:{marginTop:20,display:'flex',gap:6,flexWrap:'wrap'}},
-          ...topTags.map(([t,c]) => React.createElement('button', {key:t, className:'filter-chip', onClick:()=>{setTab('episodi');setFilterTag(t)}}, `${t} (${c})`))
-        ),
-        // Years breakdown
-        React.createElement('div', {className:'section-header', style:{marginTop:40}},
-          React.createElement('div', {className:'section-title'}, 'Episodi per anno')
-        ),
-        React.createElement('div', {style:{display:'flex',gap:16,flexWrap:'wrap'}},
-          ...Object.entries(
-            episodes.filter(e=>e.is_numbered&&e.upload_date).reduce((acc,e)=>{const y=e.upload_date.slice(0,4);acc[y]=(acc[y]||0)+1;return acc},{})
-          ).sort((a,b)=>a[0].localeCompare(b[0])).map(([y,c]) =>
-            React.createElement('div', {key:y, className:'stat-card', style:{cursor:'pointer',flex:'1',minWidth:120}, onClick:()=>{setTab('episodi');setTimelineYear(y)}},
-              React.createElement('div', {style:{fontSize:24,fontWeight:800,color:'var(--accent)'}}, c),
-              React.createElement('div', {style:{fontSize:14,color:'var(--text2)'}}, y)
-            )
-          )
-        )
-      ),
-
-      // ======= SCOPRI TAB =======
-      tab === 'scopri' && React.createElement(DiscoveryFlow, {episodes, onSelect:setSelectedEp}),
-
-      // ======= PREFERITI TAB =======
-      tab === 'preferiti' && React.createElement('div', null,
-        React.createElement('div', {className:'section-header'},
-          React.createElement('div', {className:'section-title'}, '❤ I tuoi preferiti'),
-          React.createElement('div', {className:'section-subtitle'}, `${favEpisodes.length} episodi salvati`)
-        ),
-        favEpisodes.length === 0
-          ? React.createElement('div', {className:'fav-empty'},
-              React.createElement('div', {className:'icon'}, '🤍'),
-              React.createElement('p', null, 'Nessun preferito ancora.'),
-              React.createElement('p', {style:{fontSize:13,marginTop:4}}, 'Clicca il cuoricino su un episodio per salvarlo qui.')
-            )
-          : React.createElement('div', {className:'ep-grid'}, ...favEpisodes.map(ep => React.createElement(EpisodeCard, {key:ep.youtube_id, ep, onClick:setSelectedEp, onTagClick:handleTagClick, favs, setFavs})))
-      )
+      view==='grid'
+        ?h('div',{className:'grid'},...filtered.map(ep=>h(Card,{key:ep.youtube_id,ep,onClick:setSel,onTag,favs,setFavs})))
+        :h('div',{className:'list'},...filtered.map(ep=>h('div',{key:ep.youtube_id,className:'row',onClick:()=>setSel(ep)},
+          h('span',{className:'rn'},`#${ep.episode_number}`),
+          h('span',{className:'rg'},ep.guest),
+          ep.has_rubrica_cid&&h('span',{style:{fontSize:11}},'💩'),
+          h('span',{className:'rm'},fDate(ep.upload_date)),
+          h('span',{className:'rm'},fmt(ep.view_count)),
+          h('span',{className:'rm'},fDur(ep.duration_seconds))
+        )))
     ),
 
-    // Modal
-    selectedEp && React.createElement(EpisodeModal, {ep:selectedEp, onClose:()=>setSelectedEp(null), onTagClick:handleTagClick, favs, setFavs, cidData}),
+    // === CID ===
+    tab==='cid'&&h('div',null,
+      h('div',{className:'cid-intro'},
+        h('h3',null,'💩 Cacare in discoteca'),
+        h('p',null,'La rubrica più amata di Tintoria. Daniele chiede a ogni ospite di raccontare la propria esperienza più imbarazzante legata ai bagni. Qualcuno racconta, qualcuno si rifiuta, qualcuno nega. Ma tutti, prima o poi, cagano in discoteca.'),
+        h('div',{className:'cid-nums'},
+          h('div',{className:'cn'},h('div',{className:'cv'},cid?.meta?.total_episodes_with_rubrica||0),h('div',{className:'cl'},'Episodi')),
+          h('div',{className:'cn'},h('div',{className:'cv'},cid?.meta?.guests_with_stories||0),h('div',{className:'cl'},'Raccontano')),
+          h('div',{className:'cn'},h('div',{className:'cv'},cid?.meta?.guests_without_stories||0),h('div',{className:'cl'},'Si rifiutano'))
+        )
+      ),
+      h('div',{className:'filters',style:{marginBottom:14}},
+        h('button',{className:`chip ${cidF==='all'?'on':''}`,onClick:()=>setCidF('all')},'Tutti'),
+        h('button',{className:`chip ${cidF==='story'?'on':''}`,onClick:()=>setCidF('story')},'✅ Raccontano'),
+        h('button',{className:`chip ${cidF==='no'?'on':''}`,onClick:()=>setCidF('no')},'❌ Non raccontano')
+      ),
+      h('div',{className:'count',style:{marginBottom:10}},`${cidEps.length} episodi`),
+      h('div',{className:'grid'},...cidEps.map(c=>{
+        const ep=episodes.find(e=>e.episode_number===c.episode_number);
+        return h('div',{key:c.episode_number,className:'ccard',onClick:()=>ep&&setSel(ep)},
+          h('div',{className:'ctop'},
+            h('img',{className:'cimg',src:c.thumbnail_url,alt:c.guest,loading:'lazy'}),
+            h('div',{className:'ci'},
+              h('div',{className:'cg'},`#${c.episode_number} — ${c.guest}`),
+              h('div',{className:'cm'},`${fDate(c.date)} · ~${c.estimated_timestamp}`),
+              h('span',{className:`sb ${c.guest_tells_story?'y':'n'}`},c.guest_tells_story?'✅ Racconta':'❌ No')
+            )
+          ),
+          c.segment_preview&&h('div',{className:'cpre'},c.segment_preview.slice(0,150)+'…'),
+          h('div',{style:{padding:'0 14px 10px'}},
+            h('a',{className:'btn btn-cid',style:{fontSize:11,padding:'3px 10px'},href:`${c.youtube_url}&t=${c.estimated_timestamp_sec}`,target:'_blank',rel:'noopener',onClick:e=>e.stopPropagation()},`▶ ~${c.estimated_timestamp}`)
+          )
+        )
+      }))
+    ),
 
-    // Back to top
-    React.createElement('button', {className:`back-top ${showBackTop?'visible':''}`, onClick:()=>window.scrollTo({top:0,behavior:'smooth'})}, '↑')
+    // === OSPITI ===
+    tab==='ospiti'&&h('div',null,
+      h('div',{className:'section-head'},
+        h('h2',null,'Ospiti'),
+        h('div',{className:'aside'},`${allG.length} unici · ${recurring.length} ricorrenti`)
+      ),
+      recurring.length>0&&h('div',null,
+        h('div',{style:{fontSize:14,fontWeight:500,color:'var(--accent)',marginBottom:10,textTransform:'uppercase',letterSpacing:'1px'}},'Ricorrenti'),
+        h('div',{className:'ggrid',style:{marginBottom:32}},...recurring.map(([name,eps])=>h('div',{key:name,className:'gcard'},
+          h('div',{className:'gn'},name),
+          h('div',{className:'gc'},`${eps.length} episodi`),
+          h('div',{className:'ge'},...eps.map(ep=>h('span',{key:ep.episode_number,style:{cursor:'pointer',marginRight:8},onClick:()=>setSel(ep)},
+            h('span',{style:{color:'var(--accent)'}},`#${ep.episode_number}`),' ',
+            (ep.guest||'').replace(new RegExp(esc(name),'gi'),'').replace(/^[\s,&(]+|[\s,&)]+$/g,'').replace(/^con\s*/i,'').replace(/^LIVE\s*/,'').replace(/^\s*\(con Stefano Rapone\)\s*$/i,'').trim()||''
+          )))
+        )))
+      ),
+      h('div',{style:{fontSize:14,fontWeight:500,marginBottom:10,textTransform:'uppercase',letterSpacing:'1px'}},'Tutti (A-Z)'),
+      h('div',{className:'ggrid'},...allG.map(([name,eps])=>h('div',{key:name,className:'gcard',onClick:()=>{if(eps.length===1)setSel(eps[0])}},
+        h('div',{className:'gn'},name),
+        eps.length>1&&h('div',{className:'gc'},`${eps.length} episodi`),
+        h('div',{className:'ge'},...eps.slice(0,5).map(ep=>h('span',{key:ep.episode_number,style:{cursor:'pointer',marginRight:6},onClick:e=>{e.stopPropagation();setSel(ep)}},
+          h('span',{style:{color:'var(--accent)'}},`#${ep.episode_number}`)
+        )),eps.length>5&&h('span',{style:{color:'var(--text3)'}},`+${eps.length-5}`))
+      )))
+    ),
+
+    // === STATS ===
+    tab==='stats'&&h('div',null,
+      h('div',{className:'section-head'},h('h2',null,'Lo sapevi che…')),
+      h('div',{className:'sgrid'},...stats.map((s,i)=>h('div',{key:i,className:'scard',onClick:()=>{if(s.ep)setSel(s.ep)}},
+        h('div',{className:'se'},s.e),h('div',{className:'sl'},s.l),h('div',{className:'sv'},s.v),h('div',{className:'sd'},s.d)
+      ))),
+      h('div',{className:'section-head',style:{marginTop:36}},h('h2',null,'Mappa dei temi')),
+      h('div',{style:{display:'flex',gap:6,flexWrap:'wrap'}},...ambiti.map(([a,c])=>h('button',{key:a,className:'chip',style:{fontSize:Math.max(11,Math.min(18,9+c/5))+'px'},onClick:()=>{setTab('episodi');setFAmb(a)}},`${a} ${c}`))),
+      h('div',{style:{marginTop:14,display:'flex',gap:5,flexWrap:'wrap'}},...topTags.map(([t,c])=>h('button',{key:t,className:'chip',onClick:()=>{setTab('episodi');setFTag(t)}},`${t} ${c}`))),
+      h('div',{className:'section-head',style:{marginTop:36}},h('h2',null,'Per anno')),
+      h('div',{style:{display:'flex',gap:12,flexWrap:'wrap'}},...Object.entries(
+        episodes.filter(e=>e.is_numbered&&e.upload_date).reduce((a,e)=>{const y=e.upload_date.slice(0,4);a[y]=(a[y]||0)+1;return a},{})
+      ).sort((a,b)=>a[0].localeCompare(b[0])).map(([y,c])=>h('div',{key:y,className:'scard',style:{flex:'1',minWidth:110,cursor:'pointer'},onClick:()=>{setTab('episodi');setTlY(y)}},
+        h('div',{style:{fontSize:28,fontWeight:700,color:'var(--accent)',letterSpacing:'-1px'}},c),
+        h('div',{style:{fontSize:13,color:'var(--text2)',fontWeight:300}},y)
+      )))
+    ),
+
+    // === SCOPRI ===
+    tab==='scopri'&&h(Disco,{episodes,onPick:setSel}),
+
+    // === FAV ===
+    tab==='fav'&&h('div',null,
+      h('div',{className:'section-head'},h('h2',null,'❤ Preferiti'),h('div',{className:'aside'},`${favEps.length} salvati`)),
+      favEps.length===0
+        ?h('div',{className:'empty'},h('div',{className:'icon'},'🤍'),h('p',null,'Nessun preferito.'),h('p',{style:{fontSize:12,marginTop:4}},'Clicca ♡ su un episodio per salvarlo.'))
+        :h('div',{className:'grid'},...favEps.map(ep=>h(Card,{key:ep.youtube_id,ep,onClick:setSel,onTag,favs,setFavs})))
+    )
+    ),
+
+    sel&&h(Modal,{ep:sel,onClose:()=>setSel(null),onTag,favs,setFavs,cid}),
+    h('button',{className:`btt ${btt?'vis':''}`,onClick:()=>window.scrollTo({top:0,behavior:'smooth'})},'↑')
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
 </script>
 </body>
 </html>
