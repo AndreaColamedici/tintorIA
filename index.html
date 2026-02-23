@@ -17,6 +17,7 @@
     --accent: #e63946;
     --accent-hover: #ff4d5a;
     --search-bg: #1e1e1e;
+    --tag-bg: #252525;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
@@ -42,8 +43,11 @@
   .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 
   .controls {
-    max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;
+    max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem;
+  }
+  .search-row {
     display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+    margin-bottom: 0.75rem;
   }
   .search-box {
     flex: 1; min-width: 200px;
@@ -54,17 +58,43 @@
   .search-box:focus { border-color: var(--accent); }
   .search-box::placeholder { color: var(--muted); }
 
-  .sort-btn {
+  .sort-btn, .filter-btn {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.6rem 1rem;
-    color: var(--muted); font-size: 0.85rem; cursor: pointer;
-    transition: all 0.15s;
+    border-radius: 8px; padding: 0.5rem 0.85rem;
+    color: var(--muted); font-size: 0.82rem; cursor: pointer;
+    transition: all 0.15s; white-space: nowrap;
   }
-  .sort-btn:hover { border-color: var(--accent); color: var(--text); }
+  .sort-btn:hover, .filter-btn:hover { border-color: var(--accent); color: var(--text); }
   .sort-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .filter-btn.active { background: #2a1a1c; border-color: var(--accent); color: var(--accent); }
+
+  .filters-row {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+  }
+  .filters-label {
+    font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.06em; margin-right: 0.25rem;
+  }
+  .clear-filters {
+    background: none; border: none; color: var(--accent); font-size: 0.8rem;
+    cursor: pointer; padding: 0.3rem 0.5rem; text-decoration: underline;
+  }
+  .clear-filters:hover { color: var(--accent-hover); }
+
+  .active-filters {
+    max-width: 1100px; margin: 0 auto 0.5rem; padding: 0 1rem;
+    display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;
+  }
+  .active-tag {
+    background: #2a1a1c; border: 1px solid var(--accent); color: var(--accent);
+    border-radius: 6px; padding: 0.25rem 0.6rem; font-size: 0.78rem;
+    display: flex; align-items: center; gap: 0.35rem; cursor: pointer;
+  }
+  .active-tag:hover { background: var(--accent); color: #fff; }
+  .active-tag .x { font-weight: 700; }
 
   .grid {
-    max-width: 900px; margin: 0 auto; padding: 1rem;
+    max-width: 1100px; margin: 0 auto; padding: 1rem;
     display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
   }
@@ -83,7 +113,25 @@
   .card-body { padding: 0.85rem 1rem; }
   .card-ep { color: var(--accent); font-weight: 700; font-size: 0.8rem; }
   .card-guest { font-size: 1.1rem; font-weight: 600; margin: 0.2rem 0; }
-  .card-meta { display: flex; gap: 1rem; color: var(--muted); font-size: 0.8rem; }
+  .card-meta { display: flex; gap: 1rem; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
+  .card-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .card-tag {
+    background: var(--tag-bg); color: var(--muted); border-radius: 4px;
+    padding: 0.15rem 0.45rem; font-size: 0.7rem; cursor: pointer;
+    transition: all 0.12s;
+  }
+  .card-tag:hover { background: var(--accent); color: #fff; }
+
+  .card-prof {
+    color: var(--muted); font-size: 0.78rem; font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+
+  .results-count {
+    max-width: 1100px; margin: 0 auto; padding: 0 1rem;
+    font-size: 0.85rem; color: var(--muted);
+  }
+
   .no-results { text-align: center; color: var(--muted); padding: 3rem 1rem; font-size: 1.1rem; }
 
   .footer {
@@ -96,24 +144,21 @@
 <body>
 <div id="root"></div>
 <script>
-// Episodes data will be inlined here by the build script
-window.__EPISODES_DATA__ = null;
-</script>
-<script>
-// Load data from external JSON or inline
 async function loadData() {
   if (window.__EPISODES_DATA__) return window.__EPISODES_DATA__;
   try {
-    const res = await fetch('../data/episodes.json');
+    // Try tagged version first, fall back to basic
+    let res = await fetch('../data/episodes_tagged.json');
+    if (!res.ok) res = await fetch('../data/episodes.json');
     return await res.json();
   } catch(e) {
-    console.error('Could not load episodes.json', e);
+    console.error('Could not load data', e);
     return { meta: {}, episodes: [], extras: [] };
   }
 }
 </script>
 <script type="text/babel">
-const { useState, useEffect, useMemo } = React;
+const { useState, useEffect, useMemo, useCallback } = React;
 
 function formatViews(n) {
   if (!n) return '0';
@@ -126,22 +171,65 @@ function App() {
   const [data, setData] = useState(null);
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('number_desc');
+  const [activeAmbiti, setActiveAmbiti] = useState(new Set());
+  const [activeTags, setActiveTags] = useState(new Set());
 
-  useEffect(() => {
-    loadData().then(setData);
+  useEffect(() => { loadData().then(setData); }, []);
+
+  // Collect all ambiti and top tags
+  const { ambitiList, tagsList } = useMemo(() => {
+    if (!data) return { ambitiList: [], tagsList: [] };
+    const ac = {}, tc = {};
+    for (const ep of data.episodes) {
+      for (const a of (ep.ambito || [])) ac[a] = (ac[a]||0) + 1;
+      for (const t of (ep.tags || [])) tc[t] = (tc[t]||0) + 1;
+    }
+    return {
+      ambitiList: Object.entries(ac).sort((a,b) => b[1]-a[1]),
+      tagsList: Object.entries(tc).sort((a,b) => b[1]-a[1]).slice(0, 25),
+    };
+  }, [data]);
+
+  const toggleAmbito = useCallback((a) => {
+    setActiveAmbiti(prev => {
+      const next = new Set(prev);
+      next.has(a) ? next.delete(a) : next.add(a);
+      return next;
+    });
   }, []);
+
+  const toggleTag = useCallback((t) => {
+    setActiveTags(prev => {
+      const next = new Set(prev);
+      next.has(t) ? next.delete(t) : next.add(t);
+      return next;
+    });
+  }, []);
+
+  const clearFilters = () => { setActiveAmbiti(new Set()); setActiveTags(new Set()); };
 
   const filtered = useMemo(() => {
     if (!data) return [];
     let eps = data.episodes;
+
     if (query.trim()) {
       const q = query.toLowerCase();
       eps = eps.filter(e =>
         (e.guest && e.guest.toLowerCase().includes(q)) ||
         (e.title && e.title.toLowerCase().includes(q)) ||
-        (e.episode_number && String(e.episode_number) === q.replace('#',''))
+        (e.episode_number && String(e.episode_number) === q.replace('#','')) ||
+        (e.professione && e.professione.some(p => p.toLowerCase().includes(q))) ||
+        (e.tags && e.tags.some(t => t.toLowerCase().includes(q)))
       );
     }
+
+    if (activeAmbiti.size > 0) {
+      eps = eps.filter(e => e.ambito && e.ambito.some(a => activeAmbiti.has(a)));
+    }
+    if (activeTags.size > 0) {
+      eps = eps.filter(e => e.tags && e.tags.some(t => activeTags.has(t)));
+    }
+
     const sorted = [...eps];
     switch(sort) {
       case 'views': sorted.sort((a,b) => (b.view_count||0) - (a.view_count||0)); break;
@@ -150,7 +238,7 @@ function App() {
       case 'duration': sorted.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
     }
     return sorted;
-  }, [data, query, sort]);
+  }, [data, query, sort, activeAmbiti, activeTags]);
 
   if (!data) return <div className="no-results">Caricamento...</div>;
 
@@ -161,6 +249,8 @@ function App() {
     { key: 'views', label: 'Views' },
     { key: 'duration', label: 'Durata' },
   ];
+
+  const hasFilters = activeAmbiti.size > 0 || activeTags.size > 0;
 
   return (
     <>
@@ -182,23 +272,54 @@ function App() {
           </div>
         </div>
       </div>
+
       <div className="controls">
-        <input
-          className="search-box"
-          placeholder="Cerca ospite, titolo o numero (#146)..."
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-        />
-        {sorts.map(s => (
-          <button
-            key={s.key}
-            className={`sort-btn ${sort === s.key ? 'active' : ''}`}
-            onClick={() => setSort(s.key)}
-          >{s.label}</button>
-        ))}
+        <div className="search-row">
+          <input
+            className="search-box"
+            placeholder="Cerca ospite, titolo, numero, professione o tag..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+          {sorts.map(s => (
+            <button
+              key={s.key}
+              className={`sort-btn ${sort === s.key ? 'active' : ''}`}
+              onClick={() => setSort(s.key)}
+            >{s.label}</button>
+          ))}
+        </div>
+
+        <div className="filters-row">
+          <span className="filters-label">Ambito</span>
+          {ambitiList.map(([a, c]) => (
+            <button
+              key={a}
+              className={`filter-btn ${activeAmbiti.has(a) ? 'active' : ''}`}
+              onClick={() => toggleAmbito(a)}
+            >{a} ({c})</button>
+          ))}
+          {hasFilters && <button className="clear-filters" onClick={clearFilters}>Pulisci filtri</button>}
+        </div>
+
+        <div className="filters-row" style={{marginTop: '0.5rem'}}>
+          <span className="filters-label">Tag</span>
+          {tagsList.map(([t, c]) => (
+            <button
+              key={t}
+              className={`filter-btn ${activeTags.has(t) ? 'active' : ''}`}
+              onClick={() => toggleTag(t)}
+            >{t} ({c})</button>
+          ))}
+        </div>
       </div>
+
+      <div className="results-count">
+        {filtered.length} puntate{query || hasFilters ? ' trovate' : ''}
+      </div>
+
       {filtered.length === 0 ? (
-        <div className="no-results">Nessun risultato per "{query}"</div>
+        <div className="no-results">Nessun risultato</div>
       ) : (
         <div className="grid">
           {filtered.map(ep => (
@@ -210,21 +331,35 @@ function App() {
                   alt={ep.guest}
                   loading="lazy"
                 />
-                <div className="card-body">
-                  <div className="card-ep">#{ep.episode_number}</div>
-                  <div className="card-guest">{ep.guest}</div>
-                  <div className="card-meta">
-                    <span>{formatViews(ep.view_count)} views</span>
-                    <span>{ep.duration_formatted}</span>
-                  </div>
-                </div>
               </a>
+              <div className="card-body">
+                <div className="card-ep">#{ep.episode_number}</div>
+                <div className="card-guest">{ep.guest}</div>
+                {ep.professione && ep.professione.length > 0 && (
+                  <div className="card-prof">{ep.professione.join(', ')}</div>
+                )}
+                <div className="card-meta">
+                  <span>{formatViews(ep.view_count)} views</span>
+                  <span>{ep.duration_formatted}</span>
+                </div>
+                {ep.tags && ep.tags.length > 0 && (
+                  <div className="card-tags">
+                    {ep.tags.map(t => (
+                      <span key={t} className="card-tag" onClick={(e) => {
+                        e.preventDefault();
+                        toggleTag(t);
+                      }}>{t}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
       )}
       <div className="footer">
-        TintorIA — Dati estratti da YouTube. <a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
+        TintorIA — Dati estratti da YouTube, tag generati con Claude.
+        <br/><a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
       </div>
     </>
   );
