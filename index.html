@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TintorIA — Indice Tintoria Podcast</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --card: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --accent: #e63946;
+    --accent-hover: #ff4d5a;
+    --search-bg: #1e1e1e;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  .header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; }
+  .header h1 span { color: var(--accent); }
+  .header p { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+  .stats {
+    display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .controls {
+    max-width: 900px; margin: 1.5rem auto; padding: 0 1rem;
+    display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+  }
+  .search-box {
+    flex: 1; min-width: 200px;
+    background: var(--search-bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.65rem 1rem;
+    color: var(--text); font-size: 0.95rem; outline: none;
+  }
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--muted); }
+
+  .sort-btn {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 1rem;
+    color: var(--muted); font-size: 0.85rem; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sort-btn:hover { border-color: var(--accent); color: var(--text); }
+  .sort-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .grid {
+    max-width: 900px; margin: 0 auto; padding: 1rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+    transition: transform 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .card a { text-decoration: none; color: inherit; display: block; }
+  .card-thumb {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    display: block; background: #222;
+  }
+  .card-body { padding: 0.85rem 1rem; }
+  .card-ep { color: var(--accent); font-weight: 700; font-size: 0.8rem; }
+  .card-guest { font-size: 1.1rem; font-weight: 600; margin: 0.2rem 0; }
+  .card-meta { display: flex; gap: 1rem; color: var(--muted); font-size: 0.8rem; }
+  .no-results { text-align: center; color: var(--muted); padding: 3rem 1rem; font-size: 1.1rem; }
+
+  .footer {
+    text-align: center; padding: 2rem 1rem; color: var(--muted);
+    font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 2rem;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// Episodes data will be inlined here by the build script
+window.__EPISODES_DATA__ = null;
+</script>
+<script>
+// Load data from external JSON or inline
+async function loadData() {
+  if (window.__EPISODES_DATA__) return window.__EPISODES_DATA__;
+  try {
+    const res = await fetch('../data/episodes.json');
+    return await res.json();
+  } catch(e) {
+    console.error('Could not load episodes.json', e);
+    return { meta: {}, episodes: [], extras: [] };
+  }
+}
+</script>
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+function formatViews(n) {
+  if (!n) return '0';
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
+  if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
+  return n.toString();
+}
+
+function App() {
+  const [data, setData] = useState(null);
+  const [query, setQuery] = useState('');
+  const [sort, setSort] = useState('number_desc');
+
+  useEffect(() => {
+    loadData().then(setData);
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (!data) return [];
+    let eps = data.episodes;
+    if (query.trim()) {
+      const q = query.toLowerCase();
+      eps = eps.filter(e =>
+        (e.guest && e.guest.toLowerCase().includes(q)) ||
+        (e.title && e.title.toLowerCase().includes(q)) ||
+        (e.episode_number && String(e.episode_number) === q.replace('#',''))
+      );
+    }
+    const sorted = [...eps];
+    switch(sort) {
+      case 'views': sorted.sort((a,b) => (b.view_count||0) - (a.view_count||0)); break;
+      case 'number_asc': sorted.sort((a,b) => a.episode_number - b.episode_number); break;
+      case 'number_desc': sorted.sort((a,b) => b.episode_number - a.episode_number); break;
+      case 'duration': sorted.sort((a,b) => (b.duration_seconds||0) - (a.duration_seconds||0)); break;
+    }
+    return sorted;
+  }, [data, query, sort]);
+
+  if (!data) return <div className="no-results">Caricamento...</div>;
+
+  const m = data.meta;
+  const sorts = [
+    { key: 'number_desc', label: 'Recenti' },
+    { key: 'number_asc', label: 'Cronologico' },
+    { key: 'views', label: 'Views' },
+    { key: 'duration', label: 'Durata' },
+  ];
+
+  return (
+    <>
+      <div className="header">
+        <h1>Tintor<span>IA</span></h1>
+        <p>Indice completo del podcast di Daniele Tinti e Stefano Rapone</p>
+        <div className="stats">
+          <div className="stat">
+            <div className="stat-value">{m.total_episodes}</div>
+            <div className="stat-label">Puntate</div>
+          </div>
+          <div className="stat">
+            <div className="stat-value">{m.unique_guests}</div>
+            <div className="stat-label">Ospiti</div>
+          </div>
+          <div className="stat">
+            <div className="stat-value">{formatViews(m.total_views)}</div>
+            <div className="stat-label">Views totali</div>
+          </div>
+        </div>
+      </div>
+      <div className="controls">
+        <input
+          className="search-box"
+          placeholder="Cerca ospite, titolo o numero (#146)..."
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+        />
+        {sorts.map(s => (
+          <button
+            key={s.key}
+            className={`sort-btn ${sort === s.key ? 'active' : ''}`}
+            onClick={() => setSort(s.key)}
+          >{s.label}</button>
+        ))}
+      </div>
+      {filtered.length === 0 ? (
+        <div className="no-results">Nessun risultato per "{query}"</div>
+      ) : (
+        <div className="grid">
+          {filtered.map(ep => (
+            <div className="card" key={ep.youtube_id}>
+              <a href={ep.youtube_url} target="_blank" rel="noopener noreferrer">
+                <img
+                  className="card-thumb"
+                  src={ep.thumbnail_url}
+                  alt={ep.guest}
+                  loading="lazy"
+                />
+                <div className="card-body">
+                  <div className="card-ep">#{ep.episode_number}</div>
+                  <div className="card-guest">{ep.guest}</div>
+                  <div className="card-meta">
+                    <span>{formatViews(ep.view_count)} views</span>
+                    <span>{ep.duration_formatted}</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="footer">
+        TintorIA — Dati estratti da YouTube. <a href="https://github.com/andreacolamedici/tintorIA">GitHub</a>
+      </div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
