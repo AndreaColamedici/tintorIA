@@ -1,1518 +1,2122 @@
 {
   "meta": {
-    "total_connections": 150,
+    "total_guests_connected": 85,
+    "total_cross_citations": 224,
     "generated_at": "2026-02-23"
   },
-  "connections": [
+  "guests": [
     {
-      "guest_mentioned": "Cristina D'Avena",
-      "in_episode": 101,
-      "episode_guest": "Alessandro Cino Zolfanelli",
-      "mention_count": 12,
-      "guest_episodes": [
-        237
+      "name": "Paolo Rossi",
+      "own_episodes": [
+        175
       ],
-      "context": "e potremo invitare e mi pare che tu disse ma tipo cristina d'avena ed ora dissero genio sei un gela è un'icona ma guarda che l'hanno invitata e tra la cosa più [ __ ] tutta questa storia spogliano il "
+      "cited_in": [
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 9,
+          "context": "ordare ricordare che avevamo scelto per questa puntata speciale era chiaramente paolo rossi e paolo rossi che doveva esibirsi al comedy village però non è venuto perché sapete purtroppo non è più tra noi non so "
+        },
+        {
+          "in_episode": 231,
+          "episode_guest": "Claudio Bisio",
+          "mention_count": 6,
+          "context": " no? il mio maestro fratello maggiore su in questo mondo è stato paolino rossi, paolo rossi che perché è stato il primo a io ecco questi due mondi li tenevo in quella in quel periodo della mia vita distinti, mol"
+        },
+        {
+          "in_episode": 130,
+          "episode_guest": "Dado (con Stefano Rapone)",
+          "mention_count": 5,
+          "context": " fuori tanto è vero che la generazione di claudio bisio si fece proprio un film paolo rossi per essere quelli che non avevano fatto thriving kamikazen la fecero un film si è capito come quelli che erano stati di"
+        },
+        {
+          "in_episode": 156,
+          "episode_guest": "Rocco Tanica",
+          "mention_count": 5,
+          "context": "lle cose più crudeli che si possa fare ha uno scherzo meraviglioso che fecero a paolo rossi paolo rossi aveva un aveva un suo un suo monologo dove a un certo punto citava gli skinz e e parlava del quoziente inte"
+        },
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 5,
+          "context": "rvista sì ec così grazie di averlo sottolineato sai che altro l'ha sottolineato paolo rossi ci ha detto questa cosa paolo rossi l'uomo di spettacolo paolo rossi l'uomo di beh entrambi uomini di spettacolo uno pe"
+        },
+        {
+          "in_episode": 179,
+          "episode_guest": "Gabriele Cirilli",
+          "mention_count": 3,
+          "context": "lto molto bravo ecco lui è un po' stand up all'epoca faceva io mi ricordo molto paolo rossiano no e e io guardando lui stavo guardai andrea grazie andre perché capii che potevo raccontare anch'io delle storie no"
+        },
+        {
+          "in_episode": 219,
+          "episode_guest": "Gialappa's Band",
+          "mention_count": 3,
+          "context": "anni perché la rai praticamente ne faceva poche quindi vennero anche a trovarci paolo rossi la dandini corrado guzzanti cioè tutti come a dire vi è successa sta roba ma veniamo a anche perché a teo andando via h"
+        },
+        {
+          "in_episode": 241,
+          "episode_guest": "Maurizio Milani",
+          "mention_count": 3,
+          "context": "ire le emozioni cioè alla paolo grassi si è diplomata lucia vasini la moglie di paolo rossi si è diplomato albanese e lo stesso paolino rossi gli mancava un esame bebo storti quindi loro erano già attori e la pr"
+        },
+        {
+          "in_episode": 176,
+          "episode_guest": "Giovanni Cacioppo",
+          "mention_count": 2,
+          "context": "vano da una scuola seria di teatro io venivo dal metodo johnny walker come dice paolo rossi ah ok qual è il metodo johnny walker sema che stav sul palco eh sì sì immaginavo ma poi quello che succede succede ma q"
+        },
+        {
+          "in_episode": 185,
+          "episode_guest": "Giobbe Covatta",
+          "mention_count": 2,
+          "context": " quindi sul derby io c'ho delle domand ah sul derby all no perché abbiamo avuto paolo rossi che ci ha raccontato del derby un sacco di cose non c'era nessuno qua di questi perché prima hai detto chi c'era è venu"
+        },
+        {
+          "in_episode": 207,
+          "episode_guest": "Elio",
+          "mention_count": 2,
+          "context": "mettevano insieme un po' di artisti c'erano quelli del teatro dell'elfo tra cui paolo rossi era diciamo il il più importante ma anche c'era anche bisio e e noi gli abbiamo detto sì perché era interessante insomm"
+        },
+        {
+          "in_episode": 209,
+          "episode_guest": "Raul Cremona",
+          "mention_count": 2,
+          "context": "ac e tutti poi dis nipoti di ancci teocoli boldi francesco salvi enzo iacchetti paolo rossi claudio bisio le prime armi il mio primo debutto avviene insieme a questi nomi qua claudio bisio massimo antonio catani"
+        }
+      ],
+      "total_citations": 12
     },
     {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 149,
-      "episode_guest": "The Pills",
-      "mention_count": 12,
-      "guest_episodes": [
-        240
-      ],
-      "context": "insieme viviamo farebbe tipo mi voglio ammazzare Luigi piscia nel mio bagno perché dice che il suo sta sulle scale e quindi non ci vuole andare che faccio delle scale per fare la Pip no no ma lo CAP l"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 207,
-      "episode_guest": "Elio",
-      "mention_count": 11,
-      "guest_episodes": [
-        125
-      ],
-      "context": "andato più so che quando siamo arrivati c'era un caldo perché era luglio ma un io non avevo mai sentito un caldo sceso dall'aereo Era come se mi fosse arrivata una martellata in testa un martello enor"
-    },
-    {
-      "guest_mentioned": "Carlo Verdone",
-      "in_episode": 277,
-      "episode_guest": "Claudia Gerini",
-      "mention_count": 11,
-      "guest_episodes": [
-        280
-      ],
-      "context": "l mio humus, cioè le commedie dopo molti anni con Carlo Verdone sarebbe diventato il mio diciamo il mio ambiente naturale. E quindi e facendo questo film, avevo 15 anni quando mi hanno scelto per fare"
-    },
-    {
-      "guest_mentioned": "Trio Medusa",
-      "in_episode": 114,
-      "episode_guest": "Danilo da Fiumicino (con Stefano Rapone)",
-      "mention_count": 10,
-      "guest_episodes": [
-        189
-      ],
-      "context": "sce il nome è nato perché faccio un programma col trio medusa su radio digeriamo il trio medusa di tre amici di tintoria ma nessuno né 21 la vedi le sedi la nave di qualcuno ancora non mi riconosce le"
-    },
-    {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 125,
-      "episode_guest": "Il Grande Caldo (con Stefano Rapone)",
-      "mention_count": 10,
-      "guest_episodes": [
-        240
-      ],
-      "context": "n applauso per marcello newman da bells ad onna e luigi caggiano e vai ciao ragazzi benvenuti la tintoria c'erano grazie bentornato a ti sei anche tu sei già nelle prime 16 già si è già venuto e tu no"
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 185,
-      "episode_guest": "Giobbe Covatta",
-      "mention_count": 10,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "la vecchiaia la questa la vecchiaia la Touré dei vecchi che guarda che quando vate in giro con gli acetti ogni Autogrill che vediamo Ho sentito un rumore in cantina ma adesso stamo sempre accesso stia"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 27,
-      "episode_guest": "Manuel Bongiorni aka Musica Per Bambini",
-      "mention_count": 9,
-      "guest_episodes": [
-        125
-      ],
-      "context": "o che lo stato freddo funzioni meglio dello stato caldo cioè lo stato non è la tua mamma deve dirti che cosa fare quindi tu devi essere libero anche di prenderti martellate nelle balle quindi figurati"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 156,
-      "episode_guest": "Rocco Tanica",
-      "mention_count": 9,
-      "guest_episodes": [
-        231
-      ],
-      "context": "e animavano dell'ambiente eravamo un tutt'uno con Claudio Bisio che ancora faceva cabaret Stefano nosei che è stato il primo a fare ciò che ancora viene fatto con successo ma da personaggi che hanno a"
-    },
-    {
-      "guest_mentioned": "Giovanni Floris",
-      "in_episode": 164,
-      "episode_guest": "Pilar Fogliati",
-      "mention_count": 9,
-      "guest_episodes": [
-        282
-      ],
-      "context": "eh del Signor sì presidente il consiglio No vedi Floris io so dire soltanto vedi Floris so soltanto dire Vedi Floris all con la voce di Giorgia Meloni però mi Ma vedi Floris Io penso che l'italiano si"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 233,
-      "episode_guest": "Irene Grandi",
-      "mention_count": 9,
-      "guest_episodes": [
-        125
-      ],
-      "context": "a me la merito non vedo l'ora di stare al sole al caldo tra le palme sarà stupendo e poi G diceva e nonostante io sia all'estero Comunque me la riesco a vedere Un posto al sole Certo che lui non se ne"
-    },
-    {
-      "guest_mentioned": "Giancarlo Magalli",
-      "in_episode": 236,
-      "episode_guest": "Christian De Sica",
-      "mention_count": 9,
-      "guest_episodes": [
-        203
-      ],
-      "context": "one e va bene però sono andato anche a scuola con Magalli che è Magalli no è sempre la stessa scuola sempre la stessa scuola a Nazareno a Nazareno che adesso è diventato un albergo Adesso è diventato "
-    },
-    {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 174,
-      "episode_guest": "Eterobasiche",
-      "mention_count": 8,
-      "guest_episodes": [
-        240
-      ],
-      "context": "ato un applauso è una persona come come ti chiami Luigi che se avesse un soprannome a Luigi con la Fanta con la fantasia che Gigio Quando c'era lui grande Luigi si è alzato per primo subito appena acc"
-    },
-    {
-      "guest_mentioned": "Raffaello Corti",
-      "in_episode": 263,
-      "episode_guest": "Gabriele Mainetti",
-      "mention_count": 8,
-      "guest_episodes": [
-        108
-      ],
-      "context": "e quando c'ho avuto l'idea ho fatto i miei primi corti, ne ho fatti tanti di corti, ho fatto 12 cortometraggio. A me di solito mi arriva qualcuno che mi fa \"Voglio debuttare in un lungometraggio\", ma "
-    },
-    {
-      "guest_mentioned": "Carlo Verdone",
-      "in_episode": 288,
-      "episode_guest": "Maurizio Nichetti",
-      "mention_count": 8,
-      "guest_episodes": [
-        280
-      ],
-      "context": "o, [applauso] cioè io sono un po' il contrario di Verdone. Verdone è uno che sa tutto di malattie. Io sono uno che mi son lontano da qualsiasi bigino, perché se leggo, cioè se devo prendere l'aspirina"
-    },
-    {
-      "guest_mentioned": "Carlo Verdone",
-      "in_episode": 37,
-      "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
-      "mention_count": 7,
-      "guest_episodes": [
-        280
-      ],
-      "context": "ca valeri io volevo essere quella cosa lì poi c'è verdone che che mi ha accompagnato tutta la vita ha fatto giusto kg di menta forse tutti e poi sono questi ascoltatori e fa strano perché sono così lo"
-    },
-    {
-      "guest_mentioned": "Carmine Del Grosso",
-      "in_episode": 132,
-      "episode_guest": "Martin e Luis Sal (con Stefano Rapone)",
-      "mention_count": 7,
-      "guest_episodes": [
-        283
-      ],
-      "context": "ersone che dicono ok adesso fame fame diventa più grosso io le stime un po di più di quelle che non lo fanno è una cosa mia è sbagliato sicuramente perché ho ragione si si si si no esco io poi occupar"
-    },
-    {
-      "guest_mentioned": "Massimo Ceccherini",
-      "in_episode": 139,
-      "episode_guest": "Valerio Lundini",
-      "mention_count": 7,
-      "guest_episodes": [
-        136
-      ],
-      "context": "tato proprio in un momento dopo Lucca Comics dopo Ceccherini e dopo giip e Maccio penso che tracollo totale tracollo totale ho rovinato il podcast che seguo adesso tra due settimane non avrò una punta"
-    },
-    {
-      "guest_mentioned": "Paolo Calabresi",
-      "in_episode": 196,
-      "episode_guest": "Brunori Sas",
-      "mention_count": 7,
-      "guest_episodes": [
-        141
-      ],
-      "context": "la cosa cioè io sono stato il primo anno solo con calabresi che mia madre quando sono tornato a Natale ha fatto ma tu parli più calabrese moi quando si part Cioè mamma che era par abbiamo andato a Sie"
-    },
-    {
-      "guest_mentioned": "Toni Servillo",
-      "in_episode": 198,
-      "episode_guest": "Marco D'Amore",
-      "mention_count": 7,
-      "guest_episodes": [
-        287
-      ],
-      "context": "alla formazione teatrale perché nel film c'è Tony Servillo, eh. E noi studiando abbiamo visto che nella tua prima o comunque nella prima che abbiamo trovato noi eh compagnia teatrale, quando interpret"
-    },
-    {
-      "guest_mentioned": "Giorgio Panariello",
-      "in_episode": 256,
-      "episode_guest": "Fiorella Mannoia",
-      "mention_count": 7,
-      "guest_episodes": [
-        260
-      ],
-      "context": "ellulare. E chi ci sta di famosa? Per esempio c'è Panariello. Ah. Prossimo ospite del podcast. chiediamo. Panariello e che a Caracalla l'altranno ha avuto la bella idea di raccontare come dire a tutti"
-    },
-    {
-      "guest_mentioned": "Lo Stato Sociale",
-      "in_episode": 42,
-      "episode_guest": "Liliana Fiorelli (con Stefano Rapone)",
-      "mention_count": 6,
-      "guest_episodes": [
-        153
-      ],
-      "context": "siamo andati una due volte a fare una finta vita sociale tipo in un aperitivo un ristorante no anche se siamo dei dati degli odiatori della vita sociale giusto per ogni due volte siamo andati in quest"
-    },
-    {
-      "guest_mentioned": "Carmine Del Grosso",
-      "in_episode": 100,
-      "episode_guest": "con Stefano Rapone",
-      "mention_count": 6,
-      "guest_episodes": [
-        283
-      ],
-      "context": "dottor anche come cattivo lo vedo però è magrone grosso quella non l'abbia ingrassato no però nel finale bosco malincuore spoiler spoiler alert d'amore tollerare il film non te lo dico ma questo ci so"
-    },
-    {
-      "guest_mentioned": "Daniela Delle Foglie",
-      "in_episode": 119,
-      "episode_guest": "Giacomo Bevilacqua (con Stefano Rapone)",
-      "mention_count": 6,
-      "guest_episodes": [
-        31,
-        40
-      ],
-      "context": "ilasciano questa polvere che ci ucciderà tutti le foglie dei platani rilasciano questo noi abbiamo parte azione in sala che abbiamo un altro è un'altra persona che io odio e galateri disegnatore grand"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 139,
-      "episode_guest": "Valerio Lundini",
-      "mention_count": 6,
-      "guest_episodes": [
+      "name": "Luca Ravenna",
+      "own_episodes": [
         95
       ],
-      "context": "Oh e f Le Du gocce Sì ed era una cosa che diceva Luca Ravenna in un monologo poi vabbè Luca non è uno che se la prende quindi non è successo niente e no Quindi poi gli ho chiesto scusa lui non ha parl"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 143,
-      "episode_guest": "Aurora Leone",
-      "mention_count": 6,
-      "guest_episodes": [
-        95
+      "cited_in": [
+        {
+          "in_episode": 139,
+          "episode_guest": "Valerio Lundini",
+          "mention_count": 6,
+          "context": "eniale in un giorno di pioggia oh e f le du gocce sì ed era una cosa che diceva luca ravenna in un monologo poi vabbè luca non è uno che se la prende quindi non è successo niente e no quindi poi gli ho chiesto sc"
+        },
+        {
+          "in_episode": 158,
+          "episode_guest": "Gianluca Fru",
+          "mention_count": 5,
+          "context": "sei content creator però nel nostro mondo tu sei quello che è arrivato dietro a luca ravenna eh sì quindi la domanda che ti dobbiamo fare è come è possibile come hai fatto arrivare dietro a uno che non ha fatto n"
+        },
+        {
+          "in_episode": 21,
+          "episode_guest": "Giorgio Quarzo Guarascio aka Tutti Fenomeni",
+          "mention_count": 3,
+          "context": " che avevo gradito e poi ci siamo conosciuti una sera perché allo spettacolo di luca ravenna all'alcazar tu è riandato insieme a niccolò contessa e cristoforo contessa esatto esattamente e e e io mi sono presenta"
+        },
+        {
+          "in_episode": 135,
+          "episode_guest": "Gero Arnone & Eliana Albertini",
+          "mention_count": 3,
+          "context": "azie era quello che dicevo prima daniele tipo io voi da meno tempo però tipo ma luca ravenna lo conosco da un sacco di tempo e sono rimasto impressionato raga da come siete migliorati anni dopo anno cioè se avete"
+        },
+        {
+          "in_episode": 174,
+          "episode_guest": "Eterobasiche",
+          "mention_count": 3,
+          "context": "parlando nella città però ravenna allora io io ho citato ho collegato ravenna a luca ravenna voi siete anche state ospiti di c'è questo allora niente allora puoi dirlo ma non cashmere podcast bensì cashmere cashm"
+        },
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 3,
+          "context": "valerio lundini che è un amico fa ancora più male no infatti ci salero raimondo luca ravenna fa ancora più male riccardo rossi rossi dai eh vabbè bruttissimo poi nomi vabbè volo ti dico che volo con giovanni vern"
+        },
+        {
+          "in_episode": 104,
+          "episode_guest": "vs Cachemire Podcast",
+          "mention_count": 2,
+          "context": "a allora disse già mobilitato un ragazzo cortesemente privilegi a chi in aria e luca ravenna grazie mille ma invece su cashmere come si fa ad avere una birra noi non beviamo noi non abbiamo gli altri la differenz"
+        },
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 2,
+          "context": "all partiamo da noi io so goku partiamo partiamo da questo io sono goku ti dico luca ravenna e vegeta questa è una vecchia cosa perché se vegeta fosse italiano sarebbe di milano questa cosa secondo me e tinti è p"
+        },
+        {
+          "in_episode": 200,
+          "episode_guest": "Tinti & Rapone",
+          "mention_count": 2,
+          "context": "ilterra lei faceva standup nel nord dell'inghilterra gran puntata poi puntata 7 luca ravenna puntata 8 edoardo ferrario quindi ho già precursore già vedevo sinergia dove altri vedevano certo odio no ma perché odi"
+        },
+        {
+          "in_episode": 222,
+          "episode_guest": "Sandro Cappai",
+          "mention_count": 2,
+          "context": "è un bambino idrosolubile ha sentito una goccia e invece una vecchia battuta di luca ravenna tra l'altro ah certo com'è andata invece la la maturità la maturità come si chiamano i non le fa no e non ho fatti ad i"
+        },
+        {
+          "in_episode": 258,
+          "episode_guest": "Salvo Di Paola",
+          "mention_count": 2,
+          "context": "te. il primo sì, sì, sì, sì.\n\nno, il primo, forse il primo a rispondere è stato luca ravenna che ha fatto poi un po' da apriorta a tutti e non cioè nella mia testa quello che è successo è che lui poi vi ha detto "
+        }
       ],
-      "context": "ra al liceo al liceo però già a liceo Io ho fatto Ravenna Ravenna C Cioè non so se anche a Roma si è comune Quest si va Ravenna Dove si fanno le gita a Roma io ho fatto una gita a Brescia a Brescia e "
+      "total_citations": 11
     },
     {
-      "guest_mentioned": "Stefano Nazzi",
-      "in_episode": 148,
-      "episode_guest": "Frank Matano",
-      "mention_count": 6,
-      "guest_episodes": [
-        202
-      ],
-      "context": "n mente Se veramente sei L'assassino capito Vabbè Stefano Nazzi Io sono Stefano Nazzi e questo pure quello è bello Stefano Nazzi Stefano Nazzi prossimo ospite un altro podcast Vabbè questa parte forse"
-    },
-    {
-      "guest_mentioned": "Valerio Lundini",
-      "in_episode": 152,
-      "episode_guest": "Andrea Delogu",
-      "mention_count": 6,
-      "guest_episodes": [
-        34,
-        139
-      ],
-      "context": "hela girot che proprio fuori controllo Sì sì pure lundini l'abbiamo tutti quelli che abbiamo potuto strattonare quindi nella disperazione avete chiamato me no adesso siamo arrivati a un livello in cui"
-    },
-    {
-      "guest_mentioned": "Davide Marini + Sandro Canori + Andrea di Castro",
-      "in_episode": 168,
-      "episode_guest": "Alberto Grandi",
-      "mention_count": 6,
-      "guest_episodes": [
-        103
-      ],
-      "context": "C comunisti No però ho dimenticato Ho dimenticato Castro Castro Vedi se lo meritava il podio se lo meritava se lo meritava Castro Bia di bronzo Sì ma perché poi parlava per 6 ore era era come me quind"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 172,
-      "episode_guest": "Walter Fontana",
-      "mention_count": 6,
-      "guest_episodes": [
-        125
-      ],
-      "context": "viaggio lunghissimo faticoso faticoso poi faceva caldo sai estate faceva caldo Quindi quando fa caldo viaggi Comunque sei in tensione stasera c'era la puntata sudi sei Teso è importante idratarsi impo"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 172,
-      "episode_guest": "Walter Fontana",
-      "mention_count": 6,
-      "guest_episodes": [
+      "name": "Claudio Bisio",
+      "own_episodes": [
         231
       ],
-      "context": "di teatro lì ha scoperto una vena comica c'erano Bisio Bisio faceva l'elfo però lì erano Bisio Silvio Orlando che facevo esperimenti di strano cabarè insomma c'era Era un periodo così e tu sul palco a"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 175,
-      "episode_guest": "Paolo Rossi",
-      "mention_count": 6,
-      "guest_episodes": [
-        231
+      "cited_in": [
+        {
+          "in_episode": 156,
+          "episode_guest": "Rocco Tanica",
+          "mention_count": 9,
+          "context": " tra i comici che animavano che animavano dell'ambiente eravamo un tutt'uno con claudio bisio che ancora faceva cabaret stefano nosei che è stato il primo a fare ciò che ancora viene fatto con successo ma da perso"
+        },
+        {
+          "in_episode": 175,
+          "episode_guest": "Paolo Rossi",
+          "mention_count": 6,
+          "context": "ere sentiamo la prossima e io ho detto lo spettacolo è finito signore e signori claudio bisio perché [risate] [musica] [applauso] [musica] [applauso] [musica] ciao amici serie di figure tanto ci siamo bene bene c'"
+        },
+        {
+          "in_episode": 217,
+          "episode_guest": "Paolo Hendel",
+          "mention_count": 4,
+          "context": " lanci questa di comunque tutti i comici che vengono qua spesso delle storie su claudio bisio tu hai hai degli aneddoti dei racconti su di lui allora scopriamo svegliamo il gioco che voi siete meravigliosi il mio "
+        },
+        {
+          "in_episode": 209,
+          "episode_guest": "Raul Cremona",
+          "mention_count": 3,
+          "context": "oi dis nipoti di ancci teocoli boldi francesco salvi enzo iacchetti paolo rossi claudio bisio le prime armi il mio primo debutto avviene insieme a questi nomi qua claudio bisio massimo antonio catania in coppia co"
+        },
+        {
+          "in_episode": 271,
+          "episode_guest": "Max Angioni",
+          "mention_count": 3,
+          "context": "hé cazzo ehm però ecco una cosa devo dire io quando la prima volta che ho visto claudio bisio allo zelig, il locale presentare io ho detto robin williams c'è una velocità, una una fantasy, una roba che io sono rim"
+        },
+        {
+          "in_episode": 130,
+          "episode_guest": "Dado (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": " venivano considerati e tagliati un po fuori tanto è vero che la generazione di claudio bisio si fece proprio un film paolo rossi per essere quelli che non avevano fatto thriving kamikazen la fecero un film si è c"
+        },
+        {
+          "in_episode": 200,
+          "episode_guest": "Tinti & Rapone",
+          "mention_count": 2,
+          "context": "ima il microfono no no oramai non imparo più niente cari daniele e stefano sono claudio bisio ciao so che fate state per fare la dua repca no replica la centesima puntata originale di di tintoria io so che mi avet"
+        },
+        {
+          "in_episode": 212,
+          "episode_guest": "Gioele Dix",
+          "mention_count": 2,
+          "context": "o un altro personaggio che che spesso viene citato dagli ospiti che viene qua è claudio bisio tu hai aneddoti particolari riguardo la tua persona claudio bisio sì ho sentito un aneddoto disgustoso che ha raccontat"
+        },
+        {
+          "in_episode": 240,
+          "episode_guest": "Fabio De Luigi",
+          "mention_count": 2,
+          "context": " vedendo nuovi comici avevano proprio fatto una specie di repulisti era rimasto claudio bisio era rimasta luciana litizzetto e e joele dix quindi c'erano loro che erano i broncovit per me quindi era un cazzo di br"
+        }
       ],
-      "context": "ho detto Lo spettacolo è finito Signore e signori Claudio Bisio perché [Risate] [Musica] [Applauso] [Musica] [Applauso] [Musica] Ciao amici serie di figure tanto ci siamo Bene bene c'è un annuncio da "
+      "total_citations": 9
     },
     {
-      "guest_mentioned": "COMEDY VILLAGE",
-      "in_episode": 178,
-      "episode_guest": "Martufello",
-      "mention_count": 6,
-      "guest_episodes": [
-        133
-      ],
-      "context": "nuova, lo diciamo per le persone a casa. Siamo al Comedy Village. Questo si rinnova. La tradizione di cominciare la stagione al Comedy Village. Una tradizione che vanta due episodi. Quindi, nel senso,"
-    },
-    {
-      "guest_mentioned": "Gabriele Cirilli",
-      "in_episode": 181,
-      "episode_guest": "Paola Minaccioni",
-      "mention_count": 6,
-      "guest_episodes": [
-        179
-      ],
-      "context": "o, Riccardo Casco era il proprietario. Raccontato Cirilli. Cirilli ci ha raccontato che andavi là e tiravano le cose. Io, per esempio, ho fatto pure un concorso di comicità con Cirilli che eravamo due"
-    },
-    {
-      "guest_mentioned": "Fabri Fibra",
-      "in_episode": 188,
-      "episode_guest": "Caterina Guzzanti",
-      "mention_count": 6,
-      "guest_episodes": [
-        272
-      ],
-      "context": "a mezzog giorno e mezzo mi viene il tecnico della fibra di Quale quale Fibra D tre qua è lunga sta P tre e questo è è questo è ah ah E poi che hai visto non è bella Quindi è sdolcinata leoni di Sicili"
-    },
-    {
-      "guest_mentioned": "Maurizio Battista",
-      "in_episode": 204,
-      "episode_guest": "Michela Giraud",
-      "mention_count": 6,
-      "guest_episodes": [
-        166
-      ],
-      "context": "e ho scoperto che ho lo stesso Sì è lo stesso di Maurizio Battista Perché a un certo punto ha detto io visito spesso un suo collega che fa degli sketch Maurizio Battista E sì ah e che t' ha dato notiz"
-    },
-    {
-      "guest_mentioned": "Marcello Cesena",
-      "in_episode": 219,
-      "episode_guest": "Gialappa's Band",
-      "mention_count": 6,
-      "guest_episodes": [
-        201
-      ],
-      "context": "iamo qua ne vogliamo affrontare adesso il il caso Marcello Cesena Vai falla desta quello stronzo di Marcello Cesena Ciao Marcello che sarebbe jean-claude come jecla Marcello Cesena è venuto a questa a"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 265,
-      "episode_guest": "Monir Ghassem",
-      "mention_count": 6,
-      "guest_episodes": [
-        125
-      ],
-      "context": "ai che Sorrentino m'ha chiesto il link del Grande caldo e lui sta nel Grande Caldo?\" Gli ho fatto. Quindi forse si è visto la scena dove stai nel Grande Caldo che fai tribolo, hai capito? Sorrettino q"
-    },
-    {
-      "guest_mentioned": "Lo Stato Sociale",
-      "in_episode": 29,
-      "episode_guest": "Pietro Sparacino (2)",
-      "mention_count": 5,
-      "guest_episodes": [
-        153
-      ],
-      "context": "è diventato anche un game show e quindi la gente sociale dirette suisse time le dirette su youtube invece vi era detto no [ __ ] io voglio proprio fare stand io voglio il pubblico più che altro esatto"
-    },
-    {
-      "guest_mentioned": "Raffaello Corti",
-      "in_episode": 34,
-      "episode_guest": "Valerio Lundini e Matteo Tiberia",
-      "mention_count": 5,
-      "guest_episodes": [
-        108
-      ],
-      "context": "andemia adesso finita e risolto di sanremo esatti corti fuggo e non ci sono più problemi virus a è finito l'unico il problema più grave dell'umanità è il mio filtro anti pop che cade però c'è una new "
-    },
-    {
-      "guest_mentioned": "Lo Stato Sociale",
-      "in_episode": 106,
-      "episode_guest": "Guia Scognamiglio & Tommaso Faoro",
-      "mention_count": 5,
-      "guest_episodes": [
-        153
-      ],
-      "context": "sentanza d'istituto non è mai perché lo sapete le sociale uomini ecco ci siamo noi noi vogliamo poter giocare a calcio nei corridoi vogliamo poter fumare in classe ecco voterò lui gara di flessione ma"
-    },
-    {
-      "guest_mentioned": "Caterina Guzzanti",
-      "in_episode": 114,
-      "episode_guest": "Danilo da Fiumicino (con Stefano Rapone)",
-      "mention_count": 5,
-      "guest_episodes": [
-        188
-      ],
-      "context": "faranno lol attenzione probabilmente sì ma mentre guzzanti è uno bravo tanti che dovrebbe venire a tintoria tra l'altro fra due settimane se non sbaglio due ore non posso dire quale guzzanti paolo un "
-    },
-    {
-      "guest_mentioned": "Sabina Guzzanti",
-      "in_episode": 114,
-      "episode_guest": "Danilo da Fiumicino (con Stefano Rapone)",
-      "mention_count": 5,
-      "guest_episodes": [
-        243
-      ],
-      "context": "faranno lol attenzione probabilmente sì ma mentre guzzanti è uno bravo tanti che dovrebbe venire a tintoria tra l'altro fra due settimane se non sbaglio due ore non posso dire quale guzzanti paolo un "
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 115,
-      "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "he gli anziani proprio quelli anziani provo con i vecchi vecchi di parma che a metà mattinata si fanno il bianchino al bar quello c story tra la tradizione come aggravante dell'alcolismo un rito il ri"
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 117,
-      "episode_guest": "Velia Lalli (con Stefano Rapone)",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "nziane perché i volontari negli ospedali sono dei vecchi lanciando niente la fa e vanno a fa i volontari e gli ospedali non tengono nei paraggi dice sì esatto si preparano e quindi non può [ __ ] infa"
-    },
-    {
-      "guest_mentioned": "Pietro Sparacino",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 5,
-      "guest_episodes": [
-        109
-      ],
-      "context": "no Quindi meglio meglio Un applauso un applauso a Pietro Sparacino direttore artistico del comune Village che poi chiameremo sul palco Sì e tu allora io sono stato fatto un piccolo giro dei Balcani in"
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 139,
-      "episode_guest": "Valerio Lundini",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "a una c'è un'enorme cattedra all'entrata sai quei vecchi palazzi dove c'è la cattedra del portiere ma non c'è il portiere per è rimasta questa cosa in legno Madonna c'è gente che ascolta questa roba s"
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 144,
-      "episode_guest": "Zerocalcare",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "non solo in Argentina Comunque stanno Boh quelli vecchi vecchi quelli vecchi vecchi sì quelli vecchi Sì vech ma neanche in Francia quindi è andato no cioè non mi scrive mai nessuno dall Francia No eff"
-    },
-    {
-      "guest_mentioned": "Paolo Calabresi",
-      "in_episode": 146,
-      "episode_guest": "Pietro Sermonti",
-      "mention_count": 5,
-      "guest_episodes": [
-        141
-      ],
-      "context": "'ultima cosa tu eh se sei C ci dice ci diceva ehm Paolo calabresi che siete voi siete rimasti in contatto voi voi di Boris vi sentite spesso siete come una grande Eh ma con quelli del medico in famigl"
-    },
-    {
-      "guest_mentioned": "Maurizio Milani",
-      "in_episode": 156,
-      "episode_guest": "Rocco Tanica",
-      "mention_count": 5,
-      "guest_episodes": [
-        241
-      ],
-      "context": "anche per la scrittura anche per la letteratura è Maurizio Milani vorrei per curiosità sapere chi conosce Maurizio Milan può alzare la mano solo per capire in molto pochi conoscete Maurizio Milano Io "
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 157,
-      "episode_guest": "Willie Peyote",
-      "mention_count": 5,
-      "guest_episodes": [
-        125
-      ],
-      "context": "meglio di quelle persone Ah ti meriti tutto ok Il caldo mi Tu sei una stella a staris Born sì Ehm poi sono arrivate altre persone volevo rubargli anche la sedia Perché non c'avevamo le sedie a sto pun"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 158,
-      "episode_guest": "Gianluca Fru",
-      "mention_count": 5,
-      "guest_episodes": [
-        95
-      ],
-      "context": "ostro mondo Tu sei quello che è arrivato dietro a Luca Ravenna Eh sì quindi la domanda che ti dobbiamo fare è come è possibile come hai fatto arrivare dietro a uno che non ha fatto nulla cioè Lua lett"
-    },
-    {
-      "guest_mentioned": "Tutti Fenomeni",
-      "in_episode": 191,
-      "episode_guest": "Pietro Castellitto",
-      "mention_count": 5,
-      "guest_episodes": [
-        128
-      ],
-      "context": "atte e AV riso e l'ha capito e e invece c'è anche fenomeni Giorgio guarascio amico del podcast già due volte ospite di tintoria quindi veramente abitu E invece tutti i fenomeni come Anzi chiamiamo Gio"
-    },
-    {
-      "guest_mentioned": "Alessandro Cattelan",
-      "in_episode": 210,
-      "episode_guest": "Francesco Fanucchi",
-      "mention_count": 5,
-      "guest_episodes": [
-        154
-      ],
-      "context": "punti neri tantissimo. Che schifo, Madonna. Come Cattelan pure a Cattelan ci fatto pazzo completamente. Poi anche tipo le Io non so che cosa siano, ma è tipo una roba di di gomma calda, cera forse che"
-    },
-    {
-      "guest_mentioned": "Danilo da Fiumicino",
-      "in_episode": 222,
-      "episode_guest": "Sandro Cappai",
-      "mention_count": 5,
-      "guest_episodes": [
-        114
-      ],
-      "context": "ppo anche troppo ancora soffriamo la scissione di Fiumicino che per fosse per noi anche un comune a parte Fiumicino Adesso è un comune a parte fino a un po' di anni fa era Comune di Roma quindi era Pr"
-    },
-    {
-      "guest_mentioned": "Marcello Cesena",
-      "in_episode": 240,
-      "episode_guest": "Fabio De Luigi",
-      "mention_count": 5,
-      "guest_episodes": [
-        201
-      ],
-      "context": "r me quindi era un cazzo di bronc cera appunto no Marcello Cesena ancora non c'era c'erano Ugo dighero e Maurizio Crozza che stavano provando delle cose e io rimango lì e nessuno mi caga C rimango tut"
-    },
-    {
-      "guest_mentioned": "Francesca Albanese",
-      "in_episode": 240,
-      "episode_guest": "Fabio De Luigi",
-      "mention_count": 5,
-      "guest_episodes": [
-        273
-      ],
-      "context": "sibito in questo teatro grandissimo c'era Antonio Albanese ah Paolo Cevoli c'era tutto una una nidiata nella stessa sera S Sì siamo io Antonio l'ho conosciuto lì e chi chi ha vinto fammi una classific"
-    },
-    {
-      "guest_mentioned": "Fabio Pinci",
-      "in_episode": 242,
-      "episode_guest": "Coez",
-      "mention_count": 5,
-      "guest_episodes": [
-        99
-      ],
-      "context": "mi sono visto la puntata de dei Profilax cioè di Fabio Pinci Che indirettamente Mi ha rovinato la vita perché lui c'aveva sto personaggio Silvano con cui faceva le le canzoncine moi non me le ricordo "
-    },
-    {
-      "guest_mentioned": "Marco D'Amore",
-      "in_episode": 249,
-      "episode_guest": "Valerio Mastandrea",
-      "mention_count": 5,
-      "guest_episodes": [
-        198
-      ],
-      "context": "to, diciamo, una storia è un incontro, una storia d'amore tra due persone che si incontrano in un posto un po' particolare. Sì. dove loro stanno vivendo una una condizione clinica che è metaforica ovv"
-    },
-    {
-      "guest_mentioned": "Alessandro Borghese",
-      "in_episode": 260,
-      "episode_guest": "Giorgio Panariello",
-      "mention_count": 5,
-      "guest_episodes": [
-        215
-      ],
-      "context": "o, ho visto. Cioè, non è che E com'era vestito in borghese? Da frate. Era vestito in frate. No, no, quando era in borghese. Da da frate in Ci sono dei frati che li vedi che sono un borghese. E e cioè "
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 267,
-      "episode_guest": "Toni Bonji",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "di oggi erano bucati. Ho detto \"Mi prendo quelli vecchi\". Però anche quelli vecchi erano bucati. Infatti è successo qualcosa, cioè nel senso poi i pantaloni di che c'hai oggi, oggi eravamo in treno in"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 270,
-      "episode_guest": "Giorgia Fumo",
-      "mention_count": 5,
-      "guest_episodes": [
-        125
-      ],
-      "context": "amo superato l'inverno. Eccoci qua. Primavera, il caldo, il disgelo, è stato un inverno tranquillo, bello, tranquillissimo. Tutto è andato bene, le guerre, tutto tutto tranquillo. Sì, Sanremo l'ha vin"
-    },
-    {
-      "guest_mentioned": "Massimo Ceccherini",
-      "in_episode": 277,
-      "episode_guest": "Claudia Gerini",
-      "mention_count": 5,
-      "guest_episodes": [
-        136
-      ],
-      "context": "di Carlo, poi ho fatto delle commedie tante da da Ceccherini, Peraccioni, Brizzi e tante altre, anche commedie più dramedy. Adesso va molto il dramedy perché è un po' commedia, un po' dramma e e fuori"
-    },
-    {
-      "guest_mentioned": "Luca Vecchi",
-      "in_episode": 278,
-      "episode_guest": "Cecilia Sala",
-      "mention_count": 5,
-      "guest_episodes": [
-        86,
-        102
-      ],
-      "context": "ostitute sui marciapiedi della città di Kerson, i vecchi in bicicletta e in una settimana avevano ucciso due bambini, uno di 7 anni e uno di un anno, che stava giocando nel cortile della di casa della"
-    },
-    {
-      "guest_mentioned": "Daniela Delle Foglie",
-      "in_episode": 289,
-      "episode_guest": "Mika",
-      "mention_count": 5,
-      "guest_episodes": [
-        31,
-        40
-      ],
-      "context": "lto, cioè, insomma, è un po' più non hai tolto le foglie. Per fumarla non l'hai fatta seccare. Cosa fai con la pianta? La annaffi per motivi botanici. E chi viene a contare le foglie? No, nessuno vien"
-    },
-    {
-      "guest_mentioned": "Cristina D'Avena",
-      "in_episode": 39,
-      "episode_guest": "Velia Lalli (con Stefano Rapone)",
-      "mention_count": 4,
-      "guest_episodes": [
-        237
-      ],
-      "context": "nuova una musa la nuova Musa la mia nuova Musa è Cristina D'Avena Ok infatti avete notato che ho cominciato a mettere tette su Instagram pure io come Cristina tavena eh Capito nuova Musa cioè io vogli"
-    },
-    {
-      "guest_mentioned": "Filippo Spreafico",
-      "in_episode": 41,
-      "episode_guest": "Stefano Rapone",
-      "mention_count": 4,
-      "guest_episodes": [
-        28
-      ],
-      "context": "ruolo di stefano rapa star in gas stefano rapone filippo spreafico è una battuta in cui come com'era la battuta precisamente per la clip è che finiva con e per di più paperi e fare gli italiani che un"
-    },
-    {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 81,
-      "episode_guest": "Ghemon (con Stefano Rapone)",
-      "mention_count": 4,
-      "guest_episodes": [
-        156
-      ],
-      "context": "ino audio se me la ricordo sta cosa sì perché c'è rocco tanica che verrà raccontato questo questa storia che dice ora è venuti al bacino arriva il truccatore di al pacino che era uno della scuderia al"
-    },
-    {
-      "guest_mentioned": "Cristina D'Avena",
-      "in_episode": 97,
-      "episode_guest": "Sonia Ceriola (con Stefano Rapone)",
-      "mention_count": 4,
-      "guest_episodes": [
-        237
-      ],
-      "context": "e per il paragone con cristiano ronaldo e non con cristina d'avena per carità perché io l'adoro cristina d'avena però tutti ci sono cristina d'avena del lazio ma realtà non sono una cantante ho fatto "
-    },
-    {
-      "guest_mentioned": "Massimo Bagnato",
-      "in_episode": 130,
-      "episode_guest": "Dado (con Stefano Rapone)",
-      "mention_count": 4,
-      "guest_episodes": [
-        162
-      ],
-      "context": "e c'era una regista nicoletta costantino e c'era massimo bagnato che già era interno e io ho detto io faccio questo ho portato quattro pezzi borsa bellissima ma tu devi lavorare con noi guarda che i m"
-    },
-    {
-      "guest_mentioned": "Gero Arnone",
-      "in_episode": 148,
-      "episode_guest": "Frank Matano",
-      "mention_count": 4,
-      "guest_episodes": [
-        135
-      ],
-      "context": "ha cliccato sul link in descrizione del video con Gero Arnone e Eliana Albertini E se lo stava vedendo ha detto ma nor VPN e così lui è un fan di di Gero Arnone lui un fan di Gero Arnone Tra l'altro p"
-    },
-    {
-      "guest_mentioned": "Marcello Cesena",
-      "in_episode": 148,
-      "episode_guest": "Frank Matano",
-      "mention_count": 4,
-      "guest_episodes": [
-        201
-      ],
-      "context": "se la cosa più divertente del film no anche chi è Marcello Cesena che fa ilre pi che fa Padre Pio cioè com'era una come dire un un tizio che fa eh delle apparizioni apparizioni e quindi fa cioè pratic"
-    },
-    {
-      "guest_mentioned": "Paolo Calabresi",
-      "in_episode": 151,
-      "episode_guest": "Lillo",
-      "mention_count": 4,
-      "guest_episodes": [
-        141
-      ],
-      "context": "tre domande da parte degli amici Ah ce n'è una di Paolo calabresi sì che ci ha detto come mai Continua a fare questo mestiere anche se non ne ha più voglia cioè qu qu la sua motivazione di Paolo S di "
-    },
-    {
-      "guest_mentioned": "Mauro Fratini",
-      "in_episode": 186,
-      "episode_guest": "Antonio Rezza e Flavia Mastrella",
-      "mention_count": 4,
-      "guest_episodes": [
-        109
-      ],
-      "context": "n anno di quella scuola e poi iniziai da solo con Mauro Fratini che conoscete salutiamo Mauro Fratini un amico e con Massimo Camilli e poi nell'87 ho conosciuto Flavio Ecco qua e abbiamo cominciato In"
-    },
-    {
-      "guest_mentioned": "Giorgio Montanini",
-      "in_episode": 191,
-      "episode_guest": "Pietro Castellitto",
-      "mention_count": 4,
-      "guest_episodes": [
-        226
-      ],
-      "context": "altre domande su sul casting perché nel film c'è Giorgio Montanini St il comedian che era anche nei Predator peraltro grande attore che comunque non stava scritto da nessuna parte che la transizione d"
-    },
-    {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 200,
-      "episode_guest": "Tinti & Rapone",
-      "mention_count": 4,
-      "guest_episodes": [
-        156
-      ],
-      "context": "on mi ricordo Secondo me annuncio il nostro amico Rocco tanica allora Ciao a tutti quelli che sono lì in sala all all'ambra questo è Sermonti l'abbiamo sentito poco Anzi amiche e amici di tintoria Tin"
-    },
-    {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 201,
-      "episode_guest": "Marcello Cesena",
-      "mention_count": 4,
-      "guest_episodes": [
-        240
-      ],
-      "context": "re ripetiamo le tue battute tu sei il nostro mito Fabio De Luigi Ma come Fabio De Luigi insomma la gente comincia a confondermi con Fabio De Luigi io imparo a fare la firma di Fabio De Luigi Perché a "
-    },
-    {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 207,
-      "episode_guest": "Elio",
-      "mention_count": 4,
-      "guest_episodes": [
-        156
-      ],
-      "context": "formazione quindi era questa poi sono ent appunto Rocco tanica Faso Allora Rocco tanica è entrato perché era il fratello del mio compagno di classe siccome vi ho detto che c'è stata tutta la prima fas"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 217,
-      "episode_guest": "Paolo Hendel",
-      "mention_count": 4,
-      "guest_episodes": [
-        231
-      ],
-      "context": "i i comici che vengono qua spesso delle storie su Claudio Bisio tu hai Hai degli aneddoti dei racconti su di lui allora scopriamo Svegliamo il gioco che voi Siete meravigliosi il mio carissimo amico e"
-    },
-    {
-      "guest_mentioned": "Massimo Ceccherini",
-      "in_episode": 224,
-      "episode_guest": "Rocco Papaleo",
-      "mention_count": 4,
-      "guest_episodes": [
-        136
-      ],
-      "context": "hai conosciuto anche il nostro amico comune che è Massimo Ceccherini e ho visto proprio la puntata con Massimo Ceccherini qui E perché Vabbè c'era una ragione per cui lui Vabbè insomma niente Ah vabbè"
-    },
-    {
-      "guest_mentioned": "Pietro Sermonti",
-      "in_episode": 231,
-      "episode_guest": "Claudio Bisio",
-      "mention_count": 4,
-      "guest_episodes": [
-        146
-      ],
-      "context": "mpre lui che dice cagate fa e dice cagate. Questo Pietro Sermonti c Pietro Sermonti ci ha detto che Pietro Sermonti Pietro Sermonti che tu forse l'hai usato una volta sei stato illuminato dal non divi"
-    },
-    {
-      "guest_mentioned": "Paolo Calabresi",
-      "in_episode": 236,
-      "episode_guest": "Christian De Sica",
-      "mention_count": 4,
-      "guest_episodes": [
-        141
-      ],
-      "context": "una sola fa ridere fa ridere divertente cill C'è Paolo calabresi che sono tutti amici del podcast Sì c'è Isabella Ferrari C'è Paolo calabresi c'è Francesco Bruni C sono un sacco di attori tutti bravi "
-    },
-    {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 241,
-      "episode_guest": "Maurizio Milani",
-      "mention_count": 4,
-      "guest_episodes": [
-        240
-      ],
-      "context": "on non ho fatto successo economico come han fatto Fabio De Luigi come han fatto poi un mio rammarico è quello che nessuno mi ha mai chiamato a fare una parte anche secondaria in un film mentre tutti i"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 21,
-      "episode_guest": "Giorgio Quarzo Guarascio aka Tutti Fenomeni",
-      "mention_count": 3,
-      "guest_episodes": [
-        95
-      ],
-      "context": "amo conosciuti una sera perché allo spettacolo di Luca Ravenna all'alcazar tu È riandato insieme a Niccolò Contessa e Cristoforo Contessa Esatto Esattamente e e e io mi sono presentato mi sa perché pe"
-    },
-    {
-      "guest_mentioned": "Pietro Sparacino",
-      "in_episode": 29,
-      "episode_guest": "Pietro Sparacino (2)",
-      "mention_count": 3,
-      "guest_episodes": [
-        109
-      ],
-      "context": "# Tintoria #29 — Pietro Sparacino (2) ciao a tutti sono tutte ben trovati a una nuova puntata di tintoria format classico è la prima puntata dopo il lock down tintoria torna rimane a"
-    },
-    {
-      "guest_mentioned": "Mauro Fratini",
-      "in_episode": 29,
-      "episode_guest": "Pietro Sparacino (2)",
-      "mention_count": 3,
-      "guest_episodes": [
-        109
-      ],
-      "context": "promuove ti dai soldi quindi li ho fatto poi con mauro fratini abbiamo fatto tredici puntate di scappati a casa in cui abbiamo intervistato oltre 40 persone da tutto il mondo e ci siamo fatti racconta"
-    },
-    {
-      "guest_mentioned": "Giovanni Benincasa",
-      "in_episode": 34,
-      "episode_guest": "Valerio Lundini e Matteo Tiberia",
-      "mention_count": 3,
-      "guest_episodes": [
-        134
-      ],
-      "context": "c'è nel programma che possiamo salutare allora la giovanni benincasa l'unica casa che già abbiamo collaborato su battuto battute che è il capo progetto capo veloce questo programma che tra l'altro que"
-    },
-    {
-      "guest_mentioned": "Trio Medusa",
-      "in_episode": 35,
-      "episode_guest": "Francesco Lancia (con Stefano Rapone)",
-      "mention_count": 3,
-      "guest_episodes": [
-        189
-      ],
-      "context": "rovare a scrivere funzionava poi ho incrociato il trio medusa con la mia strada da lì è partita la radio e tutto il resto è ok a questo punto sull'improvvisazione è un mondo che mi affascina e incurio"
-    },
-    {
-      "guest_mentioned": "Mauro Fratini",
-      "in_episode": 87,
-      "episode_guest": "Stefano Gorno (con Stefano Rapone)",
-      "mention_count": 3,
-      "guest_episodes": [
-        109
-      ],
-      "context": "monologo al monologo dei santi c'è un monologo di mauro fratini sulle nozze di cana che mi fa pisciare sotto dalle risate in cui va beh non vi spogliano la battuta perché non l'hanno detta l'hanno scr"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 115,
-      "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
-      "mention_count": 3,
-      "guest_episodes": [
-        125
-      ],
-      "context": "elli lo presentiamo quel 27 maggio verrà invitata il grande caldo il grande caldo però ora mi dispiace che non si chiama il grande caldo riferimento riguarda proprio in chiusura di puntata siamo riusc"
-    },
-    {
-      "guest_mentioned": "Edoardo Ferrario",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 3,
-      "guest_episodes": [
+      "name": "Edoardo Ferrario",
+      "own_episodes": [
         38
       ],
-      "context": "aggio di Dragon Ball Chi sarebbe e vai vai Allora Edoardo Ferrario fosse un personaggio di Dragon Ball partiamo da noi Io so Goku partiamo partiamo da questo Io sono Goku ti dico Luca Ravenna e Vegeta"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 135,
-      "episode_guest": "Gero Arnone & Eliana Albertini",
-      "mention_count": 3,
-      "guest_episodes": [
-        95
+      "cited_in": [
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 3,
+          "context": "nuno di questi fosse un personaggio di dragon ball chi sarebbe e vai vai allora edoardo ferrario fosse un personaggio di dragon ball partiamo da noi io so goku partiamo partiamo da questo io sono goku ti dico luca ra"
+        },
+        {
+          "in_episode": 210,
+          "episode_guest": "Francesco Fanucchi",
+          "mention_count": 3,
+          "context": "lo verdone, il primo benigni tra gli italiani e poi ivano bisi, comico di pisa, edoardo ferrario, luca ravenna, valerio lundini e michela girò.\n\nli hai detti proprio tutti, eh? li hai detti tutti [musica] quanti. una"
+        },
+        {
+          "in_episode": 31,
+          "episode_guest": "Daniela Delle Foglie",
+          "mention_count": 2,
+          "context": "è la coincidenza è stata che in lux in quel periodo lavorava la adesso è legata edoardo ferrario cioè la moglie attuale della del fratello della moglie di edoardo ferrario non so se si capisce quindi siamo tutti quan"
+        },
+        {
+          "in_episode": 32,
+          "episode_guest": "Michela Giraud",
+          "mention_count": 2,
+          "context": "ecitare è infatti in si tiene del mondo la standup a non c'è quasi nessuno cioè edoardo ferrario ma diciamo no non cisco ma rivani le coliche edoardo ferrario manuela fanelli tutti i raccomandati diciamolo l'ho detto"
+        },
+        {
+          "in_episode": 35,
+          "episode_guest": "Francesco Lancia (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "ana stessa ascoltate già tintoria già lo fa e quindi non è efficace arriverà al edoardo ferrario show dal 24 dal 24 settembre su rai play programma che ha scritto che abbiamo scritto io edoardo ferrario chiara galeaz"
+        },
+        {
+          "in_episode": 36,
+          "episode_guest": "Emanuela Fanelli (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "sto lo possiamo dire perché già l'abbiamo detto tu sarai anche nel programma di edoardo ferrario vero e come come come è stato lavorare con il maestro ferrario bellissimo anche lì una famiglia bellissimo che mi piace"
+        },
+        {
+          "in_episode": 258,
+          "episode_guest": "Salvo Di Paola",
+          "mention_count": 2,
+          "context": "o, mi sa, oggi, cioè, con v in questi giorni, questi giorni e ci siete voi. c'è edoardo ferrario, luca ravenna, michela girò, yogo yamada e lill, frank matano e la protagonista pilar fogliati e pietro sermonti.\n\ne io"
+        },
+        {
+          "in_episode": 265,
+          "episode_guest": "Monir Ghassem",
+          "mention_count": 2,
+          "context": "lora nel frattempo, pensa per colpa tua, praticamente io ero super fan di di di edoardo ferrario, quindi vedevo tutti gli spettacoli di edoardo ferrario, poi a un certo punto è stato ospite al pierrule fu da voi a tu"
+        }
       ],
-      "context": "ma Daniele tipo io voi da meno tempo però tipo ma Luca Ravenna Lo conosco da un sacco di tempo e sono rimasto impressionato raga da come siete migliorati anni dopo anno Cioè se avete adesso una natura"
+      "total_citations": 8
     },
     {
-      "guest_mentioned": "Eliana Albertini",
-      "in_episode": 139,
-      "episode_guest": "Valerio Lundini",
-      "mention_count": 3,
-      "guest_episodes": [
-        135
-      ],
-      "context": "venuto gernone a presentare il suo fumetto Sì con Eliana Albertini perché poi mi sembra che sei il primo a scordarti qu Allora piccolo dietro le quinte gernone Eliana Albertini Albertini hanno fatto u"
-    },
-    {
-      "guest_mentioned": "Maccio Capatonda",
-      "in_episode": 139,
-      "episode_guest": "Valerio Lundini",
-      "mention_count": 3,
-      "guest_episodes": [
-        138
-      ],
-      "context": "i mai la stessa spigliatezza che hai con me o con Maccio Capatonda No Cioè comunque stareste sempre un po' tipo Allora oh Insomma allora quindi Sei un'attrice E vabbè però so contenuti pure quelli com"
-    },
-    {
-      "guest_mentioned": "Pietro Sermonti",
-      "in_episode": 151,
-      "episode_guest": "Lillo",
-      "mention_count": 3,
-      "guest_episodes": [
-        146
-      ],
-      "context": "arrivare perché noi abbiamo fatto una puntata con Pietro Sermonti Sì che era tutta basata su perché ha molti aneddoti su questo che era tutta basata sulla cacca su aneddoti suoi su perché lui ha una t"
-    },
-    {
-      "guest_mentioned": "Frank Matano",
-      "in_episode": 157,
-      "episode_guest": "Willie Peyote",
-      "mention_count": 3,
-      "guest_episodes": [
-        148
-      ],
-      "context": "hi l'ha detto è molto banale la mia memoria non è Frank Matano Frank Matano ha detto Kim Beh dai Comunque Frank Matano meglio di Dalema nel senso se devo avvicinarmi a qualcuno bella bella chiudiamo c"
-    },
-    {
-      "guest_mentioned": "Paolo Hendel",
-      "in_episode": 172,
-      "episode_guest": "Walter Fontana",
-      "mention_count": 3,
-      "guest_episodes": [
-        217
-      ],
-      "context": "essenzialmente che fu un personaggio che poi fece Paolo Hendel Forse qualcuno se lo ricorda O i vostri genitori se lo ricordano e e quindi questa è stata così son diventato autore televisivo il primo "
-    },
-    {
-      "guest_mentioned": "Fabio De Luigi",
-      "in_episode": 172,
-      "episode_guest": "Walter Fontana",
-      "mention_count": 3,
-      "guest_episodes": [
-        240
-      ],
-      "context": "tore e poi sono poi ho lavorato poi sono arrivati Fabio De Luigi con cui ho avuto l'enorme fortuna di con tutti loro Fabio di Luigi ho fatto tantissimi personaggi con Fabio Paola Cortellesi con cui ho"
-    },
-    {
-      "guest_mentioned": "Maurizio Battista",
-      "in_episode": 174,
-      "episode_guest": "Eterobasiche",
-      "mention_count": 3,
-      "guest_episodes": [
-        166
-      ],
-      "context": "e Mo ve dico chi è che non ci sta forza forza era Maurizio Battista Sì infatti no venite voi però a mia discolpa Queste sono No è una tempistica di invito tipica di tintoria cioè la sera prima dire Oh"
-    },
-    {
-      "guest_mentioned": "Paolo Calabresi",
-      "in_episode": 181,
-      "episode_guest": "Paola Minaccioni",
-      "mention_count": 3,
-      "guest_episodes": [
-        141
-      ],
-      "context": "perché è andato sotto la puntata di tintoria con Paolo Calabresi e ha cliccato sul link nordvpn.com/tintoria. Ah. e ha detto \"Porco Giuda, che sconto!\" Sì, sì. E ha ottenuto il migliore dei VPN con un"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 189,
-      "episode_guest": "Trio Medusa",
-      "mention_count": 3,
-      "guest_episodes": [
-        125
-      ],
-      "context": "ema Sì sì sì perché c'è una grande c'hai presente il grande caldo il film Abbiamo pure fatto la puntata che abbiamo portato in giro per l'Italia Tutto quest'anno se vai in un circolo Arci della peniso"
-    },
-    {
-      "guest_mentioned": "Gino Paoli",
-      "in_episode": 204,
-      "episode_guest": "Michela Giraud",
-      "mention_count": 3,
-      "guest_episodes": [
-        195
-      ],
-      "context": "untata de Pietro Castelli poi e poi la puntata de Gino Paoli e mi è venuta un'ansia da prestazione micidiale Quindi perché non riuscirò mai a quagliare la storia de Tenco che caga ne nel rotolo de gio"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 209,
-      "episode_guest": "Raul Cremona",
-      "mention_count": 3,
-      "guest_episodes": [
-        231
-      ],
-      "context": "Boldi Francesco Salvi Enzo Iacchetti Paolo Rossi Claudio Bisio le prime armi il mio primo debutto avviene insieme a questi nomi qua Claudio Bisio Massimo Antonio Catania in coppia con lui che adesso è"
-    },
-    {
-      "guest_mentioned": "Serena Dandini",
-      "in_episode": 217,
-      "episode_guest": "Paolo Hendel",
-      "mention_count": 3,
-      "guest_episodes": [
-        244
-      ],
-      "context": "o la sfortuna di fare un programma televisivo con Serena Dandini così mi sono fatto amica anche lei con questa chiacchierata in realtà sto scherzando Serena Dandini è una persona di grande intelligenz"
-    },
-    {
-      "guest_mentioned": "Teo Teocoli",
-      "in_episode": 219,
-      "episode_guest": "Gialappa's Band",
-      "mention_count": 3,
-      "guest_episodes": [
-        220
-      ],
-      "context": "i dava a sacchi o a capello Eh e li diede anche a Teo Teocoli che e gli rispose lei pensi a fare i mattoni che a far ridere Ci penso io e E come dice Teo no E Berlusconi fece Ah sì eh E poi di no poi "
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 221,
-      "episode_guest": "Dargen D'Amico",
-      "mention_count": 3,
-      "guest_episodes": [
-        95
-      ],
-      "context": "fa ancora più male No infatti ci salero Raimondo Luca Ravenna fa ancora più male Riccardo Rossi Rossi dai eh Vabbè bruttissimo poi nomi Vabbè volo ti dico che volo con Giovanni Vernia perché lui a par"
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 221,
-      "episode_guest": "Dargen D'Amico",
-      "mention_count": 3,
-      "guest_episodes": [
-        125
-      ],
-      "context": "fatto anche dei film Sì indipendenti pure quì Sì il grande caldo lo potete trovare ma Congratulazioni Grazie distribuito nei circoli ARCI se Chiedete al vostro circolo Arci di fiducia vi fanno vedere "
-    },
-    {
-      "guest_mentioned": "Luca Bizzarri",
-      "in_episode": 221,
-      "episode_guest": "Dargen D'Amico",
-      "mention_count": 3,
-      "guest_episodes": [
-        213
-      ],
-      "context": "utto nostro no ci sta se leggi ci sta capito Cioè Luca Bizzarri Gabriele Cirilli Raul Cremona poi aspetta aspetta Maria Di Biase e anche consorte Manuela Fanelli No mo Guarda se te li dico impazzisci "
-    },
-    {
-      "guest_mentioned": "Il Grande Caldo",
-      "in_episode": 227,
-      "episode_guest": "Paolo Sorrentino",
-      "mention_count": 3,
-      "guest_episodes": [
-        125
-      ],
-      "context": "roduzione però eravamo ventenni Il film si chiama il grande caldo perché nella testa di due de due persone con cui l'ho scritto era la nostra risposta alla grande bellezza Ah non al grande freddo No n"
-    },
-    {
-      "guest_mentioned": "Nicola Savino",
-      "in_episode": 230,
-      "episode_guest": "Gianluca Gazzoli",
-      "mention_count": 3,
-      "guest_episodes": [
-        255
-      ],
-      "context": "h Poi c'è Ditemi altri Avengers che possono avere Nicola Savino No più più Avengers fiamo il contrario no Hulk Hulk eh Hulk potrebbe essere Fabio Volo bello B perché lui scompiglia fa il suo Estro le "
-    },
-    {
-      "guest_mentioned": "Nicola Savino",
-      "in_episode": 233,
-      "episode_guest": "Irene Grandi",
-      "mention_count": 3,
-      "guest_episodes": [
-        255
-      ],
-      "context": "o vostro collega Savino che ora mi sfugge il nome Nicola Savino Nicola Savino così Tutti capiscono quale Savino intendo Nicola Savino che era il suo primo Festival Bar e che e io il mio primo Festival"
-    },
-    {
-      "guest_mentioned": "Carlo Verdone",
-      "in_episode": 236,
-      "episode_guest": "Christian De Sica",
-      "mention_count": 3,
-      "guest_episodes": [
-        280
-      ],
-      "context": "c'abbiamo tutte l'età Massimo Ranieri Renato Zer Carlo Verdone c'era Carlo Verdone Certo certo Verdone stamente meglio de draghi e poi con Renato andavamo mi ricordo c'ero il Piper Club no che andava "
-    },
-    {
-      "guest_mentioned": "Gino Paoli",
-      "in_episode": 249,
-      "episode_guest": "Valerio Mastandrea",
-      "mention_count": 3,
-      "guest_episodes": [
-        195
-      ],
-      "context": "era una battuta che ci aveva detto Gino Paul. Ah, Gino Paoli. Quando siamo andati a casa di Gino Paoli per prima di fare la puntata ci ha voluto riconoscere. Ho detto \"Ah, sì, gli anni con Califano i "
-    },
-    {
-      "guest_mentioned": "Giorgio Montanini",
-      "in_episode": 249,
-      "episode_guest": "Valerio Mastandrea",
-      "mention_count": 3,
-      "guest_episodes": [
-        226
-      ],
-      "context": "perché c'è un un nostro amico collega, c'è anche Giorgio Montanini che fa un personale no anche c'è soprattutto Giorgio Montanini che fa un ruolo che però insomma quando è arrivato Giorgio Montanini s"
-    },
-    {
-      "guest_mentioned": "Pietro Sermonti",
-      "in_episode": 262,
-      "episode_guest": "Paolo Nori",
-      "mention_count": 3,
-      "guest_episodes": [
-        146
-      ],
-      "context": "anche Sì, c'è anche Tintoria. C'è anche C'è anche Pietro Sermonti. C'è anche Pietro Sermonti che è anche qua. Perché io ho conosciuto io non guardo la televisione da un sacco di tempo e Pietro Sermont"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 271,
-      "episode_guest": "Max Angioni",
-      "mention_count": 3,
-      "guest_episodes": [
-        231
-      ],
-      "context": "a devo dire io quando la prima volta che ho visto Claudio Bisio allo Zelig, il locale presentare io ho detto Robin Williams c'è una velocità, una una fantasy, una roba che io sono rimasto veramente sc"
-    },
-    {
-      "guest_mentioned": "Paolo Sorrentino",
-      "in_episode": 287,
-      "episode_guest": "Toni Servillo",
-      "mention_count": 3,
-      "guest_episodes": [
-        227
-      ],
-      "context": "rtuna di vedere La Grazia, che è il nuovo film di Paolo Sorrentino che esce il 15 gennaio, ci hanno invitato a vederlo in vista di questa puntata in uno studio, eravamo prente solo io e Stefano e un m"
-    },
-    {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 288,
-      "episode_guest": "Maurizio Nichetti",
-      "mention_count": 3,
-      "guest_episodes": [
+      "name": "Rocco Tanica",
+      "own_episodes": [
         156
       ],
-      "context": "lla musica. Poi ho avuto in Stefano quante storie Rocco Tanica, no? Rocco Tanica e Feyez, che poi purtroppo è mancato. Esatto. E però Elio, le storie tese nascevano. Io quando li ho visti e loro erano"
-    },
-    {
-      "guest_mentioned": "Tutti Fenomeni",
-      "in_episode": 25,
-      "episode_guest": "Valerio Lundini (2)",
-      "mention_count": 2,
-      "guest_episodes": [
-        128
+      "cited_in": [
+        {
+          "in_episode": 218,
+          "episode_guest": "Francesco Bianconi",
+          "mention_count": 5,
+          "context": "o del seme conosce anche nor vpn perché si era visto la puntata di tintoria con rocco tanica perché ha detto se si parla di seme io figurati voglio sentirne parlare dal numero uno e e ha visto lo sconto in che c'"
+        },
+        {
+          "in_episode": 81,
+          "episode_guest": "LIVE Ghemon (con Stefano Rapone)",
+          "mention_count": 4,
+          "context": "sanremo che si chiamano al pacino audio se me la ricordo sta cosa sì perché c'è rocco tanica che verrà raccontato questo questa storia che dice ora è venuti al bacino arriva il truccatore di al pacino che era uno"
+        },
+        {
+          "in_episode": 200,
+          "episode_guest": "Tinti & Rapone",
+          "mention_count": 4,
+          "context": "saluto il lo devo annunciare non mi ricordo secondo me annuncio il nostro amico rocco tanica allora ciao a tutti quelli che sono lì in sala all all'ambra questo è sermonti l'abbiamo sentito poco anzi amiche e ami"
+        },
+        {
+          "in_episode": 207,
+          "episode_guest": "Elio",
+          "mention_count": 4,
+          "context": "re allora poi quindi la prima formazione quindi era questa poi sono ent appunto rocco tanica faso allora rocco tanica è entrato perché era il fratello del mio compagno di classe siccome vi ho detto che c'è stata "
+        },
+        {
+          "in_episode": 288,
+          "episode_guest": "Maurizio Nichetti",
+          "mention_count": 3,
+          "context": "enio ha fatto una bella una bella musica. poi ho avuto in stefano quante storie rocco tanica, no? rocco tanica e feyez, che poi purtroppo è mancato. esatto. e però elio, le storie tese nascevano. io quando li ho "
+        },
+        {
+          "in_episode": 38,
+          "episode_guest": "Edoardo Ferrario",
+          "mention_count": 2,
+          "context": "amo che l'occasione in cui ha avuto come guest neri marcorè caterina guzzanti e rocco tanica con il quale ho ho avuto il privilegio di ballare attenzione c'è un momento di danza con raf latika che più divertenti "
+        },
+        {
+          "in_episode": 100,
+          "episode_guest": "con Stefano Rapone",
+          "mention_count": 2,
+          "context": "i intanto giudico un grande rimpianto dico elio elio anche rocco tattica elio e rocco tanica anche perché elio e rocco tanica perché pare che sono degli idoli dei miei fans sono cresciuto con le loro canzoni e qu"
+        }
       ],
-      "context": "a c'era stata la gara di gang e prima c'era stato tutti fenomeni ma ci sono ci sono stati un po di persone [Musica] non lo so non ne ho chiesto che lo vide roba ho idea di tornare a dire invitarlo a f"
+      "total_citations": 7
     },
     {
-      "guest_mentioned": "Nicola Savino",
-      "in_episode": 25,
-      "episode_guest": "Valerio Lundini (2)",
-      "mention_count": 2,
-      "guest_episodes": [
-        255
+      "name": "Maurizio Battista",
+      "own_episodes": [
+        166
       ],
-      "context": "ialappa's abbia fatto sicuramente forse anche con nicola savino l'hanno fatto ecco e oil tra l'altro non mi non mi sorprende che a te sia piaciuta la libertà dell'altro festival per che io penso che l"
-    },
-    {
-      "guest_mentioned": "Irene Graziosi",
-      "in_episode": 26,
-      "episode_guest": "Pippo Sowlo feat Christian the Seeker",
-      "mention_count": 2,
-      "guest_episodes": [
-        92
+      "cited_in": [
+        {
+          "in_episode": 204,
+          "episode_guest": "Michela Giraud",
+          "mention_count": 6,
+          "context": "o e sono andata dal proctologo e ho scoperto che ho lo stesso sì è lo stesso di maurizio battista perché a un certo punto ha detto io visito spesso un suo collega che fa degli sketch maurizio battista e sì ah e che t'"
+        },
+        {
+          "in_episode": 110,
+          "episode_guest": "LIVE Stefano Rapone",
+          "mention_count": 5,
+          "context": "resentano senza volevo tirare a porta e poi si prendono tutto e poi ricreare il maurizio battista come di playlist come comodi centro dice la firma esatto esattamente diventare il che poi diventa come the central fisi"
+        },
+        {
+          "in_episode": 202,
+          "episode_guest": "Stefano Nazzi",
+          "mention_count": 5,
+          "context": "sona a cui ho potuto chiedere la sottubrica. non dei capelli, però. sì, sì, sì. maurizio battista. ah, maurizio. battista.\n\nsì, sì, sì. chi pensai? chi chi pensavi? giovanni. giovanni il battista. eh, giovanni battist"
+        },
+        {
+          "in_episode": 174,
+          "episode_guest": "Eterobasiche",
+          "mention_count": 3,
+          "context": "a doveva averli uno morto forte mo ve dico chi è che non ci sta forza forza era maurizio battista sì infatti no venite voi però a mia discolpa queste sono no è una tempistica di invito tipica di tintoria cioè la sera "
+        },
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 2,
+          "context": "stand up comedy eh su italia 1 eh e i quattro protagonisti saranno andrea pucci maurizio battista giuseppe giacobazzi e max angioni non so perché fanno promozione del programma tintoria a novembre vengono tutti e quat"
+        },
+        {
+          "in_episode": 178,
+          "episode_guest": "Martufello",
+          "mention_count": 2,
+          "context": "ora son tutti bravi, belli no, ma bravi.\n\nsì, son tutti bravi. no, me fa ridere maurizio battista, mi fanno ridere tutti questi qua. cioè, beh, son un po' di parte perché sono amici, però oggi qualche risata me la son"
+        },
+        {
+          "in_episode": 181,
+          "episode_guest": "Paola Minaccioni",
+          "mention_count": 2,
+          "context": " il pezzetto. alcune scrivi, alcune ho fatto un festival di comicità dove c'era maurizio battista e piano piano tiravo su sto repertorio e proprio valigetta andavo giro per i ristoranti. e chi chi conoscevi? chi hai c"
+        }
       ],
-      "context": "ipo di temi propri tipo di parto canada pur irene irene graziosi che stabiliamo l'altro il prossimo uscirà il mio podcast con irene graziosi garganica e roche live dopo quello che è niente non mi do p"
+      "total_citations": 7
     },
     {
-      "guest_mentioned": "Francesco Lancia",
-      "in_episode": 29,
-      "episode_guest": "Pietro Sparacino (2)",
-      "mention_count": 2,
-      "guest_episodes": [
+      "name": "Francesco Lancia",
+      "own_episodes": [
         35
       ],
-      "context": "per esempio ho fatto tintoria live diciamo prima francesco lancia e francesco di carlo hanno fatto tutti a casa che poi è diventato anche un game show e quindi la gente sociale dirette suisse time le "
-    },
-    {
-      "guest_mentioned": "Edoardo Ferrario",
-      "in_episode": 31,
-      "episode_guest": "Daniela Delle Foglie",
-      "mention_count": 2,
-      "guest_episodes": [
-        38
+      "cited_in": [
+        {
+          "in_episode": 81,
+          "episode_guest": "LIVE Ghemon (con Stefano Rapone)",
+          "mention_count": 4,
+          "context": " vedere da vederle serata equa milano quindi guardo proprio molto molto piacere francesco lancia e francesco de carlo che non lo so non lo so come ci siamo beccati le prime volte però per gli stessi motivi no comunqu"
+        },
+        {
+          "in_episode": 110,
+          "episode_guest": "LIVE Stefano Rapone",
+          "mention_count": 4,
+          "context": "ico e in italia non ve ne sono open e sono boh non so chi lancia slancio comico francesco lancia che salutiamo è effettivamente comico si recò comunque fa consociazione sale sul palco non ho qua vogliono tutti appari"
+        },
+        {
+          "in_episode": 159,
+          "episode_guest": "Francesco Costa",
+          "mention_count": 4,
+          "context": "in cui quattro persone che non hanno mai giocato dei giochi di ruolo guidati da francesco lancia come master giocano per la prima volta dungeons & dragons e quindi matteo curti prenderò di gianni vittoria cabello e r"
+        },
+        {
+          "in_episode": 106,
+          "episode_guest": "Guia Scognamiglio & Tommaso Faoro",
+          "mention_count": 3,
+          "context": " la mia partecipazione un signor programma a mio avviso di francesco de carlo e francesco lancia citando gli autori è pensato e ideatori del progetto salutiamo entra anche salutiamo va in onda in questo periodo ogni "
+        },
+        {
+          "in_episode": 29,
+          "episode_guest": "Pietro Sparacino (2)",
+          "mention_count": 2,
+          "context": " di fare lo spettacolo cioè io per esempio ho fatto tintoria live diciamo prima francesco lancia e francesco di carlo hanno fatto tutti a casa che poi è diventato anche un game show e quindi la gente sociale dirette "
+        }
       ],
-      "context": "n lux in quel periodo lavorava la adesso è legata edoardo ferrario cioè la moglie attuale della del fratello della moglie di edoardo ferrario non so se si capisce quindi siamo tutti quanti di loro qui"
+      "total_citations": 5
     },
     {
-      "guest_mentioned": "Edoardo Ferrario",
-      "in_episode": 32,
-      "episode_guest": "Michela Giraud",
-      "mention_count": 2,
-      "guest_episodes": [
-        38
+      "name": "Il Grande Caldo",
+      "own_episodes": [
+        125
       ],
-      "context": "del mondo la standup a non c'è quasi nessuno cioè edoardo ferrario ma diciamo no non cisco ma rivani le coliche edoardo ferrario manuela fanelli tutti i raccomandati diciamolo l'ho detto io tu non lo "
-    },
-    {
-      "guest_mentioned": "Emanuela Fanelli",
-      "in_episode": 34,
-      "episode_guest": "Valerio Lundini e Matteo Tiberia",
-      "mention_count": 2,
-      "guest_episodes": [
-        36
+      "cited_in": [
+        {
+          "in_episode": 115,
+          "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
+          "mention_count": 3,
+          "context": "apelli se si sono ancora i capelli lo presentiamo quel 27 maggio verrà invitata il grande caldo il grande caldo però ora mi dispiace che non si chiama il grande caldo riferimento riguarda proprio in chiusura di punt"
+        },
+        {
+          "in_episode": 189,
+          "episode_guest": "Trio Medusa",
+          "mention_count": 3,
+          "context": " capodanno sì capodanno al cinema sì sì sì perché c'è una grande c'hai presente il grande caldo il film abbiamo pure fatto la puntata che abbiamo portato in giro per l'italia tutto quest'anno se vai in un circolo ar"
+        },
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 3,
+          "context": "etro scacco matto sì eh sì hai fatto anche dei film sì indipendenti pure quì sì il grande caldo lo potete trovare ma congratulazioni grazie distribuito nei circoli arci se chiedete al vostro circolo arci di fiducia "
+        },
+        {
+          "in_episode": 227,
+          "episode_guest": "Paolo Sorrentino",
+          "mention_count": 3,
+          "context": "ave era ci vediamo a tipo di produzione però eravamo ventenni il film si chiama il grande caldo perché nella testa di due de due persone con cui l'ho scritto era la nostra risposta alla grande bellezza ah non al gra"
+        },
+        {
+          "in_episode": 251,
+          "episode_guest": "Paola Iezzi",
+          "mention_count": 2,
+          "context": "o io sì, si chiama sisters, la nostra storia incredibile, però io voglio vedere il grande caldo, sappi, no? allora, fino ad adesso ti dico il criterio. tu rientri nel criterio delle persone a cui viene mandato il gr"
+        }
       ],
-      "context": "o facciamo ma che sia una festa una straordinaria emanuela fanelli emanuela fare che salutiamo bravissima oltre che se posso dirlo intelligente poi co protagonista proprio anche la quota rosa la quota"
+      "total_citations": 5
     },
     {
-      "guest_mentioned": "Edoardo Ferrario",
-      "in_episode": 35,
-      "episode_guest": "Francesco Lancia (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        38
+      "name": "Paolo Calabresi",
+      "own_episodes": [
+        141
       ],
-      "context": "ria già lo fa e quindi non è efficace arriverà al edoardo ferrario show dal 24 dal 24 settembre su rai play programma che ha scritto che abbiamo scritto io edoardo ferrario chiara galeazzi e maurizio "
-    },
-    {
-      "guest_mentioned": "Edoardo Ferrario",
-      "in_episode": 36,
-      "episode_guest": "Emanuela Fanelli (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        38
+      "cited_in": [
+        {
+          "in_episode": 146,
+          "episode_guest": "Pietro Sermonti",
+          "mention_count": 5,
+          "context": "levo chiedere due ultime due l'ultima cosa tu eh se sei c ci dice ci diceva ehm paolo calabresi che siete voi siete rimasti in contatto voi voi di boris vi sentite spesso siete come una grande eh ma con quelli del m"
+        },
+        {
+          "in_episode": 151,
+          "episode_guest": "Lillo",
+          "mention_count": 4,
+          "context": "domande degli amici abbiamo altre domande da parte degli amici ah ce n'è una di paolo calabresi sì che ci ha detto come mai continua a fare questo mestiere anche se non ne ha più voglia cioè qu qu la sua motivazione"
+        },
+        {
+          "in_episode": 236,
+          "episode_guest": "Christian De Sica",
+          "mention_count": 4,
+          "context": "vere bene perché insomma non è una sola fa ridere fa ridere divertente cill c'è paolo calabresi che sono tutti amici del podcast sì c'è isabella ferrari c'è paolo calabresi c'è francesco bruni c sono un sacco di att"
+        },
+        {
+          "in_episode": 181,
+          "episode_guest": "Paola Minaccioni",
+          "mention_count": 3,
+          "context": "ire a vedere quello che voleva perché è andato sotto la puntata di tintoria con paolo calabresi e ha cliccato sul link nordvpn.com/tintoria. ah. e ha detto \"porco giuda, che sconto!\" sì, sì.\n\ne ha ottenuto il miglio"
+        },
+        {
+          "in_episode": 170,
+          "episode_guest": "Carolina Crescentini",
+          "mention_count": 2,
+          "context": "n faccia qualcosa me lo cerco lo troverai secondo me abbiamo chiesto ho sentito paolo calabresi e mi ha detto che c'è una non mi ha detto il nome possiamo una regista televisiva famosa che ti ha detto che per avere "
+        }
       ],
-      "context": "à l'abbiamo detto tu sarai anche nel programma di edoardo ferrario vero e come come come è stato lavorare con il maestro ferrario bellissimo anche lì una famiglia bellissimo che mi piace molto e dove "
+      "total_citations": 5
     },
     {
-      "guest_mentioned": "Giovanni Benincasa",
-      "in_episode": 36,
-      "episode_guest": "Emanuela Fanelli (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        134
+      "name": "Fabio De Luigi",
+      "own_episodes": [
+        240
       ],
-      "context": "ra dove noi ci siamo conosciuti noi a una cena da giovanni benincasa oppure direttamente a fiano temo che anzi in realtà sono molto contento a fiano romano la hall della nella hall dell'albergo di fia"
-    },
-    {
-      "guest_mentioned": "Danilo da Fiumicino",
-      "in_episode": 37,
-      "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        114
+      "cited_in": [
+        {
+          "in_episode": 201,
+          "episode_guest": "Marcello Cesena",
+          "mention_count": 4,
+          "context": "oi passiamo le serate a guardare ripetiamo le tue battute tu sei il nostro mito fabio de luigi ma come fabio de luigi insomma la gente comincia a confondermi con fabio de luigi io imparo a fare la firma di fabio de"
+        },
+        {
+          "in_episode": 241,
+          "episode_guest": "Maurizio Milani",
+          "mention_count": 4,
+          "context": "i vista economico ad esempio non non ho fatto successo economico come han fatto fabio de luigi come han fatto poi un mio rammarico è quello che nessuno mi ha mai chiamato a fare una parte anche secondaria in un fil"
+        },
+        {
+          "in_episode": 172,
+          "episode_guest": "Walter Fontana",
+          "mention_count": 3,
+          "context": " bizio faceva un po' da conduttore e poi sono poi ho lavorato poi sono arrivati fabio de luigi con cui ho avuto l'enorme fortuna di con tutti loro fabio di luigi ho fatto tantissimi personaggi con fabio paola corte"
+        },
+        {
+          "in_episode": 210,
+          "episode_guest": "Francesco Fanucchi",
+          "mention_count": 2,
+          "context": "altro perché cioè c'era una lineup incredibile, una scaletta incredibile, c'era fabio de luigi, cioè dave la chapel, cioè che il fotografo internazionale. poi dico io, cioè dopo fabio de luigi, ma come fai a salire"
+        },
+        {
+          "in_episode": 275,
+          "episode_guest": "Jake La Furia",
+          "mention_count": 2,
+          "context": ". aspetta, vai, vai. questo è il podcast dei rutti.\n\nno, non voglio farlo. puoi fabio de luigi è sono mol sono molto forte a fare i rutti. eh, sì. e beh, questo è vabbè, dopo vediamo, dai. va bene. guarda, mi fai m"
+        }
       ],
-      "context": "quindi non ho visto non ho visto niente e allora danilo da fiumicino chiede giada né per successo cosa darebbe via e no non lavora non posso raggiungere anticipata quel grave esatto non è perché su in"
+      "total_citations": 5
     },
     {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 38,
-      "episode_guest": "Edoardo Ferrario",
-      "mention_count": 2,
-      "guest_episodes": [
-        156
-      ],
-      "context": "avuto come guest neri marcorè caterina guzzanti e rocco tanica con il quale ho ho avuto il privilegio di ballare attenzione c'è un momento di danza con raf latika che più divertenti che abbia mai fatt"
-    },
-    {
-      "guest_mentioned": "Alessandro Borghese",
-      "in_episode": 38,
-      "episode_guest": "Edoardo Ferrario",
-      "mention_count": 2,
-      "guest_episodes": [
-        215
-      ],
-      "context": "psi c'è valerio dei sì rocchi ha interpretato sia alessandro borghese estone è vero c'è max 4 trattorie sto e anzi e e poi c'è michela cirò che partecipano a reggere un solito divertente che esatto ch"
-    },
-    {
-      "guest_mentioned": "Pietro Castellitto",
-      "in_episode": 42,
-      "episode_guest": "Liliana Fiorelli (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        191
-      ],
-      "context": "tu che i pre dito imprenditori che i predatori di pietro castellitto purtroppo il cinema sono chiusi e quindi la domanda è quanto stai a rosicà perché comunque ed aprendo in falsetto si no beh stiamo "
-    },
-    {
-      "guest_mentioned": "Tutti Fenomeni",
-      "in_episode": 85,
-      "episode_guest": "Daniele Tinti",
-      "mention_count": 2,
-      "guest_episodes": [
-        128
-      ],
-      "context": "p in in apertura al tour di tutti del primo disco tutti fenomeni e poi c'è stata una pandemia che per me è stata una terza perché mi sarebbe piaciuto fare l'apertura a tutti i fenomeni pensate che pez"
-    },
-    {
-      "guest_mentioned": "Nino Frassica",
-      "in_episode": 86,
-      "episode_guest": "Serena Tateo e Luca Vecchi (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        238
-      ],
-      "context": "fatto lol piace vedere bene alla riceverebbero al nino frassica però di potere sei ore al giorno e di kobe hanno certo nino frassica c'è una comicità che sicuramente corrisponde però nel senso non fac"
-    },
-    {
-      "guest_mentioned": "Judah Friedlander",
-      "in_episode": 100,
-      "episode_guest": "con Stefano Rapone",
-      "mention_count": 2,
-      "guest_episodes": [
-        19
-      ],
-      "context": "la con seri nottata io e luca vecchi e quella con judah friedlander esclusi presenti ha sempre che poi qua ed è pure sonia scusa sonia allora in realtà nella short list sono escluse tutte le persone a"
-    },
-    {
-      "guest_mentioned": "Rocco Tanica",
-      "in_episode": 100,
-      "episode_guest": "con Stefano Rapone",
-      "mention_count": 2,
-      "guest_episodes": [
-        156
-      ],
-      "context": "mpianto dico elio elio anche rocco tattica elio e rocco tanica anche perché elio e rocco tanica perché pare che sono degli idoli dei miei fans sono cresciuto con le loro canzoni e quindi e non li ho m"
-    },
-    {
-      "guest_mentioned": "Marco Cappato",
-      "in_episode": 100,
-      "episode_guest": "con Stefano Rapone",
-      "mention_count": 2,
-      "guest_episodes": [
-        167
-      ],
-      "context": "ni in corso né quello che non c'è più non c'è più marco cappato volevo dire la prima cosa che salutiamo prossimo ospiti tintoria dovrebbe essere qua in mezzo tra no non c'è non c'è non conosco marco c"
-    },
-    {
-      "guest_mentioned": "Davide Marini",
-      "in_episode": 103,
-      "episode_guest": "Davide Marini + Sandro Canori + Andrea di Castro",
-      "mention_count": 2,
-      "guest_episodes": [
-        121
-      ],
-      "context": "# Tintoria #103 — LIVE Davide Marini + Sandro Canori + Andrea di Castro project work che penso che abbiamo cominciato 11 e invece no dobbiamo andare in pubblicità non è vero [Musica] [A"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 104,
-      "episode_guest": "vs Cachemire Podcast",
-      "mention_count": 2,
-      "guest_episodes": [
-        95
-      ],
-      "context": "un ragazzo cortesemente privilegi a chi in aria e luca ravenna grazie mille ma invece su cashmere come si fa ad avere una birra noi non beviamo noi non abbiamo gli altri la differenza di quelli di que"
-    },
-    {
-      "guest_mentioned": "COMEDY VILLAGE",
-      "in_episode": 109,
-      "episode_guest": "Pietro Sparacino & Mauro Fratini (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        133
-      ],
-      "context": "atti proprio di questo parlare il comedy villaggi comedy village che per chi non lo sapesse è un villaggio turistico in l'agone politico di partito nella velocità cioè dove si fanno dove ci stanno spe"
-    },
-    {
-      "guest_mentioned": "Max Angioni",
-      "in_episode": 112,
-      "episode_guest": "Eleazaro Rossi (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        271
-      ],
-      "context": "l'immediatamente immediatamente così l'impero di max angioni era esplosa la minchia sta facendo tutto max porta facendo tutto obiettivo invece lo invitiamo a tintoria lo facciamo ubriacare deve dire i"
-    },
-    {
-      "guest_mentioned": "Paolo Sorrentino",
-      "in_episode": 120,
-      "episode_guest": "Michela Giraud (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        227
-      ],
-      "context": "ra anche una domanda che mi hanno fatto sisma con paolo sorrentino è un film con attenzione i loschi paolo sorrentino con vol 2 in un film porno con palma filmati paolo sorti vorresti stanno più atten"
-    },
-    {
-      "guest_mentioned": "Claudio Bisio",
-      "in_episode": 130,
-      "episode_guest": "Dado (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        231
-      ],
-      "context": "ti un po fuori tanto è vero che la generazione di claudio bisio si fece proprio un film paolo rossi per essere quelli che non avevano fatto thriving kamikazen la fecero un film si è capito come quelli"
-    },
-    {
-      "guest_mentioned": "Jake La Furia",
-      "in_episode": 132,
-      "episode_guest": "Martin e Luis Sal (con Stefano Rapone)",
-      "mention_count": 2,
-      "guest_episodes": [
-        275
-      ],
-      "context": "non può essere in italia no no c'era il padre di jake la furia era uno di una fase di jake la furia non so il nome nemmeno perché fra il serio la furia john la famiglia che chi fa il pareggio e che pu"
-    },
-    {
-      "guest_mentioned": "Luca Ravenna",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 2,
-      "guest_episodes": [
-        95
-      ],
-      "context": "partiamo partiamo da questo Io sono Goku ti dico Luca Ravenna e Vegeta Questa è una vecchia cosa perché se Vegeta fosse italiano sarebbe di Milano questa cosa secondo me e Tinti è piccolo perché è cal"
-    },
-    {
-      "guest_mentioned": "Mauro Fratini",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 2,
-      "guest_episodes": [
+      "name": "Mauro Fratini",
+      "own_episodes": [
         109
       ],
-      "context": "ere Raimondo freezer Sì sì sì sicuro ci sta a lui Mauro Fratini chiaro andiamo anche oltre il cartellone artistico Giorgio Montanini Giorgio Majin Bu nelle varie fasi [Applauso] Filippo Giardina cell "
-    },
-    {
-      "guest_mentioned": "Maurizio Battista",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 2,
-      "guest_episodes": [
-        166
+      "cited_in": [
+        {
+          "in_episode": 186,
+          "episode_guest": "Antonio Rezza e Flavia Mastrella",
+          "mention_count": 4,
+          "context": "servita anche quella insomma un anno di quella scuola e poi iniziai da solo con mauro fratini che conoscete salutiamo mauro fratini un amico e con massimo camilli e poi nell'87 ho conosciuto flavio ecco qua e abbi"
+        },
+        {
+          "in_episode": 29,
+          "episode_guest": "Pietro Sparacino (2)",
+          "mention_count": 3,
+          "context": "l network che ti sponsorizzati promuove ti dai soldi quindi li ho fatto poi con mauro fratini abbiamo fatto tredici puntate di scappati a casa in cui abbiamo intervistato oltre 40 persone da tutto il mondo e ci si"
+        },
+        {
+          "in_episode": 87,
+          "episode_guest": "LIVE Stefano Gorno (con Stefano Rapone)",
+          "mention_count": 3,
+          "context": "er cercare un altro spazio al monologo al monologo dei santi c'è un monologo di mauro fratini sulle nozze di cana che mi fa pisciare sotto dalle risate in cui va beh non vi spogliano la battuta perché non l'hanno "
+        },
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 2,
+          "context": "ica] ce l'avremo stasera se avere raimondo freezer sì sì sì sicuro ci sta a lui mauro fratini chiaro andiamo anche oltre il cartellone artistico giorgio montanini giorgio majin bu nelle varie fasi [applauso] filip"
+        }
       ],
-      "context": "Eh e i quattro protagonisti saranno Andrea Pucci Maurizio Battista Giuseppe Giacobazzi e Max Angioni Non so perché fanno promozione del programma tintoria a novembre vengono tutti e quattro insieme tu"
+      "total_citations": 4
     },
     {
-      "guest_mentioned": "Max Angioni",
-      "in_episode": 133,
-      "episode_guest": "COMEDY VILLAGE",
-      "mention_count": 2,
-      "guest_episodes": [
+      "name": "Daniele Fabbri",
+      "own_episodes": [
+        111,
+        284
+      ],
+      "cited_in": [
+        {
+          "in_episode": 121,
+          "episode_guest": "Davide Marini",
+          "mention_count": 4,
+          "context": "a coppia scopico d'italia questo forse neanche vero però non lo dico perché c'è daniele fabbri villa lui dice che il primo il suo operato per quanto mi riguarda il primo è questo qua però la spina dorsale teniamoli"
+        },
+        {
+          "in_episode": 35,
+          "episode_guest": "Francesco Lancia (con Stefano Rapone)",
+          "mention_count": 3,
+          "context": "iamo anche al tar chi amate come vi pare e però filippo giardina stefano augeri daniele fabbri tutti i nomi che conoscerle saverio raimondo francesco de carlo mauro fratini c'ero io c'era claudio fois uno storico a"
+        },
+        {
+          "in_episode": 41,
+          "episode_guest": "Stefano Rapone",
+          "mention_count": 2,
+          "context": "ora che comunque grafico fortissimo tra l'altro il vero nome di lotta la solita daniele fabbrica esatta vero nome di daniele fabbri a daniele tinti chi ci stà odio sai che è difficile pupazzo ogni acquazzone un pò "
+        },
+        {
+          "in_episode": 105,
+          "episode_guest": "LIVE Francesco De Carlo",
+          "mention_count": 2,
+          "context": " e reti con con francesco di carlo che conduceva tantissima gente ciccio lancia daniele fabbri tommaso fauro e i due statisti flavio grasso e martina da tre mani li salutiamo tutti quanti adesso sta andando in onda"
+        }
+      ],
+      "total_citations": 4
+    },
+    {
+      "name": "Massimo Ceccherini",
+      "own_episodes": [
+        136
+      ],
+      "cited_in": [
+        {
+          "in_episode": 176,
+          "episode_guest": "Giovanni Cacioppo",
+          "mention_count": 4,
+          "context": "ano i social non c'era niente ma infatti perché a noi questa cosa ce l'ha detta massimo ceccherini a cui ho scritto detto mi dici qualcosa che posso chiedere a a cppo e m'ha detto qualcosa buffa lui m'ha detto eh buffe"
+        },
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 4,
+          "context": "hé tramite la persona giusta la persona giusta perché io rosicando ho scritto a massimo ceccherini e cazzo dovresti fare un podcast di strategia second per infiltrarsi al vaticano e ch è non cianno chiamato dopo tintor"
+        },
+        {
+          "in_episode": 224,
+          "episode_guest": "Rocco Papaleo",
+          "mention_count": 4,
+          "context": " poi tra l'altro nei laureati hai conosciuto anche il nostro amico comune che è massimo ceccherini e ho visto proprio la puntata con massimo ceccherini qui e perché vabbè c'era una ragione per cui lui vabbè insomma nie"
+        },
+        {
+          "in_episode": 200,
+          "episode_guest": "Tinti & Rapone",
+          "mention_count": 2,
+          "context": " devo andare a farne un altro dirò insomma un po' la stessa cosa ciao un saluto massimo ceccherini e lucio che stava dietro lucio che si sentiva dietro sono contento che l'abbia detto perché mi avo mandato il re di lui"
+        }
+      ],
+      "total_citations": 4
+    },
+    {
+      "name": "Pietro Sermonti",
+      "own_episodes": [
+        146
+      ],
+      "cited_in": [
+        {
+          "in_episode": 231,
+          "episode_guest": "Claudio Bisio",
+          "mention_count": 4,
+          "context": "sona adorevole, cioè pietro sempre lui che dice cagate fa e dice cagate. questo pietro sermonti c pietro sermonti ci ha detto che pietro sermonti pietro sermonti che tu forse l'hai usato una volta sei stato illumina"
+        },
+        {
+          "in_episode": 151,
+          "episode_guest": "Lillo",
+          "mention_count": 3,
+          "context": "e che che a cui dove volevamo arrivare perché noi abbiamo fatto una puntata con pietro sermonti sì che era tutta basata su perché ha molti aneddoti su questo che era tutta basata sulla cacca su aneddoti suoi su perc"
+        },
+        {
+          "in_episode": 200,
+          "episode_guest": "Tinti & Rapone",
+          "mention_count": 3,
+          "context": " sentire un altro messaggio che ci è arrivato ah vai bellissimo di questo di di pietro sermonti vai il nostro amico vediamo che ci dice tutti quelli che sono lì in sala lambra iovinelli per la festa di tintoria vi s"
+        },
+        {
+          "in_episode": 262,
+          "episode_guest": "Paolo Nori",
+          "mention_count": 3,
+          "context": "ono e c'è anche tintoria. c'è anche sì, c'è anche tintoria. c'è anche c'è anche pietro sermonti.\n\nc'è anche pietro sermonti che è anche qua. perché io ho conosciuto io non guardo la televisione da un sacco di tempo "
+        }
+      ],
+      "total_citations": 4
+    },
+    {
+      "name": "Max Giusti",
+      "own_episodes": [
+        223
+      ],
+      "cited_in": [
+        {
+          "in_episode": 282,
+          "episode_guest": "Giovanni Floris",
+          "mention_count": 4,
+          "context": "ella copertina di ballarò. ehm, poi ci facevano anche dei regali, mi ricordo eh max giusti, de luigi, avevamo tanti, insomma, che li contattavamo ed erano contenti di farci la copertina. poi dopo maurizio è pas"
+        },
+        {
+          "in_episode": 234,
+          "episode_guest": "Ubaldo Pantani",
+          "mention_count": 3,
+          "context": "di tutti i comici quando vedo una cosa bella dirgli cazzo che figata bellissima max giusti che fa de laurentis è una roba meravigliosa cioè hai capito io lì non non lì è è una figata capito quando ci sono delle"
+        },
+        {
+          "in_episode": 224,
+          "episode_guest": "Rocco Papaleo",
+          "mention_count": 2,
+          "context": "puntate registrate prima che escono dopo oggi oggi oggi è uscita la puntata con max giusti in cui che abbiamo registrato quest'estate a villada in cui dicevamo oh no perché poi c st ci saranno quasi le elezioni"
+        },
+        {
+          "in_episode": 255,
+          "episode_guest": "Nicola Savino",
+          "mention_count": 2,
+          "context": " po' preparato, ho visto oggi ho sorrentino, ho visto diego bianchi, ho sentito max giusti e poi dopo mi sono addormentato.\n\ndormit dormito, ma non per max giusti mi sono addormentato, anzi per noi più per ravo"
+        }
+      ],
+      "total_citations": 4
+    },
+    {
+      "name": "Serena Dandini",
+      "own_episodes": [
+        244
+      ],
+      "cited_in": [
+        {
+          "in_episode": 181,
+          "episode_guest": "Paola Minaccioni",
+          "mention_count": 4,
+          "context": "ati importanti. poi loro, poi una volta ho fatto un provino per un programma di serena dandini dove c'erano anche loro, sono stata presa, quindi abbiamo fatto la tv e ho cominciato a fare il centro dimagrante il ma"
+        },
+        {
+          "in_episode": 201,
+          "episode_guest": "Marcello Cesena",
+          "mention_count": 3,
+          "context": " sergio leone e e quindi arrivati a roma riuscimmo ad avere un appuntamento con serena dandini ehm le mandav una cassetta e un giorno era sabato lei mi telefonò e io credetti di riconoscere la voce di carla per cui"
+        },
+        {
+          "in_episode": 217,
+          "episode_guest": "Paolo Hendel",
+          "mention_count": 3,
+          "context": "rò breve sarò breve io ho avuto la sfortuna di fare un programma televisivo con serena dandini così mi sono fatto amica anche lei con questa chiacchierata in realtà sto scherzando serena dandini è una persona di gr"
+        },
+        {
+          "in_episode": 261,
+          "episode_guest": "Neri Marcorè",
+          "mention_count": 2,
+          "context": "ggio, insomma, a metà degli anni 90, però poi l'incontro importante è stato con serena dandini perché io vedevo i programmi appunto di serena con corrado, sabina guzzanti e tutti gli altri e io dicevo mi piacerebbe"
+        }
+      ],
+      "total_citations": 4
+    },
+    {
+      "name": "Max Angioni",
+      "own_episodes": [
         271
       ],
-      "context": "rea Pucci Maurizio Battista Giuseppe Giacobazzi e Max Angioni Non so perché fanno promozione del programma tintoria a novembre vengono tutti e quattro insieme tutti quanti tre su sempre tolto Max Angi"
-    },
-    {
-      "guest_mentioned": "Carmelo Avanzato",
-      "in_episode": 137,
-      "episode_guest": "Gipi",
-      "mention_count": 2,
-      "guest_episodes": [
-        124
+      "cited_in": [
+        {
+          "in_episode": 283,
+          "episode_guest": "Carmine Del Grosso",
+          "mention_count": 5,
+          "context": "a, ci sorprende, ci stupisce, ce la vuole raccontare, no? è sempre come come da max angioni a quella di kazuo umezz. ma molto bene, cominciamo subito con una parolaccia. sì, sì.\n\neh beh, no, ha sempre quel manga"
+        },
+        {
+          "in_episode": 112,
+          "episode_guest": "Eleazaro Rossi (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "ta cosa e farti cacciare dalle l'immediatamente immediatamente così l'impero di max angioni era esplosa la minchia sta facendo tutto max porta facendo tutto obiettivo invece lo invitiamo a tintoria lo facciamo u"
+        },
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 2,
+          "context": "attro protagonisti saranno andrea pucci maurizio battista giuseppe giacobazzi e max angioni non so perché fanno promozione del programma tintoria a novembre vengono tutti e quattro insieme tutti quanti tre su se"
+        },
+        {
+          "in_episode": 231,
+          "episode_guest": "Claudio Bisio",
+          "mention_count": 2,
+          "context": "i primi anni lo facciamo ancora oggi vanessa ogni tanto devo dire ieri sera con max angioni. ah, è vero. è venuto max angioni in quella puntata che andrò novembre o il novembre, adesso il giorno preciso devono d"
+        }
       ],
-      "context": "n drone di nordvpn Controlla un drone pilotato da Carmelo avanzato Forse perché io e te da soli non vogliamo niente Parliamoci chiaro cioè 137 puntate non grazie a me non Grazie a te non grazie a noi "
+      "total_citations": 4
     },
     {
-      "guest_mentioned": "Marco Cappato",
-      "in_episode": 147,
-      "episode_guest": "Barbascura X",
-      "mention_count": 2,
-      "guest_episodes": [
+      "name": "Luca Vecchi",
+      "own_episodes": [
+        86,
+        102
+      ],
+      "cited_in": [
+        {
+          "in_episode": 149,
+          "episode_guest": "The Pills",
+          "mention_count": 6,
+          "context": "a scialla unuomo strambo la bar comicon tipo fella aperta la metti in braccio a luca vecchio non lo so quanto ne conviene però vabbè io non l'avrei fatto tipo no e poi un'altra volta tipo a milano fa [ __ ] [ __"
+        },
+        {
+          "in_episode": 100,
+          "episode_guest": "con Stefano Rapone",
+          "mention_count": 5,
+          "context": " si sia data ai fasti di agordo quella con fanelli quella con seri nottata io e luca vecchi e quella con judah friedlander esclusi presenti ha sempre che poi qua ed è pure sonia scusa sonia allora in realtà nell"
+        },
+        {
+          "in_episode": 140,
+          "episode_guest": "Margherita Vicario",
+          "mention_count": 4,
+          "context": "oè salutiamo appunto della nonna il ruolo femminile del la fidanzata di luca di luca vecchi amico del podcast memorabile cioè ero felicissima erano i miei idoli quindi quando poi ho vinto il provino ero contenti"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Davide Marini",
+      "own_episodes": [
+        121
+      ],
+      "cited_in": [
+        {
+          "in_episode": 103,
+          "episode_guest": "LIVE Davide Marini + Sandro Canori + Andrea di Castro",
+          "mention_count": 2,
+          "context": "# tintoria #103 — live davide marini + sandro canori + andrea di castro\n\nproject work che penso che abbiamo cominciato 11 e invece no dobbiamo andare in pub"
+        },
+        {
+          "in_episode": 204,
+          "episode_guest": "Michela Giraud",
+          "mention_count": 2,
+          "context": " bello c ma perché sei venuta la festa m de 30 anni no ma ci stavano tutti pure davide marini claudio colica tutti quano davide marini no vabbè c stavano tutti te perché non sei venuto manco io sono venuto e non p"
+        },
+        {
+          "in_episode": 265,
+          "episode_guest": "Monir Ghassem",
+          "mention_count": 2,
+          "context": "imo. cioè, senza offesa per casalotti ci mancherebbe altro. per carità, ci vive davide marini, quindi salutiamo davide marini. e perché casalotti? cioè, nel senso, ci sono altre zone che capisco, cioè un secondo m"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Lo Stato Sociale",
+      "own_episodes": [
+        153
+      ],
+      "cited_in": [
+        {
+          "in_episode": 226,
+          "episode_guest": "Giorgio Montanini",
+          "mention_count": 3,
+          "context": "ita il sistema capitalista quindi fluidità sono cazzate lottate per la pensione lo stato sociale per per l'occupazione per la legge sul l'articolo 18 no per [ __ ] lottate per la scuola pubblica lottate per la pensio"
+        },
+        {
+          "in_episode": 176,
+          "episode_guest": "Giovanni Cacioppo",
+          "mention_count": 2,
+          "context": "cause i found the link on the description in the episode with marco marzocca or lo stato sociale quindi c'era questa cosa ah ok perché questo è molto strano perché la metrica mi sembra tutta spallata però si vede qua"
+        },
+        {
+          "in_episode": 189,
+          "episode_guest": "Trio Medusa",
+          "mention_count": 2,
+          "context": "hi c'è chi avete avuto che è più di un ospite eh no qualcuno c'è stato è venuto lo stato sociale sono venuti in tanti de pills sono venuti in tre eh adesso abbiamo pub di solito così ancora si può fa' più di tre dive"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Francesco Costa",
+      "own_episodes": [
+        159
+      ],
+      "cited_in": [
+        {
+          "in_episode": 127,
+          "episode_guest": "Recanati (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "derti perché non te l'ho mai chiesto che podcast ti senti a parte parte morning francesco costa bongiorno sono francesco costa la guerra è sbagliata il fatto meridiano non è palermitano che parla così però non lo co"
+        },
+        {
+          "in_episode": 168,
+          "episode_guest": "Alberto Grandi",
+          "mention_count": 2,
+          "context": "iamo che intanto noi ti abbiamo conosciuto tramite il podcast doi che era stato francesco costa ne aveva parlato in una puntata di morning ha detto senti visto podcast noi l'abbiamo sentito effettivamente podcast mo"
+        },
+        {
+          "in_episode": 202,
+          "episode_guest": "Stefano Nazzi",
+          "mention_count": 2,
+          "context": " qua. no, no, ma non è andata così.\n\nallora, io lavoravo al post e parlando con francesco costa che allora che aveva il suo vecchio podcast. sì, lui però era anche responsabile dei podcast del post. ci siamo detti, "
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Marco Cappato",
+      "own_episodes": [
         167
       ],
-      "context": "epare però posso avanzare una proposta mandiamoli Marco cappato mandiamo Marco canda bella questa buono possiamo questa mi ha fatto un po' male Quest B B ricordiamo undef con la musica di The Undertak"
+      "cited_in": [
+        {
+          "in_episode": 185,
+          "episode_guest": "Giobbe Covatta",
+          "mention_count": 8,
+          "context": "questa sì questa è la campagna elettorale di cappato vedi che marco capp salamo marco cappato nostro amico e qui e e insomma e scrivo le cose le scrivo eh no certo ma le hai portate sul palco perché non ti fidi di"
+        },
+        {
+          "in_episode": 100,
+          "episode_guest": "con Stefano Rapone",
+          "mention_count": 2,
+          "context": "nato stato io sono luca coscioni in corso né quello che non c'è più non c'è più marco cappato volevo dire la prima cosa che salutiamo prossimo ospiti tintoria dovrebbe essere qua in mezzo tra no non c'è non c'è no"
+        },
+        {
+          "in_episode": 147,
+          "episode_guest": "Barbascura X",
+          "mention_count": 2,
+          "context": "inuano a crepare lasciateli crepare però posso avanzare una proposta mandiamoli marco cappato mandiamo marco canda bella questa buono possiamo questa mi ha fatto un po' male quest b b ricordiamo undef con la music"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Giobbe Covatta",
+      "own_episodes": [
+        185
+      ],
+      "cited_in": [
+        {
+          "in_episode": 274,
+          "episode_guest": "Enzo Iacchetti",
+          "mention_count": 3,
+          "context": "on so adesso delle denunce, però parlamo di giobbe, quindi no, poi parlavamo di giobbe covatta che però vabbè, dovrebbe stare in galera, eh. giobbe dovrebbe stare in galera. giobbe è incazzato moltissimo con salvin"
+        },
+        {
+          "in_episode": 189,
+          "episode_guest": "Trio Medusa",
+          "mention_count": 2,
+          "context": "one narra che un giorno babbo natale stava guardando la puntata di tintoria con giobbe covatta perché quando guarda giobbe covatta pensa che s assomigliano perché babbo natale parla campano lo sanno tutti è andato "
+        },
+        {
+          "in_episode": 192,
+          "episode_guest": "Daniela Collu",
+          "mention_count": 2,
+          "context": "tti gli italiani si sono andati nella descrizione della puntata di tintoria con giobbe covatta che sta andando molto forte sono andati su norv pn.com inoria hanno detto wow ma kiss non è un sconto nal perché parlan"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Gino Paoli",
+      "own_episodes": [
+        195
+      ],
+      "cited_in": [
+        {
+          "in_episode": 204,
+          "episode_guest": "Michela Giraud",
+          "mention_count": 3,
+          "context": " sono lavata e e ho visto la puntata de pietro castelli poi e poi la puntata de gino paoli e mi è venuta un'ansia da prestazione micidiale quindi perché non riuscirò mai a quagliare la storia de tenco che caga "
+        },
+        {
+          "in_episode": 249,
+          "episode_guest": "Valerio Mastandrea",
+          "mention_count": 3,
+          "context": "te la dico. bellissimo.\n\nma c'era una battuta che ci aveva detto gino paul. ah, gino paoli. quando siamo andati a casa di gino paoli per prima di fare la puntata ci ha voluto riconoscere. ho detto \"ah, sì, gli "
+        },
+        {
+          "in_episode": 265,
+          "episode_guest": "Monir Ghassem",
+          "mention_count": 2,
+          "context": ", non è no, però ponente e levante, cioè tipo c'hai presente genova, ti ricordi gino paoli che c'ha che guardava sia ponente sia levante sempre mario era eh certo.\n\nnon so se quella stanza era come casa di gino"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Marcello Cesena",
+      "own_episodes": [
+        201
+      ],
+      "cited_in": [
+        {
+          "in_episode": 219,
+          "episode_guest": "Gialappa's Band",
+          "mention_count": 6,
+          "context": "almente ma credo anche marco siamo qua ne vogliamo affrontare adesso il il caso marcello cesena vai falla desta quello stronzo di marcello cesena ciao marcello che sarebbe jean-claude come jecla marcello cesena è ve"
+        },
+        {
+          "in_episode": 240,
+          "episode_guest": "Fabio De Luigi",
+          "mention_count": 5,
+          "context": " loro che erano i broncovit per me quindi era un cazzo di bronc cera appunto no marcello cesena ancora non c'era c'erano ugo dighero e maurizio crozza che stavano provando delle cose e io rimango lì e nessuno mi cag"
+        },
+        {
+          "in_episode": 148,
+          "episode_guest": "Frank Matano",
+          "mention_count": 4,
+          "context": "di padre pio che fa ridere forse la cosa più divertente del film no anche chi è marcello cesena che fa ilre pi che fa padre pio cioè com'era una come dire un un tizio che fa eh delle apparizioni apparizioni e quindi"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Luca Bizzarri",
+      "own_episodes": [
+        213
+      ],
+      "cited_in": [
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 3,
+          "context": "ti no santo pare il merito è tutto nostro no ci sta se leggi ci sta capito cioè luca bizzarri gabriele cirilli raul cremona poi aspetta aspetta maria di biase e anche consorte manuela fanelli no mo guarda se te li"
+        },
+        {
+          "in_episode": 166,
+          "episode_guest": "Maurizio Battista",
+          "mention_count": 2,
+          "context": "o vedono perché la tecnolo q code da gigante inquadratura federica cacciola c'è luca bizzarri ce ne stanno tanti altri quindi sarà difficilissimo se solo ci fosse un modo se solo ci fosse un modo per votare più di"
+        },
+        {
+          "in_episode": 170,
+          "episode_guest": "Carolina Crescentini",
+          "mention_count": 2,
+          "context": "n l'abbiamo vinto ah non l'abbiamo vinto noi no scusa macchina la vita ha vinto luca bizzarri ah cioè ci sta vabbè no sì ci sta comunque luca bizzarri è un gigante cioè comunque arrivare secondi dietro lui comunqu"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Giorgio Montanini",
+      "own_episodes": [
+        226
+      ],
+      "cited_in": [
+        {
+          "in_episode": 191,
+          "episode_guest": "Pietro Castellitto",
+          "mention_count": 4,
+          "context": "a ma non è che in realtà io ho altre domande su sul casting perché nel film c'è giorgio montanini st il comedian che era anche nei predator peraltro grande attore che comunque non stava scritto da nessuna parte che la"
+        },
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 3,
+          "context": "o ci sta a lui mauro fratini chiaro andiamo anche oltre il cartellone artistico giorgio montanini giorgio majin bu nelle varie fasi [applauso] filippo giardina cell è vero è vero in che forma arriva dal pubblico la do"
+        },
+        {
+          "in_episode": 249,
+          "episode_guest": "Valerio Mastandrea",
+          "mention_count": 3,
+          "context": "sso fare questo spoiler in più perché c'è un un nostro amico collega, c'è anche giorgio montanini che fa un personale no anche c'è soprattutto giorgio montanini che fa un ruolo che però insomma quando è arrivato giorg"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Cristina D'Avena",
+      "own_episodes": [
+        237
+      ],
+      "cited_in": [
+        {
+          "in_episode": 101,
+          "episode_guest": "LIVE Alessandro Cino Zolfanelli",
+          "mention_count": 12,
+          "context": "vanta per fare questa festa che potremo invitare e mi pare che tu disse ma tipo cristina d'avena ed ora dissero genio sei un gela è un'icona ma guarda che l'hanno invitata e tra la cosa più [ __ ] tutta questa storia"
+        },
+        {
+          "in_episode": 39,
+          "episode_guest": "Velia Lalli (con Stefano Rapone)",
+          "mention_count": 4,
+          "context": "spirando sapete ma io c'ho una nuova una musa la nuova musa la mia nuova musa è cristina d'avena ok infatti avete notato che ho cominciato a mettere tette su instagram pure io come cristina tavena eh capito nuova mus"
+        },
+        {
+          "in_episode": 97,
+          "episode_guest": "LIVE Sonia Ceriola (con Stefano Rapone)",
+          "mention_count": 4,
+          "context": "sa vi siete persi questo grazie per il paragone con cristiano ronaldo e non con cristina d'avena per carità perché io l'adoro cristina d'avena però tutti ci sono cristina d'avena del lazio ma realtà non sono una cant"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Nino Frassica",
+      "own_episodes": [
+        238
+      ],
+      "cited_in": [
+        {
+          "in_episode": 288,
+          "episode_guest": "Maurizio Nichetti",
+          "mention_count": 3,
+          "context": "o nome dalla locandina, l'hanno presentato come il nuovo film, il primo film di nino frassica, con lo slogan sto arrivandi che non era il massimo del, come dire, dell'appil cinematografico, no? il film non è andat"
+        },
+        {
+          "in_episode": 86,
+          "episode_guest": "LIVE Serena Tateo e Luca Vecchi (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": " sono ad ania ma tu l'avresti fatto lol piace vedere bene alla riceverebbero al nino frassica però di potere sei ore al giorno e di kobe hanno certo nino frassica c'è una comicità che sicuramente corrisponde però "
+        },
+        {
+          "in_episode": 162,
+          "episode_guest": "Massimo Bagnato",
+          "mention_count": 2,
+          "context": "e che dici te non puoi essere eh non credente dico una cosa di un maestro che è nino frassica che per me fa la la confido qui poi insomma lo chiedo di guarda ho detto questa cosa ha i suoi dubbi perché io dico gua"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Maurizio Milani",
+      "own_episodes": [
+        241
+      ],
+      "cited_in": [
+        {
+          "in_episode": 156,
+          "episode_guest": "Rocco Tanica",
+          "mention_count": 5,
+          "context": "è il mio punto di riferimento anche per la scrittura anche per la letteratura è maurizio milani vorrei per curiosità sapere chi conosce maurizio milan può alzare la mano solo per capire in molto pochi conoscete maur"
+        },
+        {
+          "in_episode": 244,
+          "episode_guest": "Serena Dandini",
+          "mention_count": 2,
+          "context": "e fai a sapere queste cose perché mi stavo guardando la puntata di tintoria con maurizio milani ah vedi perché che è uscita oggi quindi eh che è un grande mi ricorda shiin pin no scusa però perché questa cosa si può"
+        },
+        {
+          "in_episode": 246,
+          "episode_guest": "Matteo Berrettini",
+          "mention_count": 2,
+          "context": "mi nor vpn di cui sono venuto a conoscenza guardando la puntata di tintoria con maurizio milani che che riesco a vedere dall'al di là grazie alle antenne di radio maria e che giustamente se sei papa radio maria mi f"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Nicola Savino",
+      "own_episodes": [
+        255
+      ],
+      "cited_in": [
+        {
+          "in_episode": 230,
+          "episode_guest": "Gianluca Gazzoli",
+          "mention_count": 3,
+          "context": " li fai sicuro dai questo sì eh poi c'è ditemi altri avengers che possono avere nicola savino no più più avengers fiamo il contrario no hulk hulk eh hulk potrebbe essere fabio volo bello b perché lui scompiglia fa"
+        },
+        {
+          "in_episode": 233,
+          "episode_guest": "Irene Grandi",
+          "mention_count": 3,
+          "context": "ga si può dire savino diciamolo vostro collega savino che ora mi sfugge il nome nicola savino nicola savino così tutti capiscono quale savino intendo nicola savino che era il suo primo festival bar e che e io il m"
+        },
+        {
+          "in_episode": 25,
+          "episode_guest": "Valerio Lundini (2)",
+          "mention_count": 2,
+          "context": "ò si non beh sì penso che la gialappa's abbia fatto sicuramente forse anche con nicola savino l'hanno fatto ecco e oil tra l'altro non mi non mi sorprende che a te sia piaciuta la libertà dell'altro festival per c"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Enzo Iacchetti",
+      "own_episodes": [
+        274
+      ],
+      "cited_in": [
+        {
+          "in_episode": 212,
+          "episode_guest": "Gioele Dix",
+          "mention_count": 4,
+          "context": "le star erano francesco salvi erano l' 81-82 cioè le star erano francesco salvi enzo iacchetti giorgio porcaro e questi erano proprio quelli per cui la gente veniva la sera perché sostanzialmente il programma era s"
+        },
+        {
+          "in_episode": 185,
+          "episode_guest": "Giobbe Covatta",
+          "mention_count": 2,
+          "context": "somma ma infatti com'erano i rapporti che aveva cioè ai tempi del derby con con enzo iacchetti con paolo antoni cioè com'erano le le vostre giornate di di di quell'epoca ma le nostre giornate erano erano si fatte a"
+        },
+        {
+          "in_episode": 209,
+          "episode_guest": "Raul Cremona",
+          "mention_count": 2,
+          "context": "a fucina di annac e tutti poi dis nipoti di ancci teocoli boldi francesco salvi enzo iacchetti paolo rossi claudio bisio le prime armi il mio primo debutto avviene insieme a questi nomi qua claudio bisio massimo an"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Carlo Verdone",
+      "own_episodes": [
+        280
+      ],
+      "cited_in": [
+        {
+          "in_episode": 277,
+          "episode_guest": "Claudia Gerini",
+          "mention_count": 11,
+          "context": "ebbe poi diventato il mio eh il mio humus, cioè le commedie dopo molti anni con carlo verdone sarebbe diventato il mio diciamo il mio ambiente naturale. e quindi e facendo questo film, avevo 15 anni quando mi hann"
+        },
+        {
+          "in_episode": 289,
+          "episode_guest": "Mika",
+          "mention_count": 4,
+          "context": "ato di prendere il pantwork perché sto facendo la la cura che mi ha consigliato carlo verdone. certo. quindi giusto. no, fai bene, fai bene. il dottor verdone sì, sì, l'ho fatto veramente.\n\nsto sto meglio e però m"
+        },
+        {
+          "in_episode": 236,
+          "episode_guest": "Christian De Sica",
+          "mention_count": 3,
+          "context": "i pezzi te stai magalli ma sai c'abbiamo tutte l'età massimo ranieri renato zer carlo verdone c'era carlo verdone certo certo verdone stamente meglio de draghi e poi con renato andavamo mi ricordo c'ero il piper c"
+        }
+      ],
+      "total_citations": 3
+    },
+    {
+      "name": "Tutti Fenomeni",
+      "own_episodes": [
+        21,
+        128
+      ],
+      "cited_in": [
+        {
+          "in_episode": 25,
+          "episode_guest": "Valerio Lundini (2)",
+          "mention_count": 2,
+          "context": "nuto il 19 dicembre e poi prima c'era stata la gara di gang e prima c'era stato tutti fenomeni ma ci sono ci sono stati un po di persone [musica] non lo so non ne ho chiesto che lo vide roba ho idea di tornare a di"
+        },
+        {
+          "in_episode": 85,
+          "episode_guest": "LIVE Daniele Tinti",
+          "mention_count": 2,
+          "context": "vamente io dovevo fare stand up in in apertura al tour di tutti del primo disco tutti fenomeni e poi c'è stata una pandemia che per me è stata una terza perché mi sarebbe piaciuto fare l'apertura a tutti i fenomeni"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Filippo Spreafico",
+      "own_episodes": [
+        28
+      ],
+      "cited_in": [
+        {
+          "in_episode": 41,
+          "episode_guest": "Stefano Rapone",
+          "mention_count": 4,
+          "context": " oggi nel ruolo di me oggi nel ruolo di stefano rapa star in gas stefano rapone filippo spreafico è una battuta in cui come com'era la battuta precisamente per la clip è che finiva con e per di più paperi e fare gli i"
+        },
+        {
+          "in_episode": 110,
+          "episode_guest": "LIVE Stefano Rapone",
+          "mention_count": 3,
+          "context": "ntima e altri ma forse spreafico forse spreafico se io pure ultimamente penso a filippo spreafico fa ridere filippo si fa molto ridere stato anche ti direi anche emmanuel bongiorni però non è propriamente comico quant"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Emanuela Fanelli",
+      "own_episodes": [
+        36
+      ],
+      "cited_in": [
+        {
+          "in_episode": 85,
+          "episode_guest": "LIVE Daniele Tinti",
+          "mention_count": 3,
+          "context": "on può essere un po non può un'attrice beatrici già già ci sono state nel senso emanuela fanelli liana fiorelli michela giro martina catuzzi quindi di attrici già ce ne sono state chi più ne ha più ne metta allora ve"
+        },
+        {
+          "in_episode": 34,
+          "episode_guest": "Valerio Lundini e Matteo Tiberia",
+          "mention_count": 2,
+          "context": "ncasa che è quello che ha detto facciamo ma che sia una festa una straordinaria emanuela fanelli emanuela fare che salutiamo bravissima oltre che se posso dirlo intelligente poi co protagonista proprio anche la quota"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "con Stefano Rapone",
+      "own_episodes": [
+        100
+      ],
+      "cited_in": [
+        {
+          "in_episode": 99,
+          "episode_guest": "LIVE Fabio Pinci aka Ceppaflex (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "# tintoria #99 — live fabio pinci aka ceppaflex (con stefano rapone)\n\n[musica] buonasera a tutti e buonasera a tutti e benvenuti alla puntata numero 99 di tintoria applauso evvai grazie m"
+        },
+        {
+          "in_episode": 113,
+          "episode_guest": "Riccardo Cotumaccio (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "# tintoria #113 — riccardo cotumaccio (con stefano rapone)\n\n[musica] [applauso] [musica] [applauso] [musica] buonasera a tutti e buonasera a tutti benvenuti a una nuova puntata "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Francesco De Carlo",
+      "own_episodes": [
+        105
+      ],
+      "cited_in": [
+        {
+          "in_episode": 106,
+          "episode_guest": "Guia Scognamiglio & Tommaso Faoro",
+          "mention_count": 4,
+          "context": " dice è un nonostante la mia partecipazione un signor programma a mio avviso di francesco de carlo e francesco lancia citando gli autori è pensato e ideatori del progetto salutiamo entra anche salutiamo va in onda in q"
+        },
+        {
+          "in_episode": 210,
+          "episode_guest": "Francesco Fanucchi",
+          "mention_count": 2,
+          "context": "eh, che ne sai te metti che dice oh eh so qual è il tuo maestro? il mio maestro francesco de carlo lo salutiamo. c francesco de carlo ha detto una volta che io deo e me ne v certo. dopo che francesco è morto, anzi ment"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Pietro Sparacino",
+      "own_episodes": [
+        109
+      ],
+      "cited_in": [
+        {
+          "in_episode": 133,
+          "episode_guest": "COMEDY VILLAGE",
+          "mention_count": 5,
+          "context": "nd oggi esatto e senza sparacino quindi meglio meglio un applauso un applauso a pietro sparacino direttore artistico del comune village che poi chiameremo sul palco sì e tu allora io sono stato fatto un piccolo giro "
+        },
+        {
+          "in_episode": 29,
+          "episode_guest": "Pietro Sparacino (2)",
+          "mention_count": 3,
+          "context": "# tintoria #29 — pietro sparacino (2)\n\nciao a tutti sono tutte ben trovati a una nuova puntata di tintoria format classico è la prima puntata dopo il loc"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "COMEDY VILLAGE",
+      "own_episodes": [
+        133
+      ],
+      "cited_in": [
+        {
+          "in_episode": 178,
+          "episode_guest": "Martufello",
+          "mention_count": 6,
+          "context": "ntento che siamo una location nuova, lo diciamo per le persone a casa. siamo al comedy village.\n\nquesto si rinnova. la tradizione di cominciare la stagione al comedy village. una tradizione che vanta due episodi. q"
+        },
+        {
+          "in_episode": 109,
+          "episode_guest": "LIVE Pietro Sparacino & Mauro Fratini (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "e con il come di villa ciò infatti proprio di questo parlare il comedy villaggi comedy village che per chi non lo sapesse è un villaggio turistico in l'agone politico di partito nella velocità cioè dove si fanno do"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Giovanni Benincasa",
+      "own_episodes": [
+        134
+      ],
+      "cited_in": [
+        {
+          "in_episode": 34,
+          "episode_guest": "Valerio Lundini e Matteo Tiberia",
+          "mention_count": 3,
+          "context": "za di un navigatore chi altro c'è nel programma che possiamo salutare allora la giovanni benincasa l'unica casa che già abbiamo collaborato su battuto battute che è il capo progetto capo veloce questo programma che tra"
+        },
+        {
+          "in_episode": 36,
+          "episode_guest": "Emanuela Fanelli (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": " dopo conosciuto ospiti e allora dove noi ci siamo conosciuti noi a una cena da giovanni benincasa oppure direttamente a fiano temo che anzi in realtà sono molto contento a fiano romano la hall della nella hall dell'al"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Gero Arnone",
+      "own_episodes": [
+        135
+      ],
+      "cited_in": [
+        {
+          "in_episode": 148,
+          "episode_guest": "Frank Matano",
+          "mention_count": 4,
+          "context": "to www.nordvpn.com tintoria e ha cliccato sul link in descrizione del video con gero arnone e eliana albertini e se lo stava vedendo ha detto ma nor vpn e così lui è un fan di di gero arnone lui un fan di gero a"
+        },
+        {
+          "in_episode": 244,
+          "episode_guest": "Serena Dandini",
+          "mention_count": 2,
+          "context": "nati no se ci abitavo non erano abbandonati adesso ma chi è eh te lo posso dire gero arnone gero salutiamo vedi pureo nome e cognome fatti subito e basta chi è gero arnone torniamo immediatamente immediatamente "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Riccardo Rossi",
+      "own_episodes": [
+        145
+      ],
+      "cited_in": [
+        {
+          "in_episode": 283,
+          "episode_guest": "Carmine Del Grosso",
+          "mention_count": 5,
+          "context": "arlato nella vecchia puntata, comunque te hai anche condotto tre puntate perché riccardo rossi non poteva venire, tu e ian.\n\nsalutiamo ian, salutiamo anche riccardo rossi. bellissimo. eh, però che ricordo hai di ba"
+        },
+        {
+          "in_episode": 108,
+          "episode_guest": "LIVE Raffaello Corti (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "ato otto volte con madonna santa ho ascoltate più di ahmad è un'acqua sicuri di riccardo rossi che si sono giocati adesso ci salutiamo allora riccardo rossi un amico noi dobbiamo tutto anche se anche se io non c'er"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Frank Matano",
+      "own_episodes": [
+        148
+      ],
+      "cited_in": [
+        {
+          "in_episode": 157,
+          "episode_guest": "Willie Peyote",
+          "mention_count": 3,
+          "context": "lto banale sembra di no però chi l'ha detto è molto banale la mia memoria non è frank matano frank matano ha detto kim beh dai comunque frank matano meglio di dalema nel senso se devo avvicinarmi a qualcuno bella"
+        },
+        {
+          "in_episode": 151,
+          "episode_guest": "Lillo",
+          "mention_count": 2,
+          "context": "i ci hanno fatto tuoi amici anche del ci hanno suggerito delle cose per esempio frank matano ci ha detto che che tuo fratello è un ma chi è fr matano secondo me c'è tipo uno uno dell' intelligence sento che maata"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Piero Pelù",
+      "own_episodes": [
+        163
+      ],
+      "cited_in": [
+        {
+          "in_episode": 207,
+          "episode_guest": "Elio",
+          "mention_count": 2,
+          "context": "orge il problema di chi può interpretarlo e la prima idea che ci viene in mente piero pelù allora io vado apposta a un concerto di piero pelù cioè dei dei li fiba per chiedergli sta roba qua ed è quel concerto "
+        },
+        {
+          "in_episode": 238,
+          "episode_guest": "Nino Frassica",
+          "mention_count": 2,
+          "context": "ma è molto bello quello sul l'intervista doppia stile le iene tra pieroangela e piero pelù sì era saamo una doppia copia potevamo f fac eh cavolo arturo ce l'hai la copia c' arturo io ce l'avevo su mannaggia ma"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Walter Fontana",
+      "own_episodes": [
+        172
+      ],
+      "cited_in": [
+        {
+          "in_episode": 217,
+          "episode_guest": "Paolo Hendel",
+          "mention_count": 3,
+          "context": "in con la giunta per quanto riguarda il carlo pravettoni dell'altro genio che è walter fontana chiunque di noi comici giovani o vecchi capitati nelle loro mani hanno dato un buon risultato non sempre poi da soli ma"
+        },
+        {
+          "in_episode": 240,
+          "episode_guest": "Fabio De Luigi",
+          "mention_count": 3,
+          "context": " è tanto uno è poco cioè per lui 1000 è molto se è un bambino scemo cazzo c'era walter fontana cazzo un gigante che salutiamo lui tra noi lui in credo il nome ingegner cane si è il suo e non solo lo scrivevamo insi"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Gabriele Cirilli",
+      "own_episodes": [
+        179
+      ],
+      "cited_in": [
+        {
+          "in_episode": 247,
+          "episode_guest": "Giorgio Tirabassi",
+          "mention_count": 4,
+          "context": " c'aveva detto cirilli che con lui si era incazzato parecchio una volta cirilli gabriele cirilli e fa bene mi sarei arrabbiato pure io con cirilli fa bene salutiamo gabriele certo e con chi chi ci stava in compagnia "
+        },
+        {
+          "in_episode": 208,
+          "episode_guest": "Neri per Caso",
+          "mention_count": 2,
+          "context": "curo c'era prima l'altro comico che lavorava spesso con lui eh eh chi è tatiana gabriele cirilli un amico lo salutiamo stato qui quest ovviamente anche la tagliana stato qui ho visto la puntata salutiamo salutiamo st"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Trio Medusa",
+      "own_episodes": [
+        189
+      ],
+      "cited_in": [
+        {
+          "in_episode": 114,
+          "episode_guest": "Danilo da Fiumicino (con Stefano Rapone)",
+          "mention_count": 10,
+          "context": "rché vengo da fiumicino definisce il nome è nato perché faccio un programma col trio medusa su radio digeriamo il trio medusa di tre amici di tintoria ma nessuno né 21 la vedi le sedi la nave di qualcuno ancora "
+        },
+        {
+          "in_episode": 35,
+          "episode_guest": "Francesco Lancia (con Stefano Rapone)",
+          "mention_count": 3,
+          "context": "e appassionato di comicità a provare a scrivere funzionava poi ho incrociato il trio medusa con la mia strada da lì è partita la radio e tutto il resto è ok a questo punto sull'improvvisazione è un mondo che mi "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Pietro Castellitto",
+      "own_episodes": [
+        191
+      ],
+      "cited_in": [
+        {
+          "in_episode": 42,
+          "episode_guest": "Liliana Fiorelli (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": " cinema un film in cui ci sei tu che i pre dito imprenditori che i predatori di pietro castellitto purtroppo il cinema sono chiusi e quindi la domanda è quanto stai a rosicà perché comunque ed aprendo in falsetto si no"
+        },
+        {
+          "in_episode": 227,
+          "episode_guest": "Paolo Sorrentino",
+          "mention_count": 2,
+          "context": "er lavoro sono andato a pranzo e poi mi sono preparato ascoltando la puntata di pietro castellitto che salutiamo e comunque salutiamo pietro certo cioè mi sono preparato ho detto fammi sentire la puntata di pietro cast"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Dario Moccia",
+      "own_episodes": [
+        211
+      ],
+      "cited_in": [
+        {
+          "in_episode": 217,
+          "episode_guest": "Paolo Hendel",
+          "mention_count": 4,
+          "context": "to come lo conosci ho detto eh perché mi stavo vedendo la puntata di inoria con dario moccia perché io sto in fissa per forza cioè m'ha fatto proprio ieme di moccia e dice lo seguivo su twitch ho detto lei conosc"
+        },
+        {
+          "in_episode": 158,
+          "episode_guest": "Gianluca Fru",
+          "mention_count": 2,
+          "context": " mo sto sputtanando qui però pif prossimo ospite no vabbè pure qua ex ospite di dario moccia come il 100% delle persone che fanno qualsiasi cosa in italia ogni volta diciamo vediamo che cosa hanno fatto un giorno"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Teo Teocoli",
+      "own_episodes": [
+        220
+      ],
+      "cited_in": [
+        {
+          "in_episode": 219,
+          "episode_guest": "Gialappa's Band",
+          "mention_count": 3,
+          "context": "levisione dava consigli come di dava a sacchi o a capello eh e li diede anche a teo teocoli che e gli rispose lei pensi a fare i mattoni che a far ridere ci penso io e e come dice teo no e berlusconi fece ah sì "
+        },
+        {
+          "in_episode": 208,
+          "episode_guest": "Neri per Caso",
+          "mention_count": 2,
+          "context": "i caga ma sicuro uno fa ti esatto ma io poi il bello cioè è bello vuol dire che teo teocoli peo pericoli lo facev anni prima nei villaggi tra l'altro c'è il capo animatore del mio villaggio qua in sala e che non"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Diego Bianchi",
+      "own_episodes": [
+        225
+      ],
+      "cited_in": [
+        {
+          "in_episode": 123,
+          "episode_guest": "Karma B (con Stefano Rapone)",
+          "mention_count": 3,
+          "context": "lio dire anche adesso adesso diego si incazza che ha chiesto neanche un giovane diego bianchi propaganda sono più io che lui cioè non ho capito che si deve incalzare fra i 22 set era lui a prendere ma secondo me è"
+        },
+        {
+          "in_episode": 226,
+          "episode_guest": "Giorgio Montanini",
+          "mention_count": 3,
+          "context": "o si chiamava gazebo gazebo esatto perché il il come si chiamava come si chiama diego bianchi diego bianchi è iscritto al pd e oltre a essere iscritto al pd faceva anche l'apertura delle kermesse il pd io non ero "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Paolo Sorrentino",
+      "own_episodes": [
+        227
+      ],
+      "cited_in": [
+        {
+          "in_episode": 287,
+          "episode_guest": "Toni Servillo",
+          "mention_count": 3,
+          "context": "noi abbiamo avuto adesso la fortuna di vedere la grazia, che è il nuovo film di paolo sorrentino che esce il 15 gennaio, ci hanno invitato a vederlo in vista di questa puntata in uno studio, eravamo prente solo io e "
+        },
+        {
+          "in_episode": 120,
+          "episode_guest": "Michela Giraud (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "contento e me lo dice perché era anche una domanda che mi hanno fatto sisma con paolo sorrentino è un film con attenzione i loschi paolo sorrentino con vol 2 in un film porno con palma filmati paolo sorti vorresti st"
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Sabina Guzzanti",
+      "own_episodes": [
+        243
+      ],
+      "cited_in": [
+        {
+          "in_episode": 244,
+          "episode_guest": "Serena Dandini",
+          "mention_count": 3,
+          "context": "ano quelle che ti avevano colpito a prescindere noi allora gianto già conoscevo sabina guzzanti che aveva cominciato a fare le prime ma proprio stiamo parlando delle prime cose angela finocchiaro che anche lì erano "
+        },
+        {
+          "in_episode": 261,
+          "episode_guest": "Neri Marcorè",
+          "mention_count": 2,
+          "context": " con serena dandini perché io vedevo i programmi appunto di serena con corrado, sabina guzzanti e tutti gli altri e io dicevo mi piacerebbe molto far parte di quel gruppo lì, eh, perché quando, insomma, dopo 2 anni "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Toni Servillo",
+      "own_episodes": [
+        287
+      ],
+      "cited_in": [
+        {
+          "in_episode": 227,
+          "episode_guest": "Paolo Sorrentino",
+          "mention_count": 4,
+          "context": " studiato le cose da cioè ho sempre sì sì ce lo farei sicuro proprio sempre con toni servillo che fa sempre sempre sempre col kane pure sarebbe un perfetto k certo c jud come no chi meglio di lui la somiglianza ev"
+        },
+        {
+          "in_episode": 134,
+          "episode_guest": "Giovanni Benincasa",
+          "mention_count": 3,
+          "context": " portato la settimana te credo che la vita va male signora provocazione di maio toni servillo vabbè vabbè sarebbe la sua più grande interpretazione però l'italiano che è razzista fa napoli napoli e a lui cioè nel "
+        }
+      ],
+      "total_citations": 2
+    },
+    {
+      "name": "Judah Friedlander",
+      "own_episodes": [
+        19
+      ],
+      "cited_in": [
+        {
+          "in_episode": 100,
+          "episode_guest": "con Stefano Rapone",
+          "mention_count": 2,
+          "context": "agordo quella con fanelli quella con seri nottata io e luca vecchi e quella con judah friedlander esclusi presenti ha sempre che poi qua ed è pure sonia scusa sonia allora in realtà nella short list sono escluse tutte"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Musica Per Bambini",
+      "own_episodes": [
+        27
+      ],
+      "cited_in": [
+        {
+          "in_episode": 25,
+          "episode_guest": "Valerio Lundini (2)",
+          "mention_count": 3,
+          "context": "ha bisogno di danari grazie mille all'ora nei prossimi che vorrei chiamare sono musica per bambini pippo solo filippo giardina e insomma per ora questi 3 poi adesso non è che ciò questa lungimiranza non ho fissato date"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Matteo Tiberia",
+      "own_episodes": [
+        34
+      ],
+      "cited_in": [
+        {
+          "in_episode": 139,
+          "episode_guest": "Valerio Lundini",
+          "mention_count": 4,
+          "context": "orse è fuori classifica fuori classifica siamo noi e domanda a uno del pubblico matteo tiberia se uno nel nella nell'applicazione che cronometra i politici parla effettivamente di politici morti come quelli che ama"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Giorgio Magri",
+      "own_episodes": [
+        79
+      ],
+      "cited_in": [
+        {
+          "in_episode": 197,
+          "episode_guest": "Brenda Lodigiani",
+          "mention_count": 2,
+          "context": " devi dare adesso veramente andiamo sulla nicchia però chi chi è stato del cast giorgio magri eh giorgio magri trovato è stato ah airò aò eh questi sono stati uno di questi tre certo ma t'ha dato com'è la mononucl"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Irene Graziosi",
+      "own_episodes": [
+        92
+      ],
+      "cited_in": [
+        {
+          "in_episode": 26,
+          "episode_guest": "Pippo Sowlo feat Christian the Seeker",
+          "mention_count": 2,
+          "context": "n un locale ma no non uscivo tipo di temi propri tipo di parto canada pur irene irene graziosi che stabiliamo l'altro il prossimo uscirà il mio podcast con irene graziosi garganica e roche live dopo quello che è ni"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Fabio Pinci",
+      "own_episodes": [
+        99
+      ],
+      "cited_in": [
+        {
+          "in_episode": 242,
+          "episode_guest": "Coez",
+          "mention_count": 5,
+          "context": "a mi sono un po' documentato e mi sono visto la puntata de dei profilax cioè di fabio pinci che indirettamente mi ha rovinato la vita perché lui c'aveva sto personaggio silvano con cui faceva le le canzoncine mo"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Danilo da Fiumicino",
+      "own_episodes": [
+        114
+      ],
+      "cited_in": [
+        {
+          "in_episode": 37,
+          "episode_guest": "Martina Catuzzi (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "oppo siamo divertiti onorari e quindi non ho visto non ho visto niente e allora danilo da fiumicino chiede giada né per successo cosa darebbe via e no non lavora non posso raggiungere anticipata quel grave esatto non è "
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Carmelo Avanzato",
+      "own_episodes": [
+        124
+      ],
+      "cited_in": [
+        {
+          "in_episode": 137,
+          "episode_guest": "Gipi",
+          "mention_count": 2,
+          "context": "erché forse io e te quello è un drone di nordvpn controlla un drone pilotato da carmelo avanzato forse perché io e te da soli non vogliamo niente parliamoci chiaro cioè 137 puntate non grazie a me non grazie a te non"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Cecilia Sala",
+      "own_episodes": [
+        129,
+        278
+      ],
+      "cited_in": [
+        {
+          "in_episode": 139,
+          "episode_guest": "Valerio Lundini",
+          "mention_count": 3,
+          "context": "che parlava la zitt la zitate eh maccio capatonda maschio e se andiamo indietro cecilia sala l'ultima comica che avete chiamato vabbè vabbè sì sì lei fa r storie quando si inventa ste cose sulla russia che so cat"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Eliana Albertini",
+      "own_episodes": [
+        135
+      ],
+      "cited_in": [
+        {
+          "in_episode": 139,
+          "episode_guest": "Valerio Lundini",
+          "mention_count": 3,
+          "context": "que io sono io ho visto che è venuto gernone a presentare il suo fumetto sì con eliana albertini perché poi mi sembra che sei il primo a scordarti qu allora piccolo dietro le quinte gernone eliana albertini albertini"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Maccio Capatonda",
+      "own_episodes": [
+        138
+      ],
+      "cited_in": [
+        {
+          "in_episode": 139,
+          "episode_guest": "Valerio Lundini",
+          "mention_count": 3,
+          "context": " sta perché non è che c' avesti mai la stessa spigliatezza che hai con me o con maccio capatonda no cioè comunque stareste sempre un po' tipo allora oh insomma allora quindi sei un'attrice e vabbè però so contenuti p"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Massimo Bagnato",
+      "own_episodes": [
+        162
+      ],
+      "cited_in": [
+        {
+          "in_episode": 130,
+          "episode_guest": "Dado (con Stefano Rapone)",
+          "mention_count": 4,
+          "context": "ale bellissima via alberico ii e c'era una regista nicoletta costantino e c'era massimo bagnato che già era interno e io ho detto io faccio questo ho portato quattro pezzi borsa bellissima ma tu devi lavorare con no"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Antonio Rezza",
+      "own_episodes": [
+        186
+      ],
+      "cited_in": [
+        {
+          "in_episode": 181,
+          "episode_guest": "Paola Minaccioni",
+          "mention_count": 2,
+          "context": "niente e tra l'altro voglio dire a mia discolpa che non ero l'unica, c'ero io e antonio rezza. attenzione, io e antonio orezza si ritroviamo a milano, il mio primo, ma penso pure il suo perché non credo che abbia "
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Caterina Guzzanti",
+      "own_episodes": [
+        188
+      ],
+      "cited_in": [
+        {
+          "in_episode": 221,
+          "episode_guest": "Dargen D'Amico",
+          "mention_count": 2,
+          "context": "di biase e anche consorte manuela fanelli no mo guarda se te li dico impazzisci caterina guzzanti roberto lipari valerio lundini che è un amico fa ancora più male no infatti ci salero raimondo luca ravenna fa ancora p"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Marco D'Amore",
+      "own_episodes": [
+        198
+      ],
+      "cited_in": [
+        {
+          "in_episode": 245,
+          "episode_guest": "Salvatore Esposito",
+          "mention_count": 2,
+          "context": " tutti quelli che sono quelli che sono stati scelti sì li ho provinati tutti io marco d'amore fortunato cerlino maria pia calzone sì sì sì tutti bello e allora non non farò la domanda su gomorra ma interpretare co"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Stefano Nazzi",
+      "own_episodes": [
+        202
+      ],
+      "cited_in": [
+        {
+          "in_episode": 148,
+          "episode_guest": "Frank Matano",
+          "mention_count": 6,
+          "context": "accio qui e non ti viene mai in mente se veramente sei l'assassino capito vabbè stefano nazzi io sono stefano nazzi e questo pure quello è bello stefano nazzi stefano nazzi prossimo ospite un altro podcast vabbè q"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Elio Germano",
+      "own_episodes": [
+        206
+      ],
+      "cited_in": [
+        {
+          "in_episode": 263,
+          "episode_guest": "Gabriele Mainetti",
+          "mention_count": 2,
+          "context": "reso così. e poi abbiamo fatto sto viaggio incredibile dove ho conosciuto anche elio germano che avete avuto qua.\n\nho visto la puntata con elio che anche lui aveva preso lo eh sì, scusami di confomia. senti che c"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Raul Cremona",
+      "own_episodes": [
+        209
+      ],
+      "cited_in": [
+        {
+          "in_episode": 241,
+          "episode_guest": "Maurizio Milani",
+          "mention_count": 3,
+          "context": "one che sono stati come pubblico non so ma che hanno lavorato al derby sono ehm raul cremona e aldo e giovanni e non c'era giacomo e marco della noce che era la carovana erano in due lui e cesare gallarini loro h"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Alessandro Borghese",
+      "own_episodes": [
+        215
+      ],
+      "cited_in": [
+        {
+          "in_episode": 38,
+          "episode_guest": "Edoardo Ferrario",
+          "mention_count": 2,
+          "context": "igliose degli sponsor di raja psi c'è valerio dei sì rocchi ha interpretato sia alessandro borghese estone è vero c'è max 4 trattorie sto e anzi e e poi c'è michela cirò che partecipano a reggere un solito divertente ch"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Paolo Hendel",
+      "own_episodes": [
+        217
+      ],
+      "cited_in": [
+        {
+          "in_episode": 172,
+          "episode_guest": "Walter Fontana",
+          "mention_count": 3,
+          "context": "la cosa lì diventò pravettoni essenzialmente che fu un personaggio che poi fece paolo hendel forse qualcuno se lo ricorda o i vostri genitori se lo ricordano e e quindi questa è stata così son diventato autore te"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Sandro Cappai",
+      "own_episodes": [
+        222
+      ],
+      "cited_in": [
+        {
+          "in_episode": 258,
+          "episode_guest": "Salvo Di Paola",
+          "mention_count": 2,
+          "context": "diverso, però abbiamo dei tempi. io allora, la seconda volta che ho parlato con sandro cappai, eh io l'ero andato a vedere al franco parenti, dovevamo fare una roba insieme e lui finisce, c'aveva maschietero, quin"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Rocco Papaleo",
+      "own_episodes": [
+        224
+      ],
+      "cited_in": [
+        {
+          "in_episode": 166,
+          "episode_guest": "Maurizio Battista",
+          "mention_count": 2,
+          "context": "questa cosa no infatti tu non ci stai ah non ci stai e chi chi al tuo posto c'è rocco papaleo per una questione di dinamiche interne alla rai ah vedi sì c'è rocco papaleo coc conduttore comunque bel ragazzo tutti "
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Irene Grandi",
+      "own_episodes": [
+        233
+      ],
+      "cited_in": [
+        {
+          "in_episode": 251,
+          "episode_guest": "Paola Iezzi",
+          "mention_count": 3,
+          "context": ". piccolo orchestra avion travel. ah, che bello quel pezzo. wow! wow!\n\nseconda, irene grandi. terzo, irene grandi, che pezzo? conoz irene grandi che è venuta da noi e ci ha detto che aveva perso contro piccolo or"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Ubaldo Pantani",
+      "own_episodes": [
+        234
+      ],
+      "cited_in": [
+        {
+          "in_episode": 172,
+          "episode_guest": "Walter Fontana",
+          "mention_count": 2,
+          "context": "ersonaggi con fabio paola cortellesi con cui ho fatto tantissimi personaggi poi ubaldo pantani che è un imitatore eccezionale è un bravissimo ma non solo imitatore ha fatto anche un sacco di personaggi con lui sto "
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Christian De Sica",
+      "own_episodes": [
+        236
+      ],
+      "cited_in": [
+        {
+          "in_episode": 26,
+          "episode_guest": "Pippo Sowlo feat Christian the Seeker",
+          "mention_count": 3,
+          "context": " solo e poi di nuovo è tornato matteo detto matteo no ha detto questa s so come christian de sica contratto progetto come christian de sica da benvenuti e ben tornato e è il 24 febbraio 2020 siamo in piena crisi coron"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Salvatore Esposito",
+      "own_episodes": [
+        245
+      ],
+      "cited_in": [
+        {
+          "in_episode": 198,
+          "episode_guest": "Marco D'Amore",
+          "mention_count": 2,
+          "context": " malaugurata idea per gomorra 2 di lanciare le prime due puntate al cinema e io salvatore esposito e qualche altro del cast fummo invitati a a fare i saluti in sala in un cinema napoletano e e nessuno senza che nessuno"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Claudio Amendola",
+      "own_episodes": [
+        266
+      ],
+      "cited_in": [
+        {
+          "in_episode": 163,
+          "episode_guest": "Piero Pelù",
+          "mention_count": 2,
+          "context": "asse come ti sei trovato a recitare recitare sono parole grosse diciamo che con claudio amendola che mi ha invitato a fare tra l'altro tra virgolette il protagonista perché poi è protagonista passivo cioè questa rock"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Stefano Bollani",
+      "own_episodes": [
+        268
+      ],
+      "cited_in": [
+        {
+          "in_episode": 233,
+          "episode_guest": "Irene Grandi",
+          "mention_count": 2,
+          "context": "avevano partecipato a questo evento tra cui un amico veramente speciale che era stefano bollani stefano bollani il pianista jzz uno dei pluri premiati nel mondo comunque l'avevo conosciuto in quella in quel età lì e"
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Fabri Fibra",
+      "own_episodes": [
+        272
+      ],
+      "cited_in": [
+        {
+          "in_episode": 275,
+          "episode_guest": "Jake La Furia",
+          "mention_count": 2,
+          "context": "rtista di riferimento. i riferimenti della nostra generazione siamo stati noi e fabri fibra. c'era metà della gente che rappava come noi e metà della gente che reppava come fabri fibra. quindi vabbè, ovviamente "
+        }
+      ],
+      "total_citations": 1
+    },
+    {
+      "name": "Jake La Furia",
+      "own_episodes": [
+        275
+      ],
+      "cited_in": [
+        {
+          "in_episode": 132,
+          "episode_guest": "Martin e Luis Sal (con Stefano Rapone)",
+          "mention_count": 2,
+          "context": "ubito è quello che c'era trump non può essere in italia no no c'era il padre di jake la furia era uno di una fase di jake la furia non so il nome nemmeno perché fra il serio la furia john la famiglia che chi fa il"
+        }
+      ],
+      "total_citations": 1
     }
   ]
 }
